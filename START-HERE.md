@@ -24,6 +24,7 @@ No installs, no maths test, no GitHub, no tracker, and no career choice yet. Wee
 |---|---|
 | **I finished Week 0.** | Continue with the [first 30 days](guides/first-30-days.md#week-1). |
 | **I can already write and debug Python functions.** | Pick a goal in the [track chooser](README.md#choose-your-track). Then open a module from the [index](curriculum/README.md#all-modules) and check its prerequisites. |
+| **I can write and test Python and want to build AI systems.** | Pass the [3-check exit gate](curriculum/1-foundations.md#three-check-gate), then start [Level 1 of the Portfolio Spine](guides/portfolio-spine.md#level-1). |
 | **I'm a CS undergraduate following the four-year plan.** | Start at [S1 in the Four-Year Plan](guides/four-year-plan.md#s1). It also begins with Week 0. |
 | **I have already started this roadmap.** | Go straight to the [resume checklist](guides/progress-tracker.md#resume). You don't need to redo onboarding. |
 
@@ -56,6 +57,7 @@ Everything except Week 0. That includes the [book catalogue](resources/books.md)
 ## Need help?
 
 - **Stuck, tired or unmotivated?** Use the [stuck or unmotivated table](guides/how-to-read-a-module.md#stuck-or-unmotivated). Each row is a 15-minute fix.
+- **Can I use ChatGPT or Claude?** Yes, to *explain* things and to *quiz* you. Not to write your code yet. [Why, and when that changes](curriculum/1-foundations.md#ai-usage-rule).
 - **An error message you don't understand?** Paste the code into [Python Tutor](https://pythontutor.com/python-compiler.html) and step through it.
 - **Something in this roadmap looks wrong or contradictory?** Check [known limitations](FAQ.md#known-limitations), then [report it](https://github.com/akazadivu-design/data-sci/issues/new/choose).
 - **Wondering how long it all takes?** Read the [time assumptions](FAQ.md#how-long). They are estimates, not promises.

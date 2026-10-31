@@ -12,6 +12,27 @@
 
 ---
 
+<a id="numpy-sprint"></a>
+## 🧮 Before `.fit()`: the 3-step classical ML sequence (v2026.7)
+
+Most learners call `scikit-learn`'s `.fit()`, get a number back and assume they understood it. Video 1 (04:39–05:27) gives the fix: build a visual mental map, then a map of the algorithms, then **implement them yourself in NumPy** before using the library. This sequence comes before the module specs below. The modules stay as they are.
+
+| Step | Time box | What you do | Free resource (pick one) | Done when |
+|---|---|---|---|---|
+| **1 · Visual maths map** | **2–4 weeks max** | Matrices as transformations, the chain rule (you need it for backprop), distributions and Bayes' theorem | 3Blue1Brown [*Essence of Linear Algebra*](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) + [*Essence of Calculus*](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) · [StatQuest statistics fundamentals](https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF) | You can sketch what `A @ v` does to a vector, and say why a gradient points uphill |
+| **2 · Algorithm map** | 2–3 weeks | Classification vs regression; linear vs tree-based vs neural models; overfitting and validation | [Andrew Ng ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) (free audit) *or* StatQuest | You can say which model family you'd try first on a new tabular problem, and why |
+| **3 · Pure NumPy From Scratch Sprint** | 2–4 weeks | Implement **logistic regression**, **K-Means** and a **decision tree** in NumPy, against unit tests | **[`resources/numpy-from-scratch/`](../resources/numpy-from-scratch/README.md#numpy-from-scratch)**: starter files + `pytest` suite, plus optional [Deep-ML](https://www.deep-ml.com/) problems | `pytest -q` passes for all three, and your README explains each place where your version differs from sklearn |
+
+**Why step 3 earns its place:**
+
+- **It turns maths into data flow.** You watch the gradient change the weights, see a point get assigned and a centre move, and see a split chosen. Video 1 (05:00–05:17) describes it as "when you can see the data flow through each step of the algorithm."
+- **It's direct interview prep.** ML coding rounds often ask for exactly these algorithms in NumPy (Video 1, 05:21; W6, 07:51). See the [interview-prep findings](../audit/v2026.7-research-findings.md#interview-prep).
+- **It's what the module projects build on.** The [M9](#module-9) linear-regression, [M11](#module-11) K-Means and [M12](#module-12) decision-tree projects extend your sprint code. They don't restart it.
+
+> **Rules for the sprint.** Maths on paper before code. The [Foundations AI usage rule](1-foundations.md#ai-usage-rule) still applies: use AI to explain a failing test, never to write the fix. Only after your tests pass do you switch to `scikit-learn`. From then on, sklearn is the tool you use in projects, and your NumPy version is how you check you understand it.
+
+---
+
 <a id="module-9"></a>
 ## Module 9: Supervised Learning — Regression Family
 

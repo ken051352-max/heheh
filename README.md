@@ -4,7 +4,7 @@
 
 [Start here](START-HERE.md) · [Browse all modules](curriculum/README.md#all-modules) · [Resume studying](guides/progress-tracker.md#resume) · [FAQ](FAQ.md)
 
-[![Version](https://img.shields.io/badge/version-2026.6%20First%2030%20Days-blue)](CHANGELOG.md#refresh-log)
+[![Version](https://img.shields.io/badge/version-2026.7%20AI%20Engineering%20Spine-blue)](CHANGELOG.md#refresh-log)
 [![Modules](https://img.shields.io/badge/modules-27-6f42c1)](curriculum/README.md#all-modules)
 [![Policy](https://img.shields.io/badge/policy-free--first-1a7f37)](FAQ.md#cost-and-access)
 [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE.md)
@@ -51,7 +51,7 @@ Each module brings together prerequisites, learning resources, and practical wor
 | **Data Scientist** — inference and predictive modelling | [Foundations](curriculum/README.md#foundations), [Statistics](curriculum/README.md#statistics-and-data), and [Classical ML](curriculum/README.md#classical-ml). |
 | **Data Engineer** — databases and data systems | [M4: Algorithms](curriculum/1-foundations.md#module-4), [M8a: SQL](curriculum/2-statistics-and-data.md#module-8a), and [M8b: Distributed Data](curriculum/2-statistics-and-data.md#module-8b). |
 | **ML Engineer** — model training and serving | [Classical ML](curriculum/README.md#classical-ml), [Deep Learning](curriculum/README.md#deep-learning), and [M24: MLOps](curriculum/6-frontier-production.md#module-24). |
-| **AI Engineer, Applications** — products using existing models | [Practitioner track](guides/practitioner-track.md#practitioner-track): applied scope, projects, and trade-offs. |
+| **AI Engineer, Applications** — products using existing models | [Practitioner track](guides/practitioner-track.md#practitioner-track) for scope, then build **one system through five levels** with the [Portfolio Spine](guides/portfolio-spine.md#portfolio-spine) (API → RAG + evals → agent → multi-agent → self-improving loop). |
 | **AI Engineer, Systems** — model internals and infrastructure | [Deep Learning](curriculum/README.md#deep-learning) and [Frontier & Production](curriculum/README.md#frontier-and-production). |
 | **Research / PhD preparation** — mathematical and research depth | [Full curriculum index](curriculum/README.md#all-modules) and [M26: Research capstone](curriculum/6-frontier-production.md#module-26). |
 
@@ -104,6 +104,7 @@ Six subject groups, called **strata**, organise the module pages. Numbers are st
 ## Useful links
 
 - **Study help:** [Read a module](guides/how-to-read-a-module.md#reading-order) · [Choose a resource](guides/how-to-read-a-module.md#pick-one) · [Optional guided companions](guides/companion-curricula.md) · [Get unstuck](guides/how-to-read-a-module.md#common-ways-people-get-stuck).
+- **Building AI systems:** [Portfolio Spine: one system, five levels](guides/portfolio-spine.md#portfolio-spine) · [`DECISIONS.md` template](resources/templates/DECISIONS.md) · [NumPy From Scratch harness](resources/numpy-from-scratch/README.md#numpy-from-scratch) · [Agent labs (M22)](coursepages/m22-agentic-ai/README.md#labs) · [Evaluation harness (M24)](coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness).
 - **References, when needed:** [Books](resources/books.md) · [Toolchain](resources/toolchain.md) · [Citation key](guides/sources.md#citation-key) · [Career planning](guides/career-operations.md). Supporting course pages are linked beside their modules in the [index](curriculum/README.md#all-modules).
 - **Report a problem:** [Confusing instructions or a broken link](https://github.com/akazadivu-design/data-sci/issues/new/choose) · [Contribution guide](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md).
 
