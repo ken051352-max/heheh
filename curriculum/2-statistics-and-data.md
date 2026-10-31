@@ -73,7 +73,7 @@
   * **Harvard CAUSALab** — [course materials + *What If* book](https://www.hsph.harvard.edu/causal/) ✅
   * **Practical book (free, 2024):** [Matheus Facure — *Causal Inference for the Brave and True*](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) ✅ — every chapter is a runnable notebook.
   * **Required Reading:**
-    * Hernán & Robins — [*Causal Inference: What If* (free PDF, 2024 revision)](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf) ✅
+    * Hernán & Robins — [*Causal Inference: What If* (free PDF, 2024 revision)](https://miguelhernan.org/whatifbook) ✅
     * Pearl, Glymour & Jewell — *Causal Inference in Statistics: A Primer* (Wiley 2016).
     * Pearl — *Causality: Models, Reasoning, and Inference* (Cambridge 2e, 2009) — the reference.
     * **Kohavi, Tang & Xu** — [*Trustworthy Online Controlled Experiments*](https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59) ✅ (Cambridge 2020) — **the industrial A/B-testing bible**.
@@ -81,7 +81,7 @@
 
 * **📋 Mandatory mini-projects:**
   1. **Design + simulate an A/B test** with CUPED variance reduction — show the % reduction in required sample size.
-  2. **Fit an IV regression** on a realistic dataset (e.g., [NLSY or Angrist-Krueger 1991 compulsory-schooling](https://economics.mit.edu/sites/default/files/publications/Does%20Compulsory%20School%20Attendance.pdf)) — reproduce the returns-to-education estimate.
+  2. **Fit an IV regression** on a realistic dataset (e.g., [NLSY or Angrist-Krueger 1991 compulsory-schooling](https://www.nber.org/papers/w3572)) — reproduce the returns-to-education estimate.
   3. **Use DoWhy end-to-end**: model → identify → estimate → refute — on a confounded synthetic dataset; show refutation tests (placebo, random common cause, unobserved-confounder sensitivity).
   4. **Causal Forest on lalonde / criteo-uplift**: estimate CATEs, plot HTE heatmap, produce a targeting policy + its evaluation via doubly-robust off-policy estimation.
 

@@ -60,6 +60,9 @@ Been away for weeks? That's normal. If you're in Weeks 0–4, restart the curren
 
 - [ ] (Undergraduates) Opened the [Four-Year Plan](four-year-plan.md#semester-plan) and copied the current semester's exit check here
 
+### 🚦 Foundations gate
+- [ ] Passed the [3-check exit gate](../curriculum/1-foundations.md#three-check-gate) (read · debug · data flow) before unlocking AI coding assistants
+
 ### 🩺 Maths placement (optional, never a gate)
 - [ ] Took the [Khan Precalculus course challenge](../curriculum/1-foundations.md#math-diagnostic) once and picked resources from the result
 - [ ] Doing *Book of Proof* ch. 1–4 at 15 min/day alongside college maths (full **Module 0** is recommended, not required)
@@ -81,6 +84,7 @@ Been away for weeks? That's normal. If you're in Weeks 0–4, restart the curren
 - [ ] **Module 8b**: Distributed Data & Streaming (Stanford CS246 + DataExpert.io + Reis & Housley + Spark + Kafka + Airflow + Iceberg)
 
 ### 🟧 Classical ML Stratum
+- [ ] **NumPy sprint:** logistic regression, K-Means and a decision tree pass [`pytest`](../resources/numpy-from-scratch/README.md#numpy-from-scratch) before any `.fit()`
 - [ ] **Module 9**: Regression (MIT 6.390 Lec 1-3, CS109A Lec 3-6)
 - [ ] **Module 10**: Classification & SVMs + Calibration (MIT 6.390 Lec 4, CS109A Lec 14-15, CS 1810, Cambridge ML&BI + Platt/Isotonic/Temperature scaling)
 - [ ] **Module 11**: Unsupervised (CS109A Lec 10, CS109B Lec 1-2, MIT 6.86x Unit 4)
@@ -111,6 +115,13 @@ Been away for weeks? That's normal. If you're in Weeks 0–4, restart the curren
 - [ ] **M18** fine-tune + four-way eval · **M21** RAG mini-projects · **M22** agent mini-projects · **M23** safety mini-projects · **M24** productionise one project · **M25** product-DS mini-projects
 - [ ] At least **one** project satisfies all 12 lines of the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar)
 - [ ] At least **one** project was built **for a real person or organisation** ([why](career-operations.md#career-operations))
+
+### 🧱 Portfolio Spine (one system, five levels)
+- [ ] L1 API wrapper + schema-validated output
+- [ ] L2 RAG + 20–50-case eval set
+- [ ] L3 read-only-first agent
+- [ ] L4 router / worker / checker
+- [ ] `DECISIONS.md` with a 1× / 10× / 100× cost table — see [the spine](portfolio-spine.md#levels)
 
 ### 🧭 Career Operations
 - [ ] Ran my own [job-description survey](career-operations.md#skills-checklist) on 10–15 postings at companies I would actually join

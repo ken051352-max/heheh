@@ -85,7 +85,7 @@ each module lists alternatives if a default does not suit you.
 
 | Module | Take this one course | Then build |
 | :--- | :--- | :--- |
-| [M9](../curriculum/3-classical-ml.md#module-9) Regression | [MIT 6.390](https://introml.mit.edu/spring26/lectures/lec01) | Regression from scratch |
+| [M9](../curriculum/3-classical-ml.md#module-9) Regression | [MIT 6.390](https://introml.mit.edu/spring26/lectures/lec01) | [NumPy sprint](../curriculum/3-classical-ml.md#numpy-sprint) first, then regression from scratch |
 | [M10](../curriculum/3-classical-ml.md#module-10) Classification | [MIT 6.390 Lec 4](https://introml.mit.edu/spring26/lectures/lec04) | Churn dashboard |
 | [M11](../curriculum/3-classical-ml.md#module-11) Unsupervised | [Harvard CS109B](https://harvard-iacs.github.io/2022-CS109B/) | K-Means from scratch |
 | [M12](../curriculum/3-classical-ml.md#module-12) Ensembles | [Harvard CS109A Lec 16–20](https://harvard-iacs.github.io/2021-CS109A/pages/schedule.html) | Decision tree from scratch |
@@ -112,7 +112,7 @@ each module lists alternatives if a default does not suit you.
 | [M18](../curriculum/6-frontier-production.md#module-18) LLMs | [Stanford CS336](https://cs336.stanford.edu/) | Fine-tune + eval |
 | [M21](../curriculum/6-frontier-production.md#module-21) RAG | [Pinecone Learn](https://www.pinecone.io/learn/) | RAG minis |
 | [M22](../curriculum/6-frontier-production.md#module-22) Agents | [HF Agents Course](https://huggingface.co/learn/agents-course/) | Agent minis |
-| [M23](../curriculum/6-frontier-production.md#module-23) Safety | [AI Safety Fundamentals](https://aisafetyfundamentals.com/alignment/) | Safety minis |
+| [M23](../curriculum/6-frontier-production.md#module-23) Safety | [AI Safety Fundamentals](https://bluedot.org/courses/alignment) | Safety minis |
 | [M24](../curriculum/6-frontier-production.md#module-24) MLOps | [Made With ML](https://madewithml.com/) | Productionise one project |
 | [M25](../curriculum/6-frontier-production.md#module-25) Product DS | [Storytelling with Data](https://www.storytellingwithdata.com/) (book) | Product-DS minis |
 | [M26](../curriculum/6-frontier-production.md#module-26) Capstone | — pick a track — | Your public capstone |

@@ -36,7 +36,7 @@
   * **Multi-modality**: Vision-Language Models (LLaVA, GPT-4V, Claude 3.5 Sonnet Vision, **Molmo** 2024, **Pixtral**), audio (Whisper v3, Voice-Mode, **Moshi**), video (Sora, Veo 2, **Runway Gen-3**, **Kling 2.0**).
 
 * **2026 Resources:**
-  * **Primary Course Link:** [**Stanford CS336 Spring 2026 “Language Modeling from Scratch”**](https://cs336.stanford.edu/) (Hashimoto · Liang, LIVE 30 Mar 2026 — 17 lectures + 5 assignments covering tokenizer → Transformer → Triton FlashAttention → parallelism → data pipelines → SFT → RLHF/DPO → RLVR) · [CS336 Spring 2025 archive](https://cs336.stanford.edu/spring2025/) + [YouTube playlist](https://www.youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_) · [IITM BSCS3004](https://onlinedegree.iitm.ac.in/) · [Princeton COS 597 G](https://princeton-nlp.github.io/cos597G/) · [**MIT 6.7960 Fall 2025 Week 8‑9, 11–13**](https://deeplearning6-7960.github.io/) (Foundation Model pre‑/post‑training, scaling laws, inference‑time algorithms) · [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/) (free, certified) · [Hugging Face Smol Training Playbook](https://huggingface.co/spaces/HuggingFaceTB/smol-training-playbook) (200+ pages of real training secrets, Oct 2025).
+  * **Primary Course Link:** [**Stanford CS336 Spring 2026 “Language Modeling from Scratch”**](https://cs336.stanford.edu/) (Hashimoto · Liang, LIVE 30 Mar 2026 — 17 lectures + 5 assignments covering tokenizer → Transformer → Triton FlashAttention → parallelism → data pipelines → SFT → RLHF/DPO → RLVR) · [CS336 Spring 2025 archive](https://cs336.stanford.edu/spring2025/) + [YouTube playlist](https://www.youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_) · [IITM BSCS3004](https://onlinedegree.iitm.ac.in/) · [Princeton COS 597 G](https://www.cs.princeton.edu/courses/archive/fall22/cos597G/) · [**MIT 6.7960 Fall 2025 Week 8‑9, 11–13**](https://deeplearning6-7960.github.io/) (Foundation Model pre‑/post‑training, scaling laws, inference‑time algorithms) · [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/) (free, certified) · [Hugging Face Smol Training Playbook](https://huggingface.co/spaces/HuggingFaceTB/smol-training-playbook) (200+ pages of real training secrets, Oct 2025).
   * **Required Reading (Latest 2026 Editions — verified April 2026):**
     * **_Build a Large Language Model (From Scratch)_** — Sebastian Raschka (Manning 2024) — **do this alongside CS336 Assignment 1**.
     * **_Hands‑On Large Language Models_** — Alammar & Grootendorst (O'Reilly Sep 2024, 428 pp., [HandsOnLLM repo](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)).
@@ -91,7 +91,7 @@
   * **Evaluation:** **Ragas** metrics (faithfulness, answer relevance, context precision, context recall), **nDCG@k**, **MRR**, **recall@k**, **Needle-in-a-Haystack** for long context.
 
 * **2026 Resources:**
-  * **Primary Course Link:** [**Pinecone Learning Center**](https://www.pinecone.io/learn/) ✅ (comprehensive free RAG/vector primer) · [**LlamaIndex docs**](https://docs.llamaindex.ai/) ✅ (practical cookbook-driven) · [**LangChain RAG tutorial**](https://python.langchain.com/docs/tutorials/rag/) · [DeepLearning.AI short courses — "Advanced Retrieval for AI" & "Building and Evaluating Advanced RAG"](https://www.deeplearning.ai/).
+  * **Primary Course Link:** [**Pinecone Learning Center**](https://www.pinecone.io/learn/) ✅ (comprehensive free RAG/vector primer) · [**LlamaIndex docs**](https://developers.llamaindex.ai/python/framework/) ✅ (practical cookbook-driven) · [**LangChain RAG tutorial**](https://docs.langchain.com/oss/python/langchain/rag) · [DeepLearning.AI short courses — "Advanced Retrieval for AI" & "Building and Evaluating Advanced RAG"](https://www.deeplearning.ai/).
   * **Required Reading:**
     * Lewis et al. 2020 ("Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks") — the original RAG paper.
     * Anthropic (Sep 2024) "Introducing Contextual Retrieval" — the 2024 enterprise-grade baseline.
@@ -189,7 +189,7 @@
 <a id="module-23"></a>
 ## Module 23: AI Safety, Alignment, Interpretability, Evals & Policy
 
-* **The Tutor's "Why":** No serious 2026 AI/ML role is hired without alignment and safety literacy. MIT AI Safety Forum + Berkeley MIDS + [AISF Alignment Fundamentals](https://aisafetyfundamentals.com/alignment/) ✅ all cover this. Closes Gaps #6, #12, and #13 of the benchmark PDF.
+* **The Tutor's "Why":** No serious 2026 AI/ML role is hired without alignment and safety literacy. MIT AI Safety Forum + Berkeley MIDS + [AISF Alignment Fundamentals](https://bluedot.org/courses/alignment) ✅ all cover this. Closes Gaps #6, #12, and #13 of the benchmark PDF.
 
 * **Strict Prerequisites:** Module 18 (LLMs, RLHF), Module 22 (agents).
 
@@ -201,7 +201,7 @@
   * **Eval harnesses (beyond basic LLM evals):**
     * [**OpenAI evals**](https://github.com/openai/evals) ✅
     * [**lm-evaluation-harness** (EleutherAI)](https://github.com/EleutherAI/lm-evaluation-harness) ✅
-    * [**Inspect** (UK AISI)](https://inspect.ai-safety-institute.org.uk/) — dedicated safety-eval framework.
+    * [**Inspect** (UK AISI)](https://inspect.aisi.org.uk/) — dedicated safety-eval framework.
     * [**HF Open LLM Leaderboard**](https://huggingface.co/open-llm-leaderboard) ✅
     * [**METR evals**](https://metr.org/) — task-duration-based capability evals.
     * Dangerous-capability evals: cyber (Cybench), CBRN, persuasion, agentic autonomy.
@@ -215,8 +215,8 @@
   * **Ethics foundations:** dual-use research, **differential privacy** (re-iterated from M24), fairness (DP/EO/Calibration trade-offs, impossibility result — Chouldechova 2017), FAT/FAccT community.
 
 * **2026 Resources:**
-  * **Primary Course (free):** [**AI Safety Fundamentals — Alignment Track**](https://aisafetyfundamentals.com/alignment/) ✅ (Bluedot Impact, 12-week curriculum, free facilitated cohorts 3×/year).
-  * **Supplementary:** [AISF Governance Track](https://aisafetyfundamentals.com/governance/), [ARENA ML alignment curriculum](https://www.arena.education/), [Neel Nanda — MI study guide](https://www.neelnanda.io/mechanistic-interpretability/getting-started), [**EleutherAI Cookbook**](https://github.com/EleutherAI/cookbook) ✅.
+  * **Primary Course (free):** [**AI Safety Fundamentals — Alignment Track**](https://bluedot.org/courses/alignment) ✅ (Bluedot Impact, 12-week curriculum, free facilitated cohorts 3×/year).
+  * **Supplementary:** [AISF Governance Track](https://bluedot.org/courses/ai-governance), [ARENA ML alignment curriculum](https://www.arena.education/), [Neel Nanda — MI study guide](https://www.neelnanda.io/mechanistic-interpretability/getting-started), [**EleutherAI Cookbook**](https://github.com/EleutherAI/cookbook) ✅.
   * **Required Reading:**
     * Amodei et al. 2016 "Concrete Problems in AI Safety" — the canonical problem enumeration.
     * Olah et al. — [Transformer Circuits thread](https://transformer-circuits.pub/) ✅.

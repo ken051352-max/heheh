@@ -11,15 +11,15 @@ Retrieval-Augmented Generation is the single most-deployed LLM pattern in produc
 | Resource | Role | Link |
 |---|---|---|
 | Pinecone Learning Center | Free RAG/vector primer | <https://www.pinecone.io/learn/> |
-| LlamaIndex docs | Practical cookbook | <https://docs.llamaindex.ai/> |
-| LangChain RAG tutorial | Framework walkthrough | <https://python.langchain.com/docs/tutorials/rag/> |
+| LlamaIndex docs | Practical cookbook | <https://developers.llamaindex.ai/python/framework/> |
+| LangChain RAG tutorial | Framework walkthrough | <https://docs.langchain.com/oss/python/langchain/rag> |
 | pgvector | Postgres vector extension | <https://github.com/pgvector/pgvector> |
 | Qdrant | Rust vector DB | <https://qdrant.tech/> |
 | Weaviate | Open-source vector DB | <https://weaviate.io/> |
 | Milvus | Distributed vector DB | <https://milvus.io/> |
 | LanceDB | Embedded, Lance-format vector DB | <https://lancedb.com/> |
 | ColBERT | Late-interaction retrieval | <https://github.com/stanford-futuredata/ColBERT> |
-| Ragas | RAG evaluation framework | — see `github.com/explodinggradients/ragas` |
+| Ragas | RAG evaluation framework | <https://github.com/vibrantlabsai/ragas> (moved from `explodinggradients/ragas`) |
 | Anthropic — Contextual Retrieval (Sep 2024) | SOTA chunking technique | <https://www.anthropic.com/news/contextual-retrieval> |
 | Microsoft GraphRAG (2024) | Graph-based RAG | <https://github.com/microsoft/graphrag> |
 
@@ -43,6 +43,20 @@ measure buys an unfalsifiable improvement.
 
 **In 2026 the default answer is rung 3.** RAG is cheaper, updates instantly, cites its sources, and
 keeps private data out of the weights. Fine-tuning is the specialist tool, not the prestige tool.
+
+<a id="evaluation-harness"></a>
+## 📏 Evaluating RAG: the harness applied to retrieval (Portfolio Spine L2)
+
+"Just adding RAG is the easy part. The hard part is knowing if it's giving you correct answers, and if it messes up, figuring out why" (W3, 01:53–02:21). Use the [4-part evaluation harness](../m24-mlops-llmops-agentops/README.md#evaluation-harness) and **evaluate each component, not just the final answer**:
+
+| Harness part | RAG-specific version |
+|---|---|
+| **1 · Golden failure set** | 20–50 real questions about *your* documents, each with the answer **and the chunk(s) that support it**. Seed it from wrong answers and "I don't know"s you actually saw |
+| **2 · Graders** | *Code:* retrieval hit@k / recall@k / nDCG@10 against the labelled chunks; citation present and pointing to a retrieved chunk. *LLM judge (calibrated):* faithfulness to the retrieved context and answer relevance ([Ragas](https://docs.ragas.io/) provides both; validate it against 30+ of your own labels first) |
+| **3 · Multi-run** | Run generation N times per question; report pass rate. Retrieval is usually deterministic, generation isn't |
+| **4 · Telemetry** | Tokens of context per answer, latency of retrieval vs generation, and cost per answer. A bigger `top_k` that adds 1 point of accuracy but doubles cost needs a [`DECISIONS.md`](../../guides/portfolio-spine.md#decisions-template) entry |
+
+**Always report against a baseline:** the same questions with *no* retrieval (rung 1–2 above). If RAG doesn't beat it, you don't need RAG yet.
 
 ## Mandatory mini-projects
 

@@ -86,11 +86,11 @@ Pick **one** of these freely-available diagnostic instruments — each maps clea
 
 | # | Strand | Diagnostic instrument | Pass bar | Remediation if you fail → |
 |---|---|---|---|---|
-| 1 | **Pre-calculus & algebra** | [MIT 18.01A diagnostic (Q1–Q10)](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/resources/exam_a/) | 8/10 | Module **0a** (Khan Academy Pre-Calc) |
+| 1 | **Pre-calculus & algebra** | [Khan Academy Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) (replaces the retired MIT 18.01A exam, v2026.7) | 70 % | Module **0a** (Khan Academy Pre-Calc) |
 | 2 | **Trigonometry & complex numbers** | [Paul's Online Trig diagnostic](https://tutorial.math.lamar.edu/) | 7/10 | Module **0a** (Khan Academy Trig + Euler's formula) |
-| 3 | **Proof writing & logic** | [Velleman *How To Prove It* §1.5 exercises](https://www.cambridge.org/core/books/how-to-prove-it/) | 4/5 | Module **0b** (Hammack *Book of Proof* + Velleman + Lean tutorial) |
-| 4 | **Single-variable calculus** | [MIT 18.01 Final Exam](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/final-exam/) | 70 % | Module **2** (full) |
-| 5 | **Linear algebra (computational)** | [MIT 18.06 Quiz 1](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/exams/) | 70 % | Module **3** (full) |
+| 3 | **Proof writing & logic** | [Velleman *How To Prove It* §1.5 exercises](https://www.cambridge.org/highereducation/books/how-to-prove-it/6D2965D625C6836CD4A785A2C843B3DA) | 4/5 | Module **0b** (Hammack *Book of Proof* + Velleman + Lean tutorial) |
+| 4 | **Single-variable calculus** | [MIT 18.01 exams page (use the final)](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/exams/) | 70 % | Module **2** (full) |
+| 5 | **Linear algebra (computational)** | [MIT 18.06 Quiz 1](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/pages/exams/) | 70 % | Module **3** (full) |
 | 6 | **Probability sense** | [Harvard Stat 110 Practice Strategic Practice 1–3](https://stat110.hsites.harvard.edu/) | 70 % | Module **5** (full) |
 
 ### Step 2 — Use the remediation paths
@@ -161,7 +161,7 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 
 * **2026 Resources:**
   * **Primary (free):** [Khan Academy Precalculus](https://www.khanacademy.org/math/precalculus) — 10 units, ≈ 40 hours, includes mastery quizzes.
-  * **Alternative (free, MIT-quality):** [MIT 18.01A Calculus with Pre-Calc](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/) — combines refresher with calculus, ideal if you have 6+ weeks.
+  * **Alternative (free, MIT-quality):** [MIT 18.01SC Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) — self-paced OCW Scholar course (18.01A was retired from OCW; replaced v2026.7), ideal if you have 6+ weeks.
   * **Reading:** Stewart *Calculus, Early Transcendentals* (9th ed.) — Appendix A (numbers), Appendix B (coordinate geometry), Appendix C (graphs), §1.1–§1.5 (functions and models).
   * **Computational verification:** every identity must be checked in **SymPy** within 1 line (e.g., `sympy.simplify(sin(x)**2 + cos(x)**2 - 1)`).
 
@@ -192,7 +192,7 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 
 * **2026 Resources:**
   * **Primary text (free, CC-BY):** [_Book of Proof_ (Hammack, **3rd Edition, 2018; revised 2025**)](https://richardhammack.github.io/BookOfProof/) — chapters 1–10. Open Textbook Initiative-approved; used at 50+ universities.
-  * **Companion text:** [_How to Prove It: A Structured Approach_ (Velleman, **3rd Edition, Cambridge 2019**)](https://www.cambridge.org/core/books/how-to-prove-it/) — chapters 1–6 + the new **[*How to Prove It With Lean* (Velleman, 2024)](https://djvelleman.github.io/HTPIwL/)** companion (free, browser-based).
+  * **Companion text:** [_How to Prove It: A Structured Approach_ (Velleman, **3rd Edition, Cambridge 2019**)](https://www.cambridge.org/highereducation/books/how-to-prove-it/6D2965D625C6836CD4A785A2C843B3DA) — chapters 1–6 + the new **[*How to Prove It With Lean* (Velleman, 2024)](https://djvelleman.github.io/HTPIwL/)** companion (free, browser-based).
   * **Discrete-math companion:** [_Mathematics for Computer Science_ (Lehman, Leighton, Meyer — MIT 6.042J, **2024 edition free PDF**)](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/) — chapters 1–5 (Proofs, Induction, Number Theory).
   * **Video course:** [Stanford CS103 Mathematical Foundations of Computing — full lecture notes](https://web.stanford.edu/class/cs103/) (publicly mirrored).
   * **Free online interactive course:** [_Introduction to Mathematical Thinking_ (Keith Devlin — Coursera, evergreen)](https://www.coursera.org/learn/mathematical-thinking) — Stanford-led, free audit.
@@ -276,6 +276,43 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **`ruff` + `pyright`** for lint + typecheck; **`pre-commit`** to run them on every commit.
 
 </details>
+
+<a id="python-skill-groups"></a>
+### 🎯 The four AI-engineering skill groups (v2026.7)
+
+You don't need all of Python to start building AI systems. Video W2 (01:15–02:28) narrows the foundation to **four skill groups**. AI engineers rarely train models with PyTorch; they call models over APIs. The [first 30 days](../guides/first-30-days.md#skill-groups) map each week onto these groups.
+
+| # | Skill group | What it covers | Where you learn it | Free reference |
+|---|---|---|---|---|
+| **1** | **Core data & control flow** | Variables, lists, dicts, conditionals, `for`/`while`, functions, and *enough* OOP to read a class | Week 0 + CS50P Lectures 0–3 ([Weeks 1–4](../guides/first-30-days.md#week-1)), Lecture 8 later | [Python tutorial](https://docs.python.org/3/tutorial/) |
+| **2** | **HTTP & JSON APIs + error handling** | Making requests, parsing JSON safely, API keys from environment variables (never in code), retries and timeouts | Week 4 `try`/`except` → [weather-CLI capstone](#m1-capstone) | [`requests`](https://requests.readthedocs.io/) · [`json`](https://docs.python.org/3/library/json.html) · [12-factor config](https://12factor.net/config) |
+| **3** | **File & log I/O** | Reading documents, writing structured output, reading and writing logs | CS50P Lecture 6 → capstone cache | [`pathlib`](https://docs.python.org/3/library/pathlib.html) · [`logging`](https://docs.python.org/3/library/logging.html) |
+| **4** | **Environment & package isolation** | One virtual environment per project with `venv` + `pip` or **`uv`**, so one project's library versions can't break another's | First local project (after cs50.dev) | [`venv` tutorial](https://docs.python.org/3/tutorial/venv.html) · [uv docs](https://docs.astral.sh/uv/) |
+
+> **Group 4 is the one beginners skip** (W2, 02:13), and skipping it is what breaks your second project. The rule: **one project, one environment.** In cs50.dev the environment is managed for you. On your own machine, run `uv venv` or `python -m venv .venv` before your first `pip install`.
+
+<a id="ai-usage-rule"></a>
+### 🚦 Foundations-phase AI usage rule and the 3-check exit gate
+
+**The rule (W2, 05:08–05:26):** during Week 0, the first 30 days and M1 projects, **AI may only explain concepts and quiz you. You write the code yourself**, even when it's slow and frustrating. Letting an assistant write the project produces the *fluency illusion* (Video 1, 09:30): it feels like understanding, but you didn't do the work that makes it stick.
+
+<a id="three-check-gate"></a>
+**Exit gate: unlock AI coding assistants only when all three are true (W2, 05:27–05:41):**
+
+| Check | How to test yourself (no AI, no hints) | ✅ |
+|---|---|---|
+| **1. Read** unfamiliar code | Open a 50–100-line Python file you didn't write (an Exercism community solution or a small open-source script). In 15 minutes, write one sentence per function saying what it does and what data goes in and out | ☐ |
+| **2. Debug** a failing test alone | Break one assertion in your own `pytest` suite (or a [NumPy-sprint](../resources/numpy-from-scratch/README.md#numpy-from-scratch) test). Find and fix the cause from the traceback without pasting it into an LLM | ☐ |
+| **3. Reason about data flow** | For your weather CLI, list in advance where it breaks on malformed input (bad city, timeout, a missing JSON key, an unwritable cache file). Then write one test per item | ☐ |
+
+**After the gate, AI becomes a skill to practise, not a crutch to avoid** (W2, 05:50–07:15):
+
+- **Spec-driven prompting.** Write the specification first, with constraints, inputs, outputs and failure cases. Then ask for an implementation. Ad-hoc one-line IDE prompts produce poor output.
+- **Audit AI-written tests.** AI writes tests that pass for the wrong reasons. For every generated test, ask: *"Would this fail if the bug I care about came back?"*
+- **Review AI code as your main job.** Most AI-engineering work is reviewing what the model wrote and pushing back where it's wrong. Read every line before you commit it.
+- **Write down the trade-offs.** Every project from here on records its choices in a [`DECISIONS.md`](../guides/portfolio-spine.md#decisions-template).
+
+> The gate replaces the old "the policy loosens after M5" wording below for **coding assistants**. The M1–M5 policy still applies to maths and proof work.
 
 ### 📅 Official pacing structure — the four-phase Python roadmap
 
@@ -423,7 +460,7 @@ AI coding assistants are the fastest way to learn Python and the fastest way to 
     * **[Recommended freely-available alternative]** _Active Calculus_ (Boelkins et al., **2024 edition, free online**) — used at 80+ liberal-arts colleges.
     * **[Free, MIT-quality, 2024-revised]** Strang & Herman _Calculus, Vol 1–3_ (OpenStax, free PDF) — explicit OCW companion.
     * _Mathematics for Machine Learning_ — Deisenroth, Faisal, Ong (**book PDF last updated December 2025**) — Chapters 5 (Vector Calculus), 6 (Probability), **7 (Continuous Optimization)**. [mml-book.com](https://mml-book.com/) — **explicitly recommended by Harvard CS 1810 (2026)**.
-    * ***The Matrix Cookbook*** — Petersen & Pedersen (2024 web update) — [PDF mirror via MIT 18.S096](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/external-resources/the-matrix-cookbook-pdf_fa1edb35-184a-410d-9d60-34488dbc72ee/).
+    * ***The Matrix Cookbook*** — Petersen & Pedersen (2024 web update) — [PDF mirror (University of Waterloo)](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) (the former MIT 18.S096 mirror path now 404s; replaced v2026.7).
     * **Parr & Howard** "The Matrix Calculus You Need For Deep Learning" — free on arXiv `1802.01528` (revised); also as an HTML web-book at [explained.ai/matrix-calculus](https://explained.ai/matrix-calculus/).
     * <details><summary><strong>Advanced / later:</strong> Boyd & Vandenberghe reading</summary>
 

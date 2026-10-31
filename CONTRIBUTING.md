@@ -32,17 +32,21 @@ The only tool is the internal link checker, which needs nothing but Python 3:
 git clone https://github.com/akazadivu-design/data-sci.git
 cd data-sci
 python3 tools/check_links.py
+# optional, needs network: also HTTP-check external URLs and write a report
+python3 tools/check_links.py --external --report audit/external-links.md
 ```
 
 Expected output is a line reporting the number of internal links checked and **0 failures**.
 Run it before you submit any pull request that adds, moves, or renames a link, a file, or a
 heading. See [`tools/README.md`](tools/README.md) for what each script does.
 
-> **What the checker does and does not do.** It validates *internal* links — relative file paths
-> and `#anchors` — using GitHub's slug rules and explicit `<a id="...">` tags. It does **not** check
-> external URLs, because there are over 800 of them and many return `403` to bots while working fine
-> in a browser. External links are verified by hand during a refresh pass and logged in
-> [`audit/VERIFICATION.md`](audit/VERIFICATION.md).
+> **What the checker does and does not do.** By default it validates *internal* links — relative file
+> paths and `#anchors` — using GitHub's slug rules and explicit `<a id="...">` tags. This offline mode is
+> what the staged CI workflow runs on every push once installed ([`tools/README.md`](tools/README.md#install-ci)). Since v2026.7, `--external` also HTTP-checks every external URL in
+> `curriculum/`, `coursepages/`, `guides/` and `resources/`. It reports OK / WARN (bot-gated 401/403/429)
+> / FAIL plus cross-host redirects, and is **report-only** unless you add `--strict-external`, because
+> many sites block bots while working fine in a browser. Confirm any FAIL by hand before replacing the
+> link, and log refresh passes in [`audit/`](audit/) (latest: [`audit/v2026.7-external-links.md`](audit/v2026.7-external-links.md)).
 
 ---
 

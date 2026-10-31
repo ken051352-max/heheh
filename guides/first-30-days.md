@@ -26,6 +26,21 @@ Not done [Week 0](week-0.md#week-0) yet? Do that first. It is seven short days i
 | [3](#week-3) | CS50P Lecture 2 + Exercism practice | Loops you can write without looking |
 | [4](#week-4) | CS50P Lecture 3 + your first original project | A small program that is entirely yours |
 
+<a id="skill-groups"></a>
+### What these weeks build: the 4 skill groups
+
+AI engineering needs [four groups of Python skills](../curriculum/1-foundations.md#python-skill-groups). These weeks start the first two. The other two follow straight after Day 30.
+
+| Skill group | Weeks 1–4 | Right after |
+|---|---|---|
+| 1 · Core data & control flow | Weeks 1–3 (variables, conditionals, loops, functions) | CS50P Lecture 8 (reading classes) |
+| 2 · APIs, JSON & error handling | Week 4 `try`/`except`, plus the optional [JSON micro-task](#week-4-json) | Weather-CLI capstone |
+| 3 · File & log I/O | — | CS50P Lecture 6 (files) |
+| 4 · Environments (`venv` / `uv`) | Handled for you by cs50.dev | Your first project on your own machine |
+
+<a id="first-30-days-ai-rule"></a>
+> **🚦 One rule about AI for these weeks:** ask AI to *explain* a concept or *quiz* you, never to write your code. Write it yourself, even when it's slow ([why](../curriculum/1-foundations.md#ai-usage-rule)). You unlock AI coding assistants later, by passing a [3-check gate](../curriculum/1-foundations.md#three-check-gate).
+
 <a id="first-30-days-helpers"></a>
 ### Free helpers (use any time, never required)
 
@@ -167,6 +182,25 @@ Open `parabola.png`. Near x = 3, how far does y rise when x moves one step right
 <a id="week-4-math"></a>
 **Math meets code (optional, ~20 min): add 1 + 2 + … + n two ways.**
 Add a "sum mode" to your calculator, or write a separate script. Compute the sum with a loop, then with `n * (n + 1) // 2`. Do they always match? Wrap `int(input())` in `try`/`except` so a typo doesn't crash it. You will *prove* this formula later in [Book of Proof](https://richardhammack.github.io/BookOfProof/).
+
+<a id="week-4-json"></a>
+**APIs meet code (optional, ~20 min): your first JSON request.**
+Run `pip install requests` in cs50.dev. Then fetch today's London temperature from the free, key-less [Open-Meteo API](https://open-meteo.com/):
+
+```python
+import requests
+
+url = "https://api.open-meteo.com/v1/forecast"
+params = {"latitude": 51.5, "longitude": -0.12, "current": "temperature_2m"}
+try:
+    response = requests.get(url, params=params, timeout=10)
+    response.raise_for_status()
+    print(response.json()["current"]["temperature_2m"])
+except (requests.RequestException, KeyError) as error:
+    print("Could not get the weather:", error)
+```
+
+Change the latitude to `999`. What happens, and which line catches it? This is skill group 2 in a few lines, and it previews your weather-CLI capstone.
 
 ---
 

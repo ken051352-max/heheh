@@ -44,7 +44,7 @@
 | **33** | **_Numerical Linear Algebra_** | Lloyd N. Trefethen & David Bau III | SIAM **1997**, 25th-anniversary printing 2022 | M3, M24 | — |
 | **34** | **_Trustworthy Online Controlled Experiments_** (industrial A/B-testing bible) | Ron Kohavi, Diane Tang, Ya Xu | Cambridge **2020** | **M6½**, M25 | — |
 | **35** | **_Fundamentals of Data Engineering_** (Gap #2 anchor) | Joe Reis & Matt Housley | O'Reilly **2022** | **M8a, M8b** | — |
-| **36** | **_Causal Inference: What If_** (free) | Miguel A. Hernán & James M. Robins | Continuously updated, **2024 revision** | **M6½** | ✅ [Harvard / Hernan What If PDF](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf) |
+| **36** | **_Causal Inference: What If_** (free) | Miguel A. Hernán & James M. Robins | Continuously updated, **2024 revision** | **M6½** | ✅ [Harvard / Hernan What If PDF](https://miguelhernan.org/whatifbook) |
 | **37** | **_Causal Inference in Statistics: A Primer_** | Judea Pearl, Madelyn Glymour, Nicholas P. Jewell | Wiley **2016** | **M6½** | — |
 | **38** | **_Storytelling with Data_** (+ *Let's Practice!*) | Cole Nussbaumer Knaflic | Wiley 2015 / 2019 | **M25** | — |
 

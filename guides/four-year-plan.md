@@ -232,6 +232,8 @@ Each block has the same five fields: **Modules** (track B), **DSA** (track A, cu
 | **P6** | S6 | **Data/ML platform**: streaming events → orchestrated pipelines → feature tables → retraining job → model monitoring (can extend P3 or P5) | M8b, M24 | Data-engineer/MLOps signal: systems that run without you | Kafka or Redpanda, Airflow/Dagster, Spark or DuckDB, MLflow, Prometheus/Grafana | Meets the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar) · alerting demo · runbook |
 | **P7** | S7–S8 | **M26 capstone**: upgrade P5 or P6 (e.g., add an agent with tool use + agent evals, or scale to 10× load) | M22, M25, M26 | One deep, polished project, fit for a 20-minute interview discussion | Builds on P5/P6 | Full design doc · load test or eval report · 2-minute demo video |
 
+> **v2026.7 — one evolving AI system.** P5 and P7 are the same repository grown through the [Portfolio Spine](portfolio-spine.md#levels): P5 = L1–L2 (API → RAG + evals), P7 = L3–L4 (read-only-first agent → router/worker/checker). Keep a [`DECISIONS.md`](portfolio-spine.md#decisions-template) from P5 onwards.
+
 **Kaggle fits alongside the projects, not in place of them.** Two medal-eligible competitions a year from S4: one tabular (use M12) and one NLP/LLM (use M16/M18). Getting Started and Playground competitions award no medals. Target **Competitions Expert (2 bronze medals) by end of S6**. Put Kaggle on your resume as one line under "Achievements", never as a project.
 
 ---
