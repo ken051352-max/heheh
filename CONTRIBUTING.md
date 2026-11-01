@@ -42,7 +42,7 @@ heading. See [`tools/README.md`](tools/README.md) for what each script does.
 
 > **What the checker does and does not do.** By default it validates *internal* links — relative file
 > paths and `#anchors` — using GitHub's slug rules and explicit `<a id="...">` tags. This offline mode is
-> what the staged CI workflow runs on every push once installed ([`tools/README.md`](tools/README.md#install-ci)). Since v2026.7, `--external` also HTTP-checks every external URL in
+> what the live CI workflow ([`.github/workflows/check-links.yml`](.github/workflows/check-links.yml)) runs on every push. Since v2026.7, `--external` also HTTP-checks every external URL in
 > `curriculum/`, `coursepages/`, `guides/` and `resources/`. It reports OK / WARN (bot-gated 401/403/429)
 > / FAIL plus cross-host redirects, and is **report-only** unless you add `--strict-external`, because
 > many sites block bots while working fine in a browser. Confirm any FAIL by hand before replacing the

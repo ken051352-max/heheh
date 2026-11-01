@@ -278,9 +278,9 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 </details>
 
 <a id="python-skill-groups"></a>
-### 🎯 The four AI-engineering skill groups (v2026.7)
+### 🎯 The four AI-engineering skill groups (v2026.7) + async (v2026.8)
 
-You don't need all of Python to start building AI systems. Video W2 (01:15–02:28) narrows the foundation to **four skill groups**. AI engineers rarely train models with PyTorch; they call models over APIs. The [first 30 days](../guides/first-30-days.md#skill-groups) map each week onto these groups.
+You don't need all of Python to start building AI systems. Video W2 (01:15–02:28) narrows the foundation to **four skill groups**. v2026.8 adds a fifth, **[async concurrency and streaming](#async-skill-group)**, which you learn *after* the gate, right before Portfolio Spine L1. AI engineers rarely train models with PyTorch; they call models over APIs. The [first 30 days](../guides/first-30-days.md#skill-groups) map each week onto these groups.
 
 | # | Skill group | What it covers | Where you learn it | Free reference |
 |---|---|---|---|---|
@@ -290,6 +290,99 @@ You don't need all of Python to start building AI systems. Video W2 (01:15–02:
 | **4** | **Environment & package isolation** | One virtual environment per project with `venv` + `pip` or **`uv`**, so one project's library versions can't break another's | First local project (after cs50.dev) | [`venv` tutorial](https://docs.python.org/3/tutorial/venv.html) · [uv docs](https://docs.astral.sh/uv/) |
 
 > **Group 4 is the one beginners skip** (W2, 02:13), and skipping it is what breaks your second project. The rule: **one project, one environment.** In cs50.dev the environment is managed for you. On your own machine, run `uv venv` or `python -m venv .venv` before your first `pip install`.
+
+<a id="async-skill-group"></a>
+### ⚡ Skill group 5 · Async concurrency, backpressure and token streaming (v2026.8)
+
+> **When:** after the [3-check gate](#three-check-gate) and the [weather-CLI capstone](#m1-capstone), before you ship [Portfolio Spine L1](../guides/portfolio-spine.md#level-1). **Not** a Week 0 or first-30-days topic. Groups 1–4 come first.
+
+**Why it's a separate group.** LLM work is **I/O-bound**: your program spends almost all its time *waiting* on the network for completions, embeddings, retrieval and tool calls. A plain `for` loop waits for each call to finish before starting the next. One 2026 audit of production AI codebases found blocking synchronous code in about **60 %** of them, and puts the gap at roughly **10 req/s blocking vs. 500 req/s concurrent** ([AY Automate, *15 AI Engineer Skills 2026*](https://www.ayautomate.com/blog/ai-engineer-skills-2026), §1 and §8; a vendor audit, so treat the numbers as order-of-magnitude). "Make this loop concurrent, max 20 in flight" is now a standard interview exercise.
+
+| # | Competency | What "good" looks like | Free reference |
+|---|---|---|---|
+| **5a** | **`asyncio` + connection pooling** | One shared `httpx.AsyncClient` per process, opened with `async with` so connections are always closed, and explicit `httpx.Limits(max_connections=…)`. Never create a new client per request | [`asyncio`](https://docs.python.org/3/library/asyncio.html) · [HTTPX async](https://www.python-httpx.org/async/) · *Fluent Python* ch. 19–21 |
+| **5b** | **Bounded concurrency = backpressure** | `asyncio.Semaphore(20)` caps how many requests are in flight. `asyncio.gather(..., return_exceptions=True)` (or `asyncio.as_completed` to handle results as they land) isolates failures so one bad call never cancels the batch. Retry only `429`/`5xx`/timeouts, with exponential backoff, so a fan-out never turns into a `429 Too Many Requests` storm. Know when async stops helping: CPU-bound work (tokenising a corpus, NumPy) needs a process pool, not more coroutines | [`asyncio.Semaphore`](https://docs.python.org/3/library/asyncio-sync.html#asyncio.Semaphore) · [`asyncio.gather`](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather) |
+| **5c** | **Token streaming (SSE) + TTFT** | A `FastAPI` endpoint that streams tokens as [Server-Sent Events](https://html.spec.whatwg.org/multipage/server-sent-events.html), so users see the first token in **< 400 ms** (time-to-first-token) rather than waiting for the whole reply. Users judge latency by the *first* token, not the last ([AY Automate](https://www.ayautomate.com/blog/ai-engineer-skills-2026), §8) | [FastAPI `StreamingResponse`](https://fastapi.tiangolo.com/advanced/custom-response/) · [`sse-starlette`](https://pypi.org/project/sse-starlette/) |
+| **5d** | **Partial JSON + abort propagation** | Parse structured output *while it streams* (`partial-json-parser` turns `{"meal": "lentil so` into `{"meal": "lentil so"}`; [`instructor`](https://github.com/567-labs/instructor) offers `Partial[Model]` streaming). When the client disconnects, **stop the upstream generation**: a cancelled request that keeps generating still costs tokens | [`partial-json-parser`](https://github.com/promplate/partial-json-parser) · [`instructor`](https://github.com/567-labs/instructor) |
+
+<a id="async-exercise"></a>
+#### 🧪 Exercise: from a 100-call blocking loop to a rate-limited async pipeline
+
+**Start (the blocking version you will replace):**
+
+```python
+import requests
+results = [requests.post(API_URL, json={"prompt": p}, timeout=30).json()["text"]
+           for p in prompts]          # 100 prompts × ~1.5 s each ≈ 150 s, and one exception kills the run
+```
+
+**Target: a reference solution (31 lines).** Try it yourself first and compare afterwards. It was tested against a mock server with 100 prompts: peak concurrency was exactly 20, a `429` was retried, a `400` failed fast without a retry, and 99/100 succeeded without the one failure stopping the batch.
+
+```python
+import asyncio, os, httpx
+
+API_URL = "https://api.example.com/v1/chat"      # any OpenAI-compatible endpoint
+MAX_IN_FLIGHT = 20                               # backpressure: never more than 20 open requests
+
+async def call_llm(client, sem, prompt, retries=3):
+    async with sem:                              # waits here while 20 calls are already in flight
+        for attempt in range(retries):
+            try:
+                r = await client.post(API_URL, json={"prompt": prompt}, timeout=30.0)
+            except httpx.TransportError:         # timeout / connection reset: retryable
+                r = None
+            if r is not None and r.status_code != 429 and r.status_code < 500:
+                r.raise_for_status()             # other 4xx = our bug: fail fast, never retry
+                return r.json()["text"]
+            if attempt == retries - 1:
+                raise RuntimeError(f"gave up after {retries} attempts: {prompt[:40]!r}")
+            await asyncio.sleep(2 ** attempt)    # 1 s, 2 s backoff (honour Retry-After if sent)
+
+async def run_all(prompts, transport=None):
+    sem = asyncio.Semaphore(MAX_IN_FLIGHT)
+    limits = httpx.Limits(max_connections=MAX_IN_FLIGHT, max_keepalive_connections=MAX_IN_FLIGHT)
+    headers = {"Authorization": f"Bearer {os.environ.get('LLM_API_KEY', '')}"}
+    async with httpx.AsyncClient(limits=limits, headers=headers, transport=transport) as client:
+        results = await asyncio.gather(*(call_llm(client, sem, p) for p in prompts),
+                                       return_exceptions=True)   # one failure never kills the batch
+    print(f"{sum(not isinstance(r, Exception) for r in results)}/{len(prompts)} succeeded")
+    return results
+
+if __name__ == "__main__":
+    asyncio.run(run_all([f"Summarise ticket #{i}" for i in range(100)]))
+```
+
+**Test it without spending tokens.** The `transport=` parameter lets you pass `httpx.MockTransport(handler)`, where `handler` is an `async def` that sleeps 0.1 s, counts concurrent calls and returns a `429` the first time for one prompt and a `400` for another. Then assert: (1) peak in-flight never exceeds 20; (2) the `429` prompt succeeds on retry; (3) the `400` prompt is called exactly once; (4) the other 99 results are strings.
+
+**Then add streaming (5c–5d).** The minimal SSE endpoint. Swap `fake_llm_tokens` for your provider's streaming iterator:
+
+```python
+import asyncio, json
+from fastapi import FastAPI, Request
+from fastapi.responses import StreamingResponse
+
+app = FastAPI()
+
+async def fake_llm_tokens(prompt):               # stand-in for a provider's streaming API
+    for tok in ["Lentil", " soup", " is", " high", " in", " protein", "."]:
+        await asyncio.sleep(0.05)
+        yield tok
+
+@app.get("/chat")
+async def chat(request: Request, q: str):
+    async def event_stream():
+        async for tok in fake_llm_tokens(q):
+            if await request.is_disconnected():  # user closed the tab: stop paying for tokens
+                break
+            yield f"data: {json.dumps({'token': tok})}\n\n"     # one SSE event per token
+        yield "event: done\ndata: {}\n\n"
+    return StreamingResponse(event_stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+```
+
+**Done when:** (1) the async version handles 100 prompts with ≤ 20 in flight and per-request error isolation, proven by the mock-transport test; (2) you measured wall-clock time for blocking vs. async on the same mock (expect roughly a 20× speed-up at 20 in flight); (3) your SSE endpoint logs **TTFT** and total latency per request, and a test proves a client disconnect stops generation; (4) your [`DECISIONS.md`](../resources/templates/DECISIONS.md) records the concurrency cap and why (the provider's rate limit ÷ the number of replicas, not a guess).
+
+> **Common mistakes interviewers look for:** creating an `AsyncClient` inside the loop; an unbounded `gather` over 10,000 tasks (no semaphore, so a 429 storm); retrying a `400`; calling blocking `requests` or `time.sleep` inside `async def` (blocks the whole event loop); forgetting `return_exceptions=True`, so the first error cancels the batch.
 
 <a id="ai-usage-rule"></a>
 ### 🚦 Foundations-phase AI usage rule and the 3-check exit gate
