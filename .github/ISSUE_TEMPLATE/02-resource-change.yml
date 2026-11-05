@@ -9,9 +9,9 @@ body:
         Before filing, please skim the resource bar in
         [CONTRIBUTING.md](https://github.com/akazadivu-design/data-sci/blob/master/CONTRIBUTING.md#resource-bar).
 
-        Two things it asks for in particular: required resources must be **free**,
-        and proposals should **replace** an existing entry rather than adding to an
-        already long list.
+        Default lectures must be **free**. Books may be free or paid: recommend
+        them on their educational merits and label access clearly. Proposals should
+        explain which outcome improves and whether an existing entry is replaced.
   - type: input
     id: module
     attributes:
@@ -29,11 +29,12 @@ body:
   - type: dropdown
     id: cost
     attributes:
-      label: Is it free to complete?
+      label: Access and cost
       options:
-        - "Yes — fully free"
-        - "Free to audit, paid certificate"
-        - "Paid (propose as optional only)"
+        - "Free lectures or legitimate free full-text book"
+        - "Free lectures, optional paid certificate"
+        - "Partial access or preview only"
+        - "Paid book (purchase or library access)"
     validations:
       required: true
   - type: input

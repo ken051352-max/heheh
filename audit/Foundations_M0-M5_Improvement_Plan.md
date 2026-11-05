@@ -1,3 +1,5 @@
+> **Historical record.** This file preserves an earlier audit or proposal, including its original claims and requirements. It does not establish current access or override the [current research record](research-2026-11-05.md), [implementation audit](overhaul-2026-11-05.md), or active curriculum.
+
 # Foundations M0–M5: Evidence-Based Improvement Plan
 
 **Repository:** https://github.com/akazadivu-design/data-sci<br>

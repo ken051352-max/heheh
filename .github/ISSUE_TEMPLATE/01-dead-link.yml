@@ -9,8 +9,9 @@ body:
         Thanks — this is the most useful report you can file. Link rot is the main
         way this curriculum degrades.
 
-        This repository is documentation only; there is nothing to install and no
-        version number to report.
+        Reading the roadmap requires no installation. For a broken resource,
+        report its URL and the date checked; for a practice-code problem, include
+        the Python/package versions and the failing command.
   - type: input
     id: url
     attributes:

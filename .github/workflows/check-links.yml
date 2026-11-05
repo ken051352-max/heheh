@@ -4,14 +4,20 @@ on:
   push:
     paths:
       - "**/*.md"
-      - "tools/check_links.py"
+      - "tools/**"
+      - "curriculum/modules.json"
       - "resources/numpy-from-scratch/**"
+      - "resources/local-labs/**"
+      - "resources/agent-lab/**"
       - ".github/workflows/check-links.yml"
   pull_request:
     paths:
       - "**/*.md"
-      - "tools/check_links.py"
+      - "tools/**"
+      - "curriculum/modules.json"
       - "resources/numpy-from-scratch/**"
+      - "resources/local-labs/**"
+      - "resources/agent-lab/**"
       - ".github/workflows/check-links.yml"
   schedule:
     - cron: "0 6 1 * *"   # monthly external-link freshness report
@@ -27,6 +33,12 @@ jobs:
           python-version: "3.12"
       - name: Validate internal markdown links and anchors (blocking)
         run: python tools/check_links.py
+      - name: Validate curriculum prerequisites and generated guide tables (blocking)
+        run: python tools/check_curriculum.py --check
+      - name: Test curriculum integrity, link parsing and HTTP classification offline
+        run: python -m unittest discover -s tools/tests -v
+      - name: Test local agent contracts without a model or paid service
+        run: python -m unittest discover -s resources/agent-lab/tests -v
 
   numpy-harness:
     runs-on: ubuntu-latest
@@ -36,12 +48,14 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install harness dependencies
-        run: pip install -r resources/numpy-from-scratch/requirements.txt
-      - name: Prove the tests are correct against the reference solutions
+        run: python -m pip install -r resources/numpy-from-scratch/requirements.txt -r resources/local-labs/requirements.txt
+      - name: Validate the reference solutions against the regression suite
         working-directory: resources/numpy-from-scratch
         env:
           NPFS_IMPL: reference
         run: python -m pytest -q tests
+      - name: Test causal identification and local event replay contracts
+        run: python -m unittest discover -s resources/local-labs/tests -v
 
   external-links:
     # Report-only: many sites return 403 to bots. Runs monthly or on demand.

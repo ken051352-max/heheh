@@ -1,4 +1,8 @@
-"""Reference solution: CART-style decision tree classifier (Gini impurity)."""
+"""CART-style classifier: split only on strictly positive Gini improvement.
+
+This teaching stopping rule leaves pure XOR at a leaf. CART implementations that
+permit an initial zero-gain split can represent XOR with a depth-two tree.
+"""
 import numpy as np
 
 

@@ -1,3 +1,5 @@
+> **Historical record.** This file preserves an earlier audit or proposal, including its original claims and requirements. It does not establish current access or override the [current research record](research-2026-11-05.md), [implementation audit](overhaul-2026-11-05.md), or active curriculum.
+
 # ✅ P5 — Final Cross-Verification Audit (v2026.2)
 
 **Date:** 2026-04-23 (re-run 2026-04-24 for final sweep)

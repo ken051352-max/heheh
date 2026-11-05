@@ -21,9 +21,7 @@ to read, and which projects to build, in what order.
 
 ### Is there code to run or software to install?
 
-**No.** This repository contains only Markdown documents. There is nothing to `pip install`, no notebook
-to open, no dataset to download. You write code in *your own* repositories as you work through the
-modules. If you were looking for a runnable project, this is not that — and nothing is broken.
+Reading the roadmap needs only a browser. It also includes optional executable practice resources: the [NumPy harness](resources/numpy-from-scratch/README.md), [local causal/data labs](resources/local-labs/README.md) and [agent-contract lab](resources/agent-lab/README.md). Their READMEs explain dependencies and commands. Build your own project artifacts as you progress.
 
 ### Do I need to clone or fork it?
 
@@ -35,11 +33,16 @@ Neither is required; reading it on GitHub is enough. **Fork** it if you want to 
 Beginners who want a complete path, analysts moving into data science, engineers moving into ML or AI
 engineering, and anyone preparing for graduate-level ML. See [Who this is for](README.md#who-this-is-for).
 
+<a id="cost-and-access"></a>
 ### Does it cost anything?
 
-Every **required** resource is free to access. Some books are listed as optional references and cost
-money; they are always labelled, and a free alternative is given wherever one of comparable quality
-exists.
+**Lectures have a free route; books may be paid.** The recommended principal books are chosen for educational quality, not price. The [catalogue](resources/books.md) distinguishes paid books, authorized free text and sample/code-only access. Read selected sections as needed; Week 0 needs no purchase.
+
+Accounts, course grading, certificates and hosted compute have separate terms. Core projects have small local routes; paid APIs, cloud/GPU scale and certificates are extensions. See [access details](guides/how-to-read-a-module.md#access-audit-table).
+
+### I'm a first-year BTech student in India. Which role should I choose for an international career?
+
+Keep the shared CS, mathematics, Python and data foundation broad, then explore analysis, modeling and software/application work through small projects. Choose a provisional route after feedback and revisit it each semester. The [undergraduate guide](guides/india-undergraduate-path.md) distinguishes global-company India roles, relocation and country-restricted remote roles. Current job descriptions cannot establish the best role at graduation; a roadmap improves preparation without guaranteeing employment or work authorization.
 
 ### Is it affiliated with a university?
 
@@ -72,7 +75,7 @@ split — these were inserted between existing modules rather than pushing every
 | :--- | :--- | :--- |
 [`curriculum/`](curriculum/) | The 27 module specifications, in six stratum pages | Constantly — this is the curriculum |
 | [`guides/`](guides/) | How to read a module, fast lane, career ops, progress tracker, sources | Early and often |
-| [`resources/`](resources/) | The book list and the production toolchain | When you need a specific book or tool |
+| [`resources/`](resources/) | Books, toolchain, practice harnesses and local labs | When you reach the relevant module |
 | [`coursepages/`](coursepages/) | Extra scaffolding for the newest modules (M6½, M8b, M21–M25) | Only when you reach those modules |
 | [`audit/`](audit/) | Link-verification and fact-checking logs | Basically never, unless you doubt a claim |
 | [`tools/`](tools/) | The internal link checker | Only if contributing |
@@ -95,9 +98,10 @@ New to Python: [Week 0](guides/week-0.md#week-0), seven short days in your brows
 
 ### There are hundreds of links. Which resource do I pick?
 
-Use the [Pick-One table](guides/how-to-read-a-module.md#pick-one) — one default course per module, all
-free. The other links are alternatives for when a default does not suit you, and insurance against link
-rot. **A module's resource list is a menu, not a to-do list.**
+Use the [Pick-One table](guides/how-to-read-a-module.md#pick-one) — one default learning route per
+module, paired with its recommended principal book. Lectures are selected for free access; books can be paid and are labeled. Account/exercise terms are recorded separately.
+The other links are alternatives for when a default does not suit you, and insurance against link rot.
+**A module's resource list is a menu, not a to-do list.**
 
 ### Do I have to do all 27 modules?
 
@@ -110,14 +114,15 @@ PhD-prep track uses nearly everything.
 Yes, with a stated cost. The maths-heavy modules each carry an **⚡ Intuition-First Alternative** callout
 naming exactly what you give up and when you will need to come back. The
 [Practitioner fast lane](guides/practitioner-track.md) is the fully sequenced version of that route.
-Short version: you will be able to *use* methods and unable to *verify* them — fine for most applied
-jobs, disqualifying for research.
+You can validate application behavior experimentally without completing all advanced proofs. Return to the relevant mathematics when interpreting estimators, diagnosing failure or assessing theoretical claims. The application subsets do not certify the full training or mathematical modules.
 
 ### Do I have to build the projects?
 
-Yes. This is the one non-negotiable rule: **you do not advance until the current module's project is
-pushed to a public repository.** Course completion is not evidence; a repository is. See
-[the enforcement rule](curriculum/README.md#module-projects).
+Yes: complete the core artifact before claiming the competence a dependent module needs. Independent modules may proceed in parallel. Use tests for code, worked checks for mathematical/analytical work, a readable `README.md` and an honest results memo. Store it in a private local repo,
+private remote repo, or selectively shared repo, or publish a carefully sanitized showcase. Public
+publishing is optional: scrub API keys, credentials, private data, proprietary material, and PII first.
+A private artifact proves completion to you; an external employer needs an accessible signal such as a
+sanitized release or live demo. A single evolving longitudinal project (like the [Portfolio Spine](guides/portfolio-spine.md#portfolio-spine)) may satisfy multiple module outcomes when its git release tags and module mapping make each milestone reviewable. See [the enforcement rule](curriculum/README.md#module-projects).
 
 ### Can I do modules out of order or in parallel?
 
@@ -126,8 +131,7 @@ Running a maths module in parallel with a programming module is a common and eff
 
 ### What does "Video 1 (05:05)" mean?
 
-It is a citation. The key is in [guides/sources.md](guides/sources.md#citation-key) — it names all three
-videos, both articles, and the job-posting survey, with links and what each is used to support.
+The [source key](guides/sources.md#citation-key) preserves historical video/article shorthand with links and descriptions of its earlier use. This pass did not revalidate every video or timestamp; current technical requirements cite primary documentation.
 
 ---
 
@@ -137,32 +141,24 @@ videos, both articles, and the job-posting survey, with links and what each is u
 <a id="how-long"></a>
 ### How long does this take?
 
-It depends entirely on which finish line you mean, which is why you will see different numbers in
-different places:
+Estimate from your own pace. Choose one core route and a weekly budget, study for four weeks, then use the work completed to plan the next milestone. A useful planning formula is:
 
-| Goal | Estimate | Conditions |
-| :--- | :--- | :--- |
-| Employable in an applied AI/ML role | **6–9 months** | [Fast lane](guides/practitioner-track.md), 15–20 hrs/week, already comfortable programming |
-| Python job-ready (analyst / junior) | **9–12 months** | 5–10 hrs/week, portfolio built |
-| Career change from a non-tech background | **18–36 months** | Competing with laid-off senior engineers |
-| The complete curriculum incl. maths spine + capstone | **24–36 months** | 20–25 hrs/week, all tracks |
+```text
+weeks = estimated remaining focused hours / sustainable focused hours per week
+```
 
-These are not in conflict — they measure different things. Sources and reasoning:
-[sources](guides/sources.md).
+The hour estimate is uncertain: include time for exercises, failed experiments, review and breaks, and revise it regularly. Course duration, a completed portfolio and finding employment are different outcomes. The [four-year plan](guides/four-year-plan.md) is an adaptable undergraduate schedule; the [role routes](guides/practitioner-track.md) define smaller scopes. No timeline here promises employment.
 
 ### Is it beginner-friendly?
 
-The *sequence* is, and prerequisites are stated everywhere. But the primary resources are real
-university courses, which are demanding. If you are new to programming, start with
+The entry route starts gently, with stated prerequisites for later work. Resources include university courses and specialist author/community teaching, with different levels of difficulty. If you are new to programming, start with
 [Week 0](guides/week-0.md#week-0) and the [first 30 days](guides/first-30-days.md#first-30-days):
 one beginner course, small daily wins, and no gates. The
 [Microsoft companion curricula](guides/companion-curricula.md) are optional extra practice later.
 
 ### I'm stuck / demoralised. Is that normal?
 
-Yes, and it is usually a prerequisite gap rather than lack of ability. Check the **Strict
-Prerequisites** line and go back one module. The other common cause is *tutorial hell* — consuming
-instruction while producing nothing; the fix is the five-step protocol in
+A prerequisite gap, fatigue, an unclear explanation or too much scope can all cause difficulty. Identify one small obstacle, revisit the needed concept or use a companion explanation. For passive-study habits, try the practice protocol in
 [Module 1](curriculum/1-foundations.md#module-1).
 
 ---
@@ -172,9 +168,9 @@ instruction while producing nothing; the fix is the five-step protocol in
 
 Honest notes on what is still rough. None of them block a beginner from starting [Week 0](guides/week-0.md#week-0).
 
-- **The old 15-question maths diagnostic was never written.** It has been replaced by a free, non-gating [maths placement](curriculum/1-foundations.md#math-diagnostic). The original table is kept, collapsed, for reference; two of its links are now dead.
-- **Links move.** Course providers change URLs and editions (Scrimba and the Helsinki MOOC both did in 2026). Every link changed in a pass is logged in [`audit/VERIFICATION.md`](audit/VERIFICATION.md) with its HTTP status and date.
-- **"Free" can change.** Some platforms are free to audit but charge for certificates, and a few books are paid. Paid items are labelled. Never buy something just to resolve a confusing instruction; report it instead.
+- **The old 15-question maths diagnostic was never written.** It has been replaced by the active, free, non-gating [maths placement workflow](curriculum/1-foundations.md#math-diagnostic). The historical six-strand table and old status lines are kept collapsed purely as non-operational archival references for provenance (its MIT 18.01A exam and Velleman §1.5 links are retired/broken); it does not establish placement thresholds or gating cutoffs.
+- **Links move.** Course providers change URLs and editions (Scrimba and the Helsinki MOOC both did in 2026). The [current audit](audit/overhaul-2026-11-05.md) distinguishes content inspected, checks executed and unresolved access; historical HTTP logs do not establish current availability.
+- **Access can change.** Free lecture access is distinct from grading, certificates and hosted services. Paid books are intentional recommendations, labeled by edition and access. Report a paid-only default lecture or a wrong access label.
 - **Advanced modules are dense.** Later modules keep university-level depth, much of it collapsed under "Advanced / later". Use the [Pick-One table](guides/how-to-read-a-module.md#pick-one) and skip what you don't need yet.
 - **Found something contradictory?** [Open a "Something was confusing" issue](https://github.com/akazadivu-design/data-sci/issues/new/choose) upstream. If you couldn't work out what to do, that is a defect in the roadmap, not your mistake.
 
@@ -187,9 +183,9 @@ These marks appear next to links and claims throughout the repository.
 
 | Symbol | Meaning |
 | :--- | :--- |
-| ✅ | Link was HTTP-checked and returned 200 at the last audit |
-| ⚠️ | Returns 403 to automated checkers but **opens normally in a browser** (common for O'Reilly and some publishers) — the link is good |
-| ❌ | Dead. These are removed rather than shipped; the mark appears only in [`audit/`](audit/) logs |
+| ✅ | Completion or historical check marker; consult the associated dated evidence before treating it as current verification |
+| ⚠️ | Access or behavior needs review; an automated refusal does not establish browser accessibility |
+| ❌ | Failed check at the recorded date; inspect the cause before replacing a resource |
 | 🔁 | The original URL broke and was replaced with a verified alternative |
 | ⏭ | Deliberately deferred to a later release |
 | 📦 | A mandatory module project |

@@ -24,8 +24,13 @@ python3 -m pip install pillow      # the only dependency
 python3 assets/make_banners.py     # run from the repository root
 ```
 
-The script is deterministic — the same input produces byte-comparable output — so the banners can be
-regenerated in CI or restyled wholesale by editing one table.
+These regeneration commands assume the Linux font paths used by the script exist:
+Liberation Sans Bold and DejaVu Sans/Mono Bold under `/usr/share/fonts/truetype/`.
+On another platform, adjust the three font paths before rendering. Regeneration is optional;
+the checked-in images are usable without Python or Pillow.
+
+The drawing coordinates and random-looking glyph pattern are deterministic. Byte-identical JPEGs
+also require the same Pillow, font files and image-library versions; record these when regenerating.
 
 **Why the banners are drawn in code rather than generated.** Two reasons, both practical:
 

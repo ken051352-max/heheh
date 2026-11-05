@@ -1,38 +1,49 @@
 # Module 8b — Distributed Data & Streaming Systems
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 8b](../../curriculum/2-statistics-and-data.md#module-8b).
+[Curriculum specification](../../curriculum/2-statistics-and-data.md#module-8b) · [Learning contract](../../curriculum/README.md#learning-contract)
 
-## Why this module exists
+**Goal:** preserve correct results across replay, late data, schema changes and failures, then explain the guarantee at each boundary. A local exercise teaches contracts; it does not prove behavior under network partitions.
 
-The April 2026 benchmark identified *Modern Data Engineering* (Spark, Kafka, Airflow, Iceberg, lakehouse) as Gap #2 — the largest production-DS gap after causal inference. This module closes it. Module 8 was split so SQL fundamentals (M8a) and distributed/streaming systems (M8b) each get full airtime.
+## One free route
 
-## Primary anchors (P1-verified)
+Use the [DataTalks.Club Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) public videos for batch processing/Spark and streaming. Follow the local labs below instead of its cloud tasks; free cloud credits are not assumed. [Stanford CS246](https://web.stanford.edu/class/cs246/) provides public slides/assignments, while current recordings require enrolled-student Canvas access. Its free [*Mining of Massive Datasets*](http://www.mmds.org/) text adds partitioned-algorithm depth. Official [Spark](https://spark.apache.org/docs/latest/), [DuckDB](https://duckdb.org/docs/) and [Kafka](https://kafka.apache.org/documentation/) docs explain system behavior; they are references, not lecture courses. The [DataExpert handbook](https://github.com/DataExpert-io/data-engineer-handbook) is an optional community index, not evidence of industry consensus.
 
-| Resource | Role | Link |
+**Recommended principal book:** Reis and Housley's *Fundamentals of Data Engineering* (paid), for lifecycle and architecture decisions. Kleppmann/Riccomini's *Designing Data-Intensive Applications* and Akidau, Chernyak and Lax's *Streaming Systems* add systems depth. Match chapters to your edition; see the [book shelf](../../resources/books.md). Lecture access remains free.
+
+## Core lab: replayable local event pipeline
+
+Start with the standard-library backend; no installation is needed. The [lab README](../../resources/local-labs/README.md) also documents DuckDB installation and `--backend duckdb`:
+
+```bash
+python resources/local-labs/distributed_data.py --backend sqlite
+```
+
+The generated fixture contains repeated event IDs, a late event and a malformed row. The local ledger validates input, quarantines invalid rows, detects conflicting duplicates, commits accepted events transactionally and produces a deterministic aggregate. Replaying a batch must leave row count and totals unchanged. It uses in-memory SQLite by default or DuckDB when installed, with the selected backend/version in its output. It needs no server, Docker, account or GPU. Matching these contracts does not imply equivalent query plans or performance between engines.
+
+**Extend it into your artifact:** persist the database in a temporary directory; save output as Parquet; interrupt loading before/after commit and restart. Separate raw input, accepted rows, quarantine and aggregates. Record checksums, schema version and row counts. Never silently drop late events: choose retain/recompute, correction records or quarantine, and test that policy.
+
+## Core comparison: local Spark
+
+Choose a documented compatible runtime. For example, [Spark 4.0.1](https://spark.apache.org/docs/4.0.1/) documents Java 17/21, Scala 2.13 and Python 3.9+; this is a compatibility example, not a newest-release claim. Record actual Spark/Python/Java and storage-connector versions. Do not combine Spark and Iceberg/Delta releases by guessing.
+
+Run Spark as `local[2]` on the same small Parquet fixture and compute the same per-key totals. Assert parity with DuckDB, then compare wall time, peak memory, partitions and startup overhead. Start with data that fits in memory; 10 GB is optional. One laptop result does not establish cluster scalability.
+
+## Optional: choose one systems extension
+
+| Extension | Local route | Failure evidence |
 |---|---|---|
-| Stanford CS246 — *Mining Massive Datasets* (Leskovec, 2025) | Academic spine | <https://web.stanford.edu/class/cs246/> |
-| DataExpert.io Free Data Engineer Bootcamp (Zach Wilson) | Practical on-ramp | <https://www.dataexpert.io/free-data-engineer-bootcamp> |
-| DataExpert-io / data-engineer-handbook | Community roadmap | <https://github.com/DataExpert-io/data-engineer-handbook> |
-| Reis & Housley — *Fundamentals of Data Engineering* (O'Reilly 2022) | Canonical text | <https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/> |
-| *Mining of Massive Datasets* (Leskovec et al., 3e, free) | Textbook | <http://www.mmds.org/> |
-| Kleppmann — *Designing Data-Intensive Applications* | Systems foundations | — |
-| Apache Spark | Distributed compute | <https://spark.apache.org/> |
-| Apache Kafka | Streaming platform | <https://kafka.apache.org/> |
-| Apache Flink | True streaming | <https://flink.apache.org/> |
-| Apache Iceberg | Lakehouse table format | <https://iceberg.apache.org/> |
-| Delta Lake | ACID on data lake | <https://delta.io/> |
-| Apache Airflow | Workflow orchestration | <https://airflow.apache.org/> |
-| Dagster | Asset-oriented orchestration | <https://dagster.io/> |
-| Prefect | Pythonic flows | <https://www.prefect.io/> |
-| Joe Reis Substack | Living resource | <https://joereis.substack.com/> |
+| Orchestration | One Dagster or Airflow workflow over local files | Failed task, retry, idempotent rerun and backfill |
+| Lakehouse | Spark plus one supported Iceberg or Delta connector; local disk or MinIO | Upsert, schema evolution, snapshot/time-travel query and retention |
+| Streaming | Kafka KRaft and a local consumer; Flink optional | Consumer restart/replay, duplicate input, late event, poison message and lag |
 
-## Mandatory mini-projects
+Use the project's official local quickstart or Docker Compose example and pin images. Document CPU/RAM, ports, volumes and cleanup; the core lab does not require these services. Distinguish Arrow's in-memory interchange from Parquet storage and Iceberg/Delta metadata.
 
-1. **Mini-lakehouse:** DuckDB + Parquet + Iceberg on your laptop; exercise `MERGE INTO` + snapshots + time-travel.
-2. **Airflow DAG:** Ingest NYC Taxi API → S3/minio Parquet → dbt transform → Streamlit dashboard.
-3. **Kafka + Flink** streaming word-count over a simulated tweet stream; watermarks and late data.
-4. **Benchmark:** Spark vs Polars vs DuckDB on a 10-GB Parquet dataset; compare wall-clock, RAM, LOC.
+For streaming, distinguish event time from processing time and explain the watermark policy. Kafka transactions do not make arbitrary database/API side effects exactly-once; state source, processor and sink guarantees separately. Use idempotent keys/transactions and inject faults at the sink boundary.
+
+## Done when
+
+Keep runnable assertions for schema rejection, duplicate conflicts, replay invariance and late data. Compare Spark/DuckDB results; include a failure/recovery transcript. Submit topology, resource budget, pinned environment, README and a memo explaining local-experiment limits. A private artifact is sufficient.
 
 ## Prerequisites
 
-- Module 4 (randomised/streaming algos), Module 8a (SQL), Module 1 (async Python)
+M1 and M8a. M4 helps with hashing/partitioning; async is useful for services but does not gate batch SQL/file pipelines.

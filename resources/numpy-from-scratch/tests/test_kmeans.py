@@ -54,3 +54,45 @@ def test_agrees_with_sklearn_inertia_if_installed():
     ours = KMeans(k=3, seed=0).fit(X)
     ref = sk.KMeans(n_clusters=3, n_init=10, random_state=0).fit(X)
     assert ours.inertia_ == pytest.approx(ref.inertia_, rel=1e-3)
+
+
+@pytest.mark.parametrize("X", [np.ones((6, 2)), np.array([[0., 0.], [0., 0.], [2., 2.], [2., 2.]])])
+def test_duplicate_points_do_not_break_kmeans_plus_plus(X):
+    m = KMeans(k=3, seed=7).fit(X)
+    assert np.isfinite(m.centers).all()
+    assert m.inertia_ == pytest.approx(0.0)
+    np.testing.assert_allclose(m.centers[m.predict(X)], X)
+
+
+@pytest.mark.parametrize("kwargs", [
+    {"k": 0}, {"k": 1.5}, {"k": True}, {"k": 2, "n_iters": 0},
+    {"k": 2, "n_init": 0}, {"k": 2, "tol": -1}, {"k": 2, "tol": np.nan},
+])
+def test_invalid_configuration_is_rejected(kwargs):
+    with pytest.raises(ValueError):
+        KMeans(**kwargs).fit(np.zeros((3, 2)))
+
+
+@pytest.mark.parametrize("X", [[], [[1]], [[1, np.nan], [2, 3]], [[1, np.inf], [2, 3]], [1, 2, 3]])
+def test_invalid_training_data_is_rejected(X):
+    with pytest.raises(ValueError):
+        KMeans(k=2).fit(X)
+
+
+def test_prediction_requires_fit_and_matching_features():
+    m = KMeans(k=2)
+    with pytest.raises(ValueError):
+        m.predict([[0, 0]])
+    m.fit([[0, 0], [1, 1]])
+    with pytest.raises(ValueError):
+        m.predict([[0, 0, 0]])
+
+
+def test_seed_reproduces_solution_and_refit_replaces_training_state():
+    X, _ = blobs()
+    first = KMeans(k=3, seed=8).fit(X)
+    second = KMeans(k=3, seed=8).fit(X)
+    np.testing.assert_array_equal(first.centers, second.centers)
+    first.fit(np.ones((4, 2)))
+    assert first.labels_.shape == (4,)
+    assert first.inertia_ == pytest.approx(0.0)

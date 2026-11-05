@@ -1,56 +1,63 @@
 # DECISIONS.md: <project name>
 
-> Copy this file into the root of your project repository. Add one entry per decision you'd defend in an interview, newest at the top. Never delete an entry; if you reverse a decision, add a new one that supersedes it.
-> Template from the [Portfolio Spine](../../guides/portfolio-spine.md#decisions-template). Pattern: [Architecture Decision Records](https://adr.github.io/).
+> Copy this template into your project. Add one entry per consequential decision, newest first. When a decision changes, add a superseding entry and retain the history. Reviewable evidence may stay private or be selectively shared.
+> From the [Portfolio Spine](../../guides/portfolio-spine.md#decisions-template); pattern: [Architecture Decision Records](https://adr.github.io/).
 
-**Current level:** L1 / L2 / L3 / L4 / L5 · **Last updated:** YYYY-MM-DD
+**Current level:** L1 / L2 / L3 / optional L4 / optional L5 · **Updated:** YYYY-MM-DD
 
----
+## Acceptance criteria and budgets
 
-## Budgets (fill in before L1 ships, revisit at every level)
+Define project-specific criteria before evaluation. State the user task and consequence of each failure. The example measurements below do not prescribe a universal score, latency or cost target.
 
-| Budget | Target | Measured (date) | How measured |
+| Criterion | Target and justification | Observation, date and sample size | Method / uncertainty |
 |---|---|---|---|
-| p95 latency per task | e.g. < 4 s | | traces / logs |
-| Cost per successful task | e.g. < $0.01 | | token logs × price sheet dated ____ |
-| Eval pass rate (N runs per case) | e.g. ≥ 90 % over 5 runs | | `make eval` |
-| Max agent steps (L3+) | e.g. 8 | | step counter |
+| Task quality and relevant error slices | | | Frozen cases, rubric, baseline and confidence limits where appropriate |
+| Critical safety/permission failures | | | Named adversarial regressions and expected denials |
+| Latency at specified concurrency | | | End-to-end timing; enough samples before reporting p95 |
+| Cost per successful task | | | All attempts, retries, tools and compute; define success |
+| Tool calls / total deadline (L3) | | | Measured bounds and timeout/cancellation behavior |
 
-## Cost and scaling calculation
+Label each result **measured**, **simulated**, or **estimated**. A mock validates a contract, not model quality. Qualitative user feedback and a reproducible failure trace can be evidence; do not manufacture numeric scores for them.
 
+## Cost and capacity model
+
+```text
+model_cost = sum_over_all_attempts(
+    input_tokens * input_price_per_million / 1_000_000
+    + output_tokens * output_price_per_million / 1_000_000)
+total_cost = model_cost + tool_cost + compute_cost + storage_cost
+cost_per_success = total_cost / successful_tasks   # undefined if none succeed
+monthly_estimate = measured_or_assumed_tasks_per_day * days * cost_per_task
+                  + fixed_monthly_costs
 ```
-input_tokens  = ____   output_tokens = ____   (per request; agents: summed over all steps)
-price_in      = $____ / 1M tokens   price_out = $____ / 1M tokens   (looked up: YYYY-MM-DD, source: ____)
-cost_per_request    = ____
-requests/user/day   = ____
-cost_per_user_month = ____
-```
 
-| Users | Requests/day | Monthly cost | p95 latency | What breaks first and what I'd change |
+Record provider/model, currency, price date/source, cached-token or batch rates when applicable, included/excluded costs, task success definition and all assumptions. Local model compute is not a per-token API bill; disclose hardware/runtime even when no cash charge is incurred.
+
+| Scenario | Tasks/day and concurrency | Measured or estimated cost | Latency evidence / untested assumption | Likely limit and next experiment |
 |---|---|---|---|---|
-| 1× | | | | |
-| 10× | | | | |
-| 100× | | | | |
+| Observed workload | | | | |
+| 10× workload hypothesis | | | | |
+| 100× workload hypothesis | | | | |
 
----
+A linear cost estimate is not a load test. Do not extrapolate a measured p95 without testing queuing, rate limits and changed concurrency.
 
-## D-001 · <short title, e.g. "Vector store: pgvector instead of Qdrant">
+## D-001 · <decision title>
 
-- **Date / level:** YYYY-MM-DD · L2
-- **Context:** What problem forced a choice? What constraints apply (data size, budget, latency, privacy, skills)?
-- **Options considered:**
-  1. Option A: pros / cons
-  2. Option B: pros / cons
-  3. The "do nothing / simplest thing" option: pros / cons
-- **Decision:** What you chose.
-- **Evidence:** A number, not a feeling. For example: eval pass rate, recall@5, p95 latency or cost per task, before vs after.
-- **Consequences:** What gets easier, what gets harder, and what would make you revisit this decision.
+- **Date / level / status:** YYYY-MM-DD · L2 · proposed / accepted / superseded by D-___
+- **Context:** User need, relevant constraints, data rights and the problem forcing this decision.
+- **Options:** The simple baseline and at least one plausible alternative; compare complexity and failure modes.
+- **Decision:** What was selected and why.
+- **Evidence:** Link the run, comparison, source, observed failure or user feedback. Include limitations and contrary findings.
+- **Consequences:** Benefits, maintenance cost, risks, rollback and the condition that would trigger reconsideration.
 
-<!--
-Required entries by level (see the Portfolio Spine):
-L1  model tier · output schema + validation · retry/fallback policy
-L2  database / vector store · chunking · embedding model · RAG vs prompting vs fine-tuning
-L3  tool list + which are read-only · step limit · approval gate for writes
-L4  agent topology · per-agent context · guardrail placement · deployment target
-L5  the metric · what makes it hard to game · what a human still approves
--->
+## Decisions to record by level
+
+| Level | Evidence to retain |
+|---|---|
+| L1 | Baseline/model choice, schema + semantic validation, retry/fallback policy, fixture vs real-model results. |
+| L2 | Corpus/data rights, retrieval/store choice, chunking and reranking comparisons, frozen evaluation cases. |
+| L3 | Tool allowlist, read/write permissions, trusted approval scope, idempotency/replay and step/deadline limits. |
+| L4 — optional | Whether multiple agents outperform the single-workflow baseline; topology, context isolation and failure handling. |
+| L5 — optional | Objective validity, reward gaming regressions, bounded proposed changes, review and rollback. |
+
+Finish the chosen project's scope. L4/L5 are extensions when evidence justifies them, not prerequisites for a strong portfolio.

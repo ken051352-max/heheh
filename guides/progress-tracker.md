@@ -1,140 +1,114 @@
-[🏠 Roadmap home](../README.md)
-
----
+[Home](../README.md) · [Role pathways](practitioner-track.md)
 
 <a id="progress-tracker"></a>
-# ✅ Progress Tracker
+# Progress tracker
 
-**In Week 0?** You don't need this page yet. Scrimba saves your place. Come back in Week 1.
+Use a notes file, local/private repository or selectively shared document. Public publishing and forking this roadmap are optional. Track evidence for the chosen core route; advanced topics are not extra compulsory boxes.
+
+For a first-year BTech CSE/AI student in India, the [India undergraduate path](india-undergraduate-path.md) adds a starting sequence while you explore roles. It is fine to record your current direction as **undecided** and choose only the next learning milestone.
 
 <a id="starter-tracker"></a>
-## 🌱 Starter tracker (first 30 days)
+## First 30 days
 
-Copy these 12 boxes into a notes app, a text file or your `python-journey` README. Tick one when it's true.
+The weeks are pacing suggestions. Take longer when needed and use the [current onboarding guide](first-30-days.md#first-30-days) for the lesson details.
 
-- [ ] **Week 0:** finished Scrimba *Learn Python* (all three projects).
-- [ ] **Week 0:** rebuilt PayUp from memory and showed it to someone.
-- [ ] **Week 1:** watched CS50P Lecture 0 and submitted Problem Set 0.
-- [ ] **Week 1:** `python-journey` is public, with my Scrimba projects and a README.
-- [ ] **Week 2:** watched CS50P Lecture 1 and submitted Problem Set 1.
-- [ ] **Week 2:** took the Khan Precalculus course challenge once (placement only).
-- [ ] **Week 2:** watched 3Blue1Brown *Essence of Linear Algebra* episodes 1–3.
-- [ ] **Week 3:** watched CS50P Lecture 2 and submitted Problem Set 2.
-- [ ] **Week 3:** solved three Exercism Python exercises.
-- [ ] **Week 4:** watched CS50P Lecture 3 and submitted Problem Set 3.
-- [ ] **Week 4:** solved five Exercism exercises in total.
-- [ ] **Week 4:** my first original mini project is in `python-journey`, and I shared it.
+- [ ] Followed the chosen [Week 0](week-0.md#week-0) route.
+- [ ] Rebuilt a small beginner program without copying and explained it.
+- [ ] Practiced CS50P input/output and variables.
+- [ ] Saved my own work with a short README or notes file.
+- [ ] Practiced conditions and checked boundary inputs.
+- [ ] Used or consciously deferred the optional [math placement](../curriculum/1-foundations.md#math-diagnostic).
+- [ ] Practiced loops and traced variable values.
+- [ ] Debugged an error by comparing expected and actual behavior.
+- [ ] Practiced functions and exceptions.
+- [ ] Added simple automated checks appropriate to my program.
+- [ ] Finished the [starter project](../curriculum/1-foundations.md#m1-starter-project).
+- [ ] Wrote what I learned, what still fails and my next task.
 
-Details for each week are in [Week 0](week-0.md#week-0) and the [first 30 days](first-30-days.md#first-30-days).
+This is the starter milestone. Complete the [Weather CLI and M1 evidence](../curriculum/1-foundations.md#m1-capstone) later before marking full M1 complete. Share course solutions only when permitted by the course.
 
 <a id="daily-log"></a>
-### Daily log (one line)
+## Daily log
 
-> Today I built ___. I got stuck on ___. Next session I will ___.
+> Today I built ___. Evidence is at ___. I got stuck on ___. Next session I will ___.
 
 <a id="resume"></a>
-## ↩️ Resume after a break
+## Resume after a break
 
-1. **Find your last line** in your daily log, or your last ticked box above.
-2. **Reopen that exact lesson or exercise.** Skip any re-tour of the roadmap.
-3. **Warm up for 10 minutes:** redo one small thing you finished last time, from memory.
-4. **Do one 15-minute task.** That is a full restart. More is a bonus.
-5. **Write today's one-line log.**
+1. Find the last evidence link or daily note.
+2. Open that exact lesson or project task.
+3. Spend ten minutes reproducing one thing you previously completed.
+4. Do one small next task and write a new resume note.
 
-Been away for weeks? That's normal. If you're in Weeks 0–4, restart the current week's row. Later on, bookmark the module heading you are working on.
-
----
+You do not need to restart the whole roadmap after a break.
 
 <a id="full-tracker"></a>
-<details>
-<summary><strong>Full tracker (after your first 30 days):</strong> all modules, projects, career operations and the capstone</summary>
+## Track your chosen route
 
-> Fork this repo, copy this section, and replace `[ ]` with `[x]` as you complete each sub-module.
+- [ ] Chose a provisional [role pathway](practitioner-track.md#role-pathways), or recorded an exploration milestone while undecided, and identified any prerequisite waivers.
+- [ ] Read the [learning contract](../curriculum/README.md#learning-contract).
+- [ ] Chose one free lecture route and principal recommended book per active module.
+- [ ] Set a sustainable weekly budget and a four-week review date.
 
-### 🧭 Route selection (do this first)
-- [ ] Finished [Week 0](week-0.md#week-0) and the [first 30 days](first-30-days.md#first-30-days)
-- [ ] Read [Start here](../README.md#start-here) and picked a route: **full spine** or [**🚀 Practitioner fast lane**](practitioner-track.md#practitioner-track)
-- [ ] Chose a target role from [Choose your track](../README.md#choose-your-track) and wrote down its minimum module set
-- [ ] Read the [module-project enforcement rule](../curriculum/README.md#module-projects) and accepted it
-- [ ] Read [Career Operations §7](career-operations.md#career-operations) and picked the timeline band whose **conditions** match my situation
+Mark each row **planned / active / core complete / partial / deferred / waived**. A waiver needs equivalent evidence; partial study does not certify full-module competence. Only rows on your chosen route need completion.
 
-- [ ] (Undergraduates) Opened the [Four-Year Plan](four-year-plan.md#semester-plan) and copied the current semester's exit check here
+| Module | Status | Artifact/commit and validation evidence | Next task |
+|---|---|---|---|
+| [M0: Maths bridge](../curriculum/1-foundations.md#module-0) | | | |
+| [M1: Python](../curriculum/1-foundations.md#module-1) | | | |
+| [M2: Calculus and optimisation](../curriculum/1-foundations.md#module-2) | | | |
+| [M3: Linear algebra](../curriculum/1-foundations.md#module-3) | | | |
+| [M4: Algorithms](../curriculum/1-foundations.md#module-4) | | | |
+| [M5: Probability](../curriculum/1-foundations.md#module-5) | | | |
+| [M6: Statistical inference](../curriculum/2-statistics-and-data.md#module-6) | | | |
+| [M6½: Causal inference and experimentation](../curriculum/2-statistics-and-data.md#module-6-half) | | | |
+| [M7: Wrangling and visualisation](../curriculum/2-statistics-and-data.md#module-7) | | | |
+| [M8a: SQL and warehouses](../curriculum/2-statistics-and-data.md#module-8a) | | | |
+| [M8b: Distributed data](../curriculum/2-statistics-and-data.md#module-8b) | | | |
+| [M9: Regression](../curriculum/3-classical-ml.md#module-9) | | | |
+| [M10: Classification](../curriculum/3-classical-ml.md#module-10) | | | |
+| [M11: Unsupervised learning](../curriculum/3-classical-ml.md#module-11) | | | |
+| [M12: Ensembles](../curriculum/3-classical-ml.md#module-12) | | | |
+| [M13: Bayesian modelling](../curriculum/4-probabilistic-ml.md#module-13) | | | |
+| [M14: Time series](../curriculum/4-probabilistic-ml.md#module-14) | | | |
+| [M15: Deep learning](../curriculum/5-deep-learning.md#module-15) | | | |
+| [M16: Transformers and representations](../curriculum/5-deep-learning.md#module-16) | | | |
+| [M17: Reinforcement learning](../curriculum/5-deep-learning.md#module-17) | | | |
+| [M18: LLMs and post-training](../curriculum/6-frontier-production.md#module-18) | | | |
+| [M21: Retrieval and RAG](../curriculum/6-frontier-production.md#module-21) | | | |
+| [M22: Agents and MCP](../curriculum/6-frontier-production.md#module-22) | | | |
+| [M23: Safety and evaluations](../curriculum/6-frontier-production.md#module-23) | | | |
+| [M24: Production operations](../curriculum/6-frontier-production.md#module-24) | | | |
+| [M25: Product data science](../curriculum/6-frontier-production.md#module-25) | | | |
+| [M26: Capstone](../curriculum/6-frontier-production.md#module-26) | | | |
 
-### 🚦 Foundations gate
-- [ ] Passed the [3-check exit gate](../curriculum/1-foundations.md#three-check-gate) (read · debug · data flow) before unlocking AI coding assistants
+Record M18-app and M25-brief separately when following the application route. M0 is optional; M26 has one chosen track. Every completion row links to its actual work, validation and results memo.
 
-### 🩺 Maths placement (optional, never a gate)
-- [ ] Took the [Khan Precalculus course challenge](../curriculum/1-foundations.md#math-diagnostic) once and picked resources from the result
-- [ ] Doing *Book of Proof* ch. 1–4 at 15 min/day alongside college maths (full **Module 0** is recommended, not required)
+## Shared project evidence
 
-### 🟩 Foundation Stratum
-- [ ] **Module 0a**: Pre-Calculus & Trigonometry (Khan Academy / MIT 18.01A)
-- [ ] **Module 0b**: Logic, Proof & Discrete-Math Primer (Hammack + Velleman + MIT 6.042J; optional: Lean 4 first proof)
-- [ ] **Module 1**: Programming Foundations (CS50P + MIT 6.0001/6.0002)
-- [ ] **Module 2**: Calculus + Matrix Calculus + Convex Optimisation (MITx 18.01.1/2/3x + 18.02 + **MIT 18.S096/063 Matrix Calc** + **Stanford EE364A Boyd**)
-- [ ] **Module 3**: Linear Algebra — Computational + Abstract + Applications (MIT 18.06 + 3Blue1Brown + **Axler 4e 2024** + Townsend 2024 + Trefethen/Bau)
-- [ ] **Module 4**: DSA (MIT 6.006 + GaTech series)
-- [ ] **Module 5**: Probability + Concentration + Information Theory + Measure Bridge (Stat 110 + MITx 6.431x + **Stanley Chan 2021** + **MacKay 2003** + **Vershynin 2018**)
+- [ ] Each milestone maps to the distinct module outcomes it demonstrates.
+- [ ] Environment, data provenance/rights, seeds and resource use are recorded.
+- [ ] Model evaluation uses an appropriate baseline, held-out data and failure slices.
+- [ ] Mathematical or analytical work includes worked checks and assumptions.
+- [ ] README and results memo reproduce the main result and state limitations.
+- [ ] Relevant safety tests and the [production bar](../curriculum/6-frontier-production.md#production-bar) are complete when claiming M23/M24.
 
-### 🟨 Core Statistics Stratum
-- [ ] **Module 6**: Inference (MITx 18.6501x + STAT 111)
-- [ ] **Module 6½**: Causal Inference & Experimentation (Brady Neal + MIT 14.387 + Kohavi + DoWhy)
-- [ ] **Module 7**: EDA & Viz (CS109A Lec 1-2, 9, 12-13 + Polars/DuckDB modernisation)
-- [ ] **Module 8a**: Databases, SQL & Warehouses (IITM BSCS2001 + Kimball + dbt Learn)
-- [ ] **Module 8b**: Distributed Data & Streaming (Stanford CS246 + DataExpert.io + Reis & Housley + Spark + Kafka + Airflow + Iceberg)
+## Application portfolio, when this is your route
 
-### 🟧 Classical ML Stratum
-- [ ] **NumPy sprint:** logistic regression, K-Means and a decision tree pass [`pytest`](../resources/numpy-from-scratch/README.md#numpy-from-scratch) before any `.fit()`
-- [ ] **Module 9**: Regression (MIT 6.390 Lec 1-3, CS109A Lec 3-6)
-- [ ] **Module 10**: Classification & SVMs + Calibration (MIT 6.390 Lec 4, CS109A Lec 14-15, CS 1810, Cambridge ML&BI + Platt/Isotonic/Temperature scaling)
-- [ ] **Module 11**: Unsupervised (CS109A Lec 10, CS109B Lec 1-2, MIT 6.86x Unit 4)
-- [ ] **Module 12**: Ensembles (CS109A Lec 16-20)
+- [ ] L1: model boundary, typed outputs, failure handling and baseline.
+- [ ] L2: retrieval comparison and frozen evaluation cases.
+- [ ] L3: bounded tool workflow and the separate MCP SDK lab.
+- [ ] L4 or L5 only if chosen as an optional extension.
+- [ ] [DECISIONS.md](../resources/templates/DECISIONS.md) records evidence and operational budgets.
 
-### 🟦 Probabilistic Stratum
-- [ ] **Module 13**: Bayes + MCMC (CS109B Lec 3-7, Cambridge ML&BI, MIT 6.790 Part III; PyMC 5.28 + NumPyro 0.20)
-- [ ] **Module 14**: HMMs & Time Series + Foundation Models (Cambridge MLRD Topic 2, MITx 14.310x; + Prophet/TimeGPT/Chronos/Lag-Llama)
+## Career and capstone
 
-### 🟪 Deep Learning Stratum
-- [ ] **Module 15**: DL Foundations + JAX/FSDP/Mixed-Precision (CS109B Lec 8–15, MIT 6.390 Lec 5–7, **MIT 6.7960 Fall 2025 W1–4**, **MIT 6.S191 2026**, **Google Scaling Book**)
-- [ ] **Module 16**: Transformers + ViT + Diffusion + SSMs + MoE (CS109B Lec 16–23, **MIT 6.7960 Fall 2025 W4‑11**, MIT 6.390 Lec 9, **Stanford CS336 Lec 3–4, 6**; DINOv2/SAM 2/LLaVA/Mamba)
-- [ ] **Module 17**: RL + Modern LLM RL (MIT 6.390 Lec 10–11, IITM BSCS3003, **Stanford CS336 Lec 15–17 RLVR**, CleanRL, Berkeley CS285, Spinning Up)
+- [ ] At the [yearly direction review](four-year-plan.md#yearly-review), recorded project evidence, interests, feedback, current role requirements and the reason to keep or change my direction.
+- [ ] As college teaches DSA, operating systems, networks, databases and software design, saved demonstrable examples using the [CS evidence map](four-year-plan.md#cs-core); recorded gaps without duplicating completed coursework.
+- [ ] Chose one main learning priority for the next term and a review date; kept unchosen modules and tools deferred.
+- [ ] Reviewed a small sample of relevant [current role requirements](career-operations.md#skills-checklist).
+- [ ] Got feedback on one specific artifact, privately if preferred.
+- [ ] Chose and completed the [M26 research, systems or applied rubric](../curriculum/6-frontier-production.md#module-26).
+- [ ] Can explain a failure, trade-off and next decision without relying on a copied answer.
 
-### 🔴 Frontier / Production Stratum
-- [ ] **Module 18**: LLMs & Fine-Tuning Playbook (**Stanford CS336 Spring 2026**, IITM BSCS3004, MIT 6.7960 W8–13, **HF Agents Course**, **MCP Nov 2025 spec**, Unsloth/Axolotl/TRL/PEFT/DSPy/vLLM/SGLang)
-- [ ] **Module 21**: RAG + Vector DBs (Pinecone Learn + LlamaIndex + pgvector + Qdrant + Ragas)
-- [ ] **Module 22**: Agentic AI — LangGraph/CrewAI/MCP/A2A (HF Agents Course + Berkeley LLM Agents + Anthropic Building Effective Agents + GAIA + SWE-bench)
-- [ ] **Module 23**: AI Safety + Interpretability + Evals + Policy (AISF Alignment Fundamentals + Transformer Circuits + EU AI Act + NIST AI RMF + inspect-ai)
-- [ ] **Module 24**: MLOps + LLMOps + AgentOps (Harvard AC215, Chip Huyen AI Engineering, FSDL, Made With ML, Langfuse/LangSmith/Phoenix/Weave)
-- [ ] **Module 25**: Product DS · Communication · Decision Intelligence (Kozyrkov + Kohavi Trustworthy Experiments + Storytelling with Data + CMU MSPPM-DA / UMich MADS)
-
-### 📦 Module projects (one public repo each — see [the rule](../curriculum/README.md#module-projects))
-- [ ] **M1** starter project + Weather CLI capstone · **M2** gradient-descent lab · **M3** five linear-algebra mini-projects · **M4** constraint meal planner · **M5** Monte Carlo lab
-- [ ] **M6** inference toolkit · **M6½** causal mini-projects · **M7** end-to-end EDA · **M8a** Reddit scraper → warehouse · **M8b** streaming mini-projects
-- [ ] **M9** regression from scratch · **M10** churn dashboard + `LogisticRegressionScratch` · **M11** K-Means from scratch · **M12** decision tree from scratch + boosting bake-off
-- [ ] **M13** Bayesian A/B · **M14** forecasting dashboard with backtest · **M15** backprop from scratch + CNN · **M16** HF sentiment analyser + transformer from scratch · **M17** RL agent over 5 seeds
-- [ ] **M18** fine-tune + four-way eval · **M21** RAG mini-projects · **M22** agent mini-projects · **M23** safety mini-projects · **M24** productionise one project · **M25** product-DS mini-projects
-- [ ] At least **one** project satisfies all 12 lines of the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar)
-- [ ] At least **one** project was built **for a real person or organisation** ([why](career-operations.md#career-operations))
-
-### 🧱 Portfolio Spine (one system, five levels)
-- [ ] L1 API wrapper + schema-validated output
-- [ ] L2 RAG + 20–50-case eval set
-- [ ] L3 read-only-first agent
-- [ ] L4 router / worker / checker
-- [ ] `DECISIONS.md` with a 1× / 10× / 100× cost table — see [the spine](portfolio-spine.md#levels)
-
-### 🧭 Career Operations
-- [ ] Ran my own [job-description survey](career-operations.md#skills-checklist) on 10–15 postings at companies I would actually join
-- [ ] Built my per-track [skills checklist](career-operations.md#skills-checklist) and mapped each gap to a module
-- [ ] Started applying at ~70 % match and began tracking the funnel (applications → screens → technicals → onsites)
-- [ ] Wrote up my first rejection as a completed experiment
-- [ ] Have an accountability partner or public weekly log
-
-### 🏆 Capstone Stratum
-- [ ] **Module 26**: Capstone Project — Choose **1 of 3 tracks**: Research / Systems / Applied (arXiv preprint + HF release + MCP‑compliant tool/agent OR production system with SLOs OR stakeholder-sponsored applied project with causal evaluation)
-
-</details>
-
----
-
-[🏠 Roadmap home](../README.md)
+Employment outcomes, ratings and public user counts are not curriculum completion criteria.

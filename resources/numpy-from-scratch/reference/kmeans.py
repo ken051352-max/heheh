@@ -4,6 +4,11 @@ import numpy as np
 
 class KMeans:
     def __init__(self, k, n_iters=300, tol=1e-6, n_init=10, seed=0):
+        for name, value in (("k", k), ("n_iters", n_iters), ("n_init", n_init)):
+            if isinstance(value, (bool, np.bool_)) or not isinstance(value, (int, np.integer)) or value < 1:
+                raise ValueError(f"{name} must be a positive integer")
+        if not isinstance(tol, (int, float, np.integer, np.floating)) or not np.isfinite(tol) or tol < 0:
+            raise ValueError("tol must be finite and nonnegative")
         self.k = k
         self.n_iters = n_iters
         self.tol = tol
@@ -23,7 +28,11 @@ class KMeans:
         centers = [X[rng.integers(len(X))]]
         for _ in range(1, self.k):
             d2 = self._sq_dists(X, np.array(centers)).min(axis=1)
-            centers.append(X[rng.choice(len(X), p=d2 / d2.sum())])
+            total = d2.sum()
+            # All distinct locations are already represented. Duplicate centres
+            # are valid: with fewer than k distinct points some labels stay unused.
+            index = rng.integers(len(X)) if total == 0 else rng.choice(len(X), p=d2 / total)
+            centers.append(X[index])
         return np.array(centers)
 
     def _run(self, X, rng):
@@ -44,6 +53,10 @@ class KMeans:
 
     def fit(self, X):
         X = np.asarray(X, dtype=float)
+        if X.ndim != 2 or min(X.shape) == 0 or not np.isfinite(X).all():
+            raise ValueError("X must be a nonempty finite 2D array")
+        if self.k > len(X):
+            raise ValueError("k cannot exceed the number of samples")
         rng = np.random.default_rng(self.seed)
         best = None
         for _ in range(self.n_init):
@@ -54,4 +67,9 @@ class KMeans:
         return self
 
     def predict(self, X):
-        return self._sq_dists(np.asarray(X, dtype=float), self.centers).argmin(axis=1)
+        if self.centers is None:
+            raise ValueError("fit must be called before predict")
+        X = np.asarray(X, dtype=float)
+        if X.ndim != 2 or X.shape[1] != self.centers.shape[1] or not np.isfinite(X).all():
+            raise ValueError("X must be finite and have the fitted feature count")
+        return self._sq_dists(X, self.centers).argmin(axis=1)

@@ -30,9 +30,9 @@ def test_and_interaction_needs_depth_two():
     assert (deep.predict(X) == y).all()
 
 
-def test_greedy_tree_cannot_split_pure_xor():
-    # Every root split on XOR has zero Gini gain, so greedy CART stops at a leaf.
-    # This is correct behaviour, and a classic interview question.
+def test_positive_gain_stopping_rule_keeps_pure_xor_at_leaf():
+    # Every root split has zero gain. This exercise stops there; an implementation
+    # allowing zero-gain splits can learn XOR with two levels.
     X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]] * 5, dtype=float)
     y = np.array([0, 1, 1, 0] * 5)
     m = DecisionTreeClassifier(max_depth=2).fit(X, y)
