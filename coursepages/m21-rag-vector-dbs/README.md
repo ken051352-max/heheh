@@ -1,4 +1,12 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 21 — RAG, Vector DBs & Retrieval Systems
+
+**First task:** Choose a handful of permitted documents and label five answerable/unanswerable questions; inspect one no-retrieval response before choosing infrastructure.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Full module](../../curriculum/6-frontier-production.md#module-21) ·
 [Learning contract](../../curriculum/README.md#learning-contract)
@@ -8,6 +16,7 @@ whether it helps **your** task, at what cost, and with which failures. Enterpris
 [Menlo's 2025 U.S. sample](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/),
 are context rather than universal adoption statistics.
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites and default route
 
 M1 + M8a + [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
@@ -30,6 +39,7 @@ extension if the task needs it. Local BM25, BGE-small CPU embeddings, exact sear
 small BGE cross-encoder provide the baseline. PostgreSQL/pgvector is the SQL alternative. No cloud
 account is required. Cache downloaded model weights for offline runs and record hardware/runtime.
 
+<a id="start-lab"></a>
 ## Before building: choose the failure to address
 
 | Evidence from your baseline | Candidate intervention |
@@ -68,6 +78,7 @@ supports the claim. Human labels are a valid free grader. If using an LLM judge,
 calibration/validation examples and report agreement and errors; do not let the judge see the desired
 system identity. A small golden set supports regression work, not a population reliability claim.
 
+<a id="completion"></a>
 ## 📦 Required project — one reproducible retrieval comparison
 
 1. **Ingest:** preserve source/license, document ID/version, page/section, and access metadata.
@@ -91,3 +102,8 @@ selectively if the corpus cannot be published; include a sanitized reproducible 
 **Optional depth:** add exactly one of contextual retrieval, query rewriting, GraphRAG,
 ColBERT/ColPali, multilingual retrieval, or ANN scaling. Compare against the core baseline. Hosted
 Cohere reranking is an optional paid comparison. A GPU or a paid judge must not become a core gate.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

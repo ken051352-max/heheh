@@ -4,9 +4,18 @@
 
 # 🟦 PROBABILISTIC & BAYESIAN STRATUM (Modules 13–14)
 
+**On this page:** [M13: Bayesian modelling](#module-13) · [M14: Forecasting](#module-14)
+
+Choose the module on your route. Its **core outcome and project** define completion; the topic map supplies additional context. Use the [readiness pattern](../guides/readiness-checks.md#how-to-check) to explain, trace, debug and adapt the prerequisite skill before relying on it. Record one next action in the [tracker](../guides/progress-tracker.md#resume).
+
+<details>
+<summary>Optional stratum artwork</summary>
+
 <img src="../assets/stratum-4-bayesian.jpg" alt="Probabilistic and Bayesian stratum, modules 13 to 14" width="100%">
 
-> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+</details>
+
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [resource defaults](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
 
 ---
 
@@ -15,12 +24,21 @@
 
 **Core outcome:** build a generative model, perform prior/posterior predictive checks, diagnose sampling and communicate sensitivity. Principal recommended book: McElreath, **Statistical Rethinking**, second edition (paid; [free author lectures/code](https://github.com/rmcelreath/stat_rethinking_2024)). Murphy **Probabilistic Machine Learning: Advanced Topics** (MIT Press 2023; [author resources](https://probml.github.io/pml-book/)) is the advanced reference. Use PyMC 5.x first; NumPyro and Stan are alternatives.
 
+- **Do now:** Specify a binary outcome, prior and likelihood; compute the Beta-Binomial posterior for a tiny count example before sampling.
+- **Next:** build the [M13 project](#project-13) with its tests and results memo. Use the free lecture default and selected principal reading below.
+- **Later depth:** graphical-model algorithms, sequential Monte Carlo and variational inference; choose these only for a specific gap or specialization.
+
 * **The Tutor's "Why":** Bayesian modeling makes assumptions and uncertainty explicit. Build the data-generating story, inspect prior predictions and diagnose the posterior before trusting a decision.
 
 * **Strict Prerequisites:** M5 probability and M6 inference; M3 linear algebra for multivariate models.
 * **Recommended Prerequisites:** M9 regression for the book’s modeling chapters; M11 EM before variational/mixture-model extensions.
 
-* **Topic map (core plus optional depth; roadmap synthesis):**
+<details>
+<summary>Full topic map: core context and later depth</summary>
+
+The core outcome, practical contracts and project remain the required route. This breadth map is not a checklist of extra prerequisites.
+
+* **Topic map (roadmap synthesis):**
   * **Philosophical basis of Bayesianism** — subjective probability, Cox's theorem (probability as extension of logic), Dutch book argument. Prior × Likelihood ∝ Posterior. Conjugate prior families (Beta-Binomial, Gamma-Poisson, Normal-Normal, Dirichlet-Multinomial, Normal-Inverse-Gamma, Normal-Inverse-Wishart).
   * **Posterior predictive distribution**, credible intervals vs confidence intervals (conceptual distinction), marginal likelihood (evidence), Bayes factors for model comparison.
   * **Hierarchical (multi-level) Bayesian models** — partial pooling, shrinkage, James-Stein estimator, empirical Bayes, Gibbs sampling introduction.
@@ -32,6 +50,8 @@
   * **The Bayesian approach to neural networks** — Laplace approximation (Gaussian at MAP), Bayesian backpropagation (MacKay), MC dropout as approximate Bayesian inference.
   * Incorporating prior knowledge, sampling from complex distributions, Bayes rule as basis of all inference, selecting priors (Gaussian → ridge; Laplace → lasso; Dirichlet-process for non-parametric Bayes), **Gibbs sampling derivation**, **Metropolis-Hastings with full proof of detailed balance**.
   * **Maximum-likelihood vs Bayesian inference** — strengths and weaknesses of both; **belief propagation** algorithm.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [McElreath Statistical Rethinking — free lecture recordings and code](https://github.com/rmcelreath/stat_rethinking_2024) · [Harvard CS109B archived materials](https://harvard-iacs.github.io/2022-CS109B/) · [Cambridge ML and Bayesian Inference](https://www.cl.cam.ac.uk/teaching/2526/MLBayInfer/) (theory depth). The author course uses R/Stan; adapt computations to current PyMC rather than copying old PyMC3 conversions unchanged.
@@ -46,6 +66,7 @@
 
 **Diagnostic reference:** [Stan's convergence guidance](https://mc-stan.org/learn-stan/diagnostics-warnings.html) and ArviZ explain why R-hat alone is insufficient. Choose ESS/MCSE targets for the quantity being reported; a fixed seed does not guarantee convergence.
 
+<a id="project-13"></a>
 * **📦 Module Project (mandatory) — Bayesian A/B test, end to end**
   * **Deliverable:** A full Bayesian analysis of a real or realistically-simulated experiment in PyMC or NumPyro: state the prior and defend it, fit the posterior, run convergence diagnostics (R-hat, ESS, divergences, trace and rank plots), do prior and posterior predictive checks, and report a decision — including the probability that B beats A by more than a stated business-relevant margin.
   * **Definition of done:** (1) deterministic checks against an analytic Beta-Binomial case and a sampling diagnostic report: multiple chains, rank-normalized split R-hat < 1.01, bulk/tail ESS, Monte Carlo SE and zero unresolved post-warmup divergences; explain any warning and rerun a diagnosed model rather than repeatedly changing seeds to obtain a pass; (2) `README.md` with the posterior plots, the prior-sensitivity analysis (re-run under at least two other defensible priors), and the decision rule; (3) a results memo contrasting your Bayesian conclusion with the frequentist p-value from your [M6](2-statistics-and-data.md#module-6) toolkit on the same data — and explaining precisely what each one does and does not claim.
@@ -59,12 +80,21 @@
 
 **Core outcome:** produce a leakage-safe rolling-origin forecast with a baseline, uncertainty report and a decision memo. Principal book: Hyndman and Athanasopoulos, **Forecasting: Principles and Practice**, third edition (free). Its examples use R; implement the same statistical workflow in Python if preferred. HMMs, Kalman filters and neural forecasting are optional branches after the core.
 
+- **Do now:** Draw one prediction origin and its available history; produce a naive forecast without touching later observations.
+- **Next:** build the [M14 project](#project-14) with its tests and results memo. Use the free lecture default and selected principal reading below.
+- **Later depth:** HMMs, Kalman filters, neural forecasting and causal interventions; choose these only for a specific gap or specialization.
+
 * **The Tutor's "Why":** Forecasts must use information available at the prediction time. Rolling-origin evaluation exposes leakage, changing dynamics and horizon-dependent uncertainty; state-space models provide a later unifying framework.
 
 * **Strict Prerequisites:** M5, M7 and M9 for the forecasting core.
 * **Recommended Prerequisites:** M13 before Bayesian state-space/message-passing extensions; M15 before neural forecasting.
 
-* **Topic map (core plus optional depth; roadmap synthesis):**
+<details>
+<summary>Full topic map: core context and later depth</summary>
+
+The core outcome, practical contracts and project remain the required route. This breadth map is not a checklist of extra prerequisites.
+
+* **Topic map (roadmap synthesis):**
   * **Hidden Markov Models (HMM)** — model definition (hidden state chain + observation emissions), assumptions (Markov property on hidden chain, observation independence given state), the three canonical problems (Rabiner 1989):
     1. **Evaluation** — P(observations | model) via **Forward algorithm**.
     2. **Decoding** — most likely hidden sequence via **Viterbi algorithm** (with full dynamic-programming derivation).
@@ -72,9 +102,11 @@
     * Application: **predicting protein interactions with a cell membrane** (Cambridge's specific biological application).
   * Bernoulli process, Poisson process, **hidden random processes** (preview of state-space models).
   * **Kalman filter** implementation — state-space model for linear Gaussian systems, prediction step and update step, Rauch-Tung-Striebel smoother, **extended Kalman filter (EKF)** for nonlinear systems, **unscented Kalman filter (UKF)**, connection to Bayesian belief update.
-  * Time series basics — trend, seasonality, cyclicity, stationarity (strong vs weak/covariance stationarity), ACF/PACF, white noise tests (Ljung-Box); ARMA models; **ARIMA** and **SARIMA** (Box-Jenkins methodology); Vector Autoregression (VAR); Granger causality; cointegration and Engle-Granger two-step; **ARCH/GARCH** for volatility; state-space formulation; Kalman filter as linear-Gaussian HMM; structural time-series models (Harvey BSM); **prophet** (Facebook's decomposable model); **DeepAR**, **Temporal Fusion Transformers** (modern 2026 approach); **intervention analysis** (difference-in-differences, interrupted time series, synthetic control); regression discontinuity; instrumental variables for causal inference.
+  * Time series basics — trend, seasonality, cyclicity, stationarity (strong vs weak/covariance stationarity), ACF/PACF, white noise tests (Ljung-Box); ARMA models; **ARIMA** and **SARIMA** (Box-Jenkins methodology); Vector Autoregression (VAR); Granger causality; cointegration and Engle-Granger two-step; **ARCH/GARCH** for volatility; state-space formulation; Kalman filter as linear-Gaussian HMM; structural time-series models (Harvey BSM); **prophet** (a decomposable forecasting model); **DeepAR**, **Temporal Fusion Transformers** (optional neural forecasting); **intervention analysis** (difference-in-differences, interrupted time series, synthetic control); regression discontinuity; instrumental variables for causal inference.
   * **RNN for sequence modelling** (connects to M15).
   * **Long Short-Term Memory (LSTM)** — gate equations (input, forget, output gates), cell state, vanishing gradient solution; **Gated Recurrent Unit (GRU)** — update and reset gates.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [Hyndman's FPP3 video lectures and playlist](https://robjhyndman.com/hyndsight/fpp3_videos.html), paired with [Forecasting: Principles and Practice, third edition](https://otexts.com/fpp3/). Videos accompany most book sections; the text and examples fill the gaps. [Cambridge MLRD](https://www.cl.cam.ac.uk/teaching/2324/MLRD/) is written material for the optional HMM extension.
@@ -90,7 +122,8 @@
 
 **Forecasting workflow:** lock frequency, target availability, prediction origin and horizon; distinguish missing periods from zeros; build lags inside each training window; fit transforms only on training history; tune with rolling origins and keep a final chronological holdout. External regressors must be available at forecast time. Granger predictability is not intervention causality.
 
-* **📦 Module Project (mandatory) — Stock dashboard with honest forecasting**
+<a id="project-14"></a>
+* **📦 Module Project (mandatory) — A time-series investigation with honest forecasting**
   * **Deliverable:** A dashboard or reproducible local app over a real time series (equities, energy demand, or web traffic) that shows the history, a forecast with prediction intervals, and — critically — a **backtest** using rolling-origin cross-validation. Use a naive baseline and seasonal-naive where seasonality is plausible, then compare one ARIMA/ETS model. Record any series where seasonal-naive is inapplicable rather than manufacturing seasonality.
   * **Definition of done:** (1) `pytest` suite including a test that asserts your backtest split never leaks future data into training; (2) `README.md` with MAE/MASE (document the scaling denominator), interval coverage/width and results by horizon for every baseline/model, and either a live URL or exact local/container reproduction command; (3) a results memo stating plainly whether your model beat the applicable naive baseline, including seasonal-naive when justified.
   * **Stretch:** compare bottom-up vs reconciled forecasts on a hierarchy, checking that child forecasts sum to their parent; or evaluate a probabilistic/foundation model with the same rolling origins and compute budget.

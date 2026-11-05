@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Before filing, please skim the resource bar in
-        [CONTRIBUTING.md](https://github.com/akazadivu-design/data-sci/blob/master/CONTRIBUTING.md#resource-bar).
+        [CONTRIBUTING.md](https://github.com/ken051352-max/heheh/blob/genspark_ai_developer/CONTRIBUTING.md#resource-bar).
 
         Default lectures must be **free**. Books may be free or paid: recommend
         them on their educational merits and label access clearly. Proposals should
@@ -58,12 +58,12 @@ body:
   - type: checkboxes
     id: pickone
     attributes:
-      label: Pick-One table
+      label: Canonical resource defaults
       description: >
-        The Pick-One table names the single default course per module and is what
+        The Canonical resource defaults names the single default course per module and is what
         most readers actually follow.
       options:
-        - label: This change should also update the Pick-One table.
+        - label: This change should also update the Canonical resource defaults.
           required: false
   - type: checkboxes
     id: conduct

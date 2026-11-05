@@ -1,0 +1,2 @@
+# Runtime uses only Python 3.12+ standard library. Pin the test runner for this kit.
+pytest==9.2.0

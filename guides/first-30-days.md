@@ -1,241 +1,144 @@
-[Home](../README.md) · [Start here](../START-HERE.md) · [← Week 0](week-0.md#week-0)
-
----
+[Home](../README.md) · [Semester plan](first-semester.md#semester-plan) · [Week 0](week-0.md#week-0)
 
 <a id="first-30-days"></a>
-# Your first 30 days (after Week 0)
+# First 30 days: the opening four study milestones
 
-**Your one next step:** watch [CS50P Lecture 0](https://cs50.harvard.edu/python/weeks/0/), then follow [Week 1](#week-1) below.
-
-Not done [Week 0](week-0.md#week-0) yet? Do that first. It is seven short days in your browser.
-
----
+**Continue at [Week 1](#week-1), or the first skill you have not yet demonstrated.** [Week 0](week-0.md) is optional orientation for someone who has never run Python, not a compulsory repeat for experienced learners.
 
 <a id="first-30-days-shape"></a>
-## How these four weeks work
+## How this fits the semester
 
-- **An illustrative 5–7 hours a week.** Adjust the weeks to your pace; a 15-minute day still counts.
-- **One main course:** Harvard's free [CS50P](https://cs50.harvard.edu/python/). You keep going with it after Day 30.
-- **Small wins every week.** Each week has a goal, a short "done when" list, and one optional "math meets code" task.
-- **Nothing here is a test or a gate.** The maths placement in Week 2 only helps you pick resources.
-- **A reviewable artifact can stay private.** Keep your own code, a short README and normal/bad-input transcripts. Peer feedback is useful but optional; automatic tests start after CS50P Lecture 5.
-- **Access fallback:** CS50P lectures and problem statements are open. If a browser workspace or submission account is unavailable, run the same Python exercises locally and retain your test/output transcript. Certificates and hosted feedback do not gate this roadmap.
+These are the detailed opening tasks of the [single first-semester schedule](first-semester.md#semester-plan). Its workload, readings, buffers and later milestones govern the plan. “30 days” is a familiar label, not a deadline; stretch the four milestones across more calendar weeks when college needs the time.
 
-| Week | Main focus | You finish with |
-|---|---|---|
-| [1](#week-1) | CS50P Lecture 0 + Problem Set 0 | Your first local or remote repository, `python-journey` |
-| [2](#week-2) | CS50P Lecture 1 + a maths check-in | A rough map of your maths, and a first look at vectors |
-| [3](#week-3) | CS50P Lecture 2 + Exercism practice | Loops you can write without looking |
-| [4](#week-4) | CS50P Lecture 3 + your first original project | A small program that is entirely yours |
+- Use one free lecture spine, [Harvard CS50P](https://cs50.harvard.edu/python/). Lectures, notes and problem statements are public. Hosted submission/feedback may need the course's free accounts; local work is valid roadmap evidence.
+- Each week below has **one small required practice artifact** and a readiness check. Additional course problems and Exercism are optional practice for a demonstrated gap. If seeking the CS50 certificate, separately follow the course's full requirements.
+- Save code, expected/actual outputs, a short explanation and the next task. A private folder, local repository or selectively shared artifact is enough. Public hosting is optional.
+- Required automated tests start after Lecture 5 in [semester Week 6](first-semester.md#week-6). Manual normal/boundary checks are appropriate earlier.
 
 <a id="skill-groups"></a>
-### What these weeks build: the 4 skill groups
+## What grows next
 
-AI engineering needs [four groups of Python skills](../curriculum/1-foundations.md#python-skill-groups). These weeks start the first two. The other two follow straight after Day 30.
-
-| Skill group | Weeks 1–4 | Right after |
-|---|---|---|
-| 1 · Core data & control flow | Weeks 1–3 (variables, conditionals, loops, functions) | CS50P Lecture 8 (reading classes) |
-| 2 · APIs, JSON & error handling | Week 4 `try`/`except`, plus the optional [JSON micro-task](#week-4-json) | Weather-CLI capstone |
-| 3 · File & log I/O | — | CS50P Lecture 6 (files) |
-| 4 · Environments (`venv` / `uv`) | Handled for you by cs50.dev | Your first project on your own machine |
+**Do now:** values, functions, conditions, loops and exceptions. **Next:** imports, tests, file handling and an offline Weather CLI. **Later depth:** async, advanced typing, frameworks and deployment. These align with [M1's skill groups](../curriculum/1-foundations.md#python-skill-groups), without requiring every tool at once.
 
 <a id="first-30-days-ai-rule"></a>
-> **🚦 One rule about AI for these weeks:** ask AI to *explain* a concept or *quiz* you, never to write your code. Write it yourself, even when it's slow ([why](../curriculum/1-foundations.md#ai-usage-rule)). You unlock AI coding assistants later, by passing a [3-check gate](../curriculum/1-foundations.md#three-check-gate).
+## AI and independent understanding
+
+Attempt the small program yourself first. AI may explain a concept, ask questions or critique your attempted reasoning; keep generated solutions closed during the final changed-example check. Label assistance in your notes. Follow the [readiness policy](readiness-checks.md#how-to-check) and the course's own assignment rules. Assisted output and green tests alone do not show independent understanding.
 
 <a id="first-30-days-helpers"></a>
-### Free helpers (use any time, never required)
+## One helper when needed
 
-- [Python Tutor](https://pythontutor.com/python-compiler.html): paste code and watch it run step by step. Great for confusing loops.
-- [futurecoder](https://futurecoder.io/): a free interactive beginner course. Use it if a CS50P idea doesn't click.
-- [Exercism Python track](https://exercism.org/tracks/python): free practice exercises with an in-browser editor.
-
----
+[Python Tutor](https://pythontutor.com/python-compiler.html) helps trace code. [futurecoder](https://futurecoder.io/) supplies another interactive explanation. [Exercism Python](https://exercism.org/tracks/python) offers additional exercises. Pick a helper for a named difficulty and return to the weekly task; none adds a mandatory exercise count.
 
 <a id="week-1"></a>
-## Week 1 — Your first real course and your first repository
+## Week 1 — Functions, input and a saved artifact
 
-**Goal:** move from the browser playground to an editor and organize your Week 0 work in a reviewable repository.
-**Time:** about 6 hours.
+1. Continue [CS50P Lecture 0, Functions and Variables](https://cs50.harvard.edu/python/weeks/0/), skipping the opening examples you already demonstrated in Week 0. Pause to predict outputs.
+2. In the course's [browser workspace](https://cs50.dev/) or your local Python editor, write a bill-share function accepting a total and a positive integer group size. Begin with valid numeric inputs. Separate the returned value from its display.
+3. Save it in a `python-journey` folder or repository with a README saying what it does, how you ran it and one example result. Use the [beginner setup](../resources/beginner-projects/README.md#setup) when moving to local project dependencies; no install is needed to run the simple browser exercise.
+4. Attempt [Python basics, tasks 1–2](readiness-checks.md#python-basics). Save your prediction before running the changed example.
 
-1. **Watch** [CS50P Lecture 0, Functions and Variables](https://cs50.harvard.edu/python/weeks/0/); pause and type along, splitting it into sessions as needed.
-2. **For the hosted workflow, create the free accounts requested by CS50P.** The official course describes its current edX/GitHub submission steps. Local exercise work is a valid fallback.
-3. **Open [cs50.dev](https://cs50.dev/).** It is VS Code in your browser with Python ready. Nothing to install.
-4. **Do [Problem Set 0](https://cs50.harvard.edu/python/psets/0/):** five short problems. Follow the steps at the top of that page to submit.
-5. **Create a repository called `python-journey`** (private local, private remote, selectively shared with a mentor, or sanitized public). Use GitHub's [repository quickstart](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) if you choose a remote repo. Upload *your* versions of PayUp, the word-scramble game and the karaoke queue manager from Week 0.
-6. **Write a short `README.md`:** one line per project, saying what it does and one thing you learned.
+**Done when:** the function returns the explained result for two valid inputs and someone can reproduce the saved example. Invalid group sizes arrive next week.
 
-> Keep CS50P problem-set solutions **out** of any public repository. CS50's [academic honesty rules](https://cs50.harvard.edu/python/honesty/) ask you not to share them. Public sharing is optional; if you publish your own work, scrub API keys, credentials, private data, proprietary material, and PII first. A private artifact is enough for your own completion; a sanitized release or live demo is useful when an external reviewer needs a verifiable signal.
+**Optional practice:** choose a matching [Problem Set 0](https://cs50.harvard.edu/python/psets/0/) exercise if input/types remain unclear. Keep course solutions private in accordance with [CS50's honesty rules](https://cs50.harvard.edu/python/honesty/). No public sharing or course submission is needed for this original artifact.
 
-**Done when:**
-
-- [ ] I watched Lecture 0 and completed the five Problem Set 0 problems, submitting through the course or saving local output checks.
-- [ ] `python-journey` is created with my three Scrimba projects, a stranger-readable README, and a short honest results note (public sharing optional).
+**Next:** [Week 2](#week-2). Selected book reading is in [the semester milestone](first-semester.md#week-1).
 
 <a id="week-1-math"></a>
-**Math meets code (optional, ~20 min): how steep is y = x²?**
-Type this in cs50.dev and run it. Then try `h = 0.01` and `h = 0.001`. What number does the answer approach?
+<details>
+<summary>Later or optional: connect a function with college calculus</summary>
 
-```python
-def f(x):
-    return x ** 2
+For `f(x) = x ** 2`, calculate `(f(3 + h) - f(3)) / h` with `h = 0.1` and then `0.01`. Compare with the derivative 6 at x = 3. Do this when college calculus makes it useful; it is not extra Week 1 work.
 
-h = 0.1
-print((f(3 + h) - f(3)) / h)
-```
-
-You just estimated a derivative. Calculus will later tell you the exact answer is 6.
-
----
+</details>
 
 <a id="week-2"></a>
-## Week 2 — Decisions in code, and a friendly maths check-in
+## Week 2 — Conditions and boundary inputs
 
-**Goal:** write programs that make choices, and get a rough picture of your maths.
-**Time:** about 6–7 hours.
+1. Study [CS50P Lecture 1, Conditionals](https://cs50.harvard.edu/python/weeks/1/).
+2. Extend the bill-share function to reject a non-positive integer group size before dividing. Choose a simple documented result for invalid input, such as `None`; exceptions come later.
+3. Predict and record the results for group sizes `-1`, `0`, `1` and `2`. Complete [Python basics](readiness-checks.md#python-basics).
 
-1. **Watch** [CS50P Lecture 1, Conditionals](https://cs50.harvard.edu/python/weeks/1/), then do [Problem Set 1](https://cs50.harvard.edu/python/psets/1/).
-2. **Take Khan Academy's [Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) once** (30 questions, about 30–45 minutes). It is free with an account and is only a routing aid; follow the active [maths placement workflow](../curriculum/1-foundations.md#math-diagnostic).
-   - This is **placement only, never a gate.** Whatever you score, you continue CS50P next week.
-   - Write your score down. The [placement guide](../curriculum/1-foundations.md#math-diagnostic) shows which free resources fit your result.
-3. **Watch** episodes 1–3 of 3Blue1Brown's [Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) (about 30 minutes in total).
+**Done when:** your condition treats the boundary correctly, you explain why a negative number is not an acceptable group size, and you state your invalid-input policy.
 
-**Done when:**
+**Optional practice:** one relevant [Problem Set 1](https://cs50.harvard.edu/python/psets/1/) problem. If you want to identify a maths gap, use the optional [maths placement workflow](../curriculum/1-foundations.md#math-diagnostic) or a permitted college example. Skipping placement always allows Week 3.
 
-- [ ] I watched Lecture 1 and completed Problem Set 1, with course submission or saved local checks.
-- [ ] Optional: I took the Khan course challenge or noted topics to revisit. Skipping it never blocks Week 3.
-- [ ] Optional: I watched Essence of Linear Algebra episodes 1–3.
+**Next:** [Week 3](#week-3). Book reading remains in [the semester milestone](first-semester.md#week-2).
 
 <a id="week-2-math"></a>
-**Math meets code (optional, ~20 min): a 2×2 matrix, by hand then in NumPy.**
-On paper, multiply the matrix `[[2, 1], [0, 3]]` by the vector `[1, 2]`. Then check it in cs50.dev (run `pip install numpy` first if needed):
+<details>
+<summary>Later or optional: connect a small matrix with college algebra</summary>
 
-```python
-import numpy as np
+Multiply `[[2, 1], [0, 3]]` by `[1, 2]` on paper. The result is `[4, 6]`. Explain each component as a row's dot product. You do not need NumPy installation to check these two arithmetic operations. Revisit [M3](../curriculum/1-foundations.md#module-3) when the topic matters in college.
 
-A = np.array([[2, 1], [0, 3]])
-v = np.array([1, 2])
-print(A @ v)
-```
-
-Did you get `[4 6]` by hand? Episode 3 shows this as "moving" the vector to a new place.
-
----
+</details>
 
 <a id="weeks-3-4"></a>
 <a id="week-3"></a>
-## Week 3 — Loops, and practice that sticks
+## Week 3 — Loops and a hand trace
 
-**Goal:** repeat actions with loops, and practise until they feel normal.
-**Time:** about 6 hours.
+1. Study [CS50P Lecture 2, Loops](https://cs50.harvard.edu/python/weeks/2/).
+2. Write a function summing a list of expense amounts; write another counting amounts at or above a chosen threshold. Use only supplied local values.
+3. Trace each function on paper for three entries and an empty list. Then run it. Attempt [Loops and errors, tasks 1–2](readiness-checks.md#loops-and-errors).
 
-1. **Watch** [CS50P Lecture 2, Loops](https://cs50.harvard.edu/python/weeks/2/), then do [Problem Set 2](https://cs50.harvard.edu/python/psets/2/).
-2. **Join the free [Exercism Python track](https://exercism.org/tracks/python).** Solve three exercises in the browser editor:
-   [Hello World](https://exercism.org/tracks/python/exercises/hello-world),
-   [Guido's Gorgeous Lasagna](https://exercism.org/tracks/python/exercises/guidos-gorgeous-lasagna) and
-   [Ghost Gobble Arcade Game](https://exercism.org/tracks/python/exercises/ghost-gobble-arcade-game).
-3. **Retrieval warm-up:** before each session, write last session's key idea from memory in 5 minutes.
+**Done when:** the accumulator and count are correct for the changed example and empty input, and you can explain how the loop reaches them.
 
-**Done when:**
+**Optional practice:** one relevant [Problem Set 2](https://cs50.harvard.edu/python/psets/2/) exercise, or one Exercism loop/list exercise. Choose based on a gap rather than adding both lists to the week's work.
 
-- [ ] I watched Lecture 2 and completed Problem Set 2, with course submission or saved local checks.
-- [ ] I solved three Exercism exercises.
+**Next:** [Week 4](#week-4). Book reading: [semester Week 3](first-semester.md#week-3).
 
 <a id="week-3-math"></a>
-**Math meets code (optional, ~25 min): plot y = x² and estimate the slope.**
-Run `pip install matplotlib`, then:
+<details>
+<summary>Later or optional: a tiny table of a quadratic</summary>
 
-```python
-import matplotlib.pyplot as plt
+Use a loop to print `x` and `x ** 2` for `-2`, `-1`, `0`, `1`, `2`. Sketch the five points on paper. A plotting library is unnecessary for this early example.
 
-xs = [x / 10 for x in range(-40, 41)]
-ys = [x ** 2 for x in xs]
-plt.plot(xs, ys)
-plt.savefig("parabola.png")
-```
-
-Open `parabola.png`. Near x = 3, how far does y rise when x moves one step right? Compare with your Week 1 answer.
-
----
+</details>
 
 <a id="week-4"></a>
-## Week 4 — Handle errors, and build something that is yours
+## Week 4 — An original calculator that handles errors
 
-**Goal:** make programs that survive bad input, and ship your first original project.
-**Time:** about 7 hours.
+1. Study [CS50P Lecture 3, Exceptions](https://cs50.harvard.edu/python/weeks/3/).
+2. Read the [calculator brief and starter](../resources/beginner-projects/calculator/README.md#start). Implement the first working version, then handle malformed numbers, unsupported operators and division by zero. Follow its stages; postpone automated tests until the testing lesson if needed.
+3. Retain a normal run, invalid-input runs, your README and one lesson learned. Finish [Loops and errors](readiness-checks.md#loops-and-errors).
 
-1. **Watch** [CS50P Lecture 3, Exceptions](https://cs50.harvard.edu/python/weeks/3/), then do [Problem Set 3](https://cs50.harvard.edu/python/psets/3/).
-2. **Solve two more Exercism exercises** (five in total):
-   [Meltdown Mitigation](https://exercism.org/tracks/python/exercises/meltdown-mitigation) and
-   [Leap](https://exercism.org/tracks/python/exercises/leap).
-3. **Build your first original mini project** (the [M1 starter project](../curriculum/1-foundations.md#m1-starter-project)). Pick **one**:
-   - **Command-line calculator:** asks for two numbers and an operator, and handles "divide by zero" and typos politely.
-   - **Number-guessing game with your own twist:** for example, a limited number of guesses, a score, or difficulty levels.
-   CS50P Problem Set 4 also contains a guessing game. Give yours a different design, and never copy a pset solution.
-4. **Add it to `python-journey`** with a README, one successful run, one invalid-input run and a short lesson learned. Optionally share with one person.
+**Done when:** your own code meets the project's starter-stage criteria and you can explain a changed example. This is the [M1 starter milestone](../curriculum/1-foundations.md#m1-starter-project), not the full module. A distinct number-guessing game meeting equivalent control-flow/error-handling evidence remains a valid alternative.
 
-**Done when:**
+**Optional practice:** a relevant [Problem Set 3](https://cs50.harvard.edu/python/psets/3/) problem if exceptions remain unclear. Do not submit this repository's reference code as course work.
 
-- [ ] I watched Lecture 3 and completed Problem Set 3, with course submission or saved local checks.
-- [ ] I have solved five Exercism exercises in total.
-- [ ] My mini project is in `python-journey` with a README section.
-- [ ] I saved normal and invalid-input results; sharing for feedback is optional.
+**Next:** [semester Week 5](first-semester.md#week-5). Book reading: [semester Week 4](first-semester.md#week-4).
 
 <a id="week-4-math"></a>
-**Math meets code (optional, ~20 min): add 1 + 2 + … + n two ways.**
-Add a "sum mode" to your calculator, or write a separate script. Compute the sum with a loop, then with `n * (n + 1) // 2`. Do they always match? Wrap `int(input())` in `try`/`except` so a typo doesn't crash it. You will *prove* this formula later in [Book of Proof](https://richardhammack.github.io/BookOfProof/).
+<details>
+<summary>Later or optional: compare a sum and a formula</summary>
+
+For a positive integer `n`, compare a loop summing 1 through n with `n * (n + 1) // 2`. Check `n = 1` and a changed value. Numerical agreement on a few inputs is not a proof; [M0](../curriculum/1-foundations.md#module-0) introduces induction later.
+
+</details>
 
 <a id="week-4-json"></a>
-**APIs meet code (optional, ~20 min): your first JSON request.**
-Run `pip install requests` in cs50.dev. Then fetch today's London temperature from the free, key-less [Open-Meteo API](https://open-meteo.com/):
+<details>
+<summary>Next, after libraries: a safe JSON preview</summary>
 
-```python
-import requests
+The Weather project uses local fixtures so no service or key is needed. After Lecture 4, load a synthetic example such as `{"current": {"temperature_2m": 12.5}}` with Python's `json` module and explain its nested values. Then remove a required key and describe the failure. Use the actual [Weather stages](../resources/beginner-projects/weather/README.md#stages) for its full contract; this tiny sketch is not real weather data.
 
-url = "https://api.open-meteo.com/v1/forecast"
-params = {"latitude": 51.5, "longitude": -0.12, "current": "temperature_2m"}
-try:
-    response = requests.get(url, params=params, timeout=10)
-    response.raise_for_status()
-    print(response.json()["current"]["temperature_2m"])
-except (requests.RequestException, KeyError) as error:
-    print("Could not get the weather:", error)
-```
-
-Change the latitude to `999`. What happens, and which line catches it? This is skill group 2 in a few lines, and it previews your weather-CLI capstone.
-
-If the service is unreachable, practise parsing the fixture `{"current": {"temperature_2m": 12.5}}` instead. Record that it is synthetic data. Free service terms can change; no live API is needed for the starter milestone.
-
----
+</details>
 
 <a id="first-30-days-undergrads"></a>
-## If you follow the four-year plan
+## College and career planning
 
-The [Four-Year Plan, S1](four-year-plan.md#s1) builds on exactly these weeks. Two extra items, both small:
-
-- **Optional after Week 4:** create career/practice accounts when they serve your goal; they are not completion requirements.
-- **From Week 5:** begin easy interview problems, once CS50P Lectures 0–3 feel comfortable.
+Keep college maths and CS assignments as your main parallel courses. Save specific [equivalence evidence](readiness-checks.md#college-equivalence) instead of repeating the same material. The [India undergraduate path](india-undergraduate-path.md) and [four-year plan](four-year-plan.md#s1) use this same opening sequence. Career accounts, interview-problem quotas and choosing a job title are not first-month completion requirements.
 
 <a id="first-30-days-log"></a>
-## Your daily log (one line)
+## A note you can resume from
 
-After each session, write one line in a notes app or a text file:
+> Task ___. Artifact ___. Expected/actual result ___. Help used ___. Next specific action ___.
 
-> Today I built ___. I got stuck on ___. Next session I will ___.
-
-The [progress tracker](progress-tracker.md#starter-tracker) has a 12-box starter version of these four weeks.
+Keep the note private by default. Use the [tracker](progress-tracker.md#starter-tracker) for state and the [six-week pilot](study-pilot.md) if you want structured feedback on pacing and confusing instructions.
 
 <a id="first-30-days-after"></a>
-## After Day 30
+## After the opening four milestones
 
-- **Keep going with CS50P.** Lectures 4–9 supply the remaining skills; the tested Weather CLI and results memo complete [Module 1](../curriculum/1-foundations.md#module-1).
-- **Your end-of-M1 capstone is the weather CLI.** Start it around CS50P Lectures 5–6, once you have seen testing and files.
-- **Prefer reading to video?** The [Helsinki Python MOOC](https://programming-26.mooc.fi/) is an equally good depth option.
-- **Want motivation alongside?** [Automate the Boring Stuff](https://automatetheboringstuff.com/) shows what Python can do for you every day.
-- **Feeling stuck?** Use the [stuck or unmotivated table](how-to-read-a-module.md#stuck-or-unmotivated).
+Continue at [semester Week 5](first-semester.md#week-5): libraries, tests, files and the Weather CLI, with scheduled buffers. Keep M1 active until its [core evidence](readiness-checks.md#m1-ready) is demonstrated. If you need more time, use [recovery](first-semester.md#recovery); do not add SQL or restart onboarding merely because 30 days elapsed.
 
-Why the weeks look like this: see [Why this design](week-0.md#why-this-design).
-
----
-
-[Home](../README.md) · [← Week 0](week-0.md#week-0) · [Progress tracker](progress-tracker.md#starter-tracker)
+[Home](../README.md) · [Semester Week 5 →](first-semester.md#week-5) · [Readiness](readiness-checks.md) · [Tracker](progress-tracker.md#starter-tracker)

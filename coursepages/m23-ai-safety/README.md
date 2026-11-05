@@ -1,8 +1,17 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 23 — AI Safety, Alignment, Interpretability, Evals & Policy
+
+**First task:** Draw the current application data path and one protected asset; predict what happens when retrieved text requests an unauthorized action.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Full module](../../curriculum/6-frontier-production.md#module-23) ·
 [Executable control tests](../../resources/agent-lab/README.md)
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites and route
 
 Start application threat modeling after [M18-app](../../curriculum/6-frontier-production.md#application-foundations).
@@ -23,6 +32,7 @@ they do not gate application safety work.
 A risk framework is a review aid, not proof of safety or legal compliance. Use current official
 regulatory text for jurisdiction-specific mappings; record the version and uncertainty.
 
+<a id="start-lab"></a>
 <a id="evaluation-harness"></a>
 ## 📏 A threat model connected to tests
 
@@ -67,6 +77,7 @@ and [METR's reward-hacking report](https://metr.org/blog/2025-06-05-recent-rewar
 what an attacker could still change. A toy scripted optimizer can test isolation; claims about a
 model's reward hacking require actual model runs. Benchmark anecdotes are not universal rates.
 
+<a id="completion"></a>
 ## 📦 Required project and completion rubric
 
 Extend one existing application with the threat model and scenario matrix above. For a system
@@ -83,3 +94,8 @@ validate candidate feature interpretations with interventions/counterexamples; i
 activation patching; or evaluate a bounded optimization loop. Do not claim five labeled features
 are definitively monosemantic. Broad alignment, interpretability, fairness, privacy, and governance
 remain depth topics with their own methods and limitations.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

@@ -1,8 +1,17 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 22 — Agentic AI: Bounded Workflows, Tools, MCP & Memory
+
+**First task:** Open the offline contracts lab, inspect one allowed and one denied action, then sketch a deterministic task sequence.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Full module](../../curriculum/6-frontier-production.md#module-22) ·
 [Local executable contracts lab](../../resources/agent-lab/README.md)
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites and route
 
 Complete M21 and [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
@@ -123,6 +132,7 @@ Use one small SQL-backed assistant and a 20-task development/evaluation split. A
 below are teaching defaults to record and adjust, not industry standards. Run deterministic contract
 tests offline; run a real local model when measuring selection or answer quality.
 
+<a id="start-lab"></a>
 <a id="lab-1"></a>
 ### Lab 1 · A bounded loop and deterministic baseline
 
@@ -211,6 +221,7 @@ Evaluate coordination failures, citation provenance, shared-state races, tokens 
 GAIA/SWE-bench or browser benchmarks are specialist extensions with their own environment costs;
 small subsets do not establish leaderboard-comparable performance.
 
+<a id="completion"></a>
 ## 📦 Required completion evidence
 
 Submit the actual MCP SDK server/client, bounded assistant, frozen tasks, deterministic contract
@@ -218,3 +229,8 @@ tests, real-model comparison, traces, memory design/tests, README and results me
 all core outcomes; Lab 2 and multi-agent/public-benchmark extensions are optional. Schemas and controls
 must work, but the model is allowed to perform poorly if the evaluation explains it honestly. Private,
 selectively shared, and sanitized public artifacts all meet the reviewability requirement.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

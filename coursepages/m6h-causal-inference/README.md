@@ -1,4 +1,12 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 6½ — Causal Inference & Experimentation
+
+**First task:** Write the population, intervention and outcome for the known-truth fixture; sketch the assignment graph before running it.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Curriculum specification](../../curriculum/2-statistics-and-data.md#module-6-half) · [Learning contract](../../curriculum/README.md#learning-contract)
 
@@ -10,6 +18,7 @@ Use [Brady Neal's free course](https://www.bradyneal.com/causal-inference-course
 
 **Recommended experimentation book:** Kohavi, Tang and Xu's [*Trustworthy Online Controlled Experiments*](https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59) (paid, Cambridge 2020), alongside *What If* for identification. Pearl's *Causality* (paid, second edition) and free [MIT 14.387](https://ocw.mit.edu/courses/14-387-applied-econometrics-mostly-harmless-big-data-fall-2014/) are further econometric/theoretical depth. Lectures remain free; books are selected for quality regardless of price.
 
+<a id="start-lab"></a>
 ## Core lab: a known causal effect
 
 Run the [local causal lab](../../resources/local-labs/README.md) on a CPU:
@@ -45,10 +54,17 @@ For CUPED, use only pre-treatment information and estimate the adjustment coeffi
 - **IV or regression discontinuity:** defend exclusion/relevance or continuity assumptions before estimation. Use author-permitted data or a known synthetic generator.
 - **Causal ML:** after M9–M12, use [DoWhy](https://www.pywhy.org/dowhy/) or [EconML](https://econml.azurewebsites.net/) with sample splitting and policy evaluation. Predictive accuracy is not an effect-validation metric.
 
+<a id="completion"></a>
 ## Done when
 
 Submit a reproducible README, tests for generator/estimand and estimator identities, the pre-analysis plan and a decision memo. Include known-truth comparisons, repeated-trial uncertainty, a failure case and one identification assumption code cannot test. Record seed, sample size, repetitions and versions. A private artifact is sufficient.
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites
 
 M5 core and M6. IV, synthetic controls and causal forests are optional deeper projects; ML-dependent extensions require the relevant M9–M12 material.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

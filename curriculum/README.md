@@ -6,17 +6,20 @@
 
 The full curriculum is organised into **six strata**. Choose a role route and respect its prerequisites; module numbers are stable identifiers, not a requirement to complete every branch. This page is the map; each stratum has its own page with the complete module specifications.
 
-> **New here?** Read [START-HERE](../START-HERE.md) and [How to read a module](../guides/how-to-read-a-module.md) first — the second page includes a **[Pick-One table](../guides/how-to-read-a-module.md#pick-one)** giving one default course per module, so you never have to choose between twelve links.
+> **New here?** [Begin Week 0](../guides/week-0.md#week-0) or find [this semester's milestone](../guides/first-semester.md#semester-plan). For a full module, the [reading guide](../guides/how-to-read-a-module.md#reading-order) connects outcomes, one default resource and project evidence.
 >
 > **Undergraduate on a 4-year clock?** The [Four-Year Plan](../guides/four-year-plan.md#module-map) assigns every module below to a suggested term with a CORE / COLLEGE / SELECT decision.
 >
 > **27 modules, but the numbers skip 19 and 20 — nothing is missing.** Old M19 (MLOps) grew into [M24](6-frontier-production.md#module-24) and old M20 (Capstone) became [M26](6-frontier-production.md#module-26). Those two numbers were left vacant so existing links to M0–M18 keep working. Same reason **M6½** exists and **M8** is split into **M8a/M8b**. Details in the [FAQ](../FAQ.md#structure).
 
-<div align="center">
+<details>
+<summary>Optional subject overview</summary>
 
 <img src="../assets/roadmap-overview.jpg" alt="The six curriculum strata as a left-to-right learning path, from Foundations (M0-M5) to Production AI (M18-M26)" width="100%">
 
-</div>
+The artwork abbreviates module ranges: M8a/M8b are separate and M19/M20 are unused. Use the text map for current identifiers; the drawing is not a prerequisite graph.
+
+</details>
 
 | # | Stratum | Modules | Main outcome |
 |---|---|---|---|
@@ -119,7 +122,7 @@ Every module has a core outcome and a reviewable artifact. Complete the core of 
 
 **The default project scale is local.** Use small datasets and CPU-capable models to establish the outcome. Record hardware, versions, seeds and runtimes. Larger GPU, cloud and hosted-API experiments are extensions. Mocked responses validate software contracts; real model and retrieval performance must be measured using real examples and stated limitations.
 
-**Promotion is evidence based.** Explain the result without copying the source, reproduce the main check and identify a failure case. If a prerequisite was learned elsewhere, record the equivalent evidence. Finish a partial route honestly rather than mark the full module complete.
+**Promotion is evidence based.** Use the [readiness pattern](../guides/readiness-checks.md#how-to-check): explain, trace, debug and apply to a changed example. Explain the result without copying the source, reproduce the main check and identify a failure case. If a prerequisite was learned elsewhere, record the equivalent evidence. Finish a partial route honestly rather than mark the full module complete.
 
 Use the [complete prerequisite and route inventory](../guides/practitioner-track.md#prerequisites), [lecture/book defaults](../guides/how-to-read-a-module.md#pick-one) and [progress tracker](../guides/progress-tracker.md). Their shared [module map](modules.json) is checked automatically. The [evidence policy](../guides/sources.md#evidence-policy) explains how recommendations and current technical claims are supported.
 

@@ -1,6 +1,6 @@
 """Select which implementation the tests import.
 
-Default: your code in starter/.  Maintainers / CI set NPFS_IMPL=reference to prove the tests are correct.
+Default: your code in starter/.  Maintainers / CI set NPFS_IMPL=reference to exercise the supplied reference contracts.
 """
 import os
 import sys

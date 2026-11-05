@@ -7,12 +7,16 @@ Use a notes file, local/private repository or selectively shared document. Publi
 
 For a first-year BTech CSE/AI student in India, the [India undergraduate path](india-undergraduate-path.md) adds a starting sequence while you explore roles. It is fine to record your current direction as **undecided** and choose only the next learning milestone.
 
+**Open this first each session:** my [semester milestone](first-semester.md#semester-plan) is ___. My last demonstrated skill is ___. Evidence is at ___. My next small task is ___; open ___ to begin.
+
+Use **do now** for that one task, **next** for its dependent milestone, and **later depth** for deferred references. For pacing feedback, copy the [six-week pilot log](study-pilot.md#start); it records observations without creating another schedule.
+
 <a id="starter-tracker"></a>
 ## First 30 days
 
 The weeks are pacing suggestions. Take longer when needed and use the [current onboarding guide](first-30-days.md#first-30-days) for the lesson details.
 
-- [ ] Followed the chosen [Week 0](week-0.md#week-0) route.
+- [ ] Followed [Week 0](week-0.md#week-0), or recorded equivalent demonstrated skills.
 - [ ] Rebuilt a small beginner program without copying and explained it.
 - [ ] Practiced CS50P input/output and variables.
 - [ ] Saved my own work with a short README or notes file.
@@ -21,11 +25,25 @@ The weeks are pacing suggestions. Take longer when needed and use the [current o
 - [ ] Practiced loops and traced variable values.
 - [ ] Debugged an error by comparing expected and actual behavior.
 - [ ] Practiced functions and exceptions.
-- [ ] Added simple automated checks appropriate to my program.
+- [ ] Recorded normal, boundary and invalid-input checks; automated tests follow the testing lesson.
 - [ ] Finished the [starter project](../curriculum/1-foundations.md#m1-starter-project).
 - [ ] Wrote what I learned, what still fails and my next task.
 
 This is the starter milestone. Complete the [Weather CLI and M1 evidence](../curriculum/1-foundations.md#m1-capstone) later before marking full M1 complete. Share course solutions only when permitted by the course.
+
+<a id="semester-tracker"></a>
+## Continue through the semester
+
+The [semester plan](first-semester.md#semester-plan) is the schedule; this is its evidence record. Copy only your active milestone:
+
+- Milestone and exact lesson/project link:
+- State: planned / active / partial / core complete / deferred / waived:
+- Artifact and observed result:
+- [Readiness check](readiness-checks.md#how-to-check), assistance used and changed example:
+- Specific gap and [recovery task](first-semester.md#recovery), if needed:
+- Next action and review date:
+
+After the starter, record the tested Weather CLI and [M1 readiness](readiness-checks.md#m1-ready). A conditional SQL query/join preview is **partial M8a evidence**, with introductory data reasoning; it does not complete M7 or M8a. Preserve college-equivalence evidence rather than repeating demonstrated work.
 
 <a id="daily-log"></a>
 ## Daily log
@@ -35,10 +53,11 @@ This is the starter milestone. Complete the [Weather CLI and M1 evidence](../cur
 <a id="resume"></a>
 ## Resume after a break
 
-1. Find the last evidence link or daily note.
-2. Open that exact lesson or project task.
-3. Spend ten minutes reproducing one thing you previously completed.
-4. Do one small next task and write a new resume note.
+1. Find the last evidence link or daily note; open that exact task.
+2. Spend about ten minutes reproducing one small behavior without copying. If it works, try one changed input and continue.
+3. If it does not, select the matching [readiness recovery](readiness-checks.md#how-to-check). Practice that specific gap; keep unrelated completed work.
+4. Choose one manageable task using the [missed-week path](first-semester.md#recovery). Carry unfinished work forward without doubling the next week's load.
+5. Record the new artifact and exact next action. If circumstances prevent study, leave that resume note and pause.
 
 You do not need to restart the whole roadmap after a break.
 
@@ -48,9 +67,14 @@ You do not need to restart the whole roadmap after a break.
 - [ ] Chose a provisional [role pathway](practitioner-track.md#role-pathways), or recorded an exploration milestone while undecided, and identified any prerequisite waivers.
 - [ ] Read the [learning contract](../curriculum/README.md#learning-contract).
 - [ ] Chose one free lecture route and principal recommended book per active module.
-- [ ] Set a sustainable weekly budget and a four-week review date.
+- [ ] Set a sustainable weekly budget and a review date; optionally used the [six-week pilot](study-pilot.md#start).
 
 Mark each row **planned / active / core complete / partial / deferred / waived**. A waiver needs equivalent evidence; partial study does not certify full-module competence. Only rows on your chosen route need completion.
+
+For a small screen, use the single-milestone record above. The full table is a reference for planning a chosen route.
+
+<details>
+<summary>Full module record — copy only the rows you need</summary>
 
 | Module | Status | Artifact/commit and validation evidence | Next task |
 |---|---|---|---|
@@ -81,6 +105,8 @@ Mark each row **planned / active / core complete / partial / deferred / waived**
 | [M24: Production operations](../curriculum/6-frontier-production.md#module-24) | | | |
 | [M25: Product data science](../curriculum/6-frontier-production.md#module-25) | | | |
 | [M26: Capstone](../curriculum/6-frontier-production.md#module-26) | | | |
+
+</details>
 
 Record M18-app and M25-brief separately when following the application route. M0 is optional; M26 has one chosen track. Every completion row links to its actual work, validation and results memo.
 

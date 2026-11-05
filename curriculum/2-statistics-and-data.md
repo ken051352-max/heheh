@@ -4,9 +4,13 @@
 
 # 🟨 CORE STATISTICS STRATUM (Modules 6–8)
 
+[M6: Inference](#module-6) · [M6½: Causal inference](#module-6-half) · [M7: Data investigation](#module-7) · [M8a: SQL](#module-8a) · [M8b: Distributed data](#module-8b)
+
+**Do now:** select one module whose strict prerequisites you can demonstrate. **Next:** its core project and [readiness pattern](../guides/readiness-checks.md#how-to-check). **Later depth:** the expanded topic maps and optional systems/tool comparisons. First-semester learners follow the [conditional SQL preview](../guides/first-semester.md#week-15) after M1, not this entire stratum.
+
 <img src="../assets/stratum-2-statistics.jpg" alt="Statistics and data stratum, modules 6 to 8" width="100%">
 
-> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [resource defaults](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
 
 ---
 
@@ -21,6 +25,9 @@
 
 * **Strict Prerequisites:** Module 5 core (conditional probability, expectation/variance, sampling and CLT). MGFs and asymptotic proofs are optional mathematical depth.
 
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
+
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * Statistical models (parametric, non-parametric, semi-parametric); estimators and their properties — unbiasedness, consistency, efficiency, sufficiency (Neyman-Fisher factorisation), completeness, Rao-Blackwell theorem, Lehmann-Scheffé theorem; Cramér-Rao lower bound.
   * **Maximum Likelihood Estimation** — construction, invariance, asymptotic normality, Fisher information, observed vs expected information; **Method of Moments**; delta method.
@@ -34,6 +41,8 @@
   * **Bayesianism** vs **frequentism** — epistemic vs aleatory uncertainty. Frequentist confidence intervals construction. Hypothesis testing as decision rule. **Bootstrap resampling** (non-parametric bootstrap, parametric bootstrap, block bootstrap for time series).
   * Sampling distributions (χ², t, F); estimation (point and interval); tests for one/two means/proportions/variances; paired t-test; McNemar's test; non-parametric tests (sign, Wilcoxon, Mann-Whitney, Kruskal-Wallis); contingency tables (χ² test of independence); ANOVA (one-way, two-way, with and without interaction); simple and multiple linear regression hypothesis testing.
   * Estimators — **Maximum a Posteriori (MAP)** as the Bayesian regularised counterpart to MLE.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [MIT OCW 18.650 Statistics for Applications (free lectures and notes)](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/) · [Harvard STAT 111 course description](https://qrd.college.harvard.edu/directory/stat-111/) (comparison, not the free default)
@@ -64,6 +73,9 @@
 
 * **Strict Prerequisites:** Module 5 (joint distributions, conditional expectation), Module 6 (hypothesis testing, CIs, bootstrap).
 
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
+
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * **A/B Testing Foundations:** Randomisation as the identification strategy, potential outcomes framework (Rubin/Neyman), ATE / ATT / CATE / LATE estimands, sample-size and MDE (minimum detectable effect) calculations, one-sided vs two-sided tests, Type I/II control, **sequential testing & always-valid p-values** (Howard et al. 2021), **group-sequential designs** with O'Brien-Fleming/Pocock boundaries, **CUPED variance reduction** using a pre-treatment covariate (Deng et al., 2013), stratified randomisation, cluster-randomised experiments.
   * **Interference & Network Effects:** **SUTVA violations**, switchback experiments (Uber/Lyft), **spillover** in social networks, ego-cluster randomisation, graph-cluster randomisation, synthetic control for marketplace platforms.
@@ -74,6 +86,8 @@
   * **Adjustment Strategies:** **Backdoor criterion** (sufficient-adjustment sets), **frontdoor criterion**, **instrumental variables (IV)** and the LATE theorem (Imbens-Angrist), **2SLS**, **Difference-in-Differences (DiD)** and parallel-trends assumption, **Regression Discontinuity Design (RDD)** sharp and fuzzy, **Synthetic Control Method** (Abadie et al.), **matching** (exact, Mahalanobis, propensity-score, CEM).
   * **Modern Causal ML:** **Double/Debiased ML** (Chernozhukov et al. 2018) as the bridge to high-dimensional confounders, **Causal Forests** (Wager & Athey) for heterogeneous treatment effects, **doubly-robust estimators** (AIPW, TMLE), **meta-learners** (S-, T-, X-, R-, DR-learner), **uplift modelling** for marketing.
   * **Python Stack:** [DoWhy](https://github.com/py-why/dowhy) ✅ (end-to-end causal workflow), [EconML](https://econml.azurewebsites.net/) ✅ (Microsoft, heterogeneous TE), [CausalML](https://causalml.readthedocs.io/) ✅ (Uber, uplift), [Pyro](https://pyro.ai/) (probabilistic programming for causal models), `statsmodels` IV/2SLS, `linearmodels` (panel/IV).
+
+</details>
 
 * **Courses and references:**
   * **Primary Course (free):** [Brady Neal — *Introduction to Causal Inference*, Fall 2020 (YouTube + lecture notes; free introductory course)](https://www.bradyneal.com/causal-inference-course) ✅
@@ -102,9 +116,14 @@
 
 **Core outcome:** preserve raw data, validate a schema, make reproducible transformations and answer three pre-written questions with labelled figures. Explain missingness, selection bias and cleaning choices without causal claims from EDA.
 
+**Start and assess:** demonstrate [M1 competence](../guides/readiness-checks.md#m1-ready), then attempt the [data-readiness check](../guides/readiness-checks.md#data-ready). The [beginner SQL/data investigation](../resources/beginner-projects/sql/README.md#start) offers a small shared fixture after M1; it is practice in keys, missing values and reconciliation, not full M7 completion. For M7, extend a permitted dataset to the three-question pipeline and figures below.
+
 * **The Tutor's "Why":** Data collection and cleaning decisions determine what an analysis can support. Preserve raw inputs, document transformations and inspect missingness before interpreting a model.
 
 * **Strict Prerequisites:** Module 1 (Python).
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * The data-science life-cycle (CRISP-DM revisited for 2026), question framing, translating business problems into statistical ones.
@@ -118,6 +137,8 @@
   * Descriptive / diagnostic / predictive / prescriptive analytics framework, KPIs, dashboarding, **Tableau / PowerBI** vs **Streamlit / Dash / Plotly**.
   * Data-centric AI — **data augmentation**, weak supervision, active learning preview, label noise.
 
+</details>
+
 * **Courses and references:**
   * **Primary Course Link:** [Data School's free pandas video course](https://www.dataschool.io/easier-data-analysis-with-pandas/) — public videos, notebooks and datasets; also listed in the [pandas tutorial index](https://pandas.pydata.org/docs/getting_started/tutorials.html). Pair it with McKinney's book and current pandas docs for API changes. [Harvard CS109A 2021](https://harvard-iacs.github.io/2021-CS109A/pages/schedule.html) supplies archived notebooks/slides; public recordings are not assumed.
   * **Reading shelf (principal book above; alternatives and depth):**
@@ -130,7 +151,7 @@
   * **[Polars 1.40+](https://pola.rs/)** ✅ — an alternative DataFrame engine with expressions, lazy frames and query optimization. Learn `pl.LazyFrame`, `pl.col`, `pl.Expr`, expression-based group-by, streaming engine.
   * **[DuckDB 1.5+](https://duckdb.org/)** ✅ — "SQLite for analytics." In-process OLAP over Parquet/Arrow; useful for local analytical SQL. Performance and feasible dataset size depend on memory, query shape and storage; benchmark your own data.
   * **[Great Expectations](https://greatexpectations.io/)** ✅ + **[Pandera](https://pandera.readthedocs.io/)** ✅ — schema + data-quality validation; declarative expectations; catch data drift before it reaches models.
-  * **[Plotly 5.x](https://plotly.com/python/)** ✅ + **[Altair 5.x](https://altair-viz.github.io/)** ✅ + **[Observable Plot](https://observablehq.com/plot/)** ✅ — the modern grammar-of-graphics ecosystem; Plotly for interactivity, Altair for Vega-Lite precision.
+  * **Optional visualization alternatives:** [Plotly](https://plotly.com/python/) for interactive Python figures or [Altair](https://altair-viz.github.io/) for declarative Vega-Lite charts. [Observable Plot](https://observablehq.com/plot/) is a **JavaScript** alternative with local HTML/npm use; it is not another required Python package or hosted subscription. Keep the default Matplotlib/Seaborn route unless a project needs an alternative, and pin the version you actually use.
   * **Dashboards:** **[Streamlit](https://streamlit.io/)** ✅ for ML demos, **[Gradio](https://www.gradio.app/)** ✅ for HF-style model UIs, **[Evidently](https://www.evidentlyai.com/)** ✅ for data-drift dashboards.
   * **Feature Engineering Discipline:** Target encoding with K-fold smoothing, **train-test leakage** (temporal, group, target-leak from future aggregates), time-based features (lag, rolling, expanding windows), cyclical encoding (sin/cos of hour/month), **sklearn Pipelines + ColumnTransformer** as the default implementation pattern for keeping learned preprocessing inside training folds. Reference: [*Feature Engineering for Machine Learning* — Zheng & Casari (O'Reilly 2018)](https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/).
 
@@ -159,11 +180,16 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
 
 **Core outcome:** design keys/constraints, query joins/windows, migrate a schema, validate data and explain a measured execution plan. Start after M1; index internals do not gate SQL.
 
+**First small step:** after [M1 evidence](../guides/readiness-checks.md#m1-ready), use the [local SQL investigation](../resources/beginner-projects/sql/README.md#start) and [SQL readiness check](../guides/readiness-checks.md#sql-ready). The [semester plan](../guides/first-semester.md#week-15) makes this a conditional two-week preview. SQLite practice does not complete the PostgreSQL migrations, windows and measured-plan requirements below.
+
 * **The Tutor's "Why":** Data systems must preserve correctness as data volume and concurrent use grow. IITM dedicates a full diploma-level course (BSCS2001) plus specialisation courses to this area. SQL is a common requirement across analyst, data-science, and engineering roles, but no universal percentage is established here. **Module 8 has been split in v2026.2** into **M8a (Databases, SQL & Warehouses)** here, and **M8b (Distributed Data & Streaming)** directly below — because the 2026 production data stack (Spark + Iceberg + Airflow + Kafka + dbt) is a full module in its own right and cannot share airtime with SQL fundamentals.
 
 * **Strict Prerequisites:** Module 1 (Python for writing database migration scripts and running tests).
 * **Recommended Prerequisites:** Module 4 (Algorithms — trees and hashing help understand index internals like B-Trees and Hash Indexes, but are not a gating blocker for learning SQL queries, joins, and relational schema design).
 * **Prior Competency:** Prior study can waive a prerequisite when you demonstrate the corresponding outcome. Basic SQL familiarity alone does not establish the Python/test skills needed for this module's project.
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * Relational model (tuples, relations, schemas, keys — super/primary/candidate/foreign), relational algebra (selection σ, projection π, union, intersection, difference, Cartesian product, join variants, division), **SQL DDL** (CREATE, ALTER, DROP), **SQL DML** (SELECT/INSERT/UPDATE/DELETE), JOINs (inner, left/right/full outer, cross, self, lateral), subqueries (correlated vs uncorrelated), CTEs (recursive and non-recursive), window functions (`OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK`, `LAG`, `LEAD`, `SUM() OVER`), set operations (UNION, INTERSECT, EXCEPT), views, indexes (B-tree, hash, bitmap, covering), transactions and **ACID properties**, isolation levels (read uncommitted/committed, repeatable read, serialisable), concurrency control (two-phase locking, MVCC), recovery (WAL, ARIES), normalisation (1NF/2NF/3NF/BCNF/4NF/5NF), functional dependencies, Armstrong's axioms.
@@ -173,10 +199,12 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
   * **[dbt — Data Build Tool](https://docs.getdbt.com/)** ✅: models, sources, tests (`unique`, `not_null`, `accepted_values`, relationships), **macros** (Jinja templating), **incremental models** (with `unique_key`, late-arriving facts), **snapshots** (SCD Type 2 automation), **packages** (`dbt_utils`, `dbt_expectations`), exposures, metrics, MetricFlow integration.
   * Document databases, BSON, sharding, replica sets, aggregation pipeline ($match, $group, $project, $lookup, $unwind), indexing strategies.
 
+</details>
+
 * **Courses and references:**
-  * **Primary Course Link:** [Harvard CS50 SQL](https://cs50.harvard.edu/sql/) (free default: SQLite, relational design, queries, views and indexes, with PostgreSQL/MySQL introductions) · [Stanford CS145 Intro to Databases](https://web.stanford.edu/class/cs145/) (systems depth) · [IITM BSCS2001 course page](https://study.iitm.ac.in/ds/course_pages/BSCS2001.html) · [Kaggle Intro to SQL](https://www.kaggle.com/learn/intro-to-sql) (short free syntax primer) · [dbt Learn](https://learn.getdbt.com/) ✅ (free dbt Fundamentals course).
+  * **Primary Course Link:** [Harvard CS50 SQL](https://cs50.harvard.edu/sql/) (free default: SQLite, relational design, queries, views and indexes, with PostgreSQL/MySQL introductions) · [Stanford CS145, Fall 2020 archive](https://cs145-fa20.github.io/) (optional public slides for database theory/systems) · [IITM BSCS2001 course page](https://study.iitm.ac.in/ds/course_pages/BSCS2001.html) · [Kaggle Intro to SQL](https://www.kaggle.com/learn/intro-to-sql) (short free syntax primer) · [dbt Learn](https://learn.getdbt.com/) ✅ (free dbt Fundamentals course).
   * **Access Status (Nov 2026):**
-    * Stanford CS145 course materials and lecture slides are open for self-study.
+    * The CS145 Fall 2020 archive has public slides; its SQL and design-theory slide exports were retrieved. Recordings are listed on Stanford Canvas, so this is **not a verified public video route**. Use selected slides after the relevant CS50 SQL lessons; the archive's fuller CS prerequisites and cloud-credit projects are not extra M8a entry requirements. The local project below replaces those hosted assignments for this roadmap.
     * CS50 SQL lecture videos, notes, and problem sets are free to study; the official route uses a free edX account for feedback/submission, and its CS50 Certificate is free after the course requirements. An edX verified certificate is optional and paid.
     * Kaggle Intro to SQL is 100% free with a Kaggle account.
     * PostgreSQL 17, DuckDB, SQLite, and dbt-core are open-source and run locally at zero cost.
@@ -192,11 +220,11 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
     * Reis & Housley — [*Fundamentals of Data Engineering*](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/) ✅ (O'Reilly 2022) — Chapters 5–8 for the DB/warehouse half.
   * **Practical Implementation:** local PostgreSQL for the assessed schema/query-plan project; SQLite for early CS50 SQL exercises. DuckDB/dbt-core are optional warehouse extensions. Hosted warehouses and paid accounts are never required.
 
-* **📦 Module Project (mandatory) — Reddit scraper → warehouse → dashboard**
-  * **Deliverable:** A pipeline that uses an official API only after checking its current access terms, rate limits, and deletion/privacy obligations. Otherwise use a permitted public export, an open dataset, or a versioned mock fixture. Land posts and comments in PostgreSQL with a sane normalised schema (plus indexes you can justify), transform them with SQL into a small star schema, and surface three metrics in a Streamlit dashboard. Keep credentials in environment variables and document retention/deletion handling.
-  * **Definition of done:** (1) Schema DDL committed as migrations, not typed into a client by hand; a `pytest` suite over the extraction and transform layers with the API mocked; (2) `README.md` containing your ER diagram and the `EXPLAIN ANALYZE` output before/after an index, query/data parameters, and repeated timings; tests for keys, nulls, relationships and expected aggregates; (3) a findings/results memo on what you learned about the data that you did not expect.
+* **📦 Module Project (mandatory) — Relational investigation → warehouse → decision report**
+  * **Deliverable:** Extend the beginner fixture or choose a permitted public export/open dataset with a meaningful relationship between entities. Preserve its provenance and label generated data. Create a normalized PostgreSQL schema with justified keys/indexes, transform it into a small star schema and explain three defined metrics in a readable table or chart; a dashboard is optional. An official API is an optional source only after checking access terms, rate limits and privacy/deletion obligations. Keep any credentials outside code and document retention handling.
+  * **Definition of done:** (1) Schema DDL committed as migrations, not typed into a client by hand; a `pytest` suite over the extraction and transform layers with external calls mocked when used; (2) `README.md` containing your ER diagram and the `EXPLAIN ANALYZE` output before/after an index, query/data parameters, and repeated timings; tests for keys, nulls, relationships and expected aggregates; (3) a findings/results memo on what you learned about the data that you did not expect.
   * **Stretch:** Add incremental loading with a watermark column so a re-run does not re-ingest history, and schedule it.
-  * *Archetype source: video 1 (13:40). The warehouse extension adds schema, query and validation evidence. Use the [career guide](../guides/career-operations.md#skills-checklist) to examine SQL requirements in your own target-role sample; this roadmap does not claim a representative hiring-frequency ranking.*
+  * *The prior Reddit-dashboard archetype remains a valid source-specific option. The core assesses schema, query and validation evidence rather than API access or interface decoration. Use the [career guide](../guides/career-operations.md#skills-checklist) for your target-role sample; this roadmap does not claim a representative hiring-frequency ranking.*
 
 ---
 
@@ -212,6 +240,9 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
 * **Strict Prerequisites:** Module 1 and Module 8a (Python, SQL and relational keys).
 * **Recommended Prerequisites:** Module 4 for partitioning/hash trade-offs; async Python for service integrations, not for starting local batch pipelines.
 
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
+
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * **Storage & File Formats:** **Parquet** (columnar, predicate pushdown, row-groups, page-level statistics), **Apache Arrow** (in-memory columnar, zero-copy IPC), **ORC**, **Avro** (schema evolution), object storage (S3 / GCS / Azure Blob), **lakehouse table formats** — [Apache Iceberg](https://iceberg.apache.org/) ✅ (hidden partitioning, snapshot isolation, time travel, MERGE INTO), [Delta Lake](https://delta.io/) ✅ (ACID on data lake, Z-ordering, vacuum), [Apache Hudi](https://hudi.apache.org/) (streaming upserts).
   * **Distributed Compute:** **Apache Spark 3.5+** — RDDs, DataFrames, Dataset API, Catalyst optimiser, Tungsten execution, **Adaptive Query Execution (AQE)**, broadcast joins vs sort-merge, skew-handling, partitioning and bucketing, caching strategies, PySpark idioms, Spark SQL, MLlib (legacy), **Structured Streaming** (micro-batches, triggers, watermarks). **[Ray Data](https://docs.ray.io/en/latest/data/data.html)** ✅ + **[Dask](https://www.dask.org/)** ✅ as Python-native alternatives. **[Apache Beam](https://beam.apache.org/)** as the portable API.
@@ -219,6 +250,8 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
   * **Streaming:** **[Apache Kafka](https://kafka.apache.org/)** ✅ — brokers, topics, partitions, consumer groups, offsets, ISR, **exactly-once semantics**, Kafka Streams, Kafka Connect, Schema Registry (Avro/Protobuf). **[Redpanda](https://redpanda.com/)** ✅ (Kafka-compatible, C++). **[Apache Flink](https://flink.apache.org/)** ✅ (true-streaming, event-time, watermarks, windowing — tumbling/sliding/session, stateful functions). **[Materialize](https://materialize.com/)** / **[RisingWave](https://risingwave.com/)** (streaming SQL).
   * **CAP, Consensus & Consistency:** CAP theorem, PACELC, consensus (Paxos, Raft), eventual consistency, **CRDTs** for collaborative systems, idempotency, exactly-once vs at-least-once vs at-most-once.
   * MapReduce algorithms (word count, inverted index, joins), **LSH** (MinHash, random projections), PageRank as eigenvector of stochastic matrix, recommendation systems at scale, frequent itemsets (A-Priori, PCY, Multistage), streaming algorithms (reservoir sampling, Bloom, Count-Min Sketch, HyperLogLog), AdWords / online bipartite matching.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [DataTalks.Club Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) — select its free public batch-processing/Spark and streaming videos. Replace cloud tasks with the local project below; cloud credits are not assumed. [Stanford CS246](https://web.stanford.edu/class/cs246/) supplies public slides/assignments and partitioned-algorithm depth, but its current lecture recordings require enrolled-student Canvas access.

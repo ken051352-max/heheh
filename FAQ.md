@@ -21,12 +21,11 @@ to read, and which projects to build, in what order.
 
 ### Is there code to run or software to install?
 
-Reading the roadmap needs only a browser. It also includes optional executable practice resources: the [NumPy harness](resources/numpy-from-scratch/README.md), [local causal/data labs](resources/local-labs/README.md) and [agent-contract lab](resources/agent-lab/README.md). Their READMEs explain dependencies and commands. Build your own project artifacts as you progress.
+Reading the roadmap needs only a browser. Begin practice with the [calculator, offline Weather CLI and SQL starter](resources/beginner-projects/README.md). Later executable resources include the [NumPy harness](resources/numpy-from-scratch/README.md), [local causal/data labs](resources/local-labs/README.md) and [agent-contract lab](resources/agent-lab/README.md). Their READMEs explain dependencies and commands. Build your own project artifacts as you progress.
 
 ### Do I need to clone or fork it?
 
-Neither is required; reading it on GitHub is enough. **Fork** it if you want to use the
-[progress tracker](guides/progress-tracker.md) as your personal checklist, which is the intended use.
+Neither is required for reading. Copy the [progress tracker](guides/progress-tracker.md) into private notes. Download or clone the code when you reach a project; keep personal records in the ignored `study-private/` folder or outside the checkout. A public fork is optional.
 
 ### Who is it for?
 
@@ -94,11 +93,11 @@ interviews. Nobody reads it linearly. See [the anatomy of a module](guides/how-t
 
 ### Where do I actually start?
 
-New to Python: [Week 0](guides/week-0.md#week-0), seven short days in your browser. Then the [first 30 days](guides/first-30-days.md#first-30-days). Everyone else: [START-HERE.md](START-HERE.md#other-entry-points).
+New to Python: [Week 0](guides/week-0.md#week-0). The [first-semester sequence](guides/first-semester.md#semester-plan) includes that orientation and the first month; follow one milestone at a time. Already programming or returning: [choose your entry point](START-HERE.md#other-entry-points).
 
 ### There are hundreds of links. Which resource do I pick?
 
-Use the [Pick-One table](guides/how-to-read-a-module.md#pick-one) — one default learning route per
+Use the [resource defaults](guides/how-to-read-a-module.md#pick-one) — one default learning route per
 module, paired with its recommended principal book. Lectures are selected for free access; books can be paid and are labeled. Account/exercise terms are recorded separately.
 The other links are alternatives for when a default does not suit you, and insurance against link rot.
 **A module's resource list is a menu, not a to-do list.**
@@ -141,7 +140,7 @@ The [source key](guides/sources.md#citation-key) preserves historical video/arti
 <a id="how-long"></a>
 ### How long does this take?
 
-Estimate from your own pace. Choose one core route and a weekly budget, study for four weeks, then use the work completed to plan the next milestone. A useful planning formula is:
+Estimate from your own pace. Start with the [semester planning assumptions](guides/first-semester.md#semester-plan), then use the [six-week study pilot](guides/study-pilot.md#start) to compare planned work, actual time and readiness evidence. Adjust weekly and review the pattern after six weeks. A useful planning formula is:
 
 ```text
 weeks = estimated remaining focused hours / sustainable focused hours per week
@@ -169,10 +168,11 @@ A prerequisite gap, fatigue, an unclear explanation or too much scope can all ca
 Honest notes on what is still rough. None of them block a beginner from starting [Week 0](guides/week-0.md#week-0).
 
 - **The old 15-question maths diagnostic was never written.** It has been replaced by the active, free, non-gating [maths placement workflow](curriculum/1-foundations.md#math-diagnostic). The historical six-strand table and old status lines are kept collapsed purely as non-operational archival references for provenance (its MIT 18.01A exam and Velleman §1.5 links are retired/broken); it does not establish placement thresholds or gating cutoffs.
-- **Links move.** Course providers change URLs and editions (Scrimba and the Helsinki MOOC both did in 2026). The [current audit](audit/overhaul-2026-11-05.md) distinguishes content inspected, checks executed and unresolved access; historical HTTP logs do not establish current availability.
+- **Links move.** Course providers change URLs and access terms. The [current validation record](audit/learning-experience-validation-2026-11-05.md) distinguishes content inspected, checks executed and unresolved access; historical HTTP logs do not establish current availability.
 - **Access can change.** Free lecture access is distinct from grading, certificates and hosted services. Paid books are intentional recommendations, labeled by edition and access. Report a paid-only default lecture or a wrong access label.
-- **Advanced modules are dense.** Later modules keep university-level depth, much of it collapsed under "Advanced / later". Use the [Pick-One table](guides/how-to-read-a-module.md#pick-one) and skip what you don't need yet.
-- **Found something contradictory?** [Open a "Something was confusing" issue](https://github.com/akazadivu-design/data-sci/issues/new/choose) upstream. If you couldn't work out what to do, that is a defect in the roadmap, not your mistake.
+- **Study pacing is untested with real learners.** The [pilot](guides/study-pilot.md) is ready to use; agent walkthroughs are proxy inspections, not six weeks of student results.
+- **Advanced modules are dense.** Later modules keep university-level depth, much of it collapsed under "Advanced / later". Use the [resource defaults](guides/how-to-read-a-module.md#pick-one) and skip what you don't need yet.
+- **Found something contradictory?** [Open a "Something was confusing" issue](https://github.com/ken051352-max/heheh/issues/new/choose) upstream. If you couldn't work out what to do, that is a defect in the roadmap, not your mistake.
 
 ---
 

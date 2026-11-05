@@ -22,19 +22,25 @@ python -m unittest discover -s resources/local-labs/tests -v
 python -m unittest discover -s resources/agent-lab/tests -v
 # Bash; use the PowerShell equivalent below on Windows.
 NPFS_IMPL=reference python -m pytest resources/numpy-from-scratch/tests -q
+BEGINNER_IMPL=reference python -m pytest resources/beginner-projects/tests -q
 ```
 
 ```powershell
 $env:NPFS_IMPL = 'reference'
 python -m pytest resources/numpy-from-scratch/tests -q
 Remove-Item Env:NPFS_IMPL
+$env:BEGINNER_IMPL = 'reference'
+python -m pytest resources/beginner-projects/tests -q
+Remove-Item Env:BEGINNER_IMPL
 ```
 
 Install the [practice dependencies](../resources/numpy-from-scratch/requirements.txt) if needed. The starter suite intentionally fails until the learner implements the algorithms; reference mode validates the supplied solutions.
 
+The [beginner projects](../resources/beginner-projects/README.md#tests) use the standard library at runtime and [pytest for tests](../resources/beginner-projects/requirements.txt). Install requirements in an isolated environment. Their starters intentionally fail on explained TODOs; reference mode verifies calculator behavior, offline weather/cache failure paths and SQLite validation/reconciliation. CI includes the reference checks when these files change.
+
 ## Curriculum manifest and generated tables
 
-Edit [`curriculum/modules.json`](../curriculum/modules.json) to change a default course, principal book, declared prerequisite or role sequence. Run `python tools/check_curriculum.py --write`, review the generated table changes, then run the checks above. Only the `MODULE DEFAULTS`, `ROLE ROUTES` and `PREREQUISITES` marker bodies in the two guides are generated; surrounding prose stays handwritten. Missing or duplicate markers prevent writes. The default `--check` mode exits unsuccessfully if tables drift from the manifest.
+Edit [`curriculum/modules.json`](../curriculum/modules.json) to change a default course, principal book, declared prerequisite or role sequence. Run `python tools/check_curriculum.py --write`, review the generated changes, then run the checks above. Only the `MODULE DEFAULTS`, `ROLE ROUTES` and `PREREQUISITES` marker bodies in the two guides are generated; surrounding prose stays handwritten. Defaults and routes now render as stacked sections for narrow screens; prerequisites remain a compact table. The historical marker names and command interface are preserved. Missing or duplicate markers prevent writes. The default `--check` mode exits unsuccessfully if generated content drifts from the manifest.
 
 The checker enforces the 27 canonical module IDs, the five named subsets, six role routes, known dependencies, acyclic strict prerequisites, existing module/subset anchors and HTTP(S) source URL syntax. Each route must provide a prerequisite before the dependent step. Full M18 supplies M18 application competence and full M25 supplies product-brief competence; completing a subset does not imply completing its full parent. Capstones must name a conditional research, systems or applied route. Recommendations can point forward and do not block routes. M24's evaluated-project prerequisite remains prose because it can come from any relevant project; its quality and other learning outcomes require human review. URL syntax validation does not check external availability.
 

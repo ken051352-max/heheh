@@ -4,7 +4,16 @@
 
 # 🔴 FRONTIER & PRODUCTION STRATUM — Modules 18, 21–26
 
+**On this page:** [M18: LLMs](#module-18) · [M18 application subset](#application-foundations) · [M21: Retrieval](#module-21) · [M22: Agents](#module-22) · [M23: Safety](#module-23) · [M24: Operations](#module-24) · [M25: Product decisions](#module-25) · [M26: Capstone](#module-26)
+
+**Choose your next artifact:** follow the [ordered role route](../guides/practitioner-track.md#role-pathways), not every topic here. For an AI application, begin with the M18 subset; full model training has additional prerequisites. An evaluated classical-model project can enter M24 directly. Keep one [resume note](../guides/progress-tracker.md#resume).
+
+<details>
+<summary>Optional stratum artwork</summary>
+
 <img src="../assets/stratum-6-production.jpg" alt="Frontier and production AI, modules 18 and 21 to 26" width="100%">
+
+</details>
 
 Build on one evolving project: understand the model, retrieve useful evidence, constrain actions,
 evaluate failures, operate the system, and communicate a decision. Each module has one required
@@ -14,6 +23,11 @@ an accessible route; recommended books are selected for quality, whether paid or
 
 <a id="module-18"></a>
 ## Module 18: Large Language Models, Post-Training & Evaluation
+
+- **Do now:** Choose application-only or full training scope before downloading a model; write one input/output example and one unacceptable output.
+- **Next:** use [application-subset evidence](#application-foundations) for M18-app or the [training project](#project-18) for full M18; record which scope you completed.
+- **Later depth:** multi-GPU training and advanced preference optimization.
+
 
 **Why:** Decide what an existing model can do, when adaptation is justified, and how to demonstrate
 its limitations. Learning to call a model and learning to train one are different milestones.
@@ -90,6 +104,7 @@ reasoning RL; DPO is an optional part. CPU correctness exercises do not reproduc
 (O'Reilly, 2025), especially evaluation, dataset engineering, and fine-tuning. The free
 [Jurafsky–Martin draft](https://web.stanford.edu/~jurafsky/slp3/) supplies broader NLP theory.
 
+<a id="project-18"></a>
 **📦 Module Project (mandatory) — Adapt a small model and evaluate the tradeoff.** Use a narrow,
 licensed task and a genuinely trained small LoRA adapter. CPU training on a tiny model and short
 sequences is acceptable; QLoRA/GPU scaling is an extension. Compare base zero-shot, improved prompt,
@@ -102,6 +117,11 @@ README, and results memo. A negative result passes when the method and limitatio
 
 <a id="module-21"></a>
 ## Module 21: RAG, Vector DBs & Retrieval Systems
+
+- **Do now:** Label five questions against a handful of authorized documents before selecting an embedding or database.
+- **Next:** use the [M21 project and completion evidence](#project-21) to extend one artifact.
+- **Later depth:** GraphRAG, multimodal retrieval and approximate-index scaling.
+
 
 **Why:** Retrieve authorized, relevant evidence and determine whether it improves the answer.
 [Menlo's 2025 enterprise report](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)
@@ -141,6 +161,7 @@ methods can complement each other; no universal cost ranking applies. Retrieval 
 facts but cannot guarantee their correctness. Fine-tuning may change knowledge or behavior but does
 not maintain a source-of-truth database. Measure the component that earns its extra complexity.
 
+<a id="project-21"></a>
 **📦 Module Project (mandatory) — One evaluated retrieval system.** Freeze 20–50 labeled questions
 and supporting document IDs before tuning. Use separate development examples. Compare no retrieval,
 BM25, dense, hybrid, and hybrid plus reranker under the same generation settings. Report retrieval
@@ -155,6 +176,11 @@ an ablation against the core system. [Detailed lab and rubric](../coursepages/m2
 
 <a id="module-22"></a>
 ## Module 22: Agentic AI — Bounded Workflows, Tools, MCP & Memory
+
+- **Do now:** Write the deterministic tool sequence for one task and one denied action before introducing a model-directed loop.
+- **Next:** use the [M22 project and completion evidence](#project-22) to extend one artifact.
+- **Later depth:** multiple agents and public benchmark runs.
+
 
 **Strict Prerequisites:** M21 and [M18-app](#application-foundations) competence.
 **Why:** Give a model only the actions needed for a defined task, then demonstrate that failures are
@@ -189,6 +215,7 @@ and WebMCP are separate extension/interoperability topics, not required by every
 substitutes for hosted exercises; **depth:** [Berkeley Agents MOOC](https://llmagents-learning.org/).
 **Main book:** Huyen, *AI Engineering*, tools, planning, memory, and failure analysis.
 
+<a id="project-22"></a>
 **📦 Module Project (mandatory) — A bounded, evaluated tool assistant.** Expose a small local SQL
 fixture through an actual MCP SDK server, then connect a local SDK client. Implement a deterministic
 workflow and a model-directed alternative over the same 20 tasks. Include malformed requests,
@@ -202,6 +229,11 @@ for staged extensions. Multi-agent research and public benchmark runs are option
 
 <a id="module-23"></a>
 ## Module 23: AI Safety, Alignment, Interpretability, Evals & Policy
+
+- **Do now:** Draw one trust boundary in your existing application and write the expected result of an unauthorized request.
+- **Next:** use the [M23 project and completion evidence](#project-23) to extend one artifact.
+- **Later depth:** mechanistic interpretability and optimization-agent research.
+
 
 **Strict Prerequisites:** [M18-app](#application-foundations) for application threat modeling;
 M22 before tool-escalation labs. M15–M16 before mechanistic-interpretability research extensions.
@@ -237,6 +269,7 @@ causal interventions; labeling five activations does not establish monosemantici
 Christian's *The Alignment Problem* are paid broader-framing references; technical papers and
 threat models remain necessary for the chosen lab.
 
+<a id="project-23"></a>
 **📦 Module Project (mandatory) — Threat model plus regression suite.** Extend the M18/M21 system
 (and M22 tools when present) with direct/indirect injection, poisoned-content, sensitive-data, and
 privilege-escalation cases. Add unseen variants and benign controls. Assert unauthorized side effects
@@ -250,13 +283,28 @@ Submit runnable tests, a results table, risk register, and two-page decision mem
 <a id="module-24"></a>
 ## Module 24: MLOps + LLMOps + AgentOps
 
-**Strict Prerequisites:** one completed, evaluated project; M22 for AgentOps and the relevant M23
-threat/evaluation controls for an AI application. Classical-model projects do not require LLM modules.
+- **Do now:** Reproduce the last evaluated project result, then identify the first missing item in the canonical production bar.
+- **Next:** use the [M24 project and completion evidence](#project-24) to extend one artifact.
+- **Later depth:** Kubernetes, distributed infrastructure and feature stores.
 
-**Core outcomes:** package and serve a model; version its dependencies/data/configuration; run
+
+**Strict Prerequisites:** one completed, evaluated project; M22 for AgentOps and the relevant M23
+threat/evaluation controls for an AI application. Data pipelines and classical-model projects do not require LLM modules.
+
+**Core outcomes:** package and operate a data pipeline or model/application service; version its dependencies/data/configuration; run
 checks on push/PR; observe failures; and restore a known-good release. Choose the operational layer
 appropriate to the project. Distributed training, Kubernetes, feature stores, and cloud infrastructure
 are extensions, not prerequisites for a local production-style artifact.
+
+<a id="data-pipeline-operations"></a>
+**Data-engineering route:** operate your existing M8a/M8b pipeline as a reproducible CLI/container job.
+
+- **Correctness:** gate releases on schema/key checks, reconciliation, replay/idempotency and explicit bad-record handling.
+- **Lineage:** record input/output versions plus checkpoints or watermarks when used.
+- **Operations:** measure completion time, data freshness and quality against a stated workload and schedule.
+- **Recovery:** demonstrate a failed run and restoration/replay from a consistent prior state without duplicate or partially published outputs.
+
+Model-quality, prompt and GenAI requirements apply only when those components exist. The [Airflow task-design guidance](https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html#creating-a-task) supports fixed input partitions and retry-safe outputs; installing Airflow is optional. Reuse the [M8b resources](2-statistics-and-data.md#module-8b) for pipeline-specific implementation rather than adding an ML training project.
 
 **Free lectures:** [Full Stack Deep Learning 2022](https://fullstackdeeplearning.com/course/2022/).
 **Practical course:** [Made With ML](https://madewithml.com/).
@@ -269,7 +317,7 @@ Treveil et al., *Introducing MLOps*, is a shorter companion, not an additional c
 ### 🏁 Minimum Production Bar for Portfolio Projects
 
 Meet this complete bar for **one M24 centerpiece**. Earlier modules use their own smaller project
-rubrics. A private local repository and reproducible local service are valid evidence.
+rubrics. A private local repository and reproducible local service or pipeline job are valid evidence.
 
 | # | Requirement | Review evidence |
 |---|---|---|
@@ -279,10 +327,10 @@ rubrics. A private local repository and reproducible local service are valid evi
 | 4 | Structured logs | Request/run IDs, errors and latency; secrets and sensitive payloads redacted |
 | 5 | Configuration | Validated config, ignored local secrets, safe example config |
 | 6 | Container | Dockerfile, pinned base, non-root execution, .dockerignore, successful local smoke run |
-| 7 | Automated CI and eval gates | Push/PR lint/type/tests plus deterministic evaluation gates; changed model/prompt/data evaluated before release |
-| 8 | Artifact lineage | Data/model/prompt/config identifiers and hashes, source commit, run parameters, metrics; local MLflow or manifest is sufficient |
-| 9 | Reachable artifact | Local endpoint/container command and recorded response, or an optional hosted demo |
-| 10 | Monitoring | Health, error/latency/resource metrics, one tested alert, and applicable quality/drift controls |
+| 7 | Automated CI and eval gates | Push/PR lint/type/tests plus deterministic data/behavior gates; evaluate changed data/model/prompt components before release as applicable |
+| 8 | Artifact lineage | Input/output data, code/config and applicable model/prompt identifiers and hashes, run parameters and metrics; a local manifest is sufficient |
+| 9 | Runnable artifact | Local endpoint or container/job command with a recorded response or validated output dataset, or an optional hosted demo |
+| 10 | Monitoring | One tested alert and resource/quality controls; service health/error/latency or pipeline completion/freshness/failure metrics, as applicable |
 | 11 | Runbook and rollback | Architecture, clean-clone instructions, previous artifact/config restore command, deliberately tested rollback |
 | 12 | Results memo | Baseline, budget, results, uncertainty, observed incident and recovery, limitations and next decision |
 
@@ -292,6 +340,7 @@ They currently have **Development** status; record the semantic-convention revis
 versions. Capture prompts/responses only with an explicit data policy. Start with local traces;
 Langfuse or Phoenix can provide a viewer. Provider costs and quotas are optional measured inputs.
 
+<a id="project-24"></a>
 **📦 Module Project (mandatory) — Operate one existing project.** Meet all 12 rows. Induce one
 failure (unavailable dependency, corrupt input, or budget exhaustion), show the alert, and restore the
 previous working release. Record deployment and rollback commands, lineage, resource budget and
@@ -303,6 +352,11 @@ actual results. A ten-minute setup is a useful goal, not a universal pass thresh
 
 <a id="module-25"></a>
 ## Module 25: Product DS, Business, Communication & Storytelling
+
+- **Do now:** Write the decision, audience and exact numerator/denominator for one metric before making a chart.
+- **Next:** use the [M25 project and completion evidence](#project-25) to extend one artifact.
+- **Later depth:** new experiment methods beyond the question and prerequisites.
+
 
 **Strict Prerequisites:** M6 and M7 for full M25; M6½ is required when claiming causal impact.
 A modeling module is useful when the decision involves a predictive model, not for every product analysis.
@@ -327,6 +381,7 @@ proxy failures, missing data, selection bias, and ethical tradeoffs in ordinary 
 Knaflic, *Storytelling with Data*. Use their experiment-interpretation and audience/visualization
 chapters for this project. Library availability is useful but is not a promise of free access.
 
+<a id="project-25"></a>
 **📦 Module Project (mandatory) — An evidence-backed product decision.** Analyze a retention or
 conversion change with an explicit metric contract and segment/time checks. Produce a metric tree,
 one-page recommendation, reproducible analysis/tests, and a short readout (video, narrated slides,
@@ -340,6 +395,11 @@ scenarios must be labeled. Include reviewer feedback and the resulting revision.
 <a id="module-26"></a>
 ## Module 26: Capstone — Research, Systems & Applied Tracks
 
+- **Do now:** Choose one capstone track and write its question, baseline, budget and review date.
+- **Next:** use the [M26 project and completion evidence](#project-26) to extend one artifact.
+- **Later depth:** additional tracks; completing all three is unnecessary.
+
+
 **Prerequisites:** completion of the chosen role's core and the modules supporting this project.
 Research requires M6, M25-brief and the theory/methods relevant to its question; M15 is needed for
 a deep-learning project, not for every research capstone. Systems requires M24 plus applicable safety controls;
@@ -352,7 +412,7 @@ The scores below are **roadmap teaching rubrics**, not university grading rules 
 | Track | Artifact | Rubric (100 points) |
 |---|---|---|
 | Research | 4–8 page paper/report, related-work matrix, reproducible experiments or proofs | Question/contribution 20; method/baselines/ablations 30; reproducibility/uncertainty 30; writing/limitations 20 |
-| Production Systems | Locally runnable or hosted ML/AI service meeting the M24 bar | Architecture 20; functional/quality/safety evals 30; measured latency/resource SLOs 20; monitoring/rollback/reproduction 30 |
+| Production Systems | Locally runnable or hosted data pipeline, ML service or AI application meeting the M24 bar | Architecture 20; functional/quality/security and applicable AI-safety evals 30; measured service-latency or pipeline-completion/freshness and resource SLOs 20; monitoring/rollback/reproduction 30 |
 | Applied Flagship | Stakeholder decision package and reproducible analysis or application | Problem/metric contract 25; validity and uncertainty 30; decision usefulness/guardrails 25; reproducibility/communication 20 |
 
 **Passing evidence:** at least 75/100, no missing category, reproducible baseline comparison, and no
@@ -362,6 +422,9 @@ negative result, or new analysis. Applied impact may be an honest pilot estimate
 experiment design when an actual intervention is unavailable; do not invent ROI or stakeholder use.
 For measured causal effects, state the estimand, identification assumptions, uncertainty and sensitivity.
 
+For the data-engineering systems capstone, use the [pipeline operations contract](#data-pipeline-operations). A versioned input/output dataset, tested replay and recovery, and demonstrated freshness/quality controls supply the evidence; a model endpoint is not required.
+
+<a id="project-26"></a>
 **Submission package:** README and environment; provenance/licensing; data/model/config versions;
 tests and evaluation outputs; paper or decision memo; limitations; reviewer feedback. Systems adds
 Docker/CI/ops artifacts. Private, selectively shared, and sanitized public packages are all valid.

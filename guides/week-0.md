@@ -1,110 +1,70 @@
-[Home](../README.md) · [Start here](../START-HERE.md) · [After Week 0: first 30 days](first-30-days.md#first-30-days)
-
----
+[Home](../README.md) · [Semester plan](first-semester.md#semester-plan) · [Next: Week 1](first-30-days.md#week-1)
 
 <a id="week-0"></a>
-# Week 0: your first week of Python
+# Week 0: run your first Python program
 
-**Your one next step:** open [Scrimba — Learn Python](https://scrimba.com/learn-python-c03) and do **Day 1** below.
+**Your next step:** open [CS50P Lecture 0, Functions and Variables](https://cs50.harvard.edu/python/weeks/0/). Watch the opening `print`, variables and input examples, then change a greeting in the [Python Tutor editor](https://pythontutor.com/python-compiler.html). The lecture page also provides free notes, transcripts and downloadable recordings.
 
-It is free and runs in your browser. You can type and run code in the lesson itself. Nothing to install.
-
-**If access changes:** use [futurecoder](https://futurecoder.io/) for variables, conditions, loops and functions, then build the same small projects below. Paid plans and certificates are never required. Save your own code and a short output transcript; both can stay private.
-
----
+This is the orientation in the [first-semester plan](first-semester.md#week-0). You will continue the same lecture in Week 1, skipping examples you can already explain. If you can already write and explain this small program, go straight to [Week 1](first-30-days.md#week-1) or try the [readiness checks](readiness-checks.md#python-basics).
 
 <a id="week-0-what-this-is"></a>
-## What this week is
+## What to aim for
 
-- **7 days, 45–60 minutes a day.** One course only. Course running times and certificate terms can change; assess your small programs, not a badge.
-- **You build three small apps:** PayUp (an expense splitter), a word-scramble game, and a karaoke queue manager.
-- **You need:** a browser and a free Scrimba account. Sign up with email or Google when the course asks.
+Run, change and explain **one small program**. Try a few short sessions across a week; the number of days is a planning suggestion, not a deadline. You do not need three finished apps, a certificate or a paid book.
+
+The lecture is public. Python Tutor supplies a browser editor; if that editor is unavailable, use the course's [browser workspace](https://cs50.dev/) with its requested free accounts, or an installed Python interpreter. Save your own code and output in a private notes file so changing tools does not lose your work.
 
 <a id="week-0-not-yet"></a>
-### Not this week
+## Keep the scope small
 
-You can safely skip all of these until Week 1 or later. Nobody is checking.
+Leave toolchains, career choices and maths placement for when they help. No GitHub account, public repository, local editor installation or diagnostic is required for this first task. A single saved note is enough progress tracking.
 
-- **No maths diagnostic.** An optional, never-blocking placement comes in [Week 2](first-30-days.md#week-2).
-- **No GitHub account or repository.** That starts in [Week 1](first-30-days.md#week-1).
-- **No progress tracker.** Scrimba saves your place for you.
-- **No career track or module choice.** You can decide later, once you have written some code.
-- **No installing Python or VS Code.** That also waits for Week 1.
-
----
+If you prefer book reinforcement, use *Python Crash Course*, third edition, chapter 2 (paid), or *Automate the Boring Stuff*, third edition, chapter 1 ([free author text](https://automatetheboringstuff.com/3e/chapter1.html)). These are alternatives; reading both is not assigned.
 
 <a id="week-0-plan"></a>
-## The 7-day plan
+## The first small task
 
-The course has three sections. Each one ends with a project. Times are a guide; going slower is fine.
+1. Watch the opening lecture examples and pause to type them yourself.
+2. Run `print("Hello, learner")`. Change the name, predict the output, then run it again.
+3. Give the name a variable: `name = "Asha"`, then `print("Hello,", name)`. Explain which text is fixed and which value can change.
+4. If comfortable, replace the assigned name with `input("Name: ")` and run it with two names. If not, keep the variable example and write the question you need answered.
+5. Save the code, one output and your next question. Your first artifact can be a plain text file; keep it private if preferred.
 
-| Day | Do this (45–60 min) | You're done when |
-|---|---|---|
-| **1** | Start **Section 1, Python Fundamentals**. Variables, strings and `print()`. Type every example yourself. | You changed a `print()` line and ran it. |
-| **2** | Finish Section 1: user input, arithmetic, type conversion and f-strings. Complete **PayUp**. | PayUp splits a bill you typed in. |
-| **3** | Warm-up (5 min): from memory, write the line that asks for a name and greets it. Then start **Section 2, Logic and Loops**: lists, tuples, string methods. | Your warm-up ran, even if you peeked once. |
-| **4** | Finish Section 2: comparisons, `if`/`else` and `while` loops. Complete the **word-scramble game**. | You played your own game to the end. |
-| **5** | Warm-up (5 min): from memory, write a `while` loop that counts to 5. Then start **Section 3, Functions and Error Handling**: functions, parameters, return values. | You wrote one function and called it. |
-| **6** | Finish Section 3: `for` loops and input validation. Complete the **karaoke queue manager**. Claim your certificate if you like. | The queue manager survives one bad input. |
-| **7** | **Rebuild PayUp from memory**, then save its code and a short result (see below). | You can explain it and show a normal and invalid-input run. Sharing is optional. |
+**Ready for Week 1 when:** you can change the greeting and explain how the variable affects it. You do not need to know loops, exceptions or testing yet.
 
 <a id="week-0-day-7"></a>
-### Day 7: rebuild and record
+## End-of-week recall, whenever you reach it
 
-1. Keep your original PayUp and open a fresh copy or the free [Python Tutor editor](https://pythontutor.com/python-compiler.html).
-2. Rebuild PayUp **without looking**. Set a 30-minute timer.
-3. When you get stuck, write down what you forgot. Then peek, close the tab, and keep going.
-4. Save your code, one successful run, one invalid-input run and one thing you learned. Optionally share a sanitized copy with a friend, classmate or the [Scrimba Discord](https://scrimba.com/discord).
+Close the example and recreate the greeting in a fresh file. Explain what each line does, then change the input and predict the result. If you need a hint, record it, practise the missing step and try again later. This is feedback about the next task, not a judgment about your ability.
 
-Your list of "things I forgot" is not a failure. It is exactly what to practise next week.
-
----
+Already completed the previous Scrimba version of Week 0? Keep your PayUp, word-scramble or karaoke work as evidence. Do not repeat this orientation; continue at the first unfamiliar milestone.
 
 <a id="week-0-bad-day"></a>
-## Bad day? Do the 15-minute version
+## A short session or a missed day
 
-Some days you will be tired or busy. Fifteen minutes still counts as a study day.
-
-1. Open the course. Scrimba remembers where you stopped.
-2. Do **one** challenge, or retype **one** example from memory.
-3. Stop when the timer ends, even mid-lesson.
-
-If you miss a whole day, simply do the next day's row. Do not try to double up.
+If 15 minutes are available, change one input, predict the output and save a next-task note. If no time is available, move the session. Do not double the next day's work to compensate. Use the [recovery path](first-semester.md#recovery) after a longer break.
 
 <a id="week-0-plan-your-time"></a>
-## Pick your time and place now
+## Pick a place for the next session
 
-Finish this sentence and put it somewhere you will see it:
-
-> "After **[something you already do daily, e.g. dinner]**, I open Week 0 at **[a specific place, e.g. my desk]**."
-
-People who decide *when and where* in advance are more likely to follow through.
+Write a useful reminder, for example: “After dinner on Tuesday, at my desk, I will change the greeting input and explain the output.” Treat this as a planning aid; if the cue does not fit your life, change it.
 
 <a id="week-0-help"></a>
 ## If you get stuck
 
-- **An error you don't understand?** Paste your code into [Python Tutor](https://pythontutor.com/python-compiler.html) and step through it line by line.
-- **Still stuck after 15 minutes?** Ask in the [Scrimba Discord](https://scrimba.com/discord). Say what you expected and what happened.
-- **Feeling lost or unmotivated?** See the [stuck or unmotivated table](how-to-read-a-module.md#stuck-or-unmotivated).
+- **Access problem:** use the official lecture's notes/transcript and the alternate editor above. Record the failed URL separately from a knowledge gap.
+- **Code problem:** compare your expected output with the actual output, then step through the program in Python Tutor. Ask a classmate or AI to explain the error category after your first attempt.
+- **Instructions unclear:** write the exact step you could not perform. The [six-week pilot](study-pilot.md) gives that feedback somewhere useful to go.
+- **A concept stays unclear:** use [futurecoder](https://futurecoder.io/) for one relevant interactive explanation, then return to your greeting. A second full course is not required.
 
 <a id="week-0-next"></a>
-## After Day 7
+## Continue to Week 1
 
-Go to the [first 30 days](first-30-days.md#week-1). Week 1 moves you to Harvard's free CS50P course and your first GitHub repository.
-
----
+Open [Week 1 of the first 30 days](first-30-days.md#week-1). You will extend functions and input/output, save your own work, and begin the semester's steady practice routine.
 
 <a id="why-this-design"></a>
 ## Why this design
 
-Short, evidence-informed reasons for how Week 0 and the [first 30 days](first-30-days.md#first-30-days) are built.
+The small initial task and single lecture spine are curriculum design judgments intended to reduce choices and duplicate study. They have not been validated by a student trial. Recalling an example, checking it and trying changed input is informed by learning research, but evidence from other tasks does not establish this roadmap's completion rate or ideal session length. The [dated research record](../audit/semester-research-2026-11-05.md) explains the source checks and limits; the [pilot](study-pilot.md) is how you test the pacing in your own study.
 
-- **Early weeks matter most.** In programming MOOCs, dropout is highest at the very start. Difficulty that fits the learner, accessible help and example project topics are recommended remedies ([Rõõm, Lepp & Luik, 2021, *Education Sciences* 11(10):643](https://doi.org/10.3390/educsci11100643)). So Week 0 is one beginner course with built-in projects and a help link.
-- **Motivation needs three things.** Self-determination theory names autonomy, competence and relatedness ([Ryan & Deci, 2000](https://doi.org/10.1037/0003-066X.55.1.68)). Hence small visible wins every day, a choice of mini project, and sharing on Day 7.
-- **A tiny session beats a skipped one.** The 15-minute fallback keeps the habit alive on hard days.
-- **Plans tied to cues work.** "After X, I study at place Y" is an implementation intention ([Gollwitzer, 1999](https://doi.org/10.1037/0003-066X.54.7.493)).
-- **Recall beats rereading.** Rebuilding from memory is retrieval practice, which improves long-term retention ([Roediger & Karpicke, 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)).
-
----
-
-[Home](../README.md) · [Start here](../START-HERE.md) · [First 30 days →](first-30-days.md#first-30-days)
+[Home](../README.md) · [Semester plan](first-semester.md#semester-plan) · [Week 1 →](first-30-days.md#week-1)

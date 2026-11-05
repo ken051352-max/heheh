@@ -29,6 +29,12 @@ Default lectures are free. Books may be paid, freely available in an authorized 
 
 See the [book catalogue](../resources/books.md#books) for exact editions, reading focus and access. Provider pricing and geographic availability are deliberately not frozen into the syllabus.
 
+## Learning-design evidence and its limits
+
+The [learning-experience research record](../audit/learning-experience-research-2026-11-05.md) distinguishes original studies, review findings and design judgment. Retrieval with feedback, revisiting a skill later, and staged worked examples inform the readiness and project materials. They do not establish a universal weekly workload or prove that this roadmap works for every learner.
+
+Use the [six-week pilot](study-pilot.md) to record actual effort, artifacts and friction before changing the plan. A code test proves a tested behavior; a navigation walkthrough checks findability; neither substitutes for a real learner's study evidence. Record AI assistance separately from an independent explanation, debug task or changed-example check.
+
 ## Research and course sources
 
 The six strata cite actual course pages from MIT, Harvard, Stanford, Cambridge and IIT Madras, plus author courses and official project documentation. The roadmap is independent and does not imply university endorsement. It selects a core and adds explicitly labeled later topics rather than claiming one university course contains the entire stratum.

@@ -61,7 +61,5 @@ The accent colours match the coloured-square emoji already used on the stratum h
 
 ## Accessibility
 
-Every embed in `README.md` uses a descriptive `alt` attribute and `width="100%"`. The banners are
-decorative reinforcement — **no information appears only in an image.** Every stratum heading, module
-range, and navigation link is present as text, so the roadmap is fully usable with images disabled,
-in a screen reader, or in a plain-text renderer.
+Image embeds use descriptive alt text and bounded widths; text navigation appears before optional overview artwork. The banners are
+decorative reinforcement — **no information appears only in an image.** Every stratum heading, current module range and navigation link is present as text. The overview artwork uses abbreviated M6–M8 / M18–M26 ranges; text states the M8 split and unused numbers. The graph illustrates subject groups, not all prerequisite edges. This supports use without images; it is not a claim of a completed screen-reader accessibility audit.

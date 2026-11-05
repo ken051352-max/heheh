@@ -5,7 +5,23 @@
 <a id="refresh-log"></a>
 # 🗓️ Refresh Log
 
-Each pass records changes and the scope of verification. Current evidence lives in the [2026-11-05 research record](audit/research-2026-11-05.md) and [overhaul audit](audit/overhaul-2026-11-05.md). Earlier entries and HTTP logs describe their historical state, not present access or requirements.
+Each pass records changes and the scope of verification. Current evidence lives in the [project integration and validation](audit/project-integration-2026-11-05.md) and [learning-experience research](audit/learning-experience-research-2026-11-05.md). Earlier entries and HTTP logs describe their historical state, not present access or requirements.
+
+### Original-project integration and route corrections · 2026-11-05
+
+Applied the reviewed learning-experience work to the original project after comparing every tracked file and preserving private configuration. Fixed the Data Engineer route's M24/M26 service-only requirement: an operated data pipeline now demonstrates the same production bar through data-quality, replay, freshness and recovery evidence. Corrected Lion's attribution, clarified optional JavaScript visualization and protected the documented local-lab environment. All 182 code tests passed freshly in the project; [the integration record](audit/project-integration-2026-11-05.md) separates source access, original-project execution and rendering checks.
+
+<a id="learning-experience-2026-11"></a>
+### Learning experience — study, practise, check and resume · 2026-11-05
+
+The first semester now has one adjustable sequence, including the existing Week 0 and first-month anchors. It uses a continuous CS50P lecture route, selected edition-checked reading, exam buffers, small project stages and readiness evidence before dependent work. Existing learners keep demonstrated progress; introductory SQL remains partial M8a work.
+
+- Added local calculator, offline Weather CLI and SQLite investigation starters, references, fixtures, behavioral tests and reviewer guidance.
+- Connected independent readiness exercises, targeted recovery, college equivalence and a private six-week feedback log.
+- Simplified entry/resume navigation, generated stacked resource/role sections from the unchanged module manifest, and moved optional breadth behind labeled disclosures.
+- Corrected active help links to this repository and added beginner-reference CI coverage.
+
+The [worklog](audit/learning-experience-worklog-2026-11-05.md), [file inventory](audit/learning-experience-inventory-2026-11-05.md) and [validation](audit/learning-experience-validation-2026-11-05.md) distinguish research, code execution, rendering inspections and remaining limitations. The study pilot is a usable template; no student results are claimed.
 
 <a id="v2026-11"></a>
 ### v2026.11 — Unified routes, free lectures and books chosen on merit · 2026-11-05
