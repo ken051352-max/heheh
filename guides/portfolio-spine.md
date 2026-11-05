@@ -1,97 +1,72 @@
-[🏠 Roadmap home](../README.md) · [🧭 Start here](../START-HERE.md) · [🗓️ Four-Year Plan](four-year-plan.md#flagship-projects) · [🚀 Fast lane](practitioner-track.md#practitioner-track)
-
----
+[Home](../README.md) · [Role pathways](practitioner-track.md)
 
 <a id="portfolio-spine"></a>
-# 🧱 The Portfolio Spine: one system, five levels
+# The Portfolio Spine: one evolving application
 
-**The idea in one sentence:** instead of four unrelated toy projects, build **one** AI system for a real problem and grow it through five levels of engineering. Each level is a release of the *same* repository.
-
-Hiring managers learn almost nothing from course exercises or Kaggle notebooks where the problem, data and metric were all handed to you (Video 1, 06:09–06:46). They learn a lot from a system that grew over time, with tests, evals and written trade-offs (W2, 03:40–04:42; W3, 00:12–10:30).
-
-> **When to start:** after the [3-check gate](../curriculum/1-foundations.md#three-check-gate). Level 1 needs skill groups 1–4 from [M1](../curriculum/1-foundations.md#python-skill-groups), plus **[skill group 5 (async + streaming, v2026.8)](../curriculum/1-foundations.md#async-skill-group)** before you call L1 done. Levels 2–4 run alongside [M21](../curriculum/6-frontier-production.md#module-21)–[M24](../curriculum/6-frontier-production.md#module-24).
->
-> **How this fits the other plans:** the spine **is** the AI-engineering flagship. In the [Four-Year Plan](four-year-plan.md#flagship-projects) it is P5 (L1–L2) → P7 (L3–L4). In the [fast lane](practitioner-track.md#practitioner-track) it is Stages 5–6. It *replaces* the separate M21/M22 mini-projects; it doesn't add to them.
-
----
+Build one system for a concrete problem and improve it through measured releases. Start after the [M1 competence checks](../curriculum/1-foundations.md#three-check-gate). Levels 1–3 form a useful application route; levels 4–5 are optional experiments. A deterministic workflow or retrieval-only system can be the right final design.
 
 <a id="pick-a-problem"></a>
-## Step 0 · Pick one real problem
+## Choose a problem and data you may use
 
-Pick something with a **real user** (you count) and **data no model has seen**. The two examples from the source videos:
-
-- **Nutrition / meal-planning coach** (W3): your own meal logs and family recipes → weekly menu → grocery list.
-- **Support assistant for a small online shop** (Video 1, 06:46): order lookups, a refund policy, ticket routing.
-
-Other good fits are a study assistant over your university's regulations, a runbook assistant over an open-source project's docs, or a club's event and membership helper. See [build for real people](career-operations.md#5-build-for-real-people-not-for-datasets).
-
----
+A study assistant over public course rules, a support helper over synthetic orders or a search tool over an open-source manual are suitable examples. You can be the user. Document source/license and scope; there is no need to prove the data were absent from model training. Synthetic or private review fixtures are acceptable when the limitation is stated.
 
 <a id="levels"></a>
-## The five levels
+## Releases and evidence
 
-| Level | You ship | Skills it proves | Exit criterion (all must hold) | Course page |
-|---|---|---|---|---|
-| <a id="level-1"></a>**L1 · API wrapper + structured output + streaming** | A Python script, then a small `FastAPI` (or Streamlit/Gradio) app calling one LLM API on your real task, **streaming tokens to the UI** | HTTP + JSON, API keys from the environment, **schema-validated output**, retries/fallback when the model flakes, **async fan-out with backpressure and SSE streaming** ([skill group 5](../curriculum/1-foundations.md#async-skill-group)) | Output parses against a schema on 100 % of 20 test inputs; one test per failure mode (timeout, bad JSON, refusal, `429`); key never in git; **batch path uses one shared `httpx.AsyncClient` + `asyncio.Semaphore` (≤ 20 in flight, proven by a mock-transport test); streaming path logs TTFT (target p50 < 400 ms) and stops generation on client disconnect** | [M1 groups 1–5](../curriculum/1-foundations.md#python-skill-groups) · [async exercise](../curriculum/1-foundations.md#async-exercise) · [M22 Lab 3](../coursepages/m22-agentic-ai/README.md#lab-3) |
-| <a id="level-2"></a>**L2 · Custom-data RAG + evals** | L1 connected to *your* documents (logs, recipes, policies) | Chunking, embeddings, a vector store, retrieval; **an eval set and an LLM judge**; knowing *when* RAG beats prompting or fine-tuning | A 20–50-case [golden set](../coursepages/m21-rag-vector-dbs/README.md#evaluation-harness); retrieval metric + answer metric reported against a no-RAG baseline | [M21](../coursepages/m21-rag-vector-dbs/README.md#evaluation-harness) |
-| <a id="level-3"></a>**L3 · Read-only-first ReAct agent** | L2 given tools: search your logs, a calculator, web search. **Read-only first** | The ReAct loop, termination and step limits, tracing; *then* gated write actions with human approval | Raw loop written by hand once ([Lab 1](../coursepages/m22-agentic-ai/README.md#lab-1)); traces for every run; pass rate over N runs reported; no write tool until reads are reliable | [M22](../coursepages/m22-agentic-ai/README.md#labs) |
-| <a id="level-4"></a>**L4 · Multi-agent router / worker / checker** | L3 split into a **router**, domain **workers** (e.g. planner and grocery builder) and a **checker** that reviews output before the user sees it | Context isolation, tracing across agents, prompt-injection and data-leak guardrails, **adversarial fault tests**, a container deployment, cost and latency budgets | Fault-injection suite passes (e.g. feed the planner a fake ingredient; the checker must catch it); p95 latency and cost per task within the budgets in `DECISIONS.md` | [M22](../coursepages/m22-agentic-ai/README.md#lab-4) · [M24](../coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness) |
-| <a id="level-5"></a>**L5 · Self-improving loop** *(optional, advanced)* | An agent that proposes a change, runs it, scores it, and keeps or discards it, in a sandbox | **A metric the agent can't game**, full execution trails, and clearly defined human checkpoints | Scorer and test data are read-only to the agent; held-out checks catch metric gaming; a human approves anything merged | [M23](../coursepages/m23-ai-safety/README.md#level-5-loops) · [M24](../coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness) |
+| Release | Build | Completion evidence |
+|---|---|---|
+| <a id="level-1"></a>**L1: model boundary** | A small local script/service with one task and a typed input/output contract | Deterministic baseline, fixed examples, schema checks plus semantic checks, explicit refusal/error handling, README and memo. Use [M18-app](../curriculum/6-frontier-production.md#application-foundations). |
+| <a id="level-2"></a>**L2: retrieval** | Add document retrieval only when needed | A frozen 20–50-case teaching set with source evidence, no-retrieval and lexical baselines, retrieval metrics, citation/answer assessment and failure slices. Use [M21](../coursepages/m21-rag-vector-dbs/README.md). |
+| <a id="level-3"></a>**L3: bounded tools** | Start with a deterministic workflow; compare one model-controlled loop | Allowlists and validation enforced in code, trusted confirmation for destructive actions, idempotency, timeout/step/retry bounds, traces and repeated-task outcomes. Use [M22](../coursepages/m22-agentic-ai/README.md#labs). |
+| <a id="level-4"></a>**L4: multiple agents, optional** | Split work only if a measured bottleneck warrants it | Same evaluation workload and budgets as L3, context/permission boundaries, injected worker failures and a before/after quality-cost-latency comparison. Keeping L3 is a valid result. |
+| <a id="level-5"></a>**L5: proposed improvements, optional research** | A sandboxed agent proposes and tests a limited change | Frozen scorer/test data outside agent write access, held-out evaluation, audit trail and human review of any accepted change. Use [M23 experiments](../coursepages/m23-ai-safety/README.md#level-5-loops). |
 
-**Be honest about levels 4 and 5.** Even senior production work is often level 2 or 3: "we're hired to be useful, not fancy" (W3, 10:18–10:30). Level 5 is for study and small sandboxed experiments. The skills it needs come from years of running systems in production (W3, 10:08–10:18).
+**Module mapping:** L1 covers the M18 application subset, not the M1 Weather CLI or full M18 training project. L2 can cover M21. L3 plus the actual MCP SDK lab can cover M22. M23 needs its threat-model and regression evidence; merely adding a checker agent is insufficient. M24 needs the complete [production bar](../curriculum/6-frontier-production.md#production-bar), regardless of the chosen level. Map evidence explicitly before marking a module complete.
 
 <a id="level-rules"></a>
-### Rules that apply at every level
+## Rules at every release
 
-1. **One repository, tagged releases.** Tag `v1-api`, `v2-rag`, `v3-agent`, `v4-multi`. The git history *is* the story you tell in interviews.
-2. **Evals before features.** You can't move to a new level until the current one has an eval suite that runs with one command and in CI. See the [evaluation harness](../coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness).
-3. **Simplest version first.** Write a raw loop before adopting a framework, use simple search before a vector DB, and use one agent before several. Adopt a framework only when you can say what it saves you (Marina Wyss, [*SWE → AI Engineer roadmap*](https://www.marinawyss.com/blog/software-engineer-to-ai-engineer-roadmap)).
-4. **Meet the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar).** Items 1–4 always apply; items 5–12 apply from L2 onwards.
-5. **Keep a `DECISIONS.md`.** This is mandatory. Use the template below.
+1. Keep one repository and a commit/tag per milestone. Storage and review can be private.
+2. Build an evaluation before changing the feature. Reserve untouched cases for assessment and report the set size; a small teaching set does not establish broad safety.
+3. Test realistic failures, including invalid outputs and denied actions. Mocked responses test software boundaries; real local-model experiments establish model behavior.
+4. Add async/concurrency or streaming when needed. Record and test the chosen cap, backpressure and cancellation behavior. A concurrency limit is not a requests-per-minute rate limiter.
+5. Introduce relevant safety tests as soon as untrusted content enters the system. Accumulate production evidence and complete M24 before claiming its outcome.
+6. Prefer a simpler system when evaluation shows no useful gain from added complexity.
 
----
+The [offline agent lab](../resources/agent-lab/README.md) demonstrates deterministic permission, replay and memory contracts. It does not demonstrate answer quality, actual payments or MCP protocol conformance.
 
 <a id="decisions-template"></a>
-## 📝 The mandatory `DECISIONS.md`
+## Record decisions
 
-Video W2 (07:21–08:05): *"as you build things, write up the trade-offs as you go: why this database and not that one, why this model, how would you calculate costs and what would happen to those costs if you got way more users."* This file is how you build that judgment, and it gives you something concrete to talk through in interviews.
+Copy the [DECISIONS template](../resources/templates/DECISIONS.md). Record context, alternatives, decision, evidence and consequences. A negative comparison or an abandoned feature is useful evidence when documented honestly.
 
-**Copy the template:** [`resources/templates/DECISIONS.md`](../resources/templates/DECISIONS.md). Each entry follows the [Architecture Decision Record](https://adr.github.io/) pattern: context, options, decision and consequences. Add one entry each time you make a choice you could defend in an interview.
-
-**Required entries by level:**
-
-| Level | You must record |
+| Level | Decisions to record |
 |---|---|
-| L1 | Model tier (accuracy vs latency vs price), output schema and validation strategy, retry/fallback policy, **concurrency cap** (why 20 and not 200: provider rate limit ÷ replicas), **streaming vs. blocking** and the TTFT budget |
-| L2 | Database or vector store (e.g. pgvector vs Qdrant vs LanceDB vs "none, BM25 is enough"), chunking strategy, embedding model, why RAG instead of prompting or fine-tuning |
-| L3 | Tool list and **which tools are read-only**, step limit, approval gate for writes |
-| L4 | Agent topology, what each agent can see (context isolation), guardrail placement, deployment target |
-| L5 | The metric, what makes it hard to game, what a human still approves |
+| L1 | Task/metric, model and license, schema and semantic validation, refusal/failure policy, resource budget |
+| L2 | Corpus rights, chunking, retrieval baseline, embedding/reranker, evaluation cases and citation checks |
+| L3 | Tools and authorization, confirmation binding, idempotency scope, step/time budgets and memory lifetime |
+| L4 | Why more agents, each context/permission boundary, failure behavior and measured benefit |
+| L5 | What may change, who owns the metric/holdout, sandbox limits and human acceptance rule |
 
 <a id="cost-math"></a>
-### The cost and latency calculation (every level from L1)
+## Cost and latency
 
-Write this out with **your own measured numbers** and **current list prices**. Prices change, so record the date you looked them up.
+Measure successful and failed work. Record dated provider prices if used; local execution still consumes time and hardware resources. Separate measured local results from hypothetical hosted estimates.
 
+```text
+request_cost = input_tokens * price_per_input_token
+             + output_tokens * price_per_output_token
+             + retrieval/tool/allocated_infrastructure_cost
+cost_per_successful_task = total_cost_of_all_attempts / successful_tasks
+monthly_estimate = measured_or_assumed_requests_per_month * mean_request_cost
 ```
-tokens_per_request  = input_tokens + output_tokens          (measure from logs; agents: sum over all steps)
-cost_per_request    = input_tokens  × price_in_per_token
-                    + output_tokens × price_out_per_token
-                    + retrieval/tool/infra cost per request
-cost_per_user_month = cost_per_request × requests_per_user_per_day × 30
-monthly_cost(N)     = cost_per_user_month × N_users
-```
 
-Then fill in the scaling table and state **what changes your design** at each step:
+Sum all model/tool calls in a multi-step task. Account for retries, cache pricing, fixed infrastructure and idle costs where applicable. Report the number of trials, workload and p50/p95 latency; choose targets from the application, not a universal 400 ms requirement.
 
-| Users | Requests/day | Monthly LLM cost | p95 latency | What breaks or changes first |
+| Scenario | Requests | Estimated monthly cost | Measured latency or untested estimate | First limiting factor |
 |---|---|---|---|---|
-| 1× (today) | | | | |
-| 10× | | | | e.g. rate limits → add a queue and caching |
-| 100× | | | | e.g. cost → route easy queries to a smaller model, cache embeddings, batch |
+| Current workload | | | | |
+| 10 times the workload | | | | |
+| 100 times the workload | | | | |
 
-**Worked shape (made-up numbers, not real prices):** 3,000 input + 500 output tokens per request, at a hypothetical $1 and $4 per million tokens, gives ≈ $0.005 per request. At 10 requests per user per day that is ≈ $1.50 per user per month. At 100× users the *design* question becomes whether a cache hit rate of 40 % or a smaller model on easy queries keeps the unit cost flat. A multi-agent L4 can multiply tokens per task several times over; Anthropic reports its multi-agent research system used about 15× the tokens of chat ([source](https://www.anthropic.com/engineering/built-multi-agent-research-system)). Put that multiplier in the table before you choose L4.
-
----
-
-[🏠 Roadmap home](../README.md) · [📝 DECISIONS template](../resources/templates/DECISIONS.md) · [🔬 v2026.7 research findings](../audit/v2026.7-research-findings.md#portfolio)
+For arithmetic practice only: 3,000 input and 500 output tokens at hypothetical prices of $1 and $4 per million cost $0.005 per request before other costs. These are invented prices, not a current vendor quote.

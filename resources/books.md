@@ -1,103 +1,92 @@
-[🏠 Roadmap home](../README.md)
-
----
+[Home](../README.md) · [Lecture/book defaults](../guides/how-to-read-a-module.md#pick-one)
 
 <a id="books"></a>
-# 📖 Core Textbook Reading List
+# Books: principal texts and deeper references
 
-> **Tier 1 (own a copy)**. These are the books you should have on your shelf, marked-up, for the rest of your career.
+**Choose books on educational quality, regardless of price.** Lectures have free routes; principal books may be paid. Read selected topics and solve exercises alongside the project. Buying or finishing the entire catalogue is not a completion requirement.
 
-| # | Title | Authors | Edition / Year | Primary Modules | Free PDF? |
-|---|---|---|---|---|---|
-| 1 | _Introduction to Probability_ | Blitzstein & Hwang | 2nd Ed. (2019; 2024 reprint) | M5 | ✅ [stat110](https://projects.iq.harvard.edu/stat110/home) |
-| 2 | _Mathematics for Machine Learning_ | Deisenroth, Faisal, Ong | 2020 (2024 reprint) | M2, M3, M5 | ✅ [mml-book.com](https://mml-book.com/) |
-| 3 | _An Introduction to Statistical Learning with Python_ (ISLP) | James, Witten, Hastie, Tibshirani, Taylor | 1st Ed. (2023, 2025 reprint) | M6, M9-M12 | ✅ [statlearning.com](https://www.statlearning.com/) |
-| 4 | _Elements of Statistical Learning_ (ESL) | Hastie, Tibshirani, Friedman | 2nd Ed., 12th printing | M9-M12 | ✅ [hastie.su.domains](https://hastie.su.domains/ElemStatLearn/) |
-| 5 | **_Deep Learning: Foundations and Concepts_** (NEW — primary DL text) | Christopher M. Bishop & Hugh Bishop | **Springer 2024**, 1st Ed., 607 pp., ISBN 978‑3‑031‑45467‑7 | M15‑M16 | ✅ [bishopbook.com](https://bishopbook.com/) |
-| 6 | _Probabilistic Machine Learning: An Introduction_ (PML1) | Kevin P. Murphy | MIT Press 2022 | M11-M16 | ✅ [probml.github.io](https://probml.github.io/pml-book/book1.html) |
-| 7 | _Probabilistic Machine Learning: Advanced Topics_ (PML2) | Kevin P. Murphy | MIT Press 2023 | M13-M17 | ✅ [probml.github.io](https://probml.github.io/pml-book/book2.html) |
-| 8 | _Understanding Deep Learning_ | Simon Prince | MIT Press 2024 | M15-M16 | ✅ [udlbook.github.io](https://udlbook.github.io/udlbook/) |
-| 9 | _Dive into Deep Learning_ | Zhang, Lipton, Li, Smola | 2024, continuously updated | M15-M16 | ✅ [d2l.ai](https://d2l.ai/) |
-| 10 | _Reinforcement Learning: An Introduction_ | Sutton & Barto | 2nd Ed. 2018 (2024 reprint) | M17 | ✅ [incompleteideas.net](http://incompleteideas.net/book/the-book-2nd.html) |
-| 11 | _Bayesian Data Analysis_ (BDA3) | Gelman et al. | 3rd Ed. 2013 (2024 reprint) | M6, M13 | ✅ [stat.columbia.edu](http://www.stat.columbia.edu/~gelman/book/) |
-| 12 | _Introduction to Algorithms_ (CLRS) | Cormen, Leiserson, Rivest, Stein | 4th Ed. 2022 | M4 | — |
-| 13 | _Introduction to Linear Algebra_ | Gilbert Strang | 6th Ed. 2023 | M3 | — |
-| 14 | _Designing Data-Intensive Applications_ | Martin Kleppmann | 1st Ed. 2017 (2nd Ed. coming 2026) | M8a, M8b, M24 | — |
-| 15 | **_Speech and Language Processing_ (3rd Ed. draft, continually updated)** | Jurafsky & Martin | Draft 2024–2026 | M16, M18 | ✅ [stanford.edu/~jurafsky/slp3/](https://web.stanford.edu/~jurafsky/slp3/) |
-| 16 | _Foundations of Computer Vision_ | Torralba, Isola, Freeman | **MIT Press 2024** | M15-M16 | ✅ [visionbook.mit.edu](https://visionbook.mit.edu/) |
-| 17 | _Designing Machine Learning Systems_ | Chip Huyen | O'Reilly 2022 (2024 reprint) | M24 | — |
-| 18 | _Build a Large Language Model (From Scratch)_ | Sebastian Raschka | Manning **2024** | M18 | Partial GitHub mirror |
-| 19 | _Python for Data Analysis_ | Wes McKinney | 3rd Ed. 2022 | M7 | ✅ [wesmckinney.com](https://wesmckinney.com/book/) |
-| 20 | _Fluent Python_ | Luciano Ramalho | 2nd Ed. 2022 (3rd Ed. in progress) | M1 | — |
-| **21** | **_Hands‑On Machine Learning with Scikit‑Learn and PyTorch_** (NEW, **replaces TF edition**) | Aurélien Géron | **O'Reilly, Oct–Dec 2025**, 878 pp. | M9‑M17 | GitHub: [ageron/handson-mlp](https://github.com/ageron/handson-mlp) |
-| **22** | **_Hands‑On Large Language Models_** (NEW) | Jay Alammar & Maarten Grootendorst | **O'Reilly, Sep 2024**, 428 pp. | M18 | [HandsOnLLM repo](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) |
-| **23** | **_AI Engineering_** (NEW) | Chip Huyen | O'Reilly Jan 2025 | M18, M21‑M24 | — |
-| **24** | **_Pattern Recognition and Machine Learning_** (PRML — moved to Tier 1‑reference) | Christopher Bishop | 2006 (still in print) | M9‑M17 | — |
-| **25** | **_Linear Algebra Done Right_ — 4th Edition (the abstract / proof‑track linear algebra)** | Sheldon Axler | **Springer 2024**, 400 pp., ISBN 978‑3‑031‑41025‑3 | M3 | ✅ [linear.axler.net](https://linear.axler.net/) |
-| **26** | **_Introduction to Probability for Data Science_ — bridges Stat 110 to Python code** | Stanley H. Chan | Michigan Publishing **2021/2023**, 700+ pp. | M5 | ✅ [probability4datascience.com](https://probability4datascience.com/) |
-| **27** | **_Convex Optimization_** (paired with Stanford EE364A) | Stephen Boyd & Lieven Vandenberghe | Cambridge 2004, **6th printing 2023** | M2, M9‑M11 | ✅ [stanford.edu/~boyd/cvxbook/](https://stanford.edu/~boyd/cvxbook/) |
-| **28** | **_Information Theory, Inference, and Learning Algorithms_** | David J. C. MacKay | Cambridge **2003** (the gold-standard intro to entropy/MI) | M5, M16, M18 | ✅ [inference.org.uk/itila](https://www.inference.org.uk/itila/) |
-| **29** | **_High-Dimensional Probability_ — concentration inequalities for ML/statistics** | Roman Vershynin | Cambridge **2018** (free draft online) | M5, M9, M15 | ✅ [vershyn HDP draft](https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.html) |
-| **30** | **_Book of Proof_ — proof-writing for first-year university** | Richard Hammack | **3rd Edition, 2018** (CC-BY) | **M0b** | ✅ [richardhammack.github.io/BookOfProof](https://richardhammack.github.io/BookOfProof/) |
-| **31** | **_How to Prove It: A Structured Approach_ + *With Lean* (browser-interactive)** | Daniel J. Velleman | Cambridge **3e, 2019** + Lean companion **2024** | **M0b** | Lean: ✅ [djvelleman.github.io/HTPIwL](https://djvelleman.github.io/HTPIwL/) |
-| **32** | **_Mathematics for Computer Science_ (MIT 6.042J textbook)** | Lehman, Leighton, Meyer | **2015 final, still current**, MIT Press | **M0b**, M4 | ✅ [OCW PDF](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/) |
-| **33** | **_Numerical Linear Algebra_** | Lloyd N. Trefethen & David Bau III | SIAM **1997**, 25th-anniversary printing 2022 | M3, M24 | — |
-| **34** | **_Trustworthy Online Controlled Experiments_** (industrial A/B-testing bible) | Ron Kohavi, Diane Tang, Ya Xu | Cambridge **2020** | **M6½**, M25 | — |
-| **35** | **_Fundamentals of Data Engineering_** (Gap #2 anchor) | Joe Reis & Matt Housley | O'Reilly **2022** | **M8a, M8b** | — |
-| **36** | **_Causal Inference: What If_** (free) | Miguel A. Hernán & James M. Robins | Continuously updated, **2024 revision** | **M6½** | ✅ [Harvard / Hernan What If PDF](https://miguelhernan.org/whatifbook) |
-| **37** | **_Causal Inference in Statistics: A Primer_** | Judea Pearl, Madelyn Glymour, Nicholas P. Jewell | Wiley **2016** | **M6½** | — |
-| **38** | **_Storytelling with Data_** (+ *Let's Practice!*) | Cole Nussbaumer Knaflic | Wiley 2015 / 2019 | **M25** | — |
+The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal books; M26 selects a reference for the chosen capstone topic. The tables below explain their purpose and alternatives. Publisher/author pages verify metadata and access; [university reading lists and substantive reviews](../guides/sources.md#evidence-policy) inform fit. No title is best for every reader.
 
-> **Tier 2 (reference)**: _All of Statistics_ (Wasserman), _Statistical Inference_ (Casella & Berger), _Bayesian Reasoning and Machine Learning_ (Barber), _Machine Learning: A Probabilistic Perspective_ (Murphy 2012), _Deep Learning_ (Goodfellow/Bengio/Courville 2016), _Algorithms for Decision Making_ (Kochenderfer), _Interpretable Machine Learning_ (Molnar), _Forecasting: Principles and Practice_ (Hyndman 3rd Ed. 2021), _Mining of Massive Datasets_ (Leskovec 3rd Ed. 2020, free at [mmds.org](http://www.mmds.org/)), _The Elements of Statistical Learning_ (ESL — still canonical), **_Active Calculus_** (Boelkins, free 2024), **_Linear Algebra and Learning from Data_** (Strang 2019/25 reprint), **_The Matrix Cookbook_** (Petersen-Pedersen 2024), **_Probability with Martingales_** (Williams 1991, PhD-track), **_Measure, Integral and Probability_** (Capinski-Kopp 2e 2014, PhD-track), **_Tao Analysis I & II_** (Hindustan Book Agency, 4e 2022, real-analysis bridge for PhD-track).
+**Access:** paid means the full book is not assumed free; free text means an authorized author/publisher edition; free code or samples do not mean a free full book. Library subscriptions vary. Match exercises to your edition and check current documentation for older software examples.
+
+## Foundations: M0–M5
+
+| Book and edition | Access | Reading purpose |
+|---|---|---|
+| [Book of Proof](https://richardhammack.github.io/BookOfProof/) — Richard Hammack, 3rd ed. (2018) | Free text; paid print | M0 principal: definitions, direct/contradiction proofs and induction. Start small; no fixed exercise quota gates Python. |
+| [Python Crash Course](https://nostarch.com/python-crash-course-3rd-edition) — Eric Matthes, 3rd ed. (2022), No Starch | Paid; samples/code free | M1 principal: data structures, functions, files, exceptions and testing, then an original CLI. |
+| [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) — Al Sweigart | Free web; paid print | M1 practical alternative for file/data automation; use the edition on the author's site. |
+| [Calculus: Early Transcendentals](https://www.cengageasia.com/title/default/detail?isbn=9781337613927) — Stewart, Clegg and Watson, 9th ed. (2021), Cengage | Paid | M2 principal: differentiation, integration, partial derivatives and gradients. WebAssign is not required. |
+| [Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/) — Gilbert Strang, 6th ed. (2023), Wellesley-Cambridge | Paid | M3 principal: elimination, subspaces, least squares, eigenvalues and SVD. Map older OCW readings by topic. |
+| [Linear Algebra Done Right](https://linear.axler.net/) — Sheldon Axler, 4th ed., Springer | Authorized free text; paid print | Proof-oriented M3 depth after the computational core. |
+| [Introduction to Algorithms](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/) — Cormen, Leiserson, Rivest and Stein, 4th ed. (2022), MIT Press | Paid | M4 principal: asymptotics, data structures, graphs, greedy/dynamic programming and correctness. Selected topics with MIT 6.006. |
+| [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms-second-edition) — Aditya Y. Bhargava, 2nd ed. (2024), Manning | Paid; samples/code free | Gentler visual first pass before formal analysis. |
+| [Introduction to Probability](https://stat110.hsites.harvard.edu/) — Joseph Blitzstein and Jessica Hwang, 2nd ed. | Author-provided free text; paid print | M5 principal: conditioning, random variables, expectation and limits with Stat 110. |
+| [Mathematics for Machine Learning](https://mml-book.github.io/) — Deisenroth, Faisal and Ong (2020), Cambridge | Free author PDF; paid print | Compact bridge/revision of linear algebra, calculus, probability and optimization. |
+| [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/) — Boyd and Vandenberghe (2004), Cambridge | Authorized free text; paid print | Later M2/M9 convexity, duality and optimization depth. |
+| [Information Theory, Inference, and Learning Algorithms](https://www.inference.org.uk/itila/) — David J. C. MacKay (2003), Cambridge | Free author edition; paid print | Selected information-theory and probabilistic connections for M5/M16/M18. |
+
+## Statistics and data systems: M6–M8b
+
+| Book and edition | Access | Reading purpose |
+|---|---|---|
+| [All of Statistics](https://link.springer.com/book/10.1007/978-0-387-21736-9) — Larry Wasserman (2004), Springer | Paid | M6 principal: concise estimation, intervals, testing and bootstrap; pair its terse treatment with lecture examples. |
+| [Causal Inference: What If](https://miguelhernan.org/whatifbook) — Miguel A. Hernán and James M. Robins | Free author text, updated online | M6½ principal: estimands, identification, standardization/weighting and longitudinal reasoning. Record the revision. |
+| [Trustworthy Online Controlled Experiments](https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59) — Ron Kohavi, Diane Tang and Ya Xu (2020), Cambridge | Paid | Complementary principal for M6½/M25: design, trustworthy metrics, experiment checks and decisions. |
+| [Python for Data Analysis](https://wesmckinney.com/book/) — Wes McKinney, 3rd ed. (2022), O'Reilly | Free author web; paid print/ebook | M7 principal: NumPy/pandas transformations, joins, grouping and time handling. |
+| [Database System Concepts](https://www.db-book.com/) — Silberschatz, Korth and Sudarshan, 7th ed. (2019), McGraw-Hill | Paid; slides/labs and selected chapters free | M8a principal: relational design, SQL, transactions, indexes and query processing. |
+| [The Data Warehouse Toolkit](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/books/data-warehouse-dw-toolkit/) — Ralph Kimball and Margy Ross, 3rd ed. (2013), Wiley | Paid; companion material free | M8a dimensional-modeling depth: grain, facts, dimensions and slowly changing dimensions. |
+| [Fundamentals of Data Engineering](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/) — Joe Reis and Matt Housley (2022), O'Reilly | Paid | M8b principal: lifecycle, architecture, ingestion, transformation, serving and operations. |
+| [Designing Data-Intensive Applications](https://martin.kleppmann.com/2026/03/24/designing-data-intensive-applications-2e.html) — Martin Kleppmann and Chris Riccomini, 2nd ed. (2026), O'Reilly | Paid | M8b/M24 systems depth: storage, replication, partitioning, transactions and distributed trade-offs. The 2017 first edition has different chapter numbering and one author. |
+
+## Classical and probabilistic ML: M9–M14
+
+| Book and edition | Access | Reading purpose |
+|---|---|---|
+| [An Introduction to Statistical Learning with Applications in Python](https://www.statlearning.com/) — James, Witten, Hastie, Tibshirani and Taylor (2023), Springer | Free author PDF; paid print | M9–M12 principal: regression (3), classification (4), resampling (5), regularization (6), trees (8), SVMs (9), unsupervised learning (12). Rebuild labs with leakage controls. |
+| [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) — Hastie, Tibshirani and Friedman, 2nd ed. | Author-hosted edition; automated content fetch unresolved this pass | Statistical derivations after ISLP; use ISLP while checking access. |
+| [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html) — Kevin P. Murphy (2022), MIT Press | Free author draft; paid print | Broad probabilistic reference for supervised learning, representations and inference. |
+| [Probabilistic Machine Learning: Advanced Topics](https://probml.github.io/pml-book/book2.html) — Kevin P. Murphy (2023), MIT Press | Free author draft; paid print | Advanced inference and generative/latent-variable models after relevant prerequisites. |
+| [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) — Christopher M. Bishop (2006), Springer | Paid print; only author-authorized downloads | Classical Bayesian/graphical-model depth; not a guide to current Python or transformer engineering. |
+| [Statistical Rethinking](https://xcelab.net/rm/) — Richard McElreath, 2nd ed. (2020), Chapman & Hall/CRC | Paid; free lectures/code; sample chapters | M13 principal: generative models, priors, causal structure, multilevel models and checks. Third edition is work in progress on the author page. |
+| [Bayesian Data Analysis](https://avehtari.github.io/BDA_course_Aalto/index.html) — Gelman, Carlin, Stern, Dunson, Vehtari and Rubin, 3rd ed. | Authorized electronic edition linked by Aalto; paid print | Deeper inference/computation, guided by Aalto's notes and free lectures. |
+| [Forecasting: Principles and Practice](https://otexts.com/fpp3/) — Rob J. Hyndman and George Athanasopoulos, 3rd ed. | Free text and embedded videos | M14 principal: exploration, baselines, temporal cross-validation, forecasting and reconciliation. Examples use R; Python work must preserve the design. |
+
+## Deep learning: M15–M17
+
+| Book and edition | Access | Reading purpose |
+|---|---|---|
+| [Deep Learning: Foundations and Concepts](https://www.bishopbook.com/) — Christopher M. Bishop and Hugh Bishop (2024), Springer | Free online version; paid PDF ebook and print | M15/M16 principal: optimization, networks, regularization, attention and generative models. Both Bishops are authors. |
+| [Understanding Deep Learning](https://udlbook.github.io/udlbook/) — Simon J. D. Prince (2023), MIT Press | Free draft/notebooks; paid print | Alternative explanations with exercises and Python notebooks; author citation year is 2023. |
+| [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python-third-edition) — François Chollet and Matthew Watson, 3rd ed. (2025), Manning | Paid; samples/code free | Applied Keras 3/multiple-backend alternative, not an extra compulsory framework beside PyTorch. |
+| [Hands-On Machine Learning with Scikit-Learn and PyTorch](https://www.oreilly.com/library/view/hands-on-machine-learning/9798341607972/) — Aurélien Géron (2025), O'Reilly | Paid; code free | Applied classical-ML-to-PyTorch bridge. The older TensorFlow title is a different implementation route. |
+| [Deep Learning](https://www.deeplearningbook.org/) — Goodfellow, Bengio and Courville (2016), MIT Press | Authorized free HTML; paid print | Mathematical/probabilistic reference; the author site does not authorize distributing a free PDF. |
+| [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/) — Michael Nielsen | Free online book | Intuitive backpropagation foundations; translate older code carefully. |
+| [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html) — Sutton and Barto, 2nd ed. (2018), MIT Press | Free author draft; paid print | M17 principal: MDPs, value functions, TD learning and policy gradients; add the module's PPO/DPO sources. |
+
+## Frontier systems and communication: M18–M26
+
+| Book and edition | Access | Reading purpose |
+|---|---|---|
+| [Build a Large Language Model (From Scratch)](https://www.manning.com/books/build-a-large-language-model-from-scratch) — Sebastian Raschka (2024), Manning | Paid; code/excerpts free | Full M18 mechanisms: tokenization, attention, construction and training. Code is not a free full-book mirror. |
+| [Hands-On Large Language Models](https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/) — Jay Alammar and Maarten Grootendorst (2024), O'Reilly | Paid; code free | Visual/practical representation, retrieval and adaptation companion. |
+| [AI Engineering](https://huyenchip.com/books/) — Chip Huyen (2025 author edition), O'Reilly | Paid | Application principal for M18-app/M21–M23: evaluation, retrieval, adaptation and system trade-offs. Publisher digital listing starts December 2024; not another edition. |
+| [Designing Machine Learning Systems](https://huyenchip.com/books/) — Chip Huyen (2022), O'Reilly | Paid | M24 principal: data/model development, deployment, feedback and operations, with current implementation docs. |
+| [Introducing MLOps](https://www.oreilly.com/library/view/introducing-mlops/9781492083283/) — Mark Treveil and coauthors (2020), O'Reilly | Paid; sponsored-download terms separate | Shorter organizational/lifecycle introduction before deeper production design. |
+| [Software Engineering for Data Scientists](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/) — Catherine Nelson (2024), O'Reilly | Paid | M1-to-M24 bridge: modularity, testing, profiling and maintainable projects. |
+| [Storytelling with Data](https://www.storytellingwithdata.com/books) — Cole Nussbaumer Knaflic (2015), Wiley | Paid; samples/public videos free | M25 communication principal: choose, simplify and explain charts for decisions. Later companion books are listed separately on the author site. |
 
 <a id="practitioner-shelf"></a>
-## 🧰 The Practitioner Shelf
+## A compact practitioner shelf
 
-> **Citations in this subsection.** *"Video 3 (07:30)"* and similar refer to named practitioner sources resolved in [sources](../guides/sources.md#citation-key).
->
-> **What this subsection is, and what it is not.** The Tier 1 and Tier 2 lists above are the **academic spine** — they are what you read to be able to *check* a claim, derive a result, and read a paper. Nothing in them is deprecated by this subsection.
->
-> This shelf is the **applied canon**: the shorter, faster, code-first books that get you from "I can write a loop" to "I have shipped a product built on a foundation model." It is the reading list attached to the [Practitioner Fast Lane](../guides/practitioner-track.md#practitioner-track) and the [AI Engineer (Applications)](../README.md#choose-your-track) track, sourced from [video 3](../CHANGELOG.md#refresh-log) — an ex-Coursera / ex-Amazon engineer's seven-book canon for the AI Engineer role — and reconciled against what this roadmap already carried.
->
-> **The trade-off, stated plainly.** These books teach you to *build*. They do not teach you to *prove*. Every one of them optimises intuition and working code over derivation, which is exactly why they are fast and exactly why they are insufficient for research work. If your target is a PhD, a research-scientist role, or reading NeurIPS papers critically, this shelf is a supplement to the Tier 1 spine, not a substitute for it. Video 3 (04:47) makes the intuition-over-derivation argument explicitly; [Tier 1](#books) is the counterargument, and both are correct within their own conditions.
+Choose what serves the project: **Python Crash Course** or **Automate the Boring Stuff** for Python; **ISLP** for classical ML; **Software Engineering for Data Scientists** when a notebook becomes a codebase; **AI Engineering** for foundation-model applications; **Designing Machine Learning Systems** for operations. Bhargava, Géron and Chollet/Watson are approachable alternatives in their subjects.
 
-| # | Title | Author(s) | Edition / Year | Serves | Access |
-| :-- | :--- | :--- | :--- | :--- | :--- |
-| **P1** | _Automate the Boring Stuff with Python_ | Al Sweigart | No Starch, **3rd Ed.** | [M1](../curriculum/1-foundations.md#module-1) · [Fast lane](../guides/practitioner-track.md#practitioner-track) Stage 1 | ✅ **Free full text**: [automatetheboringstuff.com](https://automatetheboringstuff.com/) · print: [No Starch](https://nostarch.com/automate-boring-stuff-python-3rd-edition) |
-| **P2** | _Software Engineering for Data Scientists: From Notebooks to Scalable Systems_ | Catherine Nelson | O'Reilly, **May 2024** | [M1](../curriculum/1-foundations.md#module-1) · [M24](../curriculum/6-frontier-production.md#module-24) · the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar) | ✅ [Author's book page](https://catherinenelson.dev/books/software-engineering-for-data-scientists) · ⚠️ [O'Reilly](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/) (403 to crawlers, opens in a browser) · ISBN 978-1-098-13619-2 |
-| **P3** | _The Manga Guide to Statistics_ | Shin Takahashi | No Starch | [M6](../curriculum/2-statistics-and-data.md#module-6) intuition track | ✅ [No Starch](https://nostarch.com/mg_statistics.htm) |
-| **P3b** | _The Manga Guide to Linear Algebra_ | Shin Takahashi | No Starch | [M3](../curriculum/1-foundations.md#module-3) intuition track | ✅ [No Starch](https://nostarch.com/mg_linearalgebra.htm) |
-| **P3c** | _The Manga Guide to Regression Analysis_ | Shin Takahashi | No Starch | [M9](../curriculum/3-classical-ml.md#module-9) intuition track | ✅ [No Starch](https://nostarch.com/regression) |
-| **P4** | _StatQuest Illustrated Guides_ — three volumes: **Machine Learning**, **Neural Networks and AI**, **Statistics** | Josh Starmer | Self-published | [M6](../curriculum/2-statistics-and-data.md#module-6) · [M9](../curriculum/3-classical-ml.md#module-9)–[M12](../curriculum/3-classical-ml.md#module-12) · [M15](../curriculum/5-deep-learning.md#module-15) intuition track | ✅ [statquest.org store](https://statquest.org/statquest-store/) · free companion videos at [statquest.org](https://statquest.org/) |
-| **P5** | _Build a Large Language Model (From Scratch)_ | Sebastian Raschka | Manning, **2024** | [M16](../curriculum/5-deep-learning.md#module-16) · [M18](../curriculum/6-frontier-production.md#module-18) — **already [Tier 1 #18](#books)** | ✅ [Manning](https://www.manning.com/books/build-a-large-language-model-from-scratch) · ✅ free code: [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) |
-| **P6** | _AI Engineering_ | Chip Huyen | O'Reilly, **Jan 2025** | **Primary text of the [AI Engineer (Applications)](../README.md#choose-your-track) track** · [M18](../curriculum/6-frontier-production.md#module-18) · [M21](../curriculum/6-frontier-production.md#module-21)–[M24](../curriculum/6-frontier-production.md#module-24) — **already [Tier 1 #23](#books)** | ✅ [Author's book page](https://huyenchip.com/books/) · ⚠️ [O'Reilly](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) (403 to crawlers) · ISBN 978-1-098-16629-8 |
-| **P7** | _Generative AI System Design Interview_ | Alex Xu, **Ali Aminian, Hao Sheng** | ByteByteGo, **2024** | [M21](../curriculum/6-frontier-production.md#module-21) · [M22](../curriculum/6-frontier-production.md#module-22) · [M24](../curriculum/6-frontier-production.md#module-24) · interview prep for the [AI Eng track](../guides/career-operations.md#skills-checklist) | ✅ [Publisher announcement](https://blog.bytebytego.com/p/our-new-book-generative-ai-system) · ISBN 1736049143 |
+For research, deepen the same foundation with CLRS, Axler, Boyd, ESL, Murphy and relevant papers. These choices describe scope and depth; a shelf alone does not establish employability or research competence.
 
-### How to actually use this shelf
+## How reviews inform selection
 
-The seven entries are not a reading order — they are four distinct jobs.
+Inspect the reviewer's audience and examples of strengths/weaknesses. [Aalto BDA](https://avehtari.github.io/BDA_course_Aalto/index.html), [MIT algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/), [BU systems](https://www.bu.edu/csmet/files/2026/06/MET-CS-779-Syllabus-Sum22026O2.pdf) and [HN discussion](https://news.ycombinator.com/item?id=42686457) were inspected. A syllabus corroborates curricular use, not every edition or a universal ranking. Older Reddit Bishop/Murphy discussions concern older books, not the new PML series.
 
-| Job | Books | When |
-| :--- | :--- | :--- |
-| **Get Python useful fast** | P1 | [M1](../curriculum/1-foundations.md#module-1), weeks 1–8. Read alongside the [free-course matrix](../curriculum/1-foundations.md#python-course-matrix), not instead of it. |
-| **Stop writing notebook code** | P2 | The moment your first project outgrows one file. This is the single most under-read book on the shelf and the one that maps most directly onto the [Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar). |
-| **Get maths and ML intuition without proofs** | P3 series, P4 | Paired with the [⚡ Intuition-First callouts](../curriculum/1-foundations.md#module-3) in M3, M5, M6, M9–M12. Watch the free StatQuest videos first; buy the illustrated guides only if you want the offline reference. |
-| **Become an AI Engineer** | P5, P6, P7 | [M18](../curriculum/6-frontier-production.md#module-18) onward. **P6 is the anchor text** — read it end to end. P5 gives you the mechanical understanding of what you are building on; P7 gives you the system-design vocabulary that interviews use. |
+For Python, [InfoWorld's review](https://www.infoworld.com/article/2337756/plunge-into-python-with-python-crash-course-3rd-edition.html) praises *Python Crash Course*'s projects and testing while [I Programmer's review](https://www.i-programmer.info/bookreviews/62-python/16633-python-crash-course-3ed.html) questions its conceptual depth and pacing. Pair it with CS50P and original exercises; agreement is not unanimous. [Cambridge's causal-inference reading guidance](https://www.statslab.cam.ac.uk/~qz280/teaching/causal-2023/) recommends *What If* for comprehensive coverage and identifies other books for particular needs, explicitly as the lecturer's judgment.
 
-> **On the notebook-to-production progression.** Video 3 (07:30) frames P2 as the hinge of the whole shelf: the gap between someone who can produce a working notebook and someone employable is testing, structure, refactoring, and APIs — not more modelling. Our [surveyed 2026 postings](../guides/career-operations.md#skills-checklist) agree: 15 of 16 asked for communication and collaboration, and none asked for Kaggle standing.
->
-> **On P6 as the track's primary text.** Chip Huyen's own framing of the discipline — *"AI engineering: the process of building applications with readily available foundation models"* ([huyenchip.com/books](https://huyenchip.com/books/) ✅) — is precisely the role definition the [AI Engineer (Applications)](../README.md#choose-your-track) track targets: you build **on** models, you do not train them from scratch. It is also the reason this roadmap keeps a separate research-adjacent AI Engineer row rather than collapsing the two.
-
-### Corrections logged while verifying this shelf
-
-Recorded here because the repo's [audit discipline](../audit/VERIFICATION.md) requires that corrections be visible rather than silently applied:
-
-* **P7 authorship.** The source video credits this book to Alex Xu and Sahn Lam. The publisher's own announcement names **Alex Xu, Ali Aminian, and Hao Sheng**; Sahn Lam is a co-author of ByteByteGo's *System Design Interview* series, not of this title. The corrected attribution is used above.
-* **P4 link structure.** Per-title StatQuest URLs (e.g. `statquest.org/statquest-illustrated-guide-to-machine-learning/`) return **404**. The canonical entry point is the [store page](https://statquest.org/statquest-store/). A **third** volume — *Statistics* — exists and is not mentioned in the source video; it is included above.
-* **P7 URL.** `bytebytego.com/courses/generative-ai-system-design-interview` returns **404** and is not cited. The publisher announcement post is used instead.
-
-Full HTTP status log for every link in this subsection: [`audit/VERIFICATION.md`](../audit/VERIFICATION.md) and [`audit/AUDIT_v2026.3.md`](../audit/AUDIT_v2026.3.md).
-
----
-
-[🏠 Roadmap home](../README.md)
+The [research record](../audit/research-2026-11-05.md) records corrections and access limits. This review does not mean every book was read cover to cover or every exercise executed.

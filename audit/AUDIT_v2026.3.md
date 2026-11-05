@@ -1,3 +1,5 @@
+> **Historical record.** This file preserves an earlier audit or proposal, including its original claims and requirements. It does not establish current access or override the [current research record](research-2026-11-05.md), [implementation audit](overhaul-2026-11-05.md), or active curriculum.
+
 # ✅ P6 — Practitioner's Pass Audit (v2026.3)
 
 **Date:** 2026-07-30 (research 2026-07-26, final re-verification 2026-07-30)

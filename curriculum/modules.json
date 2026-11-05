@@ -1,0 +1,575 @@
+{
+  "modules": [
+    {
+      "id": "M0",
+      "title": "Maths bridge",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-0",
+      "requires": [],
+      "recommends": [],
+      "default_url": "https://www.khanacademy.org/math/precalculus",
+      "book": "Book of Proof - Hammack (free)",
+      "book_url": "https://richardhammack.github.io/BookOfProof/"
+    },
+    {
+      "id": "M1",
+      "title": "Python",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-1",
+      "requires": [],
+      "recommends": [
+        "M0"
+      ],
+      "default_url": "https://cs50.harvard.edu/python/",
+      "book": "Python Crash Course - Eric Matthes, 3rd edition (paid)",
+      "book_url": "https://nostarch.com/python-crash-course-3rd-edition"
+    },
+    {
+      "id": "M2",
+      "title": "Calculus and optimisation",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-2",
+      "requires": [
+        "M1"
+      ],
+      "recommends": [
+        "M0"
+      ],
+      "default_url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/",
+      "book": "Calculus: Early Transcendentals - Stewart, Clegg and Watson, 9th edition (paid)",
+      "book_url": "https://www.cengageasia.com/title/default/detail?isbn=9781337613927"
+    },
+    {
+      "id": "M3",
+      "title": "Linear algebra",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-3",
+      "requires": [
+        "M1"
+      ],
+      "recommends": [
+        "M0",
+        "M2"
+      ],
+      "default_url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
+      "book": "Introduction to Linear Algebra - Strang (paid)",
+      "book_url": "https://math.mit.edu/~gs/linearalgebra/"
+    },
+    {
+      "id": "M4",
+      "title": "Algorithms",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-4",
+      "requires": [
+        "M1"
+      ],
+      "recommends": [
+        "M0",
+        "M5"
+      ],
+      "default_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+      "book": "Introduction to Algorithms - CLRS (paid)",
+      "book_url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
+    },
+    {
+      "id": "M5",
+      "title": "Probability",
+      "path": "curriculum/1-foundations.md",
+      "anchor": "module-5",
+      "requires": [
+        "M1",
+        "M2"
+      ],
+      "recommends": [
+        "M3"
+      ],
+      "default_url": "https://stat110.hsites.harvard.edu/",
+      "book": "Introduction to Probability - Blitzstein and Hwang (free online; paid print)",
+      "book_url": "https://stat110.hsites.harvard.edu/"
+    },
+    {
+      "id": "M6",
+      "title": "Statistical inference",
+      "path": "curriculum/2-statistics-and-data.md",
+      "anchor": "module-6",
+      "requires": [
+        "M5"
+      ],
+      "recommends": [
+        "M1"
+      ],
+      "default_url": "https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/",
+      "book": "All of Statistics - Wasserman (paid)",
+      "book_url": "https://link.springer.com/book/10.1007/978-0-387-21736-9"
+    },
+    {
+      "id": "M6h",
+      "title": "Causal inference and experimentation",
+      "path": "curriculum/2-statistics-and-data.md",
+      "anchor": "module-6-half",
+      "requires": [
+        "M5",
+        "M6"
+      ],
+      "recommends": [
+        "M7"
+      ],
+      "default_url": "https://www.bradyneal.com/causal-inference-course",
+      "book": "Causal Inference: What If - Hernan and Robins (free)",
+      "book_url": "https://miguelhernan.org/whatifbook"
+    },
+    {
+      "id": "M7",
+      "title": "Wrangling and visualisation",
+      "path": "curriculum/2-statistics-and-data.md",
+      "anchor": "module-7",
+      "requires": [
+        "M1"
+      ],
+      "recommends": [],
+      "default_url": "https://www.dataschool.io/easier-data-analysis-with-pandas/",
+      "book": "Python for Data Analysis - McKinney (free web; paid print)",
+      "book_url": "https://wesmckinney.com/book/"
+    },
+    {
+      "id": "M8a",
+      "title": "SQL and warehouses",
+      "path": "curriculum/2-statistics-and-data.md",
+      "anchor": "module-8a",
+      "requires": [
+        "M1"
+      ],
+      "recommends": [
+        "M4"
+      ],
+      "default_url": "https://cs50.harvard.edu/sql/",
+      "book": "Database System Concepts - Silberschatz, Korth and Sudarshan (paid)",
+      "book_url": "https://www.db-book.com/"
+    },
+    {
+      "id": "M8b",
+      "title": "Distributed data",
+      "path": "curriculum/2-statistics-and-data.md",
+      "anchor": "module-8b",
+      "requires": [
+        "M1",
+        "M8a"
+      ],
+      "recommends": [
+        "M4"
+      ],
+      "default_url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+      "book": "Fundamentals of Data Engineering - Reis and Housley (paid)",
+      "book_url": "https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/"
+    },
+    {
+      "id": "M9",
+      "title": "Regression",
+      "path": "curriculum/3-classical-ml.md",
+      "anchor": "module-9",
+      "requires": [
+        "M1",
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "recommends": [
+        "M6",
+        "M7"
+      ],
+      "default_url": "https://www.statlearning.com/online-courses",
+      "book": "An Introduction to Statistical Learning with Python (free PDF; paid print)",
+      "book_url": "https://www.statlearning.com/"
+    },
+    {
+      "id": "M10",
+      "title": "Classification",
+      "path": "curriculum/3-classical-ml.md",
+      "anchor": "module-10",
+      "requires": [
+        "M9"
+      ],
+      "recommends": [
+        "M2",
+        "M3"
+      ],
+      "default_url": "https://www.statlearning.com/online-courses",
+      "book": "An Introduction to Statistical Learning with Python (free PDF; paid print)",
+      "book_url": "https://www.statlearning.com/"
+    },
+    {
+      "id": "M11",
+      "title": "Unsupervised learning",
+      "path": "curriculum/3-classical-ml.md",
+      "anchor": "module-11",
+      "requires": [
+        "M3",
+        "M5",
+        "M9"
+      ],
+      "recommends": [
+        "M7"
+      ],
+      "default_url": "https://www.statlearning.com/online-courses",
+      "book": "An Introduction to Statistical Learning with Python (free PDF; paid print)",
+      "book_url": "https://www.statlearning.com/"
+    },
+    {
+      "id": "M12",
+      "title": "Ensembles",
+      "path": "curriculum/3-classical-ml.md",
+      "anchor": "module-12",
+      "requires": [
+        "M9",
+        "M10"
+      ],
+      "recommends": [
+        "M4"
+      ],
+      "default_url": "https://www.statlearning.com/online-courses",
+      "book": "An Introduction to Statistical Learning with Python (free PDF; paid print)",
+      "book_url": "https://www.statlearning.com/"
+    },
+    {
+      "id": "M13",
+      "title": "Bayesian modelling",
+      "path": "curriculum/4-probabilistic-ml.md",
+      "anchor": "module-13",
+      "requires": [
+        "M5",
+        "M6",
+        "M3"
+      ],
+      "recommends": [
+        "M9",
+        "M11"
+      ],
+      "default_url": "https://github.com/rmcelreath/stat_rethinking_2024",
+      "book": "Statistical Rethinking - McElreath (paid)",
+      "book_url": "https://xcelab.net/rm/"
+    },
+    {
+      "id": "M14",
+      "title": "Time series",
+      "path": "curriculum/4-probabilistic-ml.md",
+      "anchor": "module-14",
+      "requires": [
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "recommends": [
+        "M13",
+        "M15"
+      ],
+      "default_url": "https://robjhyndman.com/hyndsight/fpp3_videos.html",
+      "book": "Forecasting: Principles and Practice - Hyndman and Athanasopoulos (free web)",
+      "book_url": "https://otexts.com/fpp3/"
+    },
+    {
+      "id": "M15",
+      "title": "Deep learning",
+      "path": "curriculum/5-deep-learning.md",
+      "anchor": "module-15",
+      "requires": [
+        "M2",
+        "M3",
+        "M9",
+        "M10"
+      ],
+      "recommends": [],
+      "default_url": "https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/",
+      "book": "Deep Learning: Foundations and Concepts - Christopher and Hugh Bishop (free web; paid print)",
+      "book_url": "https://www.bishopbook.com/"
+    },
+    {
+      "id": "M16",
+      "title": "Transformers and representations",
+      "path": "curriculum/5-deep-learning.md",
+      "anchor": "module-16",
+      "requires": [
+        "M15"
+      ],
+      "recommends": [],
+      "default_url": "https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/",
+      "book": "Deep Learning: Foundations and Concepts - Christopher and Hugh Bishop (free web; paid print)",
+      "book_url": "https://www.bishopbook.com/"
+    },
+    {
+      "id": "M17",
+      "title": "Reinforcement learning",
+      "path": "curriculum/5-deep-learning.md",
+      "anchor": "module-17",
+      "requires": [
+        "M5",
+        "M15"
+      ],
+      "recommends": [],
+      "default_url": "https://www.davidsilver.uk/teaching/",
+      "book": "Reinforcement Learning: An Introduction - Sutton and Barto (free draft; paid print)",
+      "book_url": "http://incompleteideas.net/book/the-book-2nd.html"
+    },
+    {
+      "id": "M18",
+      "title": "LLMs and post-training",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-18",
+      "requires": [
+        "M16"
+      ],
+      "recommends": [
+        "M17"
+      ],
+      "default_url": "https://cs336.stanford.edu/",
+      "book": "Build a Large Language Model (From Scratch) - Raschka (paid; free code)",
+      "book_url": "https://www.manning.com/books/build-a-large-language-model-from-scratch"
+    },
+    {
+      "id": "M21",
+      "title": "Retrieval and RAG",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-21",
+      "requires": [
+        "M1",
+        "M8a",
+        "M18-app"
+      ],
+      "recommends": [
+        "M11"
+      ],
+      "default_url": "https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/",
+      "book": "AI Engineering - Huyen (paid)",
+      "book_url": "https://huyenchip.com/books/"
+    },
+    {
+      "id": "M22",
+      "title": "Agents and MCP",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-22",
+      "requires": [
+        "M18-app",
+        "M21"
+      ],
+      "recommends": [],
+      "default_url": "https://huggingface.co/learn/agents-course/",
+      "book": "AI Engineering - Huyen (paid)",
+      "book_url": "https://huyenchip.com/books/"
+    },
+    {
+      "id": "M23",
+      "title": "Safety and evaluations",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-23",
+      "requires": [
+        "M18-app"
+      ],
+      "recommends": [
+        "M22"
+      ],
+      "default_url": "https://rdi.berkeley.edu/understanding_llms/s24",
+      "book": "AI Engineering - Huyen, evaluation chapters (paid)",
+      "book_url": "https://huyenchip.com/books/"
+    },
+    {
+      "id": "M24",
+      "title": "Production operations",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-24",
+      "requires": [],
+      "recommends": [
+        "M23"
+      ],
+      "default_url": "https://fullstackdeeplearning.com/course/2022/",
+      "book": "Designing Machine Learning Systems - Huyen (paid)",
+      "book_url": "https://huyenchip.com/books/"
+    },
+    {
+      "id": "M25",
+      "title": "Product data science",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-25",
+      "requires": [
+        "M6",
+        "M7"
+      ],
+      "recommends": [
+        "M6h"
+      ],
+      "default_url": "https://www.storytellingwithdata.com/videos",
+      "book": "Trustworthy Online Controlled Experiments - Kohavi, Tang and Xu (paid)",
+      "book_url": "https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59"
+    },
+    {
+      "id": "M26",
+      "title": "Capstone",
+      "path": "curriculum/6-frontier-production.md",
+      "anchor": "module-26",
+      "requires": [],
+      "recommends": [],
+      "default_url": "",
+      "book": "Choose the reference for your capstone topic",
+      "book_url": ""
+    }
+  ],
+  "subsets": [
+    {
+      "id": "M18-app",
+      "parent": "M18",
+      "anchor": "application-foundations",
+      "requires": [
+        "M1"
+      ]
+    },
+    {
+      "id": "M25-brief",
+      "parent": "M25",
+      "anchor": "product-brief",
+      "requires": [
+        "M1"
+      ]
+    },
+    {
+      "id": "M26-research",
+      "parent": "M26",
+      "anchor": "module-26",
+      "requires": [
+        "M6",
+        "M25-brief"
+      ]
+    },
+    {
+      "id": "M26-systems",
+      "parent": "M26",
+      "anchor": "module-26",
+      "requires": [
+        "M24",
+        "M25-brief"
+      ]
+    },
+    {
+      "id": "M26-applied",
+      "parent": "M26",
+      "anchor": "module-26",
+      "requires": [
+        "M25",
+        "M8a"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "analyst",
+      "title": "Data Analyst",
+      "steps": [
+        "M1",
+        "M7",
+        "M8a",
+        "M2",
+        "M5",
+        "M6",
+        "M6h",
+        "M25",
+        "M26-applied"
+      ]
+    },
+    {
+      "id": "applied-ds",
+      "title": "Applied Data Scientist",
+      "steps": [
+        "M1",
+        "M7",
+        "M8a",
+        "M2",
+        "M3",
+        "M5",
+        "M6",
+        "M6h",
+        "M9",
+        "M10",
+        "M11",
+        "M12",
+        "M24",
+        "M25",
+        "M26-applied"
+      ]
+    },
+    {
+      "id": "ml-engineer",
+      "title": "ML Engineer",
+      "steps": [
+        "M1",
+        "M4",
+        "M7",
+        "M8a",
+        "M2",
+        "M3",
+        "M5",
+        "M9",
+        "M10",
+        "M11",
+        "M12",
+        "M15",
+        "M24",
+        "M25-brief",
+        "M26-systems"
+      ]
+    },
+    {
+      "id": "ai-application",
+      "title": "AI Application Engineer",
+      "steps": [
+        "M1",
+        "M8a",
+        "M18-app",
+        "M21",
+        "M22",
+        "M23",
+        "M24",
+        "M25-brief",
+        "M26-systems"
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Research Foundations",
+      "steps": [
+        "M0",
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M6h",
+        "M7",
+        "M8a",
+        "M9",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16",
+        "M17",
+        "M18",
+        "M25-brief",
+        "M26-research"
+      ]
+    },
+    {
+      "id": "data-engineer",
+      "title": "Data Engineer",
+      "steps": [
+        "M1",
+        "M4",
+        "M7",
+        "M8a",
+        "M8b",
+        "M24",
+        "M25-brief",
+        "M26-systems"
+      ]
+    }
+  ]
+}

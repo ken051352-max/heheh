@@ -2,6 +2,9 @@
 
 Pieces: an impurity function, a best-split search over (feature, threshold),
 a recursive build with stopping rules, and a prediction traversal.
+For this exercise, stop when no split gives strictly positive Gini improvement;
+pure XOR therefore stays a leaf. This is a chosen stopping rule, not a general
+inability of decision trees to represent XOR.
 Run:  pytest -q tests/test_decision_tree.py
 """
 import numpy as np  # noqa: F401

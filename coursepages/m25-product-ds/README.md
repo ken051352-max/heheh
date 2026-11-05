@@ -1,31 +1,62 @@
 # Module 25 — Product DS, Business, Communication & Storytelling
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 25](../../curriculum/6-frontier-production.md#module-25).
+[Full module](../../curriculum/6-frontier-production.md#module-25) ·
+[Early application product brief](../../curriculum/6-frontier-production.md#product-brief)
 
-## Why this module exists
+## Prerequisites and default route
 
-Closes Gap #7 of the benchmark PDF — the largest non-technical gap. A senior data scientist must (a) frame a business problem as a measurable DS problem, (b) communicate results to non-technical stakeholders, (c) drive decisions. Every Meta / Airbnb / Uber / Spotify DS interview has a "product case" loop.
+M6 + M7 for the full module; M6½ before causal-impact claims. Modeling experience is useful when
+the decision involves predictions, but descriptive product analysis does not require a model.
+The early M25-brief subset defines user needs and acceptance criteria after M1 without claiming
+statistical or causal competence.
 
-## Primary anchors (P1-verified)
+| Resource | Role and access |
+|---|---|
+| [Storytelling with Data public videos](https://www.storytellingwithdata.com/videos) | Free lecture/video route; paid workshops and premium archives are separate |
+| [Ron Kohavi's ExP papers](https://exp-platform.com/) | Free experimentation evidence and pitfalls |
+| [Shneiderman's visualization paper](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf) | Primary visualization framework |
+| Cole Nussbaumer Knaflic — *Storytelling with Data* | Recommended main communication book; paid |
+| Kohavi, Tang & Xu — *Trustworthy Online Controlled Experiments* | Recommended main experimentation book; paid, shared with M6½ |
+| [Locally Optimistic](https://locallyoptimistic.com/) | Practitioner perspectives; assess advice against the project context |
 
-| Resource | Role | Link |
-|---|---|---|
-| Cassie Kozyrkov — Decision Intelligence | Framework + articles | <https://www.decisionintelligence.co/> |
-| Cassie Kozyrkov — LinkedIn Learning | Free courses via libraries | <https://www.linkedin.com/learning/instructors/cassie-kozyrkov> |
-| Ron Kohavi — exp-platform.com | Industrial A/B testing (shared with M6½) | <https://exp-platform.com/> |
-| Kohavi, Tang, Xu — *Trustworthy Online Controlled Experiments* | A/B testing bible | <https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59> |
-| Cole Nussbaumer Knaflic — *Storytelling with Data* | Communication standard | — |
-| Ben Shneiderman — "Overview, Zoom & Filter, Details-on-Demand" | Viz framework | <https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf> |
-| CMU MSPPM-DA (Heinz) | University benchmark | <https://www.heinz.cmu.edu/programs/public-policy-management-master/data-analytics> |
-| UMich MADS | University benchmark | <https://www.si.umich.edu/programs/master-applied-data-science> |
-| Locally Optimistic (analytics-engineering community) | Living resource | <https://locallyoptimistic.com/> |
+Books are chosen for quality. Free videos/papers and the local project provide a route without
+purchasing a book; a library subscription must not be assumed. Company interview formats vary, so
+the project demonstrates a decision-making skill rather than promising a universal interview loop.
 
-## Mandatory mini-projects
+## 📦 Required project — explain a metric change and recommend a decision
 
-1. **One-page product memo:** Given a ∆-metric scenario (e.g. 7-day retention -3pp), write a one-pager: framing → hypotheses → proposed experiments → expected ROI.
-2. **Metric tree:** Construct a 3-level metric tree for a product (marketplace / social / SaaS / media); identify north-star + input + guardrail metrics.
-3. **Stakeholder readout:** Produce a 10-minute executive video + 3-page brief for a non-technical VP, based on any of your modelling projects.
+Use one of your datasets or a labeled synthetic scenario, such as seven-day retention falling by
+three percentage points. State the audience, decision owner and action available to them.
 
-## Prerequisites
+1. **Define the metric:** numerator, denominator, unit of analysis, exposure/cohort, time window,
+   inclusion rules, missing events and timezone. Write a small test that checks a hand-worked cohort.
+2. **Diagnose:** inspect instrumentation changes, denominator mix, segments, seasonality and timing.
+   Distinguish evidence from hypotheses; do not interpret a before/after change as causal proof.
+3. **Build the metric tree:** one outcome metric, measurable input metrics and guardrails. Explain
+   how a proxy can improve while the user's outcome deteriorates.
+4. **Recommend:** quantify plausible value/cost with uncertainty and sensitivity. State the decision,
+   what evidence would reverse it, and the next experiment. Causal claims need an estimand,
+   identification assumptions and the M6½ analysis; label a proposed experiment as proposed.
+5. **Communicate:** one-page memo plus a short readout (video, narrated slides or accessible written
+   equivalent). Include one chart chosen for the decision, not a gallery of every analysis.
+6. **Review:** obtain peer/mentor/stakeholder feedback when available, or run a documented rubric
+   review. Record the revision and unresolved objection; never invent stakeholder endorsement.
 
-- Module 6½ (A/B testing literacy) · any modelling module.
+## Completion rubric
+
+| Criterion | Pass evidence |
+|---|---|
+| Decision clarity | Named audience, actionable choice, baseline and reversal condition |
+| Metric validity | Reproducible cohort/denominator checks; relevant segments and uncertainty |
+| Inference discipline | Descriptive, predictive and causal claims distinguished; assumptions explicit |
+| Communication | Main recommendation first, readable chart, limitations and guardrails |
+| Reviewability | Executable analysis/tests, README, data provenance, memo/readout and revision note |
+
+All five criteria must be met. Unsupported ROI or causal impact cannot compensate for a polished
+presentation. A defensible recommendation to collect more evidence or stop an idea is a valid result.
+Private, selectively shared, and sanitized public artifacts are all acceptable.
+
+**Optional depth:** a preregistered experiment analysis plan; sequential/multiple-experiment
+pitfalls; decision-theoretic threshold selection; a fairness or user-wellbeing tradeoff; or a
+stakeholder decision log after a real pilot. These extend the same artifact rather than creating
+three unrelated portfolio projects.

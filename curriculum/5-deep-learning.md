@@ -13,54 +13,63 @@
 <a id="module-15"></a>
 ## Module 15: Deep Learning Foundations — MLPs, CNNs, Backprop
 
-* **The Tutor's "Why":** The deep-learning revolution (2012-present) defines modern AI. Harvard CS109B allocates **four full lectures (8-11) to neural network fundamentals**; MIT 6.3900 Spring 2026 spends **three lectures (5, 6, 7) on NNs and CNNs**; MIT 6.7960 is an entire course. Master the mathematics before touching a GPU.
+**Core outcome:** verify a NumPy backward pass, reproduce it with PyTorch autograd and train/evaluate a small MLP/CNN. Principal recommended book: Christopher M. Bishop and Hugh Bishop, **Deep Learning: Foundations and Concepts** (Springer 2024; free author-hosted web edition, paid PDF/print). Prince and fast.ai are complementary alternatives, not extra gates.
+
+* **The Tutor's "Why":** Derive and check a small network, then reproduce it with autograd. This exposes the connection between a loss, gradients and a working training loop before expensive experiments.
 
 * **Strict Prerequisites:** Module 2 (chain rule), Module 3 (matrix calculus), Module 9 (SGD), Module 10 (logistic regression, cross-entropy loss).
 
-* **Exhaustive Topic List:**
-  * **[Harvard CS109B · Lec 8 "Neural Networks 1 (MLP)"]**: Biological motivation vs artificial neuron (McCulloch-Pitts, perceptron), **Multi-Layer Perceptron (MLP)** architecture — affine transformation + activation function; **universal approximation theorem** (Cybenko 1989, Hornik 1991, with proof sketch).
-  * **[Harvard CS109B · Lec 9 "NN 2 — Gradient Descent, SGD, BackProp"]**: **Backpropagation algorithm** — full derivation via chain rule as dynamic programming over the computation graph; vanishing/exploding gradients; **Xavier/Glorot initialisation**, **He initialisation** (theoretical justification for each).
-  * **[Harvard CS109B · Lec 10 "NN 3 (Optimizers)"]**: **Momentum**, **Nesterov momentum**, **AdaGrad**, **RMSProp**, **Adam**, **AdamW** (decoupled weight decay — 2017 fix), **LAMB** (for large-batch), **Lion** (2023, Chesterton), **Sophia** (2023), learning-rate schedules (step decay, exponential, cosine annealing, warmup, one-cycle), gradient clipping.
-  * **[Harvard CS109B · Lec 11 "NN 4 (Regularization)"]**: **L1/L2 weight decay**, **Dropout** (Hinton 2014 — inverted dropout, concrete dropout), **Batch Normalisation** (Ioffe-Szegedy 2015 — full derivation, internal covariate shift debate, post-hoc explanations), **Layer Normalisation**, **Group Normalisation**, **Instance Normalisation**, **RMSNorm** (2026 standard in LLMs), **early stopping**, **data augmentation**, **label smoothing**, **mixup**, **cutmix**.
-  * **[Harvard CS109B · Lec 12 "CNNs 1 (Basics)"]**: **Convolutional Neural Networks** — convolution operation (discrete 2D), **kernels as learnable filters**, stride, padding (valid, same, full), pooling (max, average, global), translation equivariance vs invariance; classic architectures: **LeNet-5**, **AlexNet**, **VGG-16/19**, **GoogLeNet/Inception** (1×1 convolutions for dimensionality reduction).
-  * **[Harvard CS109B · Lec 13 "CNNs 2 (Regularization)"]**: Data augmentation for vision, dropout in CNNs, batch-norm placement debate.
-  * **[Harvard CS109B · Lec 14 "CNNs 3 (Receptive Field)"]**: **Effective receptive field** calculation, dilated/atrous convolutions, **ResNet** (residual connections — identity mapping, full derivation of gradient flow improvement), **DenseNet**, **SqueezeNet**, **MobileNet** (depthwise-separable convolution), **EfficientNet** (compound scaling), **ConvNeXt** (2022 — CNN catches up to ViT).
-  * **[Harvard CS109B · Lec 15 "CNNs 4 (Saliency Maps)"]**: Gradient-based saliency, **Grad-CAM** (Selvaraju 2017), integrated gradients, **SmoothGrad**, adversarial examples (FGSM, PGD, Carlini-Wagner).
-  * **[Harvard CS109B · Advanced Section 3 "Solvers"]**: Second-order methods, L-BFGS, natural gradient, K-FAC.
-  * **[Harvard CS109B · Advanced Section 4 "Segmentation"]**: **Semantic segmentation** (FCN, U-Net, DeepLab); **instance segmentation** (Mask R-CNN); **panoptic segmentation**.
-  * **[Harvard CS109B · Advanced Section 5 "SOTA & Transfer Learning"]**: ImageNet pretraining, **fine-tuning** vs **linear probing** vs **LoRA** (→ M18), feature extraction.
-  * **[Harvard CS109B · Advanced Section 6 "Autoencoders"]**: Vanilla AEs, denoising AEs, contractive AEs (Jacobian penalty), sparse AEs (KL penalty on activations).
-  * **[MIT 6.390 · Lec 5-6-7 (Spring 2026)]**: "Features & Neural Networks I", "Neural Networks II", "Convolutional Neural Networks" — with extensive labs.
-  * **[MIT 6.7960 · Fall 2025, Week 1-3 (Beery · He · Khattab)]**: Course overview (Beery); **How to train a neural net** (Beery — SGD, backprop, autodiff, differentiable programming); **Approximation theory** (Khattab — universal approximation, **Barron's theorem**, depth separation); **Architectures: Grids** (Beery — CNNs in depth); **Architectures: Memory and Sequence Modeling** (He — RNNs, LSTMs, sequence models); **PyTorch Tutorial** sessions with Jamie Meindl and Sharut Gupta. Reading: *Foundations of Computer Vision* chapters on neural nets, gradient descent, backprop, CNNs (all [visionbook.mit.edu](https://visionbook.mit.edu/)).
-  * **[MIT 6.7960 · Fall 2025, Week 4]**: **Architectures: Transformers** (Beery — tokens + attention + positional codes; Transformers unify MLPs, GNNs, CNNs); **Generalization Theory** (Khattab — PAC, overparameterisation, **double descent**, inadequacy of VC dimension, inductive biases; readings include arXiv 1611.03530, 2503.02113, 2310.00865).
-  * **[IITM BSCS3002 — Deep Learning]**: IITM's dedicated Deep Learning course covers the above plus practical engineering on **PyTorch**.
-  * **[IITM BSCS2008 · Week 11]**: Neural networks in scikit-learn (MLP introduction).
-  * **[Harvard CS 1810]**: Neural networks as a syllabus topic.
-  * **[MIT 6.S191 bootcamp]**: Condensed practical treatment.
+* **Topic map (core plus optional depth; roadmap synthesis):**
+  * Biological motivation vs artificial neuron (McCulloch-Pitts, perceptron), **Multi-Layer Perceptron (MLP)** architecture — affine transformation + activation function; **universal approximation theorem** (Cybenko 1989, Hornik 1991, with proof sketch).
+  * **Backpropagation algorithm** — full derivation via chain rule as dynamic programming over the computation graph; vanishing/exploding gradients; **Xavier/Glorot initialisation**, **He initialisation** (theoretical justification for each).
+  * **Momentum**, **Nesterov momentum**, **AdaGrad**, **RMSProp**, **Adam**, **AdamW** (decoupled weight decay — 2017 fix), **LAMB** (for large-batch), **Lion** (2023, Chesterton), **Sophia** (2023), learning-rate schedules (step decay, exponential, cosine annealing, warmup, one-cycle), gradient clipping.
+  * **L1/L2 penalties and decoupled weight decay**, **Dropout** (Hinton 2014 — inverted dropout, concrete dropout), **Batch Normalisation** (Ioffe-Szegedy 2015 — full derivation, internal covariate shift debate, post-hoc explanations), **Layer Normalisation**, **Group Normalisation**, **Instance Normalisation**, **RMSNorm** (a normalization option used in some LLMs), **early stopping**, **data augmentation**, **label smoothing**, **mixup**, **cutmix**.
+  * **Convolutional Neural Networks** — convolution operation (discrete 2D), **kernels as learnable filters**, stride, padding (valid, same, full), pooling (max, average, global), translation equivariance vs invariance; classic architectures: **LeNet-5**, **AlexNet**, **VGG-16/19**, **GoogLeNet/Inception** (1×1 convolutions for dimensionality reduction).
+  * Data augmentation for vision, dropout in CNNs, batch-norm placement debate.
+  * **Effective receptive field** calculation, dilated/atrous convolutions, **ResNet** (residual connections — identity mapping, full derivation of gradient flow improvement), **DenseNet**, **SqueezeNet**, **MobileNet** (depthwise-separable convolution), **EfficientNet** (compound scaling), **ConvNeXt** (2022 — CNN catches up to ViT).
+  * Gradient-based saliency, **Grad-CAM** (Selvaraju 2017), integrated gradients, **SmoothGrad**, adversarial examples (FGSM, PGD, Carlini-Wagner).
+  * Second-order methods, L-BFGS, natural gradient, K-FAC.
+  * **Semantic segmentation** (FCN, U-Net, DeepLab); **instance segmentation** (Mask R-CNN); **panoptic segmentation**.
+  * ImageNet pretraining, **fine-tuning** vs **linear probing** vs **LoRA** (→ M18), feature extraction.
+  * Vanilla AEs, denoising AEs, contractive AEs (Jacobian penalty), sparse AEs (KL penalty on activations).
+  * "Features & Neural Networks I", "Neural Networks II", "Convolutional Neural Networks" — with extensive labs.
+  * **Training and architectures:** SGD, backprop, autodiff, differentiable programming, CNNs, RNNs/LSTMs and a PyTorch tutorial. Read the matching *Foundations of Computer Vision* chapters on neural nets, gradient descent, backprop and CNNs at [visionbook.mit.edu](https://visionbook.mit.edu/).
+  * **Optional theory:** universal approximation, Barron's theorem, depth separation, PAC learning, overparameterisation, double descent and inductive biases. These are roadmap extensions, not a claim that one archived lecture covers the entire list.
+  * Neural networks in scikit-learn (MLP introduction).
+  * Condensed practical treatment.
 
-* **2026 Resources:**
-  * **Primary Course Link:** [**MIT 6.7960 Fall 2025 live schedule**](https://deeplearning6-7960.github.io/) (15 weeks · Beery · He · Khattab) · [MIT 6.390 Spring 2026 calendar](https://introml.mit.edu/spring26/calendar) · [**MIT 6.S191 (2026 edition, Amini)**](https://introtodeeplearning.com/) · [Harvard CS109B 2022 (latest public)](https://harvard-iacs.github.io/2022-CS109B/).
-  * **Required Reading (Latest 2026 Editions — verified April 2026):**
-    * **_Deep Learning: Foundations and Concepts_** — Bishop & Bishop (**Springer 2024**, free online [bishopbook.com](https://bishopbook.com/)) — **primary text** for this module.
-    * _Understanding Deep Learning_ — Simon Prince (MIT Press 2024; free online [udlbook.github.io](https://udlbook.github.io/udlbook/)) — chapters 1‑12.
+* **Courses and references:**
+  * **Primary Course Link:** [MIT OCW 6.7960 Deep Learning, Fall 2024](https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/) — public lecture videos, notes, assignments and a PyTorch tutorial; instructors Phillip Isola, Sara Beery and Jeremy Bernstein. [MIT 6.S191](https://introtodeeplearning.com/) supplies a shorter free video companion. The [current 6.7960 schedule](https://deeplearning6-7960.github.io/) is a syllabus update, not a promise of public recordings for its current offering.
+  * **Principal reading and further references:**
+    * **_Deep Learning: Foundations and Concepts_** — Bishop & Bishop (**Springer 2024**, free online [bishopbook.com](https://www.bishopbook.com/)) — **primary text** for this module.
+    * _Understanding Deep Learning_ — Simon J. D. Prince (MIT Press 2023; free online [udlbook.github.io](https://udlbook.github.io/udlbook/)) — chapters 1‑12.
     * _Dive into Deep Learning_ — Zhang, Lipton, Li, Smola — [d2l.ai](https://d2l.ai/) — PyTorch + JAX parallel implementations, continuously updated.
     * _Foundations of Computer Vision_ — Torralba, Isola, Freeman (**MIT Press 2024**, free online at [visionbook.mit.edu](https://visionbook.mit.edu/)) — the official MIT 6.7960 textbook.
     * *Hands‑On Machine Learning with Scikit‑Learn and PyTorch* — Géron (O'Reilly Oct‑Dec 2025).
     * _Deep Learning_ — Goodfellow, Bengio, Courville (2016, still relevant as historical reference).
-  * **Practical Implementation:** **PyTorch 2.11.0** (`torch.compile`, FSDP2, CUDA 13, `torch.func.grad`, `torch.distributed.tensor`), **JAX 0.10.0** with **Flax 0.10+** / **NNX** / **Equinox** for functional DL, **Hugging Face Accelerate** for distributed training, **Weights & Biases** or **MLflow 3.11+** for experiment tracking, **Lightning 2.4+** for training‑loop abstraction.
+  * **Practical Implementation:** PyTorch 2.x with a documented compatible Python/device build; CPU float32 is the required baseline. Start with a plain training loop and local JSON/CSV experiment logs. JAX, Accelerate, Lightning and hosted trackers are optional alternatives or later scaling tools.
 
-* **🚀 Deep Learning Systems — Training at Scale:** Modern DL is as much a *systems* discipline as an algorithms discipline. Stanford CS336 dedicates weeks to it.
-  * **JAX alongside PyTorch:** [JAX docs](https://docs.jax.dev/) ✅, [Flax NNX](https://flax.readthedocs.io/) ✅ — mainstream at Google, DeepMind, Anthropic. Learn `jit`, `vmap`, `pmap`, `scan`, `shard_map`, `jax.Array` with sharding, and the [tour of JAX tutorials](https://docs.jax.dev/en/latest/tutorials.html).
-  * **Mixed-Precision Training:** `torch.amp`, `bfloat16` vs `fp16` vs `fp8` (H100/B200), loss-scaling, stochastic rounding; **why bf16 is the 2026 default** (no loss-scaling needed, wider dynamic range).
-  * **Gradient Checkpointing:** Trade compute for memory; `torch.utils.checkpoint`, `jax.checkpoint` — required for any model that doesn't fit in GPU RAM.
-  * **Fully-Sharded Data Parallel (FSDP / FSDP2):** [PyTorch FSDP API docs](https://docs.pytorch.org/docs/stable/fsdp.html) ✅ + [Getting-Started-with-FSDP2 tutorial](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html) ✅. Shard parameters, gradients, and optimiser states across GPUs — the 2026 default for any model > 7B.
+
+**PyTorch training contract:** use `nn.Module`, a dataset/loader, explicit device/dtype, `optimizer.zero_grad(set_to_none=True)`, loss/backward/step and reproducible checkpoint state. Distinguish `model.train()` from `model.eval()`; evaluate under `torch.inference_mode()`. Tune and early-stop on validation data, then evaluate the held-out set once.
+
+Implement one small `torch.autograd.Function` and check its analytical backward with [gradcheck](https://docs.pytorch.org/docs/stable/notes/gradcheck.html) in float64 at differentiable inputs; compare with native autograd. Explain why ReLU at zero is not a valid smooth finite-difference fixture. [AMP](https://docs.pytorch.org/docs/stable/amp.html) wraps the forward/loss computation; run backward outside autocast. Use `torch.amp.GradScaler` for the appropriate fp16 path; bf16 commonly needs no scaler. Keep float32 CPU as the fallback and record supported operations.
+
+**Regularization experiment:** L2 penalization and decoupled weight decay are equivalent only for particular optimizer/update conventions; they differ for adaptive optimizers. Compare Adam with an L2 loss penalty and AdamW under matched data, steps and learning-rate budgets; document bias/norm parameter treatment. Compare one constant schedule with one warmup/decay schedule.
+
+**Applied companion:** [fast.ai Practical Deep Learning for Coders](https://course.fast.ai/) provides free lectures and practical examples. Use it alongside the derivation/gradient checks, not as a second mandatory course. Availability of hosted GPU quotas can change; the small local fixture remains the completion route.
+
+* **🚀 Deep Learning Systems — Training at Scale (optional depth):** Modern DL is as much a *systems* discipline as an algorithms discipline. Stanford CS336 dedicates weeks to it.
+  * **JAX alongside PyTorch:** [JAX docs](https://docs.jax.dev/), [Flax NNX](https://flax.readthedocs.io/) — an optional alternative stack. Learn `jit`, `vmap`, `scan`, `shard_map`, `jax.Array` with sharding, and the [tour of JAX tutorials](https://docs.jax.dev/en/latest/tutorials.html); check current guidance before using older `pmap` examples.
+  * **Mixed-Precision Training:** `torch.amp`, `bfloat16` vs `fp16` vs `fp8` (H100/B200), loss-scaling, stochastic rounding; **bf16 where supported** (wider exponent range than fp16, usually without gradient scaling; performance and operator support depend on hardware).
+  * **Gradient Checkpointing:** Trade recomputation for activation memory with `torch.utils.checkpoint` or `jax.checkpoint`. Compare it with smaller batches/sequences, offloading or sharding; checkpointing alone cannot solve every model-memory limit.
+  * **Fully-Sharded Data Parallel (FSDP / FSDP2):** [PyTorch FSDP API docs](https://docs.pytorch.org/docs/stable/fsdp.html) ✅ + [Getting-Started-with-FSDP2 tutorial](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html) ✅. Shard parameters, gradients, and optimiser states across GPUs — an optional scaling technique, selected after measuring memory and communication costs.
   * **Distributed primitives:** DDP, FSDP/FSDP2, Tensor-Parallel (Megatron-style), Pipeline-Parallel (GPipe, PipeDream), **3D parallelism** (DP × TP × PP), ZeRO-1/2/3 (DeepSpeed).
   * **Throughput engineering:** [Triton](https://github.com/triton-lang/triton) ✅ kernels, **FlashAttention-2 / 3** (Tri Dao), **PagedAttention** (vLLM), activation recomputation strategies, `torch.compile` with `fullgraph=True`.
-  * **Reading:** [*How to Scale Your Model* (Google JAX scaling book, 2024)](https://jax-ml.github.io/scaling-book/) ✅, [PyTorch DTensor docs](https://pytorch.org/docs/stable/distributed.tensor.html), Stanford CS336 Lectures 5-7 (scaling, parallelism, systems).
+  * **Reading:** [*How to Scale Your Model*](https://jax-ml.github.io/scaling-book/), [PyTorch DTensor docs](https://pytorch.org/docs/stable/distributed.tensor.html), and the scaling/parallelism/systems materials listed in the selected Stanford CS336 offering; lecture numbering can change.
 
 * **📦 Module Project (mandatory) — Backprop from scratch, then a real CNN**
-  * **Deliverable:** Two halves. **(a)** A NumPy-only MLP with manual forward and backward passes for at least Linear, ReLU, and Softmax-CE layers, trained on MNIST to >97 % test accuracy. **(b)** The same task in PyTorch, then a CNN on CIFAR-10 with augmentation, LR scheduling, and a training loop you wrote yourself.
-  * **Definition of done:** (1) A gradient-check test comparing every analytic backward pass against finite differences to `1e-5` — non-negotiable; plus a smoke test that the model can overfit a 10-sample batch to near-zero loss (the fastest way to detect a broken training loop); (2) `README.md` with loss/accuracy curves for train and validation, and a confusion matrix; (3) a results memo describing one bug you hit in the backward pass and how the gradient check found it.
+  * **Deliverable:** Two halves. **(a)** A NumPy-only MLP with manual forward and backward passes for at least Linear, ReLU, and Softmax-CE layers, trained on a fixed small MNIST or local digits fixture; report held-out accuracy against a trivial baseline instead of treating a hardware-dependent target as a universal gate. **(b)** The same task in PyTorch, then a small CNN on a documented image subset with augmentation, LR scheduling and your own training loop. Full CIFAR-10 runs are optional; report actual sample count, budget and hardware.
+  * **Definition of done:** (1) Compare analytic backward passes with finite differences on smooth float64 fixtures, documenting the step size and absolute/relative tolerances (`1e-5` is a starting tolerance, not a universal bound); add a tiny-batch overfit smoke test with an explicit loss target and step budget; (2) `README.md` with loss/accuracy curves for train and validation, and a confusion matrix; (3) a results memo describing a backward-pass bug you found or deliberately injected and how the check detected it.
   * **Stretch:** Add mixed-precision training and report the throughput and memory difference.
   * **Anti-goal:** Do not start from a tutorial's training loop. The point of the module is that you can write one.
 
@@ -69,51 +78,57 @@
 <a id="module-16"></a>
 ## Module 16: Representation Learning, Transformers & Generative Models
 
-* **The Tutor's "Why":** The Transformer (Vaswani et al. 2017, *Attention is All You Need*) is **the** defining architecture of 2026. MIT 6.390 Spring 2026 dedicates Lecture 9 entirely to it. Every frontier lab, from OpenAI to DeepMind to Anthropic, builds on transformers + diffusion. This module is the ticket to research-grade work.
+**Core outcome:** explain tokenization and causal attention, implement a tiny decoder and evaluate a pretrained representation on a frozen task. Principal reading: Bishop and Bishop on attention/transformers; Alammar and Grootendorst, **Hands-On Large Language Models** (O’Reilly 2024, paid), is the applied book. GAN/diffusion/3D families are optional specialization depth.
 
-* **Strict Prerequisites:** Module 15 (backprop, CNNs, RNNs, attention preview).
+* **The Tutor's "Why":** Attention, learned representations and generative objectives explain how a model uses context. Build a tiny causal decoder to connect the equations with testable behavior; then compare modern architectural choices.
 
-* **Exhaustive Topic List:**
-  * **[Harvard CS109B · Lec 16 "Intro to Language Models"]**: n-gram language models, perplexity, statistical LM vs neural LM.
-  * **[Harvard CS109B · Lec 17 "Recurrent Neural Networks"]**: RNN forward/backward through time, bidirectional RNNs.
-  * **[Harvard CS109B · Lec 18 "NLP 1 (GRUs/LSTMs)"]**: LSTM full derivation, GRU comparison, vanishing-gradient resolution.
-  * **[Harvard CS109B · Lec 19 "NLP 2 (ELMo)"]**: Contextual word embeddings, character-level convolutions, bidirectional LM.
-  * **[Harvard CS109B · Advanced Section 7 "Word2Vec"]**: **Skip-gram**, **CBOW**, negative sampling, hierarchical softmax, GloVe (global co-occurrence), FastText (subword embeddings).
-  * **[Harvard CS109B · Lec 20 "NLP 3 (Seq2Seq & Attention)"]**: **Encoder-decoder architecture**, **Bahdanau attention** (additive), **Luong attention** (multiplicative), content-based vs location-based attention.
-  * **[Harvard CS109B · Lec 21 "NLP 4 (Transformers)"]**: **The Transformer** — Vaswani et al. 2017 in full. Scaled dot-product attention (Q, K, V), **multi-head attention**, **positional encoding** (sinusoidal, learned, rotary RoPE, ALiBi, YaRN), encoder stack, decoder stack with masked self-attention, layer norm placement (pre-LN vs post-LN — 2020 pre-LN victory), feed-forward network (GELU → SwiGLU), residual connections.
-  * **[Harvard CS109B · Advanced Section 8 "BERT"]**: **BERT** (bidirectional encoder, masked language modelling, next-sentence prediction), **RoBERTa**, **ALBERT**, **DistilBERT**, **ELECTRA** (replaced token detection), **DeBERTa** (disentangled attention).
-  * **[MIT 6.390 · Lec 9 (Spring 2026) "Transformers"]**: Dedicated lecture on transformer architecture.
-  * **[MIT 6.7960 · Fall 2025 Week 4 "Architectures: Transformers" (Beery)]**: Three key ideas — **tokens, attention, positional codes**; Transformers as unified framework (subsuming MLPs, GNNs, CNNs); reading = *visionbook.mit.edu/transformers*.
-  * **[MIT 6.7960 · Fall 2025 Weeks 5‑7 "Representation Learning" (He, Khattab)]**: **Reconstruction‑based** (autoencoders, VQ-VAE, MAE — Masked Autoencoders); **Similarity‑based / Neural Information Retrieval** — information retrieval, contrastive learning (InfoNCE, hard negatives, KL distillation), sub‑linear search & scaling trade‑offs (cross‑encoders, bi‑encoders, **late interaction / ColBERT**); **Representation Learning and Information Theory** — NN‑GP correspondence, NTK — Neural Tangent Kernel.
-  * **[MIT 6.7960 · Fall 2025 Weeks 6‑9 "Foundation Models" (Khattab, He)]**: **Pre‑training** (causal LM loss, SmolLM3, OLMo 2, Marin 8B); **Scaling laws** (Kaplan 2020 + Chinchilla 2022 + Emergent Abilities debate: are emergent abilities a mirage?); **Generative models: basics → VAE & GAN → Diffusion & Flows** (Kaiming He); **Post‑training** (instruction tuning, DPO, GRPO).
-  * **[Harvard CS109B · Lec 22-23 "GANs 1 & 2"]**: **Generative Adversarial Networks** — minimax game formulation (Goodfellow 2014), optimal discriminator proof, **mode collapse**, **Wasserstein GAN** (earth-mover distance, Kantorovich-Rubinstein duality), **WGAN-GP** (gradient penalty), **DCGAN**, **Progressive GAN**, **StyleGAN 2/3**, **BigGAN**, **Conditional GAN**, **Pix2Pix**, **CycleGAN** (unpaired translation).
-  * **[Harvard CS109B · Advanced Section 9 "More GANs"]**: Evaluation metrics (IS, FID, KID, precision-recall), tricks (spectral normalisation, self-attention GAN — SAGAN).
-  * **[MIT 6.7960 · Week 8-9 "Generative models"]**:
-    * **Basics** — density models, energy-based models, Langevin samplers, **autoregressive models** (PixelRNN, PixelCNN, MADE, WaveNet), GANs.
+* **Strict Prerequisites:** Module 15 core (backprop, a working PyTorch training loop and small-network evaluation). RNNs and attention are developed here; optional M15 architecture surveys are not extra entry gates.
+
+* **Topic map (core plus optional depth; roadmap synthesis):**
+  * n-gram language models, perplexity, statistical LM vs neural LM.
+  * RNN forward/backward through time, bidirectional RNNs.
+  * LSTM full derivation, GRU comparison, vanishing-gradient resolution.
+  * Contextual word embeddings, character-level convolutions, bidirectional LM.
+  * **Skip-gram**, **CBOW**, negative sampling, hierarchical softmax, GloVe (global co-occurrence), FastText (subword embeddings).
+  * **Encoder-decoder architecture**, **Bahdanau attention** (additive), **Luong attention** (multiplicative), content-based vs location-based attention.
+  * **The Transformer** — Vaswani et al. 2017 in full. Scaled dot-product attention (Q, K, V), **multi-head attention**, **positional encoding** (sinusoidal, learned, rotary RoPE, ALiBi, YaRN), encoder stack, decoder stack with masked self-attention, layer norm placement (pre-LN vs post-LN and training trade-offs), feed-forward network (GELU → SwiGLU), residual connections.
+  * **BERT** (bidirectional encoder, masked language modelling, next-sentence prediction), **RoBERTa**, **ALBERT**, **DistilBERT**, **ELECTRA** (replaced token detection), **DeBERTa** (disentangled attention).
+  * Dedicated lecture on transformer architecture.
+  * Three key ideas — **tokens, attention, positional codes**; Transformers as unified framework (subsuming MLPs, GNNs, CNNs); reading = *visionbook.mit.edu/transformers*.
+  * **Reconstruction‑based** (autoencoders, VQ-VAE, MAE — Masked Autoencoders); **Similarity‑based / Neural Information Retrieval** — information retrieval, contrastive learning (InfoNCE, hard negatives, KL distillation), sub‑linear search & scaling trade‑offs (cross‑encoders, bi‑encoders, **late interaction / ColBERT**); **Representation Learning and Information Theory** — NN‑GP correspondence, NTK — Neural Tangent Kernel.
+  * **Pre‑training** (causal LM loss, SmolLM3, OLMo 2, Marin 8B); **Scaling laws** (Kaplan 2020 + Chinchilla 2022 + Emergent Abilities debate: are emergent abilities a mirage?); **Generative models: basics → VAE & GAN → Diffusion & Flows** (Kaiming He); **Post‑training** (instruction tuning, DPO, GRPO).
+  * **Generative Adversarial Networks** — minimax game formulation (Goodfellow 2014), optimal discriminator proof, **mode collapse**, **Wasserstein GAN** (earth-mover distance, Kantorovich-Rubinstein duality), **WGAN-GP** (gradient penalty), **DCGAN**, **Progressive GAN**, **StyleGAN 2/3**, **BigGAN**, **Conditional GAN**, **Pix2Pix**, **CycleGAN** (unpaired translation).
+  * Evaluation metrics (IS, FID, KID, precision-recall), tricks (spectral normalisation, self-attention GAN — SAGAN).
+  * * **Basics** — density models, energy-based models, Langevin samplers, **autoregressive models** (PixelRNN, PixelCNN, MADE, WaveNet), GANs.
     * **Representation-meets-generation** — **VAEs** (Kingma 2013) with full ELBO derivation, **reparameterisation trick** (ε ~ 𝒩(0,I); z = μ + σε), β-VAE for disentanglement, VQ-VAE, NVAE.
     * **Conditional models** — cGAN, cVAE, conditional diffusion, paired image-to-image (Pix2Pix), text-to-image (DALL-E, Imagen, Stable Diffusion, Midjourney), image-to-text (captioning).
-  * **[MIT 6.7960]**: **Diffusion Models (DDPM)** — forward noising process, reverse denoising process, **score-matching formulation** (Song & Ermon), **variational diffusion** (Ho et al. 2020), classifier-free guidance, **latent diffusion** (Stable Diffusion), **DPM-Solver / DPM-Solver++** (2022 ODE samplers), **Flow Matching** (2023), **Rectified Flow** (2024 — the 2026 SOTA for image/video gen).
-  * **[MIT 6.7960 · Week 10-11 "Generalization (OOD) & Transfer Learning"]**: **Adversarial robustness** (FGSM, PGD attacks, certified defences), **distribution shift** (covariate shift, label shift, concept drift), **domain adaptation** (DANN, CORAL, MMD), **foundation models** — fine-tuning, **linear probing**, **knowledge distillation**, **prompting**, **parameter-efficient fine-tuning** (PEFT: adapters, LoRA, QLoRA, IA³, prompt tuning, prefix tuning).
-  * **[MIT 6.7960 · Week 11 "Scaling Laws"]**: **Kaplan scaling laws** (2020), **Chinchilla scaling laws** (Hoffmann 2022 — compute-optimal N*D allocation), power-law behaviour, breaking power laws via data pruning, critical batch size.
-  * **[IITM BSCS3005 — Computer Vision]**: Image classification, object detection (YOLO v8-v10, DETR), segmentation, video understanding, 3D vision, **NeRF** (Neural Radiance Fields), **3D Gaussian Splatting** (2023 SOTA — 2026 standard for 3D scenes).
-  * **[IITM BSCS3004 — LLMs]**: Dedicated course on language modelling (see M18).
+  * **Diffusion Models (DDPM)** — forward noising process, reverse denoising process, **score-matching formulation** (Song & Ermon), **variational diffusion** (Ho et al. 2020), classifier-free guidance, **latent diffusion** (Stable Diffusion), **DPM-Solver / DPM-Solver++** (2022 ODE samplers), **Flow Matching** (2023), **Rectified Flow** (a generative-model family; compare objectives and sampling behavior).
+  * **Adversarial robustness** (FGSM, PGD attacks, certified defences), **distribution shift** (covariate shift, label shift, concept drift), **domain adaptation** (DANN, CORAL, MMD), **foundation models** — fine-tuning, **linear probing**, **knowledge distillation**, **prompting**, **parameter-efficient fine-tuning** (PEFT: adapters, LoRA, QLoRA, IA³, prompt tuning, prefix tuning).
+  * **Kaplan scaling laws** (2020), **Chinchilla scaling laws** (Hoffmann 2022 — compute-optimal N*D allocation), power-law behaviour, breaking power laws via data pruning, critical batch size.
+  * Image classification, object detection (YOLO v8-v10, DETR), segmentation, video understanding, 3D vision, **NeRF** (Neural Radiance Fields), **3D Gaussian Splatting** (optional 3D representation topic).
+  * Dedicated course on language modelling (see M18).
 
-* **2026 Resources:**
-  * **Primary Course Link:** [**MIT 6.7960 Fall 2025 full schedule**](https://deeplearning6-7960.github.io/) (weeks 4‑11) · [**Stanford CS336 Spring 2026 Lec 3–4**](https://cs336.stanford.edu/) (architectures + MoE) · [Harvard CS109B 2022 Lec 16‑23](https://harvard-iacs.github.io/2022-CS109B/) · [MIT 6.390 S26 Lec 9](https://introml.mit.edu/spring26/lectures/lec09).
-  * **Required Reading (Latest 2026 Editions — verified April 2026):**
-    * **Bishop & Bishop — *Deep Learning: Foundations and Concepts*** (Springer 2024, free at [bishopbook.com](https://bishopbook.com/)) — chapters on attention and transformers.
+* **Courses and references:**
+  * **Primary Course Link:** [MIT OCW 6.7960 Deep Learning, Fall 2024](https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/) — select transformer, representation-learning and generative-model videos. [Stanford CS336 public recordings](https://cs336.stanford.edu/) provide current architecture and language-model systems depth; its full GPU-heavy assignments are not M16 core requirements. [Harvard CS109B 2022](https://harvard-iacs.github.io/2022-CS109B/) supplies archived written materials.
+  * **Principal reading and further references:**
+    * **Bishop & Bishop — *Deep Learning: Foundations and Concepts*** (Springer 2024, free at [bishopbook.com](https://www.bishopbook.com/)) — chapters on attention and transformers.
     * _Understanding Deep Learning_ — Prince — Chapters 12‑18 (transformers, GANs, VAEs, diffusion).
     * **_Hands‑On Large Language Models_** — Alammar & Grootendorst (O'Reilly, Sep 2024, 428 pp.) — [HandsOnLLM repo](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models).
     * Vaswani et al. 2017 ("Attention is All You Need") — **mandatory primary‑source reading**.
     * Ho, Jain, Abbeel 2020 ("DDPM") — for diffusion.
-    * Lipman et al. 2023 ("Flow Matching") & Liu et al. 2022 ("Rectified Flow") — 2026 generative SOTA.
+    * Lipman et al. 2023 ("Flow Matching") & Liu et al. 2022 ("Rectified Flow") — optional generative-model depth.
     * Radford et al. 2021 ("CLIP") — multi‑modal foundation.
     * _The Little Book of Deep Learning_ — François Fleuret — concise reference.
-  * **Practical Implementation:** **Hugging Face Transformers v5.0 / v4.57 LTS**, **Diffusers 0.30+** (image/video), **PEFT 0.14+** (LoRA/QLoRA/DoRA), **xformers** / **FlashAttention‑3**, **bitsandbytes** (4/8‑bit), **`torch.compile`** + **`torch.fullgraph`** (2× speedups), **Triton 3.x** for custom kernels (Stanford CS336 Lec 6).
+  * **Practical Implementation:** **Hugging Face Transformers** (pin a release compatible with the selected checkpoint and PyTorch), **Diffusers** for optional image/video work, **PEFT** for optional adapters, **xformers** / **FlashAttention**, **bitsandbytes** (4/8-bit), **`torch.compile(fullgraph=True)`** where supported (measure compile time, runtime and graph breaks; no fixed speedup), **Triton** for optional custom kernels. Pin compatible versions for the selected extension.
+
+
+**Modern decoder anatomy:** start with causal multi-head attention, then study RoPE, RMSNorm, SwiGLU and [grouped-query attention (GQA)](https://arxiv.org/abs/2305.13245). GQA shares fewer key/value heads across query-head groups; explain the KV-cache trade-off and test head dimensions. These are design choices used by some model families, not requirements of every transformer. Compare one change at a time on the same budget.
+
+**Tokenization and scaling:** implement a small byte-pair-encoding example or inspect a trained tokenizer using [tiktoken](https://github.com/openai/tiktoken). Train a learned tokenizer on training text only; document Unicode/byte behavior, special tokens and context limits. Check encoding/decoding on adversarial strings. Scaling-law fits describe measured regimes; report tokens, parameters and compute rather than extrapolating a tiny run into a frontier-model claim.
 
 * **📦 Module Project (mandatory) — Sentiment analyser on a pretrained model, plus a transformer you built**
-  * **Deliverable:** Two halves. **(a)** A deployed sentiment (or topic) classifier built on a pretrained Hugging Face model — fine-tuned or used zero-shot, your choice, but you must justify it — with a proper eval set and error analysis. **(b)** A minimal decoder-only transformer written from scratch (tokeniser → embeddings → multi-head self-attention → residual + layer-norm → LM head) trained on a small corpus until it produces recognisable text.
-  * **Definition of done:** (1) `pytest` suite including a shape test for every tensor in the attention block and a causal-mask test proving position *t* cannot attend to *t+1*; (2) `README.md` with the classifier's per-class metrics, a confusion matrix, at least ten inspected misclassifications, and a live URL; (3) a results memo on what your from-scratch model's failure modes taught you about the pretrained one.
+  * **Deliverable:** Two halves. **(a)** A sentiment (or topic) classifier built on a pretrained Hugging Face model — fine-tuned or used zero-shot, your choice, but you must justify it — with a proper eval set and error analysis. **(b)** A minimal decoder-only transformer written from scratch (tokeniser → embeddings → multi-head self-attention → residual + layer-norm → LM head) trained on a small licensed corpus with fixed train/validation partitions; compare validation cross-entropy against a unigram baseline. Keep the model tiny enough for a CPU smoke run and report sample quality without promising fluent language.
+  * **Definition of done:** (1) `pytest` suite including shape checks for the attention block and a causal-mask test proving that changing any later token cannot change the output at position *t*; (2) `README.md` with the classifier's per-class metrics, a confusion matrix, up to ten inspected misclassifications (all of them if fewer), and either a live URL or exact local/container reproduction command; (3) a results memo on what your from-scratch model's failure modes taught you about the pretrained one.
   * **Stretch:** Compare your fine-tuned classifier against a well-prompted foundation model on the same eval set and report cost, latency, and accuracy — this is the exact trade-off [M21](6-frontier-production.md#module-21) formalises.
   * *Archetype source: video 1 (13:25) — "sentiment analyser on a pretrained Hugging Face model" is named as the accessible NLP portfolio project; the from-scratch half is added so the module still earns its place in the deep-learning stratum.*
 
@@ -122,16 +137,18 @@
 <a id="module-17"></a>
 ## Module 17: Reinforcement Learning & Decision Making
 
-* **The Tutor's "Why":** RL drives robotics, game AI, and — most importantly in 2026 — the RLHF alignment of LLMs. MIT 6.390 Spring 2026 Lec 10-11 covers MDPs and RL. IITM runs a dedicated BSCS3003 course. Harvard CS 1810 (2026) lists reinforcement learning as a named syllabus topic.
+**Core outcome:** formulate an MDP, verify Bellman updates, train tabular Q-learning and a tiny DQN, then explain policy gradients/PPO and the DPO distinction. Principal book: Sutton and Barto, **Reinforcement Learning: An Introduction**, second edition (2018; free author PDF and paid print).
+
+* **The Tutor's "Why":** Reinforcement learning studies decisions whose consequences unfold over time. Robotics, games and some LLM post-training methods provide different applications; the right objective and evaluation depend on the setting.
 
 * **Strict Prerequisites:** Module 5 (Markov chains, expectation), Module 15 (can train a deep network).
 
-* **Exhaustive Topic List:**
-  * **[MIT 6.390 · Lec 10 (Spring 2026) "Markov Decision Processes"]**: **MDP formulation** — (S, A, P, R, γ), episodic vs continuing tasks, **Bellman equations** (value iteration, policy iteration), **optimality** (Bellman optimality operator, contraction mapping theorem proof), dynamic programming for MDPs.
-  * **[MIT 6.390 · Lec 11 (Spring 2026) "Reinforcement Learning"]**: **Model-free RL** — **Monte Carlo methods** (first-visit, every-visit), **Temporal Difference (TD)** learning, **TD(0)**, TD(λ), SARSA, **Q-learning** (off-policy TD control), **Deep Q-Networks (DQN)** (Mnih et al. 2015 — experience replay, target network, Atari), Double DQN, Dueling DQN, Rainbow DQN.
-  * **[MIT 6.790 · Part IV "Decision Making"]**: Optimising under model uncertainty; **explore-vs-exploit tradeoff**; **credit assignment problem**; two key timescales (state dynamics vs information dynamics) → framework table distinguishing optimisation, MDPs, RL.
-  * **[MIT 6.86x · Unit 5 Lec 17-19]**: **Reinforcement Learning 1 & 2**; Applications to **Natural Language Processing** (dialogue systems as RL, text summarisation as RL).
-  * **[IITM BSCS3003 — Reinforcement Learning]**: Dedicated 12-week course covering:
+* **Topic map (core plus optional depth; roadmap synthesis):**
+  * **MDP formulation** — (S, A, P, R, γ), episodic vs continuing tasks, **Bellman equations** (value iteration, policy iteration), **optimality** (Bellman optimality operator, contraction mapping theorem proof), dynamic programming for MDPs.
+  * **Model-free RL** — **Monte Carlo methods** (first-visit, every-visit), **Temporal Difference (TD)** learning, **TD(0)**, TD(λ), SARSA, **Q-learning** (off-policy TD control), **Deep Q-Networks (DQN)** (Mnih et al. 2015 — experience replay, target network, Atari), Double DQN, Dueling DQN, Rainbow DQN.
+  * Optimising under model uncertainty; **explore-vs-exploit tradeoff**; **credit assignment problem**; two key timescales (state dynamics vs information dynamics) → framework table distinguishing optimisation, MDPs, RL.
+  * **Reinforcement Learning 1 & 2**; Applications to **Natural Language Processing** (dialogue systems as RL, text summarisation as RL).
+  * Optional RL topic branches:
     * Multi-armed bandits (ε-greedy, UCB, Thompson sampling, contextual bandits — LinUCB, Neural contextual bandits).
     * Policy gradient methods — **REINFORCE** (Williams 1992, log-likelihood trick derivation), **Actor-Critic** (A2C, A3C), **Advantage function**, **GAE** (Generalised Advantage Estimation).
     * **Trust Region methods** — TRPO (Schulman 2015), **PPO** (Schulman 2017 — clipped objective, the RLHF workhorse), **TRPO vs PPO vs ACKTR**.
@@ -141,18 +158,23 @@
     * **Offline RL** — BCQ, CQL, IQL, decision transformer.
     * **Hierarchical RL** — options framework, feudal networks, HIRO.
     * **Multi-agent RL** — self-play, fictitious play, MADDPG, AlphaZero, counterfactual regret minimisation.
-  * **[MIT 6.7960 · Week 15 "Efficient Policy Optimization Techniques for LLMs"]**: **RLHF challenges**, simplifying RL policy optimisation to **relative reward regression** (DPO — Direct Preference Optimisation, Rafailov 2023), **IPO**, **KTO**, **ORPO**, multi-turn RLHF extensions.
+  * **RLHF challenges**, reward models and **DPO** (Direct Preference Optimization, Rafailov et al., 2023) as direct optimization on preference pairs, **IPO**, **KTO**, **ORPO**, multi-turn RLHF extensions.
 
-* **2026 Resources:**
-  * **Primary Course Link:** [MIT 6.390 Spring 2026 Lec 10-11](https://introml.mit.edu/spring26/) · [David Silver DeepMind RL Course (YouTube, still canonical)](https://www.youtube.com/watch?v=2pWv7GOvuf0) · **[IITM BSCS3003 Reinforcement Learning](https://study.iitm.ac.in/ds/course_pages/BSCS3003.html)**.
-  * **Required Reading (Latest 2026 Editions):**
-    * _Reinforcement Learning: An Introduction_ (**2nd Edition, 2018, 2024 reprint**) — Sutton & Barto — [free PDF](http://incompleteideas.net/book/the-book-2nd.html) — **the canonical text**.
+* **Courses and references:**
+  * **Primary Course Link:** [David Silver’s free RL lectures, slides and Easy21 assignment](https://www.davidsilver.uk/teaching/). The [IITM Reinforcement Learning course description](https://study.iitm.ac.in/ds/course_pages/BSCS3003.html) is syllabus context, not a verified free lecture route.
+  * **Principal reading and further references:**
+    * _Reinforcement Learning: An Introduction_ (**2nd Edition, 2018**) — Sutton & Barto — [free PDF](http://incompleteideas.net/book/the-book-2nd.html) — **the canonical text**.
     * _Algorithms for Decision Making_ — Kochenderfer, Wheeler, Wray (MIT Press 2022) — [free online](https://algorithmsbook.com/).
     * _Foundations of Deep Reinforcement Learning_ — Graesser & Keng — for practitioners.
   * **Practical Implementation:** **Gymnasium** (successor to OpenAI Gym), **Stable-Baselines3 2.x**, **CleanRL** (single-file implementations — best for learning), **RLlib** (Ray, for distributed), **PettingZoo** (multi-agent), **trl** (Hugging Face — for RLHF), **DeepMind Acme**, **PufferLib** (2025, unified wrapper).
 
+
+**Preference-learning bridge:** first derive REINFORCE and the PPO clipped surrogate on a small policy. Then read the [DPO paper](https://arxiv.org/abs/2305.18290): standard DPO learns from chosen/rejected pairs and a reference policy, without fitting a separate reward model or sampling online rollouts during its training loop. Distinguish this from PPO-based RLHF, which uses a learned reward signal and online sampling. Implement the tiny preference-loss calculation and test that swapping the preferred/rejected pair changes the objective as expected; full LLM post-training belongs to M18.
+
+**RL evaluation:** separate training exploration from evaluation, use fixed episode budgets and multiple seeds, compare a random/heuristic policy, and distinguish environment termination from time-limit truncation when bootstrapping value targets. Report failures and variability; learning curves are not guaranteed to improve monotonically.
+
 * **📦 Module Project (mandatory) — Agent that actually learns**
-  * **Deliverable:** Tabular Q-learning implemented from scratch on a discrete environment (Taxi, FrozenLake, or a gridworld you define), then DQN on a continuous-observation environment (CartPole → LunarLander) with a training loop you wrote. Learning curves over at least five seeds, with mean and spread — single-seed RL results are not evidence.
+  * **Deliverable:** Tabular Q-learning implemented from scratch on a discrete environment (Taxi, FrozenLake, or a gridworld you define), then DQN on a continuous-observation, discrete-action environment (CartPole; LunarLander optional) with a training loop you wrote. Use at least five seeds as this lab's teaching budget, report mean/spread and held-out evaluation episodes; a single-seed result cannot establish stability across seeds.
   * **Definition of done:** (1) `pytest` suite covering the Bellman update on a hand-computable 2-state MDP, the replay buffer's sampling and eviction, and epsilon decay; (2) `README.md` with the multi-seed learning curves, the full hyperparameter table, and a recorded episode; (3) a results memo describing one instability you observed (divergence, catastrophic forgetting, reward hacking of your own reward function) and what fixed it.
   * **Stretch:** Re-run one experiment with a shaped reward and document how the agent exploited your shaping — the cheapest possible lesson in [M23](6-frontier-production.md#module-23)'s specification-gaming material.
 

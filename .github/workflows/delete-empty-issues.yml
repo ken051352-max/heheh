@@ -1,4 +1,4 @@
-name: Delete empty issues
+name: Close empty issues
 on:
   issues:
     types:
@@ -9,7 +9,7 @@ jobs:
     permissions:
       issues: write
 
-    if: github.event.issue.body == '' || contains(github.event.issue.body, 'Give a 1 sentence description of a problem with the current OSSU Curriculum. Successful critiques of the curriculum will point out ways that OSSU is failing to uphold')
+    if: github.event.issue.body == null || github.event.issue.body == ''
     steps:
       - name: Create comment
         uses: actions-cool/issues-helper@v3
@@ -18,15 +18,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}.
-            It looks like you've opened an empty issue or one without a unique problem description.
-            Please understand that this is a popular project, useful to many learners, and empty issues distract maintainers that are trying to help others.
-            If you would like practice with issues, you can follow github documentation to create your own repo:
-            https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
-            And then in that repo practice creating and editing issues:
-            https://docs.github.com/en/issues/tracking-your-work-with-issues/configuring-issues/quickstart
+            Hi @${{ github.event.issue.user.login }}. This issue has an empty description, so there is not enough information to investigate it. It will be closed; please reopen it with details or choose an issue form:
 
-            We look forward to your future contributions to OSSU, when you are contributing to improve computer science education for learners all over the world!
+            https://github.com/${{ github.repository }}/issues/new/choose
+
+            The forms cover broken links, resource suggestions, confusing instructions and curriculum proposals. Include the affected file, what you expected and what happened. For reading guidance, see START-HERE.md, FAQ.md and guides/how-to-read-a-module.md in this repository.
       - name: Close issue
         uses: actions-cool/issues-helper@v3
         with:

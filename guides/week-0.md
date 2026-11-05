@@ -9,12 +9,14 @@
 
 It is free and runs in your browser. You can type and run code in the lesson itself. Nothing to install.
 
+**If access changes:** use [futurecoder](https://futurecoder.io/) for variables, conditions, loops and functions, then build the same small projects below. Paid plans and certificates are never required. Save your own code and a short output transcript; both can stay private.
+
 ---
 
 <a id="week-0-what-this-is"></a>
 ## What this week is
 
-- **7 days, 45–60 minutes a day.** One course only: Scrimba's free *Learn Python* (about 4.1 hours, with a free certificate).
+- **7 days, 45–60 minutes a day.** One course only. Course running times and certificate terms can change; assess your small programs, not a badge.
 - **You build three small apps:** PayUp (an expense splitter), a word-scramble game, and a karaoke queue manager.
 - **You need:** a browser and a free Scrimba account. Sign up with email or Google when the course asks.
 
@@ -44,15 +46,15 @@ The course has three sections. Each one ends with a project. Times are a guide; 
 | **4** | Finish Section 2: comparisons, `if`/`else` and `while` loops. Complete the **word-scramble game**. | You played your own game to the end. |
 | **5** | Warm-up (5 min): from memory, write a `while` loop that counts to 5. Then start **Section 3, Functions and Error Handling**: functions, parameters, return values. | You wrote one function and called it. |
 | **6** | Finish Section 3: `for` loops and input validation. Complete the **karaoke queue manager**. Claim your certificate if you like. | The queue manager survives one bad input. |
-| **7** | **Rebuild PayUp from memory**, then share it (see below). | Someone else has seen your PayUp. |
+| **7** | **Rebuild PayUp from memory**, then save its code and a short result (see below). | You can explain it and show a normal and invalid-input run. Sharing is optional. |
 
 <a id="week-0-day-7"></a>
-### Day 7: rebuild and share
+### Day 7: rebuild and record
 
-1. Open the first PayUp lesson in Scrimba. Delete the code, or use the free [Python Tutor editor](https://pythontutor.com/python-compiler.html) instead.
+1. Keep your original PayUp and open a fresh copy or the free [Python Tutor editor](https://pythontutor.com/python-compiler.html).
 2. Rebuild PayUp **without looking**. Set a 30-minute timer.
 3. When you get stuck, write down what you forgot. Then peek, close the tab, and keep going.
-4. Share it. Send a screenshot to a friend or classmate, or post it in the [Scrimba Discord](https://scrimba.com/discord).
+4. Save your code, one successful run, one invalid-input run and one thing you learned. Optionally share a sanitized copy with a friend, classmate or the [Scrimba Discord](https://scrimba.com/discord).
 
 Your list of "things I forgot" is not a failure. It is exactly what to practise next week.
 

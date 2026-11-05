@@ -4,11 +4,11 @@
 
 # 📚 Curriculum Index
 
-The full curriculum is organised into **six strata**. Work through them in order — each module states its strict prerequisites. This page is the map; each stratum has its own page with the complete module specifications.
+The full curriculum is organised into **six strata**. Choose a role route and respect its prerequisites; module numbers are stable identifiers, not a requirement to complete every branch. This page is the map; each stratum has its own page with the complete module specifications.
 
 > **New here?** Read [START-HERE](../START-HERE.md) and [How to read a module](../guides/how-to-read-a-module.md) first — the second page includes a **[Pick-One table](../guides/how-to-read-a-module.md#pick-one)** giving one default course per module, so you never have to choose between twelve links.
 >
-> **Undergraduate on a 4-year clock?** The [Four-Year Plan](../guides/four-year-plan.md#module-map) assigns every module below to a semester with a CORE / COMPRESS / COLLEGE / DEFER decision.
+> **Undergraduate on a 4-year clock?** The [Four-Year Plan](../guides/four-year-plan.md#module-map) assigns every module below to a suggested term with a CORE / COLLEGE / SELECT decision.
 >
 > **27 modules, but the numbers skip 19 and 20 — nothing is missing.** Old M19 (MLOps) grew into [M24](6-frontier-production.md#module-24) and old M20 (Capstone) became [M26](6-frontier-production.md#module-26). Those two numbers were left vacant so existing links to M0–M18 keep working. Same reason **M6½** exists and **M8** is split into **M8a/M8b**. Details in the [FAQ](../FAQ.md#structure).
 
@@ -85,9 +85,9 @@ The full curriculum is organised into **six strata**. Work through them in order
 
 | Module | Title |
 |---|---|
-| M18 | [Large Language Models, RLHF & Alignment](6-frontier-production.md#module-18) |
+| M18 | [Large Language Models, Post-Training & Evaluation](6-frontier-production.md#module-18) |
 | M21 | [RAG, Vector DBs & Retrieval Systems](6-frontier-production.md#module-21) · [course page](../coursepages/m21-rag-vector-dbs/README.md) |
-| M22 | [Agentic AI — LangGraph, CrewAI, MCP & A2A](6-frontier-production.md#module-22) · [course page](../coursepages/m22-agentic-ai/README.md) |
+| M22 | [Agentic AI — Bounded Workflows, Tools, MCP & Memory](6-frontier-production.md#module-22) · [course page](../coursepages/m22-agentic-ai/README.md) |
 | M23 | [AI Safety, Alignment, Interpretability, Evals & Policy](6-frontier-production.md#module-23) · [course page](../coursepages/m23-ai-safety/README.md) |
 | M24 | [MLOps + LLMOps + AgentOps](6-frontier-production.md#module-24) · [course page](../coursepages/m24-mlops-llmops-agentops/README.md) · [🏁 Minimum Production Bar](6-frontier-production.md#production-bar) |
 | M25 | [Product DS, Business, Communication & Storytelling](6-frontier-production.md#module-25) · [course page](../coursepages/m25-product-ds/README.md) |
@@ -95,23 +95,34 @@ The full curriculum is organised into **six strata**. Work through them in order
 
 ---
 
+<a id="learning-contract"></a>
 <a id="module-projects"></a>
-### Module projects — the enforcement rule
+## The learning contract
 
-Every module from [M1](1-foundations.md#module-1) to [M25](6-frontier-production.md#module-25) carries a **📦 Module Project (mandatory)** or **📋 Mandatory mini-projects** block. The rule is simple and it is not negotiable: **you do not advance to the next module until the current module's project is pushed to a public repository.** Passing a course's quizzes is not evidence; a repository is.
+Every module has a core outcome and a reviewable artifact. Complete the core of your chosen route before claiming the competence on which the next module depends. Independent modules may proceed in parallel; M0 and maths placement never block beginning Python.
 
-Each project block states three things in the same shape:
+**Resource policy: free lectures; books chosen on quality.** A paid textbook can be the principal recommended reference. Each module pairs selected reading with a free lecture/course route, labels book access and separates advanced references. Buying a whole shelf is not a completion requirement. Start Week 0 without a purchase.
 
-| Field | What it means |
-| :--- | :--- |
-| **Deliverable** | The concrete artefact. Specific enough that you cannot talk yourself into having finished. |
-| **Definition of done** | Three fixed requirements every time: a **test suite**, a **`README.md`** a stranger can follow, and a short **results memo** stating what you found and what you are unsure about. The memo is the part everyone skips and the part that reads as senior. |
-| **Stretch goal** | Adds exactly **one production element** — a Dockerfile, a CI workflow, a deployment, a monitoring hook. Stretch goals accumulate; by [M24](6-frontier-production.md#module-24) you will have met the full [Minimum Production Bar](6-frontier-production.md#production-bar). |
+| Evidence | What the reviewer needs |
+|---|---|
+| Problem and scope | The question, intended user, input/output, assumptions and explicit limits |
+| Reproducible artifact | Code or mathematical/analytical work; data source and rights; environment and one reproduction command |
+| Validation | Tests for executable behavior; worked checks/proofs for mathematical claims; a baseline and held-out evaluation for models |
+| Results memo | Measured findings, uncertainty, failures, interpretation and the next decision |
+| README | Setup, evidence locations, actual resource requirements and what is unfinished |
 
-> **Ship it before it is good.** A messy project on the internet beats a perfect project on your laptop. An unfinished public repository with an honest README is a stronger signal than a polished notebook nobody can see — and it is the only version of the work that can get you a job, feedback, or a collaborator. [Video 2](../guides/sources.md#citation-key) (11:30) goes one step further: prefer projects built **for a real person or organisation** over generic dataset projects, because a stakeholder who wanted the result is what makes the project a story rather than a screenshot.
->
-> **Where the archetypes come from.** The project set is deliberately drawn from the archetypes named in the [source videos](../CHANGELOG.md#refresh-log) — churn-prediction dashboard, constraint-based meal planner, weather CLI, Reddit scraper, Discord bot, Flask blog with authentication, Hugging Face sentiment analyser, stock dashboard, RAG chatbot over your own notes — mapped to the module that actually teaches the underlying skill, and hardened with the definition-of-done requirements above.
+**Depth is explicit.** Core outcomes define completion; extra architectures, proofs and tools are specialization options. A small project can share its README, validation harness and memo across mini-projects if each requirement maps to evidence. Statistical significance, accuracy, code-coverage percentages and arbitrary user quotas are not universal pass marks.
+
+**One evolving repository is encouraged.** Reuse an analysis, dataset or application across modules. Record a module-to-artifact mapping and a commit/tag for each milestone. Reusing a project does not waive distinct outcomes. The [Portfolio Spine](../guides/portfolio-spine.md#levels) is one application path; it is not compulsory for analysts or research learners.
+
+**Private work counts.** Local, private remote, selectively shared or sanitized public work is acceptable. Respect course sharing rules, data rights and employer permissions. External reviewers need an accessible demonstration, which can be a private review or sanitized reproduction; public hosting is optional.
+
+**The default project scale is local.** Use small datasets and CPU-capable models to establish the outcome. Record hardware, versions, seeds and runtimes. Larger GPU, cloud and hosted-API experiments are extensions. Mocked responses validate software contracts; real model and retrieval performance must be measured using real examples and stated limitations.
+
+**Promotion is evidence based.** Explain the result without copying the source, reproduce the main check and identify a failure case. If a prerequisite was learned elsewhere, record the equivalent evidence. Finish a partial route honestly rather than mark the full module complete.
+
+Use the [complete prerequisite and route inventory](../guides/practitioner-track.md#prerequisites), [lecture/book defaults](../guides/how-to-read-a-module.md#pick-one) and [progress tracker](../guides/progress-tracker.md). Their shared [module map](modules.json) is checked automatically. The [evidence policy](../guides/sources.md#evidence-policy) explains how recommendations and current technical claims are supported.
 
 ---
 
-[🏠 Roadmap home](../README.md) · [🚀 Practitioner fast lane](../guides/practitioner-track.md) · [✅ Progress tracker](../guides/progress-tracker.md)
+[Home](../README.md) · [Role pathways](../guides/practitioner-track.md) · [Progress tracker](../guides/progress-tracker.md)

@@ -1,198 +1,125 @@
-[🏠 Roadmap home](README.md) · [🧭 Start here](START-HERE.md) · [❓ FAQ](FAQ.md)
-
----
+[Home](README.md) · [Start here](START-HERE.md) · [FAQ](FAQ.md)
 
 <a id="contributing"></a>
-# 🤝 Contributing
+# Contributing
 
-Thanks for being here. This curriculum stays useful only because people report the things that
-break — and links break constantly. **Reporting one dead link is a real contribution.** You do not
-need to be an expert, and you do not need to write code.
+Help readers find a clear route, trustworthy resources and projects they can reproduce. A precise report about one inaccessible lecture or confusing prerequisite is useful.
 
 <a id="tldr"></a>
-## The 30-second version
+## Choose a contribution
 
-| I want to… | Do this |
-| :--- | :--- |
-| Report a dead or moved link | [Open an issue](https://github.com/akazadivu-design/data-sci/issues/new/choose) → *Dead or moved link*. Paste the URL and the file it's in. |
-| Fix a typo | Edit the file on GitHub and open a pull request. No issue needed. |
-| Suggest a better course for a module | [Open an issue](https://github.com/akazadivu-design/data-sci/issues/new/choose) → *Resource change*. Read [the resource bar](#resource-bar) first. |
-| Propose restructuring the curriculum | Open an **RFC** issue. See [Bigger changes](#rfc). |
-| Ask a question | Check the [FAQ](FAQ.md) first — most questions are answered there. |
+| Change | How to proceed |
+|---|---|
+| Dead/moved link or confusing instruction | Use the [issue chooser](https://github.com/akazadivu-design/data-sci/issues/new/choose); include the file, URL and observed problem. |
+| Typo or concrete factual correction | Open a focused pull request with the evidence. |
+| Course/book replacement | Apply the [resource bar](#resource-bar), identify what it replaces and update the canonical default when appropriate. |
+| Module structure or prerequisite change | Describe affected learners and migration in an [RFC](#rfc), unless the maintainer has already authorized the work. |
 
 <a id="no-setup"></a>
-## There is nothing to install
+## Reading needs no setup; checks and labs use Python
 
-This repository is **documentation only**. There is no application, no build step, no package
-manager, and no dependencies. It is Markdown files plus images.
+The roadmap is Markdown with images, Python integrity tools and optional practice labs. Reading requires no installation. Most integrity/contract tests use the standard library; the NumPy harness and optional DuckDB backend have explicit dependencies.
 
-The only tool is the internal link checker, which needs nothing but Python 3:
+From the repository root:
 
-```bash
-git clone https://github.com/akazadivu-design/data-sci.git
-cd data-sci
-python3 tools/check_links.py
-# optional, needs network: also HTTP-check external URLs and write a report
-python3 tools/check_links.py --external --report audit/external-links.md
+```text
+python tools/check_links.py
+python tools/check_curriculum.py --check
+python -m unittest discover -s tools/tests -v
+python -m unittest discover -s resources/agent-lab/tests -v
+python -m unittest discover -s resources/local-labs/tests -v
 ```
 
-Expected output is a line reporting the number of internal links checked and **0 failures**.
-Run it before you submit any pull request that adds, moves, or renames a link, a file, or a
-heading. See [`tools/README.md`](tools/README.md) for what each script does.
+For the numerical suite, install the listed dependencies in an isolated environment and select the reference implementation:
 
-> **What the checker does and does not do.** By default it validates *internal* links — relative file
-> paths and `#anchors` — using GitHub's slug rules and explicit `<a id="...">` tags. This offline mode is
-> what the live CI workflow ([`.github/workflows/check-links.yml`](.github/workflows/check-links.yml)) runs on every push. Since v2026.7, `--external` also HTTP-checks every external URL in
-> `curriculum/`, `coursepages/`, `guides/` and `resources/`. It reports OK / WARN (bot-gated 401/403/429)
-> / FAIL plus cross-host redirects, and is **report-only** unless you add `--strict-external`, because
-> many sites block bots while working fine in a browser. Confirm any FAIL by hand before replacing the
-> link, and log refresh passes in [`audit/`](audit/) (latest: [`audit/v2026.7-external-links.md`](audit/v2026.7-external-links.md)).
+```powershell
+python -m pip install -r resources/numpy-from-scratch/requirements.txt -r resources/local-labs/requirements.txt
+$env:NPFS_IMPL = 'reference'
+python -m pytest resources/numpy-from-scratch/tests -q
+Remove-Item Env:NPFS_IMPL
+```
 
----
+In Bash, use `NPFS_IMPL=reference python -m pytest resources/numpy-from-scratch/tests -q`. The learner starter suite intentionally fails until its algorithms are implemented. Report skipped dependencies explicitly. See [tooling](tools/README.md) for supported Markdown syntax, limits and optional HTTP checks.
+
+The [workflow](.github/workflows/check-links.yml) configures push/PR checks and monthly/manual external reports. Passing locally does not demonstrate that a remote workflow has run.
 
 <a id="dead-links"></a>
-## Reporting a dead link
+## Report observed access
 
-This is the most valuable thing you can do. Please include:
-
-1. **The URL** that is broken.
-2. **The file and module** it appears in — e.g. `curriculum/3-classical-ml.md`, Module 9.
-3. **What you saw** — a 404 page, a paywall, a redirect somewhere unrelated, or a video marked
-   private.
-4. **A replacement, if you found one** — optional, but it speeds things up enormously.
-
-If the link works in your browser but the checker or a bot reports it failing, say so. That is a
-`403` bot-gate, not a dead link, and the repository marks those `⚠️` rather than removing them.
+Provide the URL, file/module, date and result: missing page, wrong subject, unavailable recording, account/paywall requirement, or technical error. Include a replacement if you inspected it. Do not classify an entire domain as dead from a timeout or assume a 403 means it works in a browser.
 
 <a id="verification-legend"></a>
-### The status legend this repo uses
+### Verification legend
 
-Every verified resource is recorded with one of four markers. If you are filing a report or a PR,
-using the same markers helps a lot:
+| Status | What it establishes |
+|---|---|
+| OK / ✅ reachable | The endpoint responded successfully at the recorded time. Content, lecture access and edition still need inspection. |
+| WARN / ⚠️ unverified | Authentication, blocking/rate limits, server failure or network failure prevented verification. Explain any separate manual result. |
+| FAIL / ❌ missing | The endpoint returned 404/410 after the checker's GET retry. Review before replacing. |
+| Replaced / 🔁 | A changed destination with documented evidence of subject/access fit. |
 
-| Marker | Meaning |
-| :---: | :--- |
-| ✅ | Live — HTTP `200` or `302`. Use as-is. |
-| ⚠️ | Bot-gated — HTTP `403` to automated fetches, but reachable in a normal browser. Kept, with disclosure. |
-| ❌ | Dead — HTTP `4xx`, `5xx`, or DNS failure. Must be replaced. |
-| 🔁 | Replaced — a dead or wrong resource swapped for a verified alternative. |
-
-The full legend for curriculum symbols (📦 ⚡ 🩺 ⏭ and the stratum colours) is in the
-[FAQ](FAQ.md#symbols).
-
----
+Historical audit legends may differ. They describe earlier checks, not current availability. Curriculum symbols are explained in the [FAQ](FAQ.md#symbols).
 
 <a id="resource-bar"></a>
-## Proposing a different resource
+## Resource bar
 
-The curriculum is opinionated on purpose, so resource swaps are held to a bar. A proposal is most
-likely to be accepted if it clears these:
+| Criterion | Required evidence |
+|---|---|
+| **Free lecture route** | Actual publicly accessible teaching, not a degree page, enrollment-only recording, time-limited trial or paid certificate. Label notes, labs and documentation separately from lectures. |
+| **Books chosen on quality, whether free or paid** | Principal books may be paid. Verify title/authors/edition, relevant reading and legal access. Free samples/code are not a free full book. A purchase is not a completion gate; retain a workable free learning route. |
+| **Named, checkable source** | Author/publisher, university course, official technical docs or original research. Record the inspected page and date. |
+| **Outcome and prerequisite fit** | Explain what the learner should do with it and what background it assumes. A stronger advanced course may be a poor beginner default. |
+| **Independent corroboration** | For major recommendations, inspect syllabus use, a substantive specialist review or independent comparison. Separate individual opinions from consensus. |
+| **Bounded technical claims** | Use released specifications and qualified benchmarks. Do not turn vendor metrics, repository stars or convenience surveys into universal rules. |
 
-| Criterion | Why it exists |
-| :--- | :--- |
-| **Free to complete** | The badge says every *required* resource is free. Paid material can only ever be listed as **optional**, and must be labelled as such. |
-| **From a named, checkable source** | A university course, an institutional textbook, an official docs site, or a clearly credentialed author. Not an anonymous blog aggregating other people's content. |
-| **Covers the module's stated outcome** | Each module names what you should be able to do afterwards. A resource that teaches an adjacent topic is not a substitute. |
-| **Verified live at time of proposal** | Say what you got: `200`, `403`-but-browser-OK, etc. |
-| **Replaces rather than piles on** | See below. |
+Use the [evidence policy](guides/sources.md#evidence-policy) and [research record](audit/research-2026-11-05.md) as examples. Verify links through both content and access where possible; disclose what remains unverified.
 
 <a id="no-piling-on"></a>
-### Please do not just add more links
+### Keep one clear default
 
-The single biggest complaint about this repository has been that modules list so many resources
-that readers freeze and don't start. The lists are a **menu, not a to-do list** — they exist as
-link-rot insurance — but every extra entry makes that harder to see.
+Prefer replacing weaker or inaccessible entries. For a new alternative, explain the audience or gap it serves. Keep targeted reading/project instructions instead of an unranked link collection.
 
-So:
-
-- **Prefer replacing** a dead or weaker resource over appending a new one.
-- If you genuinely want to *add*, say which existing entry it should displace, or argue why the
-  module needs another alternative.
-- If your resource is better than the current default, propose updating the
-  [Pick-One table](guides/how-to-read-a-module.md#pick-one) too — that table is what most readers
-  actually follow.
+Defaults, principal books, strict/recommended prerequisites and role routes live in [curriculum/modules.json](curriculum/modules.json). Edit that manifest, run `python tools/check_curriculum.py --write`, and review the generated tables. Also update the module/coursepage prose, catalogue and affected guides; the checker cannot verify pedagogical meaning.
 
 <a id="citations"></a>
-### If you cite a video or article
+### Cite what supports the claim
 
-Citations in the curriculum look like *"Video 1 (05:05)"* and resolve through
-[`guides/sources.md`](guides/sources.md#citation-key). If you introduce a new source, add it to
-that key with its full URL and a one-line note on what kind of evidence it is. Practitioner
-interviews are testimony, not research, and the repository labels them that way.
-
----
+Link primary sources beside technical requirements. Record a source's revision and scope for fast-changing systems. The [historical practitioner key](guides/sources.md#citation-key) preserves old video references; it does not certify that every timestamp has been rechecked. Do not add a precise lecture/topic or benchmark attribution without inspecting it.
 
 <a id="pull-requests"></a>
 ## Pull requests
 
-Small and focused beats large and sweeping.
-
-1. Fork the repository and create a branch — e.g. `fix/dead-link-m9`.
-2. Make the change. Keep the surrounding formatting: tables stay tables, the breadcrumb line stays
-   at the top of the file, `<a id="...">` anchors are **never** deleted or renamed.
-3. Run `python3 tools/check_links.py` and confirm 0 failures.
-4. Open the PR against `master` with a description that says **what** changed and **why**, plus the
-   verification status of any URL you touched.
+1. Work on a branch and preserve unrelated changes.
+2. Explain the learner-facing problem, resulting behavior and evidence.
+3. Run link/manifest checks. Run the relevant existing tests for changed code; include results and skips.
+4. Describe any changed prerequisites, access conditions, local alternatives and migration needs. Add a changelog entry for substantive changes.
 
 <a id="anchors-warning"></a>
-> ### ⚠️ Never remove an anchor or renumber a module
->
-> Explicit `<a id="...">` tags exist so that links from outside the repository keep working. The
-> same reasoning is why the module numbers **skip 19 and 20**, and why **M6½** and **M8a/M8b**
-> exist instead of a clean renumber. Old M19 became [M24](curriculum/6-frontier-production.md#module-24)
-> and old M20 became [M26](curriculum/6-frontier-production.md#module-26); those two numbers were
-> left vacant deliberately. A PR that "tidies up" the numbering breaks every inbound link and will
-> be declined. Background is in the [FAQ](FAQ.md#structure).
+### Preserve module IDs and explicit anchors
+
+Do not delete or rename existing `<a id="...">` anchors. Preserve compatibility aliases when moving content. The 27 active module IDs include M6½ and M8a/M8b; 19 and 20 remain vacant because their former content moved to M24/M26. See the [structure explanation](FAQ.md#structure). Review explicit-anchor preservation in addition to the checker, which cannot see external inbound links.
 
 <a id="prose"></a>
 ### Editing prose
 
-Curriculum text is moved verbatim between refactors and diff-verified — see the verbatim-move
-guarantee in [`tools/README.md`](tools/README.md). If you are rewriting module prose rather than
-correcting an error, open an issue first so the intent can be discussed before you spend the effort.
+Use concrete outcomes, prerequisites and reviewable evidence. Clearly separate core work from later depth. Artifacts can be private, selectively shared or sanitized public. Avoid compulsory hosting, arbitrary metric gates and promised employment timelines. Historic verbatim migration guarantees apply to those earlier migrations; this release deliberately improves curriculum content.
 
 <a id="changelog"></a>
-### The changelog
+### Changelog and audits
 
-Substantive changes get an entry in [`CHANGELOG.md`](CHANGELOG.md). You don't have to write it
-yourself — flag in your PR that it needs one, or add a line under the newest version heading if
-you're comfortable doing so.
-
----
+Record substantive changes in [CHANGELOG.md](CHANGELOG.md). Keep earlier audit bodies as historical evidence and create a dated current report. Distinguish source inspection, HTTP reachability, tests actually executed, mocks and untested integrations.
 
 <a id="rfc"></a>
-## Bigger changes: the RFC process
+## Structural proposals
 
-For anything that changes the **shape** of the curriculum — adding or removing a module, resequencing
-a stratum, changing a prerequisite chain, altering the free-first policy — open an issue using the
-**RFC** template rather than a pull request.
-
-An RFC states the problem in one sentence, gives the background and the trade-offs, lists the
-concrete proposed changes, and lists the alternatives considered. It stays open for comment for
-about a month before anything is merged, so that people part-way through the affected modules get a
-chance to object.
-
-This is deliberately slower than a normal PR. People are following this thing for months at a time;
-reshuffling it under them has a real cost.
-
----
+An RFC explains the problem, proposed routes/prerequisites, affected files, alternatives and migration for learners already in progress. Seek maintainer direction before unrequested structural work; existing authorization can cover the implementation. Preserve stable links and avoid requiring learners to restart completed work.
 
 <a id="conduct"></a>
-## Code of conduct
+## Conduct
 
-Be decent. Assume the person on the other end is learning, is short on time, or is in a different
-timezone and a second language. Critique resources, not people.
-
-Participation is governed by the [Contributor Covenant v2.1](CODE_OF_CONDUCT.md). Unacceptable
-behaviour can be reported by opening an issue or contacting a maintainer privately.
+Critique resources and reasoning respectfully. Follow the [Contributor Covenant](CODE_OF_CONDUCT.md). Report concerns through its documented channels.
 
 <a id="licence"></a>
-## Licence
+## License
 
-By contributing, you agree your contribution is licensed under
-[CC BY-SA 4.0](LICENSE.md), the same licence as the rest of the repository. This covers this
-repository's own text and images — linked course material stays with its respective institution.
-
----
-
-[🏠 Roadmap home](README.md) · [🧭 Start here](START-HERE.md) · [❓ FAQ](FAQ.md) · [🗓️ Changelog](CHANGELOG.md)
+Contributions follow this repository's [CC BY-SA 4.0 license](LICENSE.md). Linked courses, books, datasets, models and third-party code retain their own terms; linking or accessing a resource does not transfer redistribution rights. Do not upload copyrighted book PDFs without authorization.

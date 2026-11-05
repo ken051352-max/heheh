@@ -1,69 +1,93 @@
 # Module 21 — RAG, Vector DBs & Retrieval Systems
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 21](../../curriculum/6-frontier-production.md#module-21).
+[Full module](../../curriculum/6-frontier-production.md#module-21) ·
+[Learning contract](../../curriculum/README.md#learning-contract)
 
-## Why this module exists
+Retrieval helps when a task needs evidence outside the model's prompt or training. This lab asks
+whether it helps **your** task, at what cost, and with which failures. Enterprise surveys, including
+[Menlo's 2025 U.S. sample](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/),
+are context rather than universal adoption statistics.
 
-Retrieval-Augmented Generation is the single most-deployed LLM pattern in production (Menlo Ventures Oct 2025: >70% of enterprise LLM deployments). Getting chunking + retrieval + reranking + evaluation right is the difference between a demo and a product. Closes Gap #5.
+## Prerequisites and default route
 
-## Primary anchors (P1-verified)
+M1 + M8a + [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
+(full M18 also covers it). M11 is recommended for vector geometry; study cosine similarity before
+implementing dense retrieval.
 
-| Resource | Role | Link |
-|---|---|---|
-| Pinecone Learning Center | Free RAG/vector primer | <https://www.pinecone.io/learn/> |
-| LlamaIndex docs | Practical cookbook | <https://developers.llamaindex.ai/python/framework/> |
-| LangChain RAG tutorial | Framework walkthrough | <https://docs.langchain.com/oss/python/langchain/rag> |
-| pgvector | Postgres vector extension | <https://github.com/pgvector/pgvector> |
-| Qdrant | Rust vector DB | <https://qdrant.tech/> |
-| Weaviate | Open-source vector DB | <https://weaviate.io/> |
-| Milvus | Distributed vector DB | <https://milvus.io/> |
-| LanceDB | Embedded, Lance-format vector DB | <https://lancedb.com/> |
-| ColBERT | Late-interaction retrieval | <https://github.com/stanford-futuredata/ColBERT> |
-| Ragas | RAG evaluation framework | <https://github.com/vibrantlabsai/ragas> (moved from `explodinggradients/ragas`) |
-| Anthropic — Contextual Retrieval (Sep 2024) | SOTA chunking technique | <https://www.anthropic.com/news/contextual-retrieval> |
-| Microsoft GraphRAG (2024) | Graph-based RAG | <https://github.com/microsoft/graphrag> |
+| Resource | Role and access |
+|---|---|
+| [FSDL — Augmented Language Models](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/augmented-language-models/) | Free lecture; durable retrieval concepts, dated 2023 tooling |
+| [Pinecone Learn](https://www.pinecone.io/learn/) | Free reference explanations; using Pinecone's service is unnecessary |
+| [LlamaIndex docs](https://developers.llamaindex.ai/python/framework/) | Implementation companion when a framework becomes useful |
+| [AI Engineering](https://huyenchip.com/books/) — Chip Huyen | Recommended main text, retrieval and evaluation chapters; paid book |
+| [BGE model card](https://huggingface.co/BAAI/bge-small-en-v1.5) | CPU embedding baseline; read preprocessing and license |
+| [pgvector](https://github.com/pgvector/pgvector) / [LanceDB](https://lancedb.com/) | Local storage choices; choose one |
+| [ColBERT](https://github.com/stanford-futuredata/ColBERT) / [ColPali](https://github.com/illuin-tech/colpali) | Depth: text late interaction / visual document retrieval |
+| [Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval) | Source-specific experiment to reproduce, not a universal SOTA claim |
 
-## ⚖️ Before you build: the prompting → RAG → fine-tuning ladder
+Start with 10–30 small, licensed text/Markdown documents and stable IDs. PDF parsing is a later
+extension if the task needs it. Local BM25, BGE-small CPU embeddings, exact search or LanceDB, and a
+small BGE cross-encoder provide the baseline. PostgreSQL/pgvector is the SQL alternative. No cloud
+account is required. Cache downloaded model weights for offline runs and record hardware/runtime.
 
-Do not start this module by writing a retrieval pipeline. Start by deciding whether you need one.
-The root README carries the full decision table — see
-[README.md § Module 21 → the decision framework](../../curriculum/6-frontier-production.md#module-21). Short version:
+## Before building: choose the failure to address
 
-| Rung | Technique | Reach for it when |
-|---|---|---|
-| 1 | Zero-shot prompting | Always first — it is your baseline, and you may not skip it |
-| 2 | Few-shot / structured prompting | The model *could* know the answer but answers the wrong question, or in the wrong shape |
-| 3 | **RAG (this module)** | The failure is *"it does not know this"* — private, missing, or fast-changing knowledge; citations required |
-| 4 | Fine-tuning (SFT / LoRA — M18) | The failure is *"it knows this but behaves wrong"* — style, tone, format, or a small cheap specialist model |
-| 5 | RAG + fine-tuning | You have measured **both** failure modes and can prove each component earns its keep |
+| Evidence from your baseline | Candidate intervention |
+|---|---|
+| Wrong format or unclear instructions | Explicit contract, examples, constrained output |
+| Missing authorized document evidence | Fixed context for tiny corpora, then retrieval |
+| Irrelevant candidates | Ingestion/chunking, lexical/dense retrieval, filtering, reranking |
+| Task behavior still poor with correct evidence | Model/prompt comparison or measured adaptation |
 
-**The rule that makes this operational:** you cannot pick a rung without an eval set.
-Build 50–200 real queries with acceptable answers *first*, then climb. Fine-tuning before you can
-measure buys an unfalsifiable improvement.
-
-**In 2026 the default answer is rung 3.** RAG is cheaper, updates instantly, cites its sources, and
-keeps private data out of the weights. Fine-tuning is the specialist tool, not the prestige tool.
+Measure each intervention. Fine-tuning and retrieval can complement each other; neither guarantees
+truth. A larger model and more chunks can both increase cost without improving the selected task.
 
 <a id="evaluation-harness"></a>
-## 📏 Evaluating RAG: the harness applied to retrieval (Portfolio Spine L2)
+## 📏 Evaluating RAG: component and answer evidence
 
-"Just adding RAG is the easy part. The hard part is knowing if it's giving you correct answers, and if it messes up, figuring out why" (W3, 01:53–02:21). Use the [4-part evaluation harness](../m24-mlops-llmops-agentops/README.md#evaluation-harness) and **evaluate each component, not just the final answer**:
+Use the [shared four-part harness](../m24-mlops-llmops-agentops/README.md#evaluation-harness).
+Freeze **20–50 evaluation questions before tuning** and keep separate development questions.
+Include exact identifiers, paraphrases, multi-document questions, stale/conflicting sources,
+unanswerable questions, and inaccessible tenant documents. Label document IDs first so labels
+remain meaningful when chunks change; map chunks back to those documents.
 
-| Harness part | RAG-specific version |
+| Measurement | Definition and interpretation |
 |---|---|
-| **1 · Golden failure set** | 20–50 real questions about *your* documents, each with the answer **and the chunk(s) that support it**. Seed it from wrong answers and "I don't know"s you actually saw |
-| **2 · Graders** | *Code:* retrieval hit@k / recall@k / nDCG@10 against the labelled chunks; citation present and pointing to a retrieved chunk. *LLM judge (calibrated):* faithfulness to the retrieved context and answer relevance ([Ragas](https://docs.ragas.io/) provides both; validate it against 30+ of your own labels first) |
-| **3 · Multi-run** | Run generation N times per question; report pass rate. Retrieval is usually deterministic, generation isn't |
-| **4 · Telemetry** | Tokens of context per answer, latency of retrieval vs generation, and cost per answer. A bigger `top_k` that adds 1 point of accuracy but doubles cost needs a [`DECISIONS.md`](../../guides/portfolio-spine.md#decisions-template) entry |
+| Hit@k | Fraction of answerable queries with at least one relevant item in the top k |
+| Recall@k | Retrieved relevant items / all labeled relevant items; requires adequate relevance labels |
+| Context precision@k | Relevant retrieved items / returned items; report retrieval granularity and k |
+| nDCG@k | Ranking quality when graded relevance labels are available; state the gain convention |
+| Faithfulness | Supported factual claims / factual claims in the answer, against cited retrieved evidence |
+| Answer correctness | Task-specific rubric or exact answer check; unsupported but correct guesses are separate |
+| Abstention | Correct abstentions on unanswerable cases and false abstentions on answerable cases |
+| Resources | Retrieval/reranker/generation latency, context tokens, peak memory and optional API cost |
 
-**Always report against a baseline:** the same questions with *no* retrieval (rung 1–2 above). If RAG doesn't beat it, you don't need RAG yet.
+Define the zero-denominator cases before scoring; an empty answer does not receive perfect
+faithfulness by default. Citation presence is only a structural check: verify the cited passage
+supports the claim. Human labels are a valid free grader. If using an LLM judge, reserve labeled
+calibration/validation examples and report agreement and errors; do not let the judge see the desired
+system identity. A small golden set supports regression work, not a population reliability claim.
 
-## Mandatory mini-projects
+## 📦 Required project — one reproducible retrieval comparison
 
-1. Build a RAG over your own PDFs: chunking → pgvector → BGE reranker → answer-with-citations; measure Ragas faithfulness + context precision.
-2. Hybrid search A/B: BM25-only vs dense-only vs hybrid-with-RRF; measure nDCG@10 on a labelled query set.
-3. GraphRAG on a technical corpus; compare multi-hop accuracy vs vanilla RAG.
+1. **Ingest:** preserve source/license, document ID/version, page/section, and access metadata.
+   Test empty input, duplicates, malformed documents, and re-indexing after an update.
+2. **Compare:** run no retrieval, BM25, dense, hybrid RRF, and hybrid plus reranker over the same
+   corpus and eval questions. Freeze candidate count, k, model, prompt, and decoding settings when
+   comparing retrieval changes. Inspect exact search before claiming ANN improvements.
+3. **Authorize:** apply access controls before candidates reach reranking, generation, or caches.
+   Test that an unauthorized document is absent at every stage and in the final response.
+4. **Evaluate:** score retrieval deterministically and answer quality from real model outputs.
+   Repeat stochastic generation (start with five runs if feasible), report counts and variability.
+   Scripted/mock responses validate integration only; they do not demonstrate RAG answer quality.
+5. **Decide:** write a memo recommending the simplest configuration that meets the declared
+   quality/resource budget, with concrete failure examples and reasons it might change.
 
-## Prerequisites
+**Done when:** a clean-clone command rebuilds the index and metrics from versioned inputs; tests pass;
+the README contains the comparison table and limitations; the memo interprets the results. A result
+where hybrid or reranking fails to improve is acceptable. Keep the repository private or share it
+selectively if the corpus cannot be published; include a sanitized reproducible fixture.
 
-- Module 18 (LLMs, tokenisation), Module 11 (embeddings, cosine similarity, PCA/SVD), Module 8a (SQL metadata filters + hybrid search)
+**Optional depth:** add exactly one of contextual retrieval, query rewriting, GraphRAG,
+ColBERT/ColPali, multilingual retrieval, or ANN scaling. Compare against the core baseline. Hosted
+Cohere reranking is an optional paid comparison. A GPU or a paid judge must not become a core gate.

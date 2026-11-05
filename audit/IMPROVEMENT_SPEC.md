@@ -1,3 +1,5 @@
+> **Historical record.** This file preserves an earlier audit or proposal, including its original claims and requirements. It does not establish current access or override the [current research record](research-2026-11-05.md), [implementation audit](overhaul-2026-11-05.md), or active curriculum.
+
 # 🎨 P2 — Improvement Specification (v2026.2)
 
 **Target:** Transform the README from the current 21-module "theory-first" curriculum into the v2026.2 **26-module** spec the PDF recommends — without weakening the math spine.

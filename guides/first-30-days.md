@@ -14,14 +14,16 @@ Not done [Week 0](week-0.md#week-0) yet? Do that first. It is seven short days i
 <a id="first-30-days-shape"></a>
 ## How these four weeks work
 
-- **About 5–7 hours a week.** That is 45–60 minutes on most days. A 15-minute day still counts.
+- **An illustrative 5–7 hours a week.** Adjust the weeks to your pace; a 15-minute day still counts.
 - **One main course:** Harvard's free [CS50P](https://cs50.harvard.edu/python/). You keep going with it after Day 30.
 - **Small wins every week.** Each week has a goal, a short "done when" list, and one optional "math meets code" task.
 - **Nothing here is a test or a gate.** The maths placement in Week 2 only helps you pick resources.
+- **A reviewable artifact can stay private.** Keep your own code, a short README and normal/bad-input transcripts. Peer feedback is useful but optional; automatic tests start after CS50P Lecture 5.
+- **Access fallback:** CS50P lectures and problem statements are open. If a browser workspace or submission account is unavailable, run the same Python exercises locally and retain your test/output transcript. Certificates and hosted feedback do not gate this roadmap.
 
 | Week | Main focus | You finish with |
 |---|---|---|
-| [1](#week-1) | CS50P Lecture 0 + Problem Set 0 | Your first GitHub repository, `python-journey` |
+| [1](#week-1) | CS50P Lecture 0 + Problem Set 0 | Your first local or remote repository, `python-journey` |
 | [2](#week-2) | CS50P Lecture 1 + a maths check-in | A rough map of your maths, and a first look at vectors |
 | [3](#week-3) | CS50P Lecture 2 + Exercism practice | Loops you can write without looking |
 | [4](#week-4) | CS50P Lecture 3 + your first original project | A small program that is entirely yours |
@@ -53,22 +55,22 @@ AI engineering needs [four groups of Python skills](../curriculum/1-foundations.
 <a id="week-1"></a>
 ## Week 1 — Your first real course and your first repository
 
-**Goal:** move from Scrimba's playground to a real editor, and put your Week 0 work online.
+**Goal:** move from the browser playground to an editor and organize your Week 0 work in a reviewable repository.
 **Time:** about 6 hours.
 
-1. **Watch** [CS50P Lecture 0, Functions and Variables](https://cs50.harvard.edu/python/weeks/0/) (about 1 hour; pause and type along).
-2. **Create a free GitHub account.** CS50P uses it to collect your work.
+1. **Watch** [CS50P Lecture 0, Functions and Variables](https://cs50.harvard.edu/python/weeks/0/); pause and type along, splitting it into sessions as needed.
+2. **For the hosted workflow, create the free accounts requested by CS50P.** The official course describes its current edX/GitHub submission steps. Local exercise work is a valid fallback.
 3. **Open [cs50.dev](https://cs50.dev/).** It is VS Code in your browser with Python ready. Nothing to install.
 4. **Do [Problem Set 0](https://cs50.harvard.edu/python/psets/0/):** five short problems. Follow the steps at the top of that page to submit.
-5. **Create a public repository called `python-journey`.** Use GitHub's [repository quickstart](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories). Upload *your* versions of PayUp, the word-scramble game and the karaoke queue manager from Week 0.
+5. **Create a repository called `python-journey`** (private local, private remote, selectively shared with a mentor, or sanitized public). Use GitHub's [repository quickstart](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) if you choose a remote repo. Upload *your* versions of PayUp, the word-scramble game and the karaoke queue manager from Week 0.
 6. **Write a short `README.md`:** one line per project, saying what it does and one thing you learned.
 
-> Keep CS50P problem-set solutions **out** of your public repository. CS50's [academic honesty rules](https://cs50.harvard.edu/python/honesty/) ask you not to share them. Your Scrimba projects and your own projects are fine to publish.
+> Keep CS50P problem-set solutions **out** of any public repository. CS50's [academic honesty rules](https://cs50.harvard.edu/python/honesty/) ask you not to share them. Public sharing is optional; if you publish your own work, scrub API keys, credentials, private data, proprietary material, and PII first. A private artifact is enough for your own completion; a sanitized release or live demo is useful when an external reviewer needs a verifiable signal.
 
 **Done when:**
 
-- [ ] I watched Lecture 0 and submitted all five Problem Set 0 problems.
-- [ ] `python-journey` is public, with my three Scrimba projects and a README.
+- [ ] I watched Lecture 0 and completed the five Problem Set 0 problems, submitting through the course or saving local output checks.
+- [ ] `python-journey` is created with my three Scrimba projects, a stranger-readable README, and a short honest results note (public sharing optional).
 
 <a id="week-1-math"></a>
 **Math meets code (optional, ~20 min): how steep is y = x²?**
@@ -93,16 +95,16 @@ You just estimated a derivative. Calculus will later tell you the exact answer i
 **Time:** about 6–7 hours.
 
 1. **Watch** [CS50P Lecture 1, Conditionals](https://cs50.harvard.edu/python/weeks/1/), then do [Problem Set 1](https://cs50.harvard.edu/python/psets/1/).
-2. **Take Khan Academy's [Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) once** (30 questions, about 30–45 minutes). It is free with an account.
+2. **Take Khan Academy's [Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) once** (30 questions, about 30–45 minutes). It is free with an account and is only a routing aid; follow the active [maths placement workflow](../curriculum/1-foundations.md#math-diagnostic).
    - This is **placement only, never a gate.** Whatever you score, you continue CS50P next week.
    - Write your score down. The [placement guide](../curriculum/1-foundations.md#math-diagnostic) shows which free resources fit your result.
 3. **Watch** episodes 1–3 of 3Blue1Brown's [Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) (about 30 minutes in total).
 
 **Done when:**
 
-- [ ] I watched Lecture 1 and submitted Problem Set 1.
-- [ ] I took the Khan course challenge once and wrote down my score.
-- [ ] I watched Essence of Linear Algebra episodes 1–3.
+- [ ] I watched Lecture 1 and completed Problem Set 1, with course submission or saved local checks.
+- [ ] Optional: I took the Khan course challenge or noted topics to revisit. Skipping it never blocks Week 3.
+- [ ] Optional: I watched Essence of Linear Algebra episodes 1–3.
 
 <a id="week-2-math"></a>
 **Math meets code (optional, ~20 min): a 2×2 matrix, by hand then in NumPy.**
@@ -136,7 +138,7 @@ Did you get `[4 6]` by hand? Episode 3 shows this as "moving" the vector to a ne
 
 **Done when:**
 
-- [ ] I watched Lecture 2 and submitted Problem Set 2.
+- [ ] I watched Lecture 2 and completed Problem Set 2, with course submission or saved local checks.
 - [ ] I solved three Exercism exercises.
 
 <a id="week-3-math"></a>
@@ -170,14 +172,14 @@ Open `parabola.png`. Near x = 3, how far does y rise when x moves one step right
    - **Command-line calculator:** asks for two numbers and an operator, and handles "divide by zero" and typos politely.
    - **Number-guessing game with your own twist:** for example, a limited number of guesses, a score, or difficulty levels.
    CS50P Problem Set 4 also contains a guessing game. Give yours a different design, and never copy a pset solution.
-4. **Add it to `python-journey`** with a short README section, and share the link with one person.
+4. **Add it to `python-journey`** with a README, one successful run, one invalid-input run and a short lesson learned. Optionally share with one person.
 
 **Done when:**
 
-- [ ] I watched Lecture 3 and submitted Problem Set 3.
+- [ ] I watched Lecture 3 and completed Problem Set 3, with course submission or saved local checks.
 - [ ] I have solved five Exercism exercises in total.
 - [ ] My mini project is in `python-journey` with a README section.
-- [ ] I shared something I built with at least one person.
+- [ ] I saved normal and invalid-input results; sharing for feedback is optional.
 
 <a id="week-4-math"></a>
 **Math meets code (optional, ~20 min): add 1 + 2 + … + n two ways.**
@@ -202,6 +204,8 @@ except (requests.RequestException, KeyError) as error:
 
 Change the latitude to `999`. What happens, and which line catches it? This is skill group 2 in a few lines, and it previews your weather-CLI capstone.
 
+If the service is unreachable, practise parsing the fixture `{"current": {"temperature_2m": 12.5}}` instead. Record that it is synthetic data. Free service terms can change; no live API is needed for the starter milestone.
+
 ---
 
 <a id="first-30-days-undergrads"></a>
@@ -209,7 +213,7 @@ Change the latitude to `999`. What happens, and which line catches it? This is s
 
 The [Four-Year Plan, S1](four-year-plan.md#s1) builds on exactly these weeks. Two extra items, both small:
 
-- **End of Week 4 (10 minutes):** create your LinkedIn and Codeforces/LeetCode accounts. Don't start solving yet.
+- **Optional after Week 4:** create career/practice accounts when they serve your goal; they are not completion requirements.
 - **From Week 5:** begin easy interview problems, once CS50P Lectures 0–3 feel comfortable.
 
 <a id="first-30-days-log"></a>
@@ -224,7 +228,7 @@ The [progress tracker](progress-tracker.md#starter-tracker) has a 12-box starter
 <a id="first-30-days-after"></a>
 ## After Day 30
 
-- **Keep going with CS50P.** Lectures 4–9 complete [Module 1](../curriculum/1-foundations.md#module-1).
+- **Keep going with CS50P.** Lectures 4–9 supply the remaining skills; the tested Weather CLI and results memo complete [Module 1](../curriculum/1-foundations.md#module-1).
 - **Your end-of-M1 capstone is the weather CLI.** Start it around CS50P Lectures 5–6, once you have seen testing and files.
 - **Prefer reading to video?** The [Helsinki Python MOOC](https://programming-26.mooc.fi/) is an equally good depth option.
 - **Want motivation alongside?** [Automate the Boring Stuff](https://automatetheboringstuff.com/) shows what Python can do for you every day.

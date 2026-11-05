@@ -5,7 +5,30 @@
 <a id="refresh-log"></a>
 # 🗓️ Refresh Log
 
-Each pass records what changed, what was verified, and what was deliberately left alone. Full HTTP status logs live in [`audit/VERIFICATION.md`](audit/VERIFICATION.md); per-pass reports live in [`audit/`](audit/).
+Each pass records changes and the scope of verification. Current evidence lives in the [2026-11-05 research record](audit/research-2026-11-05.md) and [overhaul audit](audit/overhaul-2026-11-05.md). Earlier entries and HTTP logs describe their historical state, not present access or requirements.
+
+<a id="v2026-11"></a>
+### v2026.11 — Unified routes, free lectures and books chosen on merit · 2026-11-05
+
+The roadmap now connects 27 stable modules through one prerequisite/default-resource manifest and six role routes. Lectures have free routes; principal books can be paid. Projects require reviewable evidence, which can stay private, with local alternatives and a clear distinction between core work and later depth.
+
+| Change | Result |
+|---|---|
+| Curriculum and coursepages | Explicit outcomes, reading scope, prerequisites, reproducible projects and evaluation rubrics across all six strata; active non-gating maths placement preserved. |
+| Lecture access | Replaced inaccessible or enrollment-only defaults with inspected public routes. Public notes, free-account content and videos are labeled separately. |
+| Books and toolchain | Expanded principal/reference catalogue with authors, editions, access and reading purpose; independent reviews inform fit. Tools are staged by project rather than unverified version/adoption rankings. |
+| Learning routes | Machine-checked prerequisite graph, six ordered role paths and named application/product subsets; generated defaults/routes/prerequisites resist drift. |
+| Evidence and production | Leakage-safe evaluation, causal assumptions/power, Bayesian diagnostics, qualified conformal intervals, retrieval baselines, trusted agent controls, released MCP revision, safety regressions and one 12-item production bar. |
+| Practice code | Offline causal/event-replay and agent-contract labs, stronger NumPy reference regressions, duplicate-point KMeans fix and checker tests. |
+| Repository integrity | Robust Markdown link checks, curriculum-manifest validation, CI configuration, current contributor policy and historical-audit labels. |
+
+See the [overhaul audit](audit/overhaul-2026-11-05.md) for per-file coverage and actual check results, including skipped integrations. Live research does not establish that every legacy URL or every lecture/video has been exercised. This release was prepared in a writable working copy; no remote publication or workflow execution is implied.
+
+**Same-day follow-up:** applied the reviewed overhaul to the original repository after expanded access, preserving its prior tracked edits. Added an [India undergraduate route](guides/india-undergraduate-path.md), a [12-posting career evidence sample](audit/career-research-2026-11-05.md), an [opportunity log](resources/templates/OPPORTUNITIES.md), analyst reconciliation and application-integration exercises, and role-specific interview practice. The [application audit](audit/original-application-2026-11-05.md) records current checks, including the previously skipped DuckDB backend and external access review. This adapts the roadmap for an undecided first-year student without treating current job descriptions as graduation-year forecasts.
+
+## Historical releases
+
+The entries below retain their original claims, module state and access observations. Current modules, guides and evidence policy supersede earlier requirements and unqualified verification language.
 
 <a id="v2026-7"></a>
 ### v2026.7 — AI Engineering Spine · 2026-10-27

@@ -1,131 +1,123 @@
 # Module 24 — MLOps + LLMOps + AgentOps
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 24](../../curriculum/6-frontier-production.md#module-24).
->
-> Supersedes old Module 19 (MLOps / Systems / Responsible AI) by expanding into three operational tiers.
+[Full module](../../curriculum/6-frontier-production.md#module-24) ·
+[Canonical Minimum Production Bar](../../curriculum/6-frontier-production.md#production-bar)
 
-## Why this module exists
+## Prerequisites and default route
 
-Closes Gap #3 of the benchmark PDF — the 2026 operational stack for (1) classical ML (MLOps), (2) prompt/LLM-driven systems (LLMOps), and (3) stateful tool-using agents (AgentOps).
+Bring one completed, evaluated project. M22 is required for the AgentOps extension, and the
+relevant M23 threat/evaluation controls apply to AI applications. Classical models can complete
+M24 without LLM or agent modules.
 
-## Primary anchors (P1-verified)
+| Resource | Role and access |
+|---|---|
+| [Full Stack Deep Learning 2022](https://fullstackdeeplearning.com/course/2022/) | Free lectures and labs; default systems course |
+| [Made With ML](https://madewithml.com/) | Free code-oriented companion |
+| [Full Stack LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/) | Free LLMOps lectures; supplement dated SDK examples with current docs |
+| [Designing ML Systems / AI Engineering](https://huyenchip.com/books/) — Chip Huyen | Recommended main books for classical/AI application systems; complementary paid texts |
+| [OpenTelemetry GenAI](https://github.com/open-telemetry/semantic-conventions-genai) | Current source; Development status, version-sensitive conventions |
+| [MLflow](https://mlflow.org/) | Local experiment/artifact tracking option |
 
-### MLOps (classical)
+## 🏁 One production bar, one centerpiece
 
-| Resource | Role | Link |
-|---|---|---|
-| Full Stack Deep Learning | Canonical open course | <https://fullstackdeeplearning.com/> |
-| Made With ML (Goku Mohandas) | End-to-end MLOps course | <https://madewithml.com/> |
-| Chip Huyen — *Designing ML Systems* | Canonical text | — |
-| Chip Huyen — *AI Engineering* (O'Reilly 2025) | 2026 successor text | <https://www.oreilly.com/library/view/ai-engineering/9781098166298/> |
-| MLflow | Experiment tracking + registry | <https://mlflow.org/> |
-| Weights & Biases | Research experiment tracking | <https://wandb.ai/> |
-| Feast | Open-source feature store | <https://feast.dev/> |
-| Evidently | Drift monitoring | <https://www.evidentlyai.com/> |
-| BentoML / KServe / Ray Serve / Triton | Serving | <https://www.bentoml.com/> · <https://kserve.github.io/website/> · <https://docs.ray.io/en/latest/serve/> · <https://developer.nvidia.com/nvidia-triton-inference-server> |
+The [12-row canonical bar](../../curriculum/6-frontier-production.md#production-bar) is the single
+completion checklist: package, tests, typed boundaries, structured logs, configuration, container,
+CI/eval gates, artifact lineage, reachable artifact, monitoring, rollback/runbook, and results memo.
+Meet it once, deeply, in M24. Earlier modules retain their smaller learning rubrics.
 
-### LLMOps (2024–2026)
-
-| Resource | Role | Link |
-|---|---|---|
-| Langfuse (self-hostable) | Prompt versioning + observability | <https://langfuse.com/> |
-| Helicone | Gateway + observability | <https://www.helicone.ai/> |
-| PromptLayer | Prompt management | <https://promptlayer.com/> |
-| NeMo Guardrails | Guardrails framework | <https://github.com/NVIDIA/NeMo-Guardrails> |
-| Guardrails AI | Guardrails | <https://www.guardrailsai.com/> |
-| Llama Guard / PurpleLlama | Meta guardrails | <https://github.com/meta-llama/PurpleLlama> |
-| OTel GenAI semantic conventions | LLM observability standard | <https://opentelemetry.io/docs/specs/semconv/gen-ai/> |
-
-### AgentOps (2025–2026)
-
-| Resource | Role | Link |
-|---|---|---|
-| LangSmith | Agent tracing | <https://www.langchain.com/langsmith> |
-| Arize Phoenix | Free self-hostable OTel-native tracing (Elastic License 2.0, source-available) | <https://github.com/Arize-ai/phoenix> |
-| W&B Weave | LLM/agent tracing | <https://wandb.ai/site/weave> |
-| GAIA benchmark | Agent eval | <https://huggingface.co/gaia-benchmark> |
-| SWE-bench | Software-engineering eval | <https://www.swebench.com/> |
-| E2B / Daytona / Modal | Sandboxing | <https://e2b.dev/> · <https://www.daytona.io/> · <https://modal.com/> |
-
-## 🏁 The Minimum Production Bar
-
-Every project you ship from Modules 1–25 is measured against one standard, defined in full at
-[README.md § Minimum Production Bar](../../curriculum/6-frontier-production.md#production-bar). A notebook that only ever ran on
-your laptop is not a project — it is a homework file. The bar, in brief:
-
-1. Runs from a clean clone with one documented command
-2. Pinned dependencies (`uv` / `requirements.txt` / lockfile), stated Python version
-3. A README that says what it does, why, and what the result was — with a number in it
-4. Version control with real commit history, not one `initial commit`
-5. Tests on the non-obvious logic, and CI that runs them
-6. Config and secrets outside the code (`.env`, never committed)
-7. Structured logging, not `print`
-8. A reachable artefact: an endpoint, a Streamlit/Gradio app, a scheduled job, or a container image
-9. A stated evaluation with a baseline to compare against
-10. Error handling for the inputs you know are malformed
-11. A written limitations section — what it does *not* do, and where it fails
-12. Reproducibility: fixed seeds, versioned data, recorded run parameters
-
-Items 1–4 are non-negotiable for every project. Items 5–12 are what separate the two or three
-portfolio-centrepiece projects from the rest.
+A local Docker service with a documented smoke run is valid; public hosting, Kubernetes and paid
+cloud accounts are optional. Run metadata can begin as a versioned manifest or local MLflow store.
+Use one adequate tool for each need; installing every framework is not a learning outcome.
 
 <a id="evaluation-harness"></a>
-## 📏 The 4-part evaluation harness (v2026.7)
+## 📏 The four-part evaluation harness
 
-The single most under-taught skill in AI engineering (Video 1, 08:30–09:04; W2, 06:31–06:58; W4, 11:15–13:20). Most teams start with **eval by vibes**: run the agent a few times, it looks fine, ship it. Then a prompt tweak or model swap makes it worse, and nobody can say whether or why. This harness replaces that. [M21](../m21-rag-vector-dbs/README.md#evaluation-harness) applies it to retrieval, [M22](../m22-agentic-ai/README.md#labs) to agent trajectories and [M23](../m23-ai-safety/README.md#level-5-loops) to self-improving loops.
+Use the same harness across [retrieval](../m21-rag-vector-dbs/README.md#evaluation-harness),
+[agents](../m22-agentic-ai/README.md#labs), and [safety](../m23-ai-safety/README.md#evaluation-harness).
+[Anthropic's evaluation guide](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+distinguishes tasks, trials, graders, transcripts and actual final state. Treat those as separate
+objects in your project so a persuasive response cannot substitute for a correct state change.
 
 <a id="harness-1"></a>
-### Part 1 · A golden failure dataset (20–50 real tasks)
+### Part 1 · Versioned tasks and held-out evidence
 
-- Start with **20–50 tasks drawn from real failures**, each with an unambiguous success criterion. Include some cases that already pass, so a fix for one failure can't quietly break another ([Anthropic, *Demystifying evals for AI agents*](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents); W4, 11:56).
-- Find the failures through **error analysis**. Read about 100 traces yourself, label at least the first 30, group them into failure categories, and stop when no new categories appear ([Hamel Husain, *Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/) · [LLM Evals FAQ](https://hamel.dev/blog/posts/evals-faq/) · [Marina Wyss, *SWE → AI Engineer*, Month 2](https://www.marinawyss.com/blog/software-engineer-to-ai-engineer-roadmap)).
-- Store it as `evals/golden.jsonl` with one line per task: `{"id", "input", "expected" or "criteria", "failure_bucket", "source_trace"}`. Version it in git like code.
+Start with 20–50 representative tasks, including known failures and ordinary passing cases. This is
+a teaching/regression set, not a reliability certification. Develop on separate examples; protect a
+held-out subset from repeated prompt tuning. Record data provenance and why each category matters.
+
+Store one JSONL object per task with a stable ID, input, expected output or rubric, category, and
+source. Add relevant document IDs for retrieval and expected final state/allowed side effects for
+agents. Freeze corpus/model/config identifiers for each run. Label synthetic data explicitly.
 
 <a id="harness-2"></a>
-### Part 2 · Two kinds of grader: code first, then a calibrated LLM judge
+### Part 2 · Code graders and calibrated judgments
 
-| Grader | Use it for | Rules |
+| Grader | Use | Required checks |
 |---|---|---|
-| **Deterministic code grader** | Anything checkable: tests pass, the record exists in the DB, JSON matches the schema, correct tool and arguments, under the step limit, a citation is present | Cheap, objective, run thousands. **Use code wherever code can decide** (W4, 12:08) |
-| **LLM-as-judge** | Fuzzy qualities: is the summary faithful, did the reply resolve the complaint, is the tone right | A written rubric with **binary pass/fail per criterion**. Validate the judge **against your own labels** before trusting it: report agreement (or TPR/TNR) on a held-out labelled set, and tighten the rubric until it agrees with you ([Hamel Husain, *Using LLM-as-a-Judge*](https://hamel.dev/blog/posts/llm-judge/) · [Eugene Yan, *Evaluating LLM-Evaluators*](https://eugeneyan.com/writing/llm-evaluators/) · [*Product Evals in Three Simple Steps*](https://eugeneyan.com/writing/product-evals/)) |
+| Deterministic | Output schema, task-specific exact answer, tool arguments, DB state, citations, budgets | Test grader edge cases and known pass/fail fixtures; citation presence is not evidential support |
+| Human rubric | Correctness, supported claims, usefulness, refusal appropriateness | Explicit criteria, examples and adjudication of ambiguous labels |
+| LLM judge | Scalable approximation of a human rubric | Validate on separate human-labeled examples; report false accepts/rejects and agreement; revalidate model/rubric changes |
 
-Never let an unvalidated judge gate a release. Re-check its agreement whenever you change the judge model or the rubric.
+Use deterministic or human grading for a free local route. A paid judge is optional. Never claim
+that schema-valid output proves semantic correctness, and never let an unvalidated judge alone
+approve a release. Keep grader/data permissions separate from any optimization agent.
 
 <a id="harness-3"></a>
-### Part 3 · Multi-run pass rates, not single runs
+### Part 3 · Repeated trials and uncertainty
 
-Agents are non-deterministic: the same task can pass today and fail tomorrow with no code change (W4, 12:43). Run every task **N times (start with N = 5)** and report:
+For stochastic systems start with five trials per task when feasible; publish the actual trial
+count, seeds/settings and raw outcomes. Report first-attempt success, per-task pass rate and the
+number of tasks that pass **all** trials. `pass@k` (at least one success) applies only when those
+retries are permitted; it is different from `pass^k` (all k succeed).
 
-- **pass rate** per task and overall, and **pass^k** (passes *all* k runs), which matters for customer-facing reliability. An average can hide the 1-in-5 failure you care about.
-- **pass@k** (passes *at least once* in k), useful only where retrying is acceptable, such as offline code generation.
+Report counts, denominators and uncertainty. Repeated trials of one task do not create independent
+new tasks; compare changes on paired tasks and report per-category failures. A five-instance public
+benchmark subset is a learning exercise, not a leaderboard estimate.
 
 <a id="harness-4"></a>
-### Part 4 · Cost and operations regression telemetry
+### Part 4 · Resource and operational regressions
 
-Log these **per task, per run**: steps, tool calls, input and output tokens, dollar cost, latency and the termination reason. **A prompt change that keeps accuracy but doubles token cost is a regression** (W4, 13:08). Set budgets in your [`DECISIONS.md`](../../guides/portfolio-spine.md#decisions-template) and fail CI when they're exceeded.
+Record task/run ID, source commit, model/prompt/data versions, grader version, actual final state,
+termination reason, latency, steps, retries and token counts. Track peak local memory/runtime; add
+API cost only for hosted runs. Define acceptable quality/resource changes in the decision memo
+before comparing candidates. A cost increase can be justified by a measured quality gain.
 
-**Run the whole suite on every change** to the prompt, model, retrieval or tools: locally with one command, and in CI on every pull request.
+Run deterministic control and integration tests on every push/PR. Evaluate any change to model,
+prompt, data, retrieval or tools before release using the frozen real-system suite. Small local-model
+checks can run in CI; expensive sweeps can run separately with results tied to the exact commit.
+Mocks are useful for stable transport failures, but cannot approve a model-quality change.
 
 <a id="evals-stack"></a>
-### 🧰 Free / open-source evals and observability stack (verified 2026-10-27)
+### Minimal evaluation and observability stack
 
-| Tool | Licence | Best at | Use it for |
-|---|---|---|---|
-| [**Promptfoo**](https://github.com/promptfoo/promptfoo) | MIT | Declarative YAML eval matrices (prompts × models × test cases), CI integration, red-teaming | **Default CI runner** for L1–L4 regression suites |
-| [**Inspect AI**](https://inspect.aisi.org.uk/) (UK AI Security Institute) | MIT | Python-first tasks = dataset + solver + scorer; agent/tool evals, sandboxes, multi-epoch runs | **Default for agent evals** (L3–L5) and anything safety-flavoured (M23) |
-| [**Ragas**](https://github.com/vibrantlabsai/ragas) | Apache-2.0 | RAG metrics: faithfulness, context precision/recall, answer relevance | The **retrieval leg** (M21, L2) |
-| [**DeepEval**](https://github.com/confident-ai/deepeval) | Apache-2.0 | pytest-style LLM assertions | When your team already lives in `pytest` |
-| [**Langfuse**](https://github.com/langfuse/langfuse) | MIT core (some enterprise features under a separate licence) | Self-hostable tracing, prompt versioning, datasets, scores | **Default tracing** if you want fully open source |
-| [**Arize Phoenix**](https://github.com/Arize-ai/phoenix) | Elastic License 2.0 (source-available, free to self-host; not OSI open source) | OpenTelemetry-native trace inspection, eval notebooks | Local trace debugging with [OTel GenAI conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) |
+Start with Python tests, JSONL task/run records and local structured logs. Add
+[Inspect](https://inspect.aisi.org.uk/) or [promptfoo](https://github.com/promptfoo/promptfoo) for
+suite orchestration, [Ragas](https://github.com/vibrantlabsai/ragas) for relevant retrieval metrics,
+and one viewer such as [Langfuse](https://github.com/langfuse/langfuse) or
+[Phoenix](https://github.com/Arize-ai/phoenix) if useful. Check repository licenses and hosted terms;
+free self-hosting, open source, and free managed service are different claims.
 
-**Recommended minimal stack:** Promptfoo *or* Inspect for the suite, Langfuse for traces, Ragas for retrieval. Managed tools such as LangSmith or W&B Weave are fine on their free tiers, but pick from the list above if you want no vendor lock-in.
+For GenAI telemetry, pin the
+[semantic-convention revision](https://github.com/open-telemetry/semantic-conventions-genai) and
+instrumentor versions. Trace model, retrieval and tool operations with correlated IDs; record errors
+and budget exhaustion. The conventions have Development status and may change. Keep sensitive
+prompt/response content capture off unless the project has an explicit data policy. Metrics and
+redacted traces are enough to begin.
 
-## Mandatory mini-projects
+## 📦 Required project — operate and recover one system
 
-1. **MLOps:** Package a scikit-learn model with MLflow tracking + BentoML serving + Evidently drift dashboard.
-2. **LLMOps:** Instrument an LLM app with Langfuse traces + OTel GenAI semantic conventions + a promptfoo eval in CI.
-3. **AgentOps:** Trace a LangGraph agent with LangSmith or Phoenix; run GAIA-Level-1 as a regression suite.
+1. Select one evaluated project and meet all rows of the canonical production bar. Use a local
+   package/container, validated configuration, test suite, artifact manifest, and automated CI.
+2. Define a measured latency/resource/quality budget on stated hardware, workload and concurrency.
+   Store the model/data/prompt/config identifiers needed to reproduce the baseline.
+3. Introduce an observable failure: unavailable dependency, invalid payload, corrupted artifact,
+   budget exhaustion or a controlled distribution change. Record the alert and investigation.
+4. Restore a previous known-good artifact/configuration using the documented rollback command.
+   Run the smoke/evaluation gates again and record the outcome. A rollback paragraph without an
+   executed drill does not satisfy the systems artifact.
+5. Submit the architecture, runbook, clean-clone instructions, lineage, incident memo, and results.
 
-## Prerequisites
-
-- Any model from Modules 9–18; Module 22 for the AgentOps half.
+**Done:** one command reproduces the service and verification; every checklist row points to
+concrete evidence; quality and resource limits are declared; the rollback drill succeeds. Public
+hosting is optional. **Stretch:** one justified canary/shadow evaluation, distributed workload, or
+feature-store integration. Do not build classical, LLM and agent services solely to tick three boxes.

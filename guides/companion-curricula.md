@@ -5,7 +5,7 @@
 <a id="companion-curricula"></a>
 ## Guided companion curricula
 
-The two Microsoft curricula below are strong, actively maintained beginner companions. They use the lesson-table navigation, short projects, quizzes, assignments, and solution folders that make a large subject easier to enter. Use their repository root links to follow the newest default-branch content; the reviewed commits provide a dated audit trail.
+The two Microsoft curricula below provide guided beginner practice. They use the lesson-table navigation, short projects, quizzes, assignments, and solution folders that make a large subject easier to enter. Their public READMEs were re-read on 2026-11-05 and describe the lesson counts below. Earlier reviewed commits remain historical snapshots; current software setup and hosted-service terms should be checked separately.
 
 | Curriculum | Best for | Current scope | Reviewed upstream snapshot |
 |---|---|---|---|
@@ -34,11 +34,11 @@ The two Microsoft curricula below are strong, actively maintained beginner compa
 For each module, use a simple four-step loop:
 
 1. **Learn** — complete the primary course or lecture sequence.
-2. **Read** — work through the listed primary text and exercises.
+2. **Read** — work selected sections of the principal book and exercises, whether that book is free or paid.
 3. **Implement** — reproduce core algorithms without relying only on high-level APIs.
 4. **Ship** — complete the module project with tests, documentation, and a short results memo.
 
-> **Resource policy:** free and open resources are preferred. Some books are listed as optional references when no equivalent open source is as strong.
+> **Resource policy:** default lectures are free; principal books are chosen on quality regardless of price. Use these companions for a specific practice gap. Optional cloud lessons/Codespaces can require accounts and incur costs; local lesson execution is the default. Completing both entire companion curricula is not required.
 
 ---
 
