@@ -1,0 +1,8 @@
+order_id,customer_id,amount_cents
+o1,A,1200
+o2,A,800
+o3,B,500
+o1,A,1200
+o4,B,
+o5,Z,100
+o6,B,-1

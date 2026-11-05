@@ -1,0 +1,380 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "beginner_projects agent",
+  "scope": "Only resources/beginner-projects files edited; assigned pre-existing resources individually reviewed and retained.",
+  "files": [
+    {
+      "path": "resources/toolchain.md",
+      "disposition": "retain",
+      "reason": "Retain staged tool introduction and environment policy; beginner kit deliberately uses standard-library runtime and adds testing only after Lecture 5. Full toolchain is later scope.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/templates/DECISIONS.md",
+      "disposition": "retain",
+      "reason": "Retain production decision evidence, measurement labels and budget context; a shorter beginner results memo avoids imposing production tables on a first CLI.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/templates/OPPORTUNITIES.md",
+      "disposition": "retain",
+      "reason": "Retain private employer/eligibility evidence log and explicit unknowns; unrelated to beginner project implementation.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/README.md",
+      "disposition": "retain",
+      "reason": "Retain starter/reference distinction, mathematical derivation requirement and library-comparison limitations; this remains an M10-M12 harness.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/requirements.txt",
+      "disposition": "retain",
+      "reason": "Retain compatible NumPy, pytest and scikit-learn requirements; new beginner kit does not require numerical packages.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/starter/decision_tree.py",
+      "disposition": "retain",
+      "reason": "Retain intentional CART exercise gaps and explicit positive-Gini stopping rule; does not solve the learner task.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/starter/kmeans.py",
+      "disposition": "retain",
+      "reason": "Retain detailed finite-data, duplicate-centre and configuration contracts with learner TODOs.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/starter/logistic_regression.py",
+      "disposition": "retain",
+      "reason": "Retain from-scratch gradient exercise gaps and stable-sigmoid contract.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/reference/decision_tree.py",
+      "disposition": "retain",
+      "reason": "Retain readable recursive CART reference, majority leaf and positive-gain stopping rule; scope is a teaching implementation, not general input-validation library.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/reference/kmeans.py",
+      "disposition": "retain",
+      "reason": "Retain prior zero-distance k-means++ fix, finite validation, random restarts and duplicate-centre handling; reviewed fit/predict and refit flow.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/reference/logistic_regression.py",
+      "disposition": "retain",
+      "reason": "Retain stable sigmoid, batch gradients and explicit unregularized comparison; reported history is cross entropy and not a general penalized objective guarantee.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/tests/conftest.py",
+      "disposition": "retain",
+      "reason": "Retain explicit implementation selection and invalid-mode rejection; reference selection is behavioral evidence, not a proof that tests are correct (overstated comment reported to root).",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/tests/test_decision_tree.py",
+      "disposition": "retain",
+      "reason": "Retain Gini, stump, AND/XOR stopping rule, depth and held-out/library tests; meaningful behavior rather than implementation wording.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/tests/test_kmeans.py",
+      "disposition": "retain",
+      "reason": "Retain duplicate-point, invalid-configuration, monotonic-objective, fitted-feature, seed and sklearn regressions.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/numpy-from-scratch/tests/test_logistic_regression.py",
+      "disposition": "retain",
+      "reason": "Retain stability, exact initial-gradient, loss/shape and near-unregularized sklearn agreement tests; these exercise limited declared examples.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/local-labs/README.md",
+      "disposition": "retain",
+      "reason": "Retain truthful synthetic causal truth and SQLite/DuckDB replay limits; advanced lab is not repurposed as a beginner SQL exercise.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/local-labs/requirements.txt",
+      "disposition": "retain",
+      "reason": "Retain optional local DuckDB compatibility range; no new beginner dependency on DuckDB.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/local-labs/causal_inference.py",
+      "disposition": "retain",
+      "reason": "Retain binary-confounder generation, known 50/50 standardization and normal-approximation power/coverage demo; assumptions and checks match docs.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/local-labs/distributed_data.py",
+      "disposition": "retain",
+      "reason": "Retain immutable event ledger, validated UTC timestamp, late event accounting, quarantine and atomic conflict rollback; no cluster guarantee claimed.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/local-labs/tests/test_labs.py",
+      "disposition": "retain",
+      "reason": "Retain six causal and repeated SQLite/DuckDB contracts; review found honest optional-backend skips and rollback checks.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/agent-lab/README.md",
+      "disposition": "retain",
+      "reason": "Retain local-only scope, trusted principal/approval, wire-protocol limitation and deletion-tombstone caveat.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/agent-lab/contracts.py",
+      "disposition": "retain",
+      "reason": "Retain scoped contract harness: parameterized tenant-scoped queries, BEGIN IMMEDIATE idempotency, approvals, memory event ordering, step/deadline limits. Not a production service or a complete untrusted-input validator.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/agent-lab/tests/test_contracts.py",
+      "disposition": "retain",
+      "reason": "Retain unknown-tool/permission, exact approval, concurrent replay, tenant memory and deadline tests; no model-quality claims.",
+      "inspection": "individual source read"
+    },
+    {
+      "path": "resources/beginner-projects/README.md",
+      "disposition": "improve",
+      "reason": "Create stage-specific entry, isolated setup, starter/reference test selection, shared rubric, private evidence policy and fixture provenance.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/RESULTS-MEMO.md",
+      "disposition": "improve",
+      "reason": "Create short blank evidence template distinguishing assisted/reference/learner work and fixture/live results, with resume task.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/REVIEWER.md",
+      "disposition": "improve",
+      "reason": "Create answer notes, diagnostic misconceptions and acceptable alternative designs; label worked examples explicitly.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/requirements.txt",
+      "disposition": "improve",
+      "reason": "Pin pytest 9.2.0 actually used for validation; document stdlib runtime and need to record transitive installed environment.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/calculator/README.md",
+      "disposition": "improve",
+      "reason": "Create bounded brief, three learning stages, commands, changed-example check and targeted type-conversion recovery.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/calculator/starter.py",
+      "disposition": "improve",
+      "reason": "Create learner arithmetic function gap while supplying minimal CLI/error-stream shell; review leaves algorithm unfinished.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/calculator/reference.py",
+      "disposition": "improve",
+      "reason": "Create finite arithmetic reference with invalid operator, zero divisor, parse/overflow and CLI return-code handling.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/README.md",
+      "disposition": "improve",
+      "reason": "Create M1-aligned city/cache/fixtures brief, stages, exact expiry contract, mock failures, provenance and optional live boundary.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/starter.py",
+      "disposition": "improve",
+      "reason": "Create parse/cache/get-weather TODOs with supplied bounded stdlib adapter and CLI; no default network access.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/reference.py",
+      "disposition": "improve",
+      "reason": "Create UTF-8 JSON/Celsius/UTC validation, explicit offline source, expiry-aware atomic cache and injected HTTP boundary.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/fixtures/current.json",
+      "disposition": "improve",
+      "reason": "Create synthetic valid Celsius payload; January timestamp is explicitly not measured current weather.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/fixtures/missing-temperature.json",
+      "disposition": "improve",
+      "reason": "Create structurally valid JSON with deliberately missing required temperature to test schema failure.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/weather/fixtures/malformed.json",
+      "disposition": "improve",
+      "reason": "Create deliberately truncated JSON; invalid syntax is an intentional fixture, not an uncorrected artifact error.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/README.md",
+      "disposition": "improve",
+      "reason": "Create prerequisite-respecting M8a introduction with explicit grain/keys, replay/reconciliation, plan dialect caveat and recovery.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/schema.sql",
+      "disposition": "improve",
+      "reason": "Create SQLite keys, foreign keys, nonnegative integer constraints; reviewed SQL structure and connection enforcement.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/starter.py",
+      "disposition": "improve",
+      "reason": "Create ingestion/report TODOs, with supplied temporary database/schema loading/demo runner; preserves independent query work.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/reference.py",
+      "disposition": "improve",
+      "reason": "Create atomic validated CSV ingestion, exact-duplicate/conflict policy, grain-correct aggregate report and before/after plan demo.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/fixtures/customers.csv",
+      "disposition": "improve",
+      "reason": "Create three synthetic customer records, including no-order customer, and reviewed unique IDs.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/fixtures/orders.csv",
+      "disposition": "improve",
+      "reason": "Create three valid orders plus duplicate, missing amount, unknown customer and negative amount; expected counts manually reconciled.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/sql/fixtures/payments.csv",
+      "disposition": "improve",
+      "reason": "Create four synthetic payments including split payment and partial balance; manually reconcile 2,300 cents.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/tests/conftest.py",
+      "disposition": "improve",
+      "reason": "Create explicit starter-default/reference-opt-in loader and invalid-selector rejection; each project imported in isolation.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/tests/test_calculator.py",
+      "disposition": "improve",
+      "reason": "Create 15 behavioral cases for normal arithmetic, conversion, zero, nonfinite values, overflow and CLI error/success separation.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/tests/test_weather.py",
+      "disposition": "improve",
+      "reason": "Create 38 behavioral cases for payload/type/encoding/UTC, offline isolation, city/cache boundary, mock service errors and unwritable-cache preservation. Added invalid config, supplied adapter size/timeout/close contracts and failed replacement preserving the prior cache after root review.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "resources/beginner-projects/tests/test_sql.py",
+      "disposition": "improve",
+      "reason": "Create 14 cases exposing duplicate/replay errors, invalid raw rows, bad join cardinality, DISTINCT-amount mistake and transaction/key failures.",
+      "inspection": "authored and individually reviewed; code/config/fixture semantics checked"
+    },
+    {
+      "path": "audit/beginner-project-review-2026-11-05.json",
+      "disposition": "improve",
+      "reason": "Dated per-file review, evidence sources and actual new-project validation; does not rewrite historical audits.",
+      "inspection": "structured record reviewed"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use Python standard-library runtime and supplied CLI/HTTP/SQLite scaffolding, with gaps only in named capabilities.",
+      "why": "Avoid imposing HTTPX/Pydantic/async/DuckDB before the beginner can explain parsing, errors and joins; preserve later toolchain routes."
+    },
+    {
+      "decision": "Add a dedicated small SQL investigation instead of reusing the advanced event ledger.",
+      "why": "Existing M8b ledger teaches replay systems, not beginner one-to-many joins, relational grain and reconciliation."
+    },
+    {
+      "decision": "Retain optional public Weather check, but default to synthetic offline data and tests.",
+      "why": "API availability and commercial terms must not block local learning. One mock call never establishes real network availability."
+    }
+  ],
+  "research": [
+    {
+      "source": "https://docs.python.org/3.12/library/sqlite3.html",
+      "method": "Exa page extraction plus Context7 /python/cpython query and executed Python3.12 SQLite contracts",
+      "supports": "stdlib engine, parameter bindings, Python3.12 autocommit and explicit SQL transaction controls",
+      "limit": "Context7 main docs are not pinned to installed patch; behavior tested locally on3.12.10/SQLite3.49.1."
+    },
+    {
+      "source": "https://www.sqlite.org/foreignkeys.html",
+      "method": "Exa page extraction",
+      "supports": "foreign-key enforcement must be enabled; code enables and checks it per connection",
+      "limit": "not a complete database design syllabus."
+    },
+    {
+      "source": "https://www.sqlite.org/eqp.html",
+      "method": "Exa page extraction",
+      "supports": "EXPLAIN QUERY PLAN is high-level strategy and output format is unstable; do not assert exact prose or pretend measured timings",
+      "limit": "small demo is not a benchmark."
+    },
+    {
+      "source": "https://docs.python.org/3.12/library/urllib.request.html",
+      "method": "Exa page extraction",
+      "supports": "urlopen context manager, blocking-operation timeout and URLError boundary",
+      "limit": "socket timeout is not total wall-clock deadline; production clients have more requirements."
+    },
+    {
+      "source": "https://open-meteo.com/en/docs",
+      "method": "Exa page extraction",
+      "supports": "forecast API current-temperature/Celsius/UTC request context",
+      "limit": "One real request returned the documented current-temperature shape. This does not validate future availability or scientific accuracy; automated tests remain offline."
+    },
+    {
+      "source": "https://open-meteo.com/en/terms",
+      "method": "Exa page extraction",
+      "supports": "free noncommercial service permits education; data CC-BY4.0 and mutable limits; bundled fixtures avoid service dependency",
+      "limit": "terms can change; no guarantee of uptime or commercial free use."
+    },
+    {
+      "source": "https://cs50.harvard.edu/python/weeks/3/",
+      "method": "Exa page extraction",
+      "supports": "exception topics, public notes/transcript/video and MP4/YouTube alternatives for calculator preparation",
+      "limit": "lecture not watched in full."
+    },
+    {
+      "source": "https://cs50.harvard.edu/sql/weeks/0/",
+      "method": "Exa page extraction",
+      "supports": "Querying lecture includes SELECT, NULL, aggregate functions and SQLite context",
+      "limit": "this extraction does not by itself prove playback; root research/validation covers media accessibility."
+    }
+  ],
+  "validation": {
+    "interpreter": "Python3.12.10",
+    "pytest": "9.2.0",
+    "sqlite": "3.49.1",
+    "reference_command": "BEGINNER_IMPL=reference python -m pytest resources/beginner-projects/tests -q",
+    "reference_result": "67 passed, zero skips; executed in repository isolated .venv.",
+    "starter_command": "python -m pytest resources/beginner-projects/tests -q --tb=no --junitxml=.research/beginner-starter.xml",
+    "starter_result": "65 expected NotImplementedError failures, 2 passing supplied-adapter tests; zero collection/setup errors. JUnit failure messages inspected.",
+    "demos": [
+      "calculator/reference.py 2 + 3 =>5.0",
+      "weather/reference.py Delhi --offline =>12.5 Celsius, January fixture timestamp, source synthetic fixture",
+      "sql/reference.py => accepted3, duplicate1, rejected3; A(2000,1800,200), B(500,500,0), C(0,0,0); observed SCAN then indexed SEARCH, no performance claim",
+      "Optional single live reference Weather request succeeded: Delhi, provider response24.5 Celsius, timestamp2026-11-05T12:45, source provider. Cache kept under ignored .research, not a deliverable. This is provider output, not independently measured weather accuracy."
+    ],
+    "links": "Ran repository link checker after new guides; no beginner-kit failures; five missing root audit files were pending integration at that time. Root will record final full check.",
+    "unverified": [
+      "browser/mobile rendering of new kit",
+      "all future input combinations",
+      "provider scientific accuracy or future availability"
+    ]
+  }
+}

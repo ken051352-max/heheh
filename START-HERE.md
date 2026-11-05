@@ -11,23 +11,20 @@
 
 ### 👉 [Open Week 0](guides/week-0.md#week-0)
 
-Seven days, 45–60 minutes a day, in your browser. Day 1 starts in [Scrimba's free *Learn Python* course](https://scrimba.com/learn-python-c03), where you run code inside the lesson.
+Begin with a short piece of [CS50P Lecture 0](https://cs50.harvard.edu/python/weeks/0/) and change a small program. [Week 0](guides/week-0.md#week-0) explains the browser-first setup and manageable practice. Session lengths are planning suggestions; take longer when needed.
 
-Begin with the Week 0 browser route; its free fallback is included if the preferred course is inaccessible. You need no maths test, book purchase or career choice to start.
+Week 0 and the first 30 days are the beginning of one [semester sequence](guides/first-semester.md#semester-plan). You need no maths test, book purchase or career choice to start.
 
 ---
 
 <a id="other-entry-points"></a>
 ## Not a beginner?
 
-| If this describes you | Do this |
-|---|---|
-| **I finished Week 0.** | Continue with the [first 30 days](guides/first-30-days.md#week-1). |
-| **I can already write and debug Python functions.** | Pick a goal in the [track chooser](README.md#choose-your-track). Then open a module from the [index](curriculum/README.md#all-modules) and check its prerequisites. |
-| **I can write and test Python and want to build AI systems.** | Pass the [3-check exit gate](curriculum/1-foundations.md#three-check-gate), then start [Level 1 of the Portfolio Spine](guides/portfolio-spine.md#level-1). |
-| **I'm a CS undergraduate following the four-year plan.** | Start at [S1 in the Four-Year Plan](guides/four-year-plan.md#s1). It also begins with Week 0. |
-| **I'm a first-year CSE/AI student in India and undecided about roles or countries.** | Begin Python as above; use the [undergraduate route](guides/india-undergraduate-path.md) to plan college foundations, role exploration and international options. |
-| **I have already started this roadmap.** | Go straight to the [resume checklist](guides/progress-tracker.md#resume). You don't need to redo onboarding. |
+- **Finished Week 0:** [begin Week 1](guides/first-30-days.md#week-1); skip lecture sections you can already demonstrate.
+- **Already write and debug Python:** try [M1 readiness](guides/readiness-checks.md#m1-ready). Keep matching evidence and repair gaps instead of repeating onboarding.
+- **Know Python and want AI applications:** use [the application route](guides/practitioner-track.md#route-ai-application), respecting SQL and M18-app prerequisites.
+- **First-year undergraduate, role undecided:** [this semester's sequence](guides/first-semester.md#semester-plan) is your study schedule; [the India guide](guides/india-undergraduate-path.md) adds college and career context.
+- **Already studying here:** [resume](guides/progress-tracker.md#resume) from your last artifact and next task.
 
 <a id="1-what-this-repository-is"></a>
 <a id="rule-1--one-primary-resource-at-a-time"></a>
@@ -45,7 +42,7 @@ The golden rule: **one main course at a time.** Many modules list alternatives. 
 ## Save your place
 
 - **During Week 0:** use the course progress feature if available, or bookmark the lesson and record one next task.
-- **From Week 1:** write one line after each session: *"Today I built ___. I got stuck on ___. Next session I will ___."* The [starter tracker](guides/progress-tracker.md#starter-tracker) has 12 boxes for your first 30 days.
+- **From Week 1:** write one line after each session: *"Today I built ___. I got stuck on ___. Next session I will ___."* Use the [starter tracker](guides/progress-tracker.md#starter-tracker) to save evidence; the [pilot log](guides/study-pilot.md#start) adds optional pacing feedback.
 - **Later:** bookmark the module heading you're working on, and use the [resume note](guides/progress-tracker.md#resume) after a break.
 - **Publishing work:** public sharing is optional. Keep a reviewable artifact in a local/private repo or share it selectively; if you publish, follow each course's rules and scrub passwords, credentials, private data, proprietary material, and PII.
 
@@ -59,9 +56,9 @@ Everything except Week 0. That includes the [book catalogue](resources/books.md)
 ## Need help?
 
 - **Stuck, tired or unmotivated?** Use the [stuck or unmotivated table](guides/how-to-read-a-module.md#stuck-or-unmotivated). Each row is a 15-minute fix.
-- **Can I use ChatGPT or Claude?** Yes, to *explain* things and to *quiz* you. Not to write your code yet. [Why, and when that changes](curriculum/1-foundations.md#ai-usage-rule).
+- **Can I use AI?** Ask for explanations, hints or feedback within your course's rules. For [readiness checks](guides/readiness-checks.md#how-to-check), first attempt and explain a changed example independently; record assistance. [M1 guidance](curriculum/1-foundations.md#ai-usage-rule).
 - **An error message you don't understand?** Paste the code into [Python Tutor](https://pythontutor.com/python-compiler.html) and step through it.
-- **Something in this roadmap looks wrong or contradictory?** Check [known limitations](FAQ.md#known-limitations), then [report it](https://github.com/akazadivu-design/data-sci/issues/new/choose).
+- **Something in this roadmap looks wrong or contradictory?** Check [known limitations](FAQ.md#known-limitations), then [report it](https://github.com/ken051352-max/heheh/issues/new/choose).
 - **Wondering how long it all takes?** Read the [time assumptions](FAQ.md#how-long). They are estimates, not promises.
 
 <a id="-your-start-here-checklist"></a>

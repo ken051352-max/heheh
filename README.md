@@ -2,84 +2,74 @@
 
 **Free lectures, carefully chosen books, and practical projects - from mathematics and Python to production AI.**
 
-[Start here](START-HERE.md) · [Browse all modules](curriculum/README.md#all-modules) · [Resume studying](guides/progress-tracker.md#resume) · [FAQ](FAQ.md)
+[Start here](START-HERE.md) · [This semester](guides/first-semester.md#semester-plan) · [Resume](guides/progress-tracker.md#resume) · [All modules](curriculum/README.md#all-modules)
 
-**First-year CSE/AI in India, aiming for international companies and still choosing a role?** Follow the [undergraduate route](guides/india-undergraduate-path.md): shared foundations, small role experiments, stage-appropriate internships and a semester review of actual employer requirements.
-
-[![Version](https://img.shields.io/badge/version-2026.11%20Curriculum%20Overhaul-blue)](CHANGELOG.md#refresh-log)
-[![Modules](https://img.shields.io/badge/modules-27-6f42c1)](curriculum/README.md#all-modules)
-[![Policy](https://img.shields.io/badge/policy-free%20lectures%20%2B%20best%20books-1a7f37)](FAQ.md#cost-and-access)
-[![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE.md)
+**First-year CSE/AI in India and still choosing a role?** Start with the [first-semester path](guides/first-semester.md#semester-plan). The [undergraduate guide](guides/india-undergraduate-path.md) connects college foundations, role exploration and international options.
 
 <a id="read-these-first"></a>
-## Where to go next
+## Choose your next action
 
-| Your next step | Open this |
-|---|---|
-| **I'm new. Help me start.** | [Start Here](START-HERE.md#first-step): open Week 0 and begin the first small Python exercise. |
-| **I know what I want to learn.** | [Curriculum index](curriculum/README.md#all-modules): jump directly to any of the 27 modules. |
-| **I'm returning to my studies.** | [Resume checklist](guides/progress-tracker.md#resume): reopen your module and find the next unfinished task. |
-| **I'm a CS undergrad planning four years of study.** | [Four-Year Plan](guides/four-year-plan.md#four-year-plan): eight adaptable semesters, coherent prerequisites, evolving projects and an opportunity directory. |
+- **New to programming:** [start the first small Python task](guides/week-0.md#week-0). No maths test, purchase or career choice is needed.
+- **Studying this semester:** [find your current milestone](guides/first-semester.md#semester-plan), with one objective, lecture, practice task and readiness check.
+- **Already programming:** [demonstrate your current skills](guides/readiness-checks.md#m1-ready), then fill the specific gaps and choose the next module.
+- **Returning after a break:** [resume from your last evidence](guides/progress-tracker.md#resume), with one small task.
 
 ## What this is (in 30 seconds)
 
-Read the roadmap on GitHub without installing or cloning it. When you reach the practical modules, use the included NumPy harness, local causal/data labs and agent-contract lab, or build the stated equivalent in your own repository. Courses and projects explain their own tools and accounts.
+A self-study roadmap from Python, mathematics and core CS to data science and production AI. Read it in your browser; runnable projects explain setup when you reach them. **You do not need to finish all 27 modules.** Build the shared foundation and explore a direction through actual work.
 
-Each module brings together prerequisites, learning resources, and practical work. Start with its recommended resource, then follow the **module's actual reading and project requirements**. A short resource table is a starting point, not a promise that one course covers everything.
-
-**Lectures are free; books are selected on merit regardless of price.** Module defaults name principal recommended books, with a topic-specific choice for M26, and label paid, authorized free-text and code/sample access. Core projects use small local routes. Certificates, hosted APIs and larger GPU experiments have separate costs. Start Week 0 without buying a book.
+**Lectures are free; principal books may be paid.** Use selected reading when it helps, with access labels in the [book catalogue](resources/books.md). Starting does not require buying a book. Local project routes avoid required paid APIs or cloud hosting.
 
 ## How to use this roadmap
 
-1. **Choose a starting module.** New to Python? Open [Week 0](guides/week-0.md#week-0). Otherwise use [Start Here](START-HERE.md#first-step), or the [track chooser](#choose-your-track) if you already have a goal.
-2. **Check prerequisites and the deliverable.** The [module guide](guides/how-to-read-a-module.md#reading-order) shows what to read first.
-3. **Study, practise, and build.** Use the [resource defaults](guides/how-to-read-a-module.md#pick-one) without treating alternatives as extra compulsory courses. Keep explicit required work in view.
-4. **Record your next task.** Bookmark the module heading in your [progress tracker](guides/progress-tracker.md#resume). Check its definition of done and the [project policy](curriculum/README.md#module-projects) before moving on.
+1. **Do now:** open your [semester milestone](guides/first-semester.md#semester-plan), or a chosen [module](curriculum/README.md#all-modules) if you already have the prerequisites.
+2. **Build and check:** follow one free teaching route, produce the small artifact and attempt its [readiness check](guides/readiness-checks.md#how-to-check). Guided or AI-assisted output alone is not evidence of independent understanding.
+3. **Record next:** save your evidence and [next task](guides/progress-tracker.md#resume). Use the [six-week pilot](guides/study-pilot.md#start) to adjust pacing from real study.
+4. **Later depth:** open advanced references when your chosen project or role needs them. The [learning contract](curriculum/README.md#learning-contract) defines full completion.
 
 <a id="start-here"></a>
 ## Entry points by experience
 
-- **New to Python:** open [Week 0](guides/week-0.md#week-0), then the [first 30 days](guides/first-30-days.md#first-30-days). Together they are the gentle start of [M1: Programming Foundations](curriculum/1-foundations.md#module-1).
-- **Already programming:** choose a target below, then check that module's prerequisites. Python fluency alone does not establish calculus, probability, or ML readiness.
-- **Returning after a break:** use [Resume](guides/progress-tracker.md#resume), not another full tour of the repository.
+[Beginner orientation](guides/week-0.md#week-0) · [Experienced learner checks](guides/readiness-checks.md#m1-ready) · [Resume](guides/progress-tracker.md#resume) · [Undecided undergraduate](guides/india-undergraduate-path.md)
 
 ## Choose your track
 
-**Not sure yet? Start with [Week 0](guides/week-0.md#week-0); you can choose a destination later.** Use the [complete role sequences and prerequisite inventory](guides/practitioner-track.md#role-pathways). They are checked against one module map, and distinguish full modules from application subsets.
+Stay **undecided** while you build Python and college CS/mathematics. After the relevant prerequisites, try one [small role experiment](guides/india-undergraduate-path.md#role-experiments). Choose one provisional route; revisit it using your work and current employer requirements.
 
-| Your goal | Where to explore |
-|---|---|
-| **Data Analyst** — analysis and communication | [Statistics & Data](curriculum/README.md#statistics-and-data), then [M25: Product DS](curriculum/6-frontier-production.md#module-25). |
-| **Data Scientist** — inference and predictive modelling | [Foundations](curriculum/README.md#foundations), [Statistics](curriculum/README.md#statistics-and-data), and [Classical ML](curriculum/README.md#classical-ml). |
-| **Data Engineer** — databases and data systems | [M4: Algorithms](curriculum/1-foundations.md#module-4), [M8a: SQL](curriculum/2-statistics-and-data.md#module-8a), and [M8b: Distributed Data](curriculum/2-statistics-and-data.md#module-8b). |
-| **ML Engineer** — model training and serving | [Classical ML](curriculum/README.md#classical-ml), [Deep Learning](curriculum/README.md#deep-learning), and [M24: MLOps](curriculum/6-frontier-production.md#module-24). |
-| **AI Engineer, Applications** — products using existing models | [Practitioner track](guides/practitioner-track.md#practitioner-track) for scope, then grow one evaluated system with the [Portfolio Spine](guides/portfolio-spine.md#portfolio-spine). Multiple agents and self-improvement are optional extensions. |
-| **AI Engineer, Systems** — model internals and infrastructure | [Deep Learning](curriculum/README.md#deep-learning) and [Frontier & Production](curriculum/README.md#frontier-and-production). |
-| **Research / PhD preparation** — mathematical and research depth | [Full curriculum index](curriculum/README.md#all-modules) and [M26: Research capstone](curriculum/6-frontier-production.md#module-26). |
+- [Data Analyst](guides/practitioner-track.md#route-analyst): investigate data and explain decisions.
+- [Applied Data Scientist](guides/practitioner-track.md#route-applied-ds): inference and predictive evaluation.
+- [Data Engineer](guides/practitioner-track.md#route-data-engineer): schemas, pipelines, replay and operations.
+- [ML Engineer](guides/practitioner-track.md#route-ml-engineer): training, serving and model operations.
+- [AI Application Engineer](guides/practitioner-track.md#route-ai-application): evaluated products using existing models.
+- [Research Foundations](guides/practitioner-track.md#route-research): mathematical depth and paper reproduction.
 
-The [role guide](guides/practitioner-track.md#role-pathways) contains the complete ordered sequences. It also states the missing depth of application-only study and the evidence needed to waive prior competencies. The [learning contract](curriculum/README.md#learning-contract) keeps project requirements consistent across paths.
-
+Software engineering remains a valid destination: retain the [college CS foundation](guides/four-year-plan.md#cs-core) and use your programming projects. Model infrastructure is later depth within the ML/research routes. These are learning choices, not employment guarantees.
 
 <a id="the-curriculum-itself"></a>
 ## Curriculum at a glance
 
 Six subject groups, called **strata**, organise the module pages. Numbers are stable identifiers, not a requirement to take every module in numerical order. [Why M19/M20 are absent](FAQ.md#structure).
 
-| Browse | Modules | Focus |
-|---|---|---|
-| [Foundations](curriculum/README.md#foundations) | M0–M5 | Proofs, Python, calculus, linear algebra, algorithms, probability |
-| [Statistics & Data](curriculum/README.md#statistics-and-data) | M6, M6½, M7, M8a, M8b | Inference, causal reasoning, data analysis, SQL, distributed systems |
-| [Classical ML](curriculum/README.md#classical-ml) | M9–M12 | Regression, classification, clustering, ensembles |
-| [Probabilistic ML](curriculum/README.md#probabilistic-ml) | M13–M14 | Bayesian inference, MCMC, time series |
-| [Deep Learning](curriculum/README.md#deep-learning) | M15–M17 | Neural networks, transformers, generative models, reinforcement learning |
-| [Frontier & Production](curriculum/README.md#frontier-and-production) | M18, M21–M26 | LLMs, retrieval, agents, safety, MLOps, product work, capstone |
+- **[Foundations](curriculum/README.md#foundations) (M0–M5):** Proofs, Python, calculus, linear algebra, algorithms, probability.
+
+- **[Statistics & Data](curriculum/README.md#statistics-and-data) (M6, M6½, M7, M8a, M8b):** Inference, causal reasoning, data analysis, SQL, distributed systems.
+
+- **[Classical ML](curriculum/README.md#classical-ml) (M9–M12):** Regression, classification, clustering, ensembles.
+
+- **[Probabilistic ML](curriculum/README.md#probabilistic-ml) (M13–M14):** Bayesian inference, MCMC, time series.
+
+- **[Deep Learning](curriculum/README.md#deep-learning) (M15–M17):** Neural networks, transformers, generative models, reinforcement learning.
+
+- **[Frontier & Production](curriculum/README.md#frontier-and-production) (M18, M21–M26):** LLMs, retrieval, agents, safety, MLOps, product work, capstone.
 
 <details>
 <summary>Visual overview (optional)</summary>
 
 <img src="assets/hero-banner.jpg" alt="Data Science and AI Roadmap, from foundations to production AI" width="720">
 
-<img src="assets/roadmap-overview.jpg" alt="Overview of the six curriculum strata; the text table above provides their module ranges and topics" width="720">
+<img src="assets/roadmap-overview.jpg" alt="Six subject groups, with current module ranges and topics in the text list above" width="720">
+
+The illustration uses abbreviated ranges; M8 splits into M8a/M8b, and M19/M20 are unused. It shows subject groups, not prerequisite order.
 
 </details>
 
@@ -89,14 +79,20 @@ Six subject groups, called **strata**, organise the module pages. Numbers are st
 <a id="guides-and-reference--when-you-need-them"></a>
 ## Useful links
 
+- **Beginner practice:** [Calculator, offline Weather CLI and SQL investigation](resources/beginner-projects/README.md) · [Readiness and recovery](guides/readiness-checks.md#how-to-check) · [Six-week study pilot](guides/study-pilot.md#start).
 - **Study help:** [Read a module](guides/how-to-read-a-module.md#reading-order) · [Choose a resource](guides/how-to-read-a-module.md#pick-one) · [Optional guided companions](guides/companion-curricula.md) · [Get unstuck](guides/how-to-read-a-module.md#common-ways-people-get-stuck).
 - **Building AI systems:** [Portfolio Spine: one system, five levels](guides/portfolio-spine.md#portfolio-spine) · [`DECISIONS.md` template](resources/templates/DECISIONS.md) · [NumPy From Scratch harness](resources/numpy-from-scratch/README.md#numpy-from-scratch) · [Agent labs (M22)](coursepages/m22-agentic-ai/README.md#labs) · [Evaluation harness (M24)](coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness).
 - **References, when needed:** [Books](resources/books.md) · [Toolchain](resources/toolchain.md) · [Citation key](guides/sources.md#citation-key) · [Career planning](guides/career-operations.md). Supporting course pages are linked beside their modules in the [index](curriculum/README.md#all-modules).
 - **Career evidence:** [India undergraduate and international options](guides/india-undergraduate-path.md) · [Employer research and eligibility limits](audit/career-research-2026-11-05.md) · [Opportunity log template](resources/templates/OPPORTUNITIES.md).
-- **Report a problem:** [Confusing instructions or a broken link](https://github.com/akazadivu-design/data-sci/issues/new/choose) · [Contribution guide](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md).
+- **Report a problem:** [Confusing instructions or a broken link](https://github.com/ken051352-max/heheh/issues/new/choose) · [Contribution guide](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md).
 
 <details>
 <summary>About the roadmap and maintenance</summary>
+
+[![Version](https://img.shields.io/badge/version-2026.11%20Curriculum%20Overhaul-blue)](CHANGELOG.md#refresh-log)
+[![Modules](https://img.shields.io/badge/modules-27-6f42c1)](curriculum/README.md#all-modules)
+[![Policy](https://img.shields.io/badge/policy-free%20lectures%20%2B%20best%20books-1a7f37)](FAQ.md#cost-and-access)
+[![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE.md)
 
 ## Goal
 
@@ -108,9 +104,9 @@ Beginners, returning learners, analysts, engineers, and research-oriented learne
 
 ### Maintainer material — safe to ignore as a learner
 
-[Changelog](CHANGELOG.md#refresh-log) · [Current overhaul audit](audit/overhaul-2026-11-05.md) · [Foundations improvement proposal](audit/Foundations_M0-M5_Improvement_Plan.md) · [Repository tools](tools/README.md).
+[Changelog](CHANGELOG.md#refresh-log) · [Latest project validation](audit/project-integration-2026-11-05.md) · [Earlier curriculum overhaul](audit/overhaul-2026-11-05.md) · [Foundations improvement proposal](audit/Foundations_M0-M5_Improvement_Plan.md) · [Repository tools](tools/README.md).
 
-Earlier improvement proposals and verification logs are historical. The current modules and learning contract govern study; the active maths placement is optional and the older diagnostic tables are non-operational. See the [research record](audit/research-2026-11-05.md) for the current evidence and limitations.
+Earlier improvement proposals and verification logs are historical. The current modules and learning contract govern study; the active maths placement is optional and the older diagnostic tables are non-operational. See the [learning-experience research](audit/learning-experience-research-2026-11-05.md) and latest project validation above for evidence and limitations.
 
 </details>
 

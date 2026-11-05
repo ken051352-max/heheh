@@ -175,12 +175,17 @@ def render_tables(data):
             label += " — " + node["title"]
         return f"[{cell(label)}](../{path}#{node['anchor']})"
 
-    defaults = ["| Module | Free lecture / course route | Principal recommended book |", "| :--- | :--- | :--- |"]
+    # Stacked resource cards reflow on narrow screens. Marker names remain
+    # unchanged so existing integrations and drift checks keep working.
+    defaults = []
     prerequisites = ["| Module | Required modules | Recommended modules |", "| :--- | :--- | :--- |"]
     for node in data["modules"]:
         course = f"[Free course / lecture route]({node['default_url']})" if node["default_url"] else "Use your chosen capstone topic"
         book = f"[{cell(node['book'])}]({node['book_url']})" if node["book_url"] else cell(node["book"])
-        defaults.append(f"| {link(node['id'], titled=True)} | {course} | {book} |")
+        defaults.extend([f'<a id="default-{node["id"].lower()}"></a>',
+                         f"### {link(node['id'], titled=True)}", "",
+                         f"- **Free teaching route:** {course}",
+                         f"- **Principal book:** {book}", ""])
         required = ", ".join(link(dep) for dep in node["requires"]) or "None"
         if node["id"] == "M24":
             required = "An evaluated project (see module)"
@@ -191,11 +196,13 @@ def render_tables(data):
     for node in data["subsets"]:
         required = ", ".join(link(dep) for dep in node["requires"]) or "None"
         prerequisites.append(f"| {link(node['id'])} | {required} | None |")
-    routes = ["| Role | Core sequence |", "| :--- | :--- |"]
-    routes.extend(f"| {cell(route['title'])} | " + " → ".join(link(step) for step in route["steps"]) + " |"
-                  for route in data["routes"])
-    return {"guides/how-to-read-a-module.md": {"MODULE DEFAULTS": "\n".join(defaults)},
-            "guides/practitioner-track.md": {"ROLE ROUTES": "\n".join(routes), "PREREQUISITES": "\n".join(prerequisites)}}
+    routes = []
+    for route in data["routes"]:
+        routes.extend([f'<a id="route-{route["id"]}"></a>',
+                       f"### {cell(route['title'])}", "",
+                       " → ".join(link(step) for step in route["steps"]), ""])
+    return {"guides/how-to-read-a-module.md": {"MODULE DEFAULTS": "\n".join(defaults).rstrip()},
+            "guides/practitioner-track.md": {"ROLE ROUTES": "\n".join(routes).rstrip(), "PREREQUISITES": "\n".join(prerequisites)}}
 
 
 def sync_tables(data, root=ROOT, write=False):

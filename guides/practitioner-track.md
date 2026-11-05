@@ -5,7 +5,7 @@
 
 Choose a provisional role when you have enough experience to make that choice, then follow its core sequence. The full curriculum remains available for deeper study. These are learning routes with reviewable outcomes, not guarantees about job titles, hiring, salary or time to employment.
 
-**Undecided undergraduate:** begin with M1, your college mathematics and CS coursework, then use a small M7/M8a project to explore data work after the prerequisites. The [India undergraduate path](india-undergraduate-path.md) and [yearly direction reviews](four-year-plan.md#yearly-review) help you choose and revise a specialization. The six routes below remain options; you do not need to complete all of them to keep exploring.
+**Undecided undergraduate:** follow the [first-semester sequence](first-semester.md#semester-plan), beginning with M1, your college mathematics and CS coursework, then use a small M7/M8a project to explore data work after the prerequisites. The [India undergraduate path](india-undergraduate-path.md) and [yearly direction reviews](four-year-plan.md#yearly-review) help you choose and revise a specialization. The six routes below remain options; you do not need to complete all of them to keep exploring.
 
 **Free lectures, books chosen on merit:** use the [default lectures and principal books](how-to-read-a-module.md#pick-one). Paid books are welcome; complete selected reading and exercises rather than collecting every recommended title.
 
@@ -14,14 +14,35 @@ Choose a provisional role when you have enough experience to make that choice, t
 
 <!-- BEGIN ROLE ROUTES -->
 
-| Role | Core sequence |
-| :--- | :--- |
-| Data Analyst | [M1](../curriculum/1-foundations.md#module-1) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M25](../curriculum/6-frontier-production.md#module-25) → [M26 applied](../curriculum/6-frontier-production.md#module-26) |
-| Applied Data Scientist | [M1](../curriculum/1-foundations.md#module-1) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25](../curriculum/6-frontier-production.md#module-25) → [M26 applied](../curriculum/6-frontier-production.md#module-26) |
-| ML Engineer | [M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M5](../curriculum/1-foundations.md#module-5) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M15](../curriculum/5-deep-learning.md#module-15) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26) |
-| AI Application Engineer | [M1](../curriculum/1-foundations.md#module-1) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) → [M21](../curriculum/6-frontier-production.md#module-21) → [M22](../curriculum/6-frontier-production.md#module-22) → [M23](../curriculum/6-frontier-production.md#module-23) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26) |
-| Research Foundations | [M0](../curriculum/1-foundations.md#module-0) → [M1](../curriculum/1-foundations.md#module-1) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M4](../curriculum/1-foundations.md#module-4) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M13](../curriculum/4-probabilistic-ml.md#module-13) → [M14](../curriculum/4-probabilistic-ml.md#module-14) → [M15](../curriculum/5-deep-learning.md#module-15) → [M16](../curriculum/5-deep-learning.md#module-16) → [M17](../curriculum/5-deep-learning.md#module-17) → [M18](../curriculum/6-frontier-production.md#module-18) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 research](../curriculum/6-frontier-production.md#module-26) |
-| Data Engineer | [M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M8b](../curriculum/2-statistics-and-data.md#module-8b) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26) |
+<a id="route-analyst"></a>
+### Data Analyst
+
+[M1](../curriculum/1-foundations.md#module-1) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M25](../curriculum/6-frontier-production.md#module-25) → [M26 applied](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-applied-ds"></a>
+### Applied Data Scientist
+
+[M1](../curriculum/1-foundations.md#module-1) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25](../curriculum/6-frontier-production.md#module-25) → [M26 applied](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-ml-engineer"></a>
+### ML Engineer
+
+[M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M5](../curriculum/1-foundations.md#module-5) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M15](../curriculum/5-deep-learning.md#module-15) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-ai-application"></a>
+### AI Application Engineer
+
+[M1](../curriculum/1-foundations.md#module-1) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) → [M21](../curriculum/6-frontier-production.md#module-21) → [M22](../curriculum/6-frontier-production.md#module-22) → [M23](../curriculum/6-frontier-production.md#module-23) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-research"></a>
+### Research Foundations
+
+[M0](../curriculum/1-foundations.md#module-0) → [M1](../curriculum/1-foundations.md#module-1) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M4](../curriculum/1-foundations.md#module-4) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M13](../curriculum/4-probabilistic-ml.md#module-13) → [M14](../curriculum/4-probabilistic-ml.md#module-14) → [M15](../curriculum/5-deep-learning.md#module-15) → [M16](../curriculum/5-deep-learning.md#module-16) → [M17](../curriculum/5-deep-learning.md#module-17) → [M18](../curriculum/6-frontier-production.md#module-18) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 research](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-data-engineer"></a>
+### Data Engineer
+
+[M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M8b](../curriculum/2-statistics-and-data.md#module-8b) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
 
 <!-- END ROLE ROUTES -->
 
@@ -43,6 +64,8 @@ The Analyst path includes the calculus/probability needed for the full inference
 - **M26-research / systems / applied:** the three [capstone contracts](../curriculum/6-frontier-production.md#module-26). Complete one, with the prerequisites of the actual research method or system you use.
 
 M24 requires an existing evaluated project. It has no single numbered prerequisite because a data pipeline, classical model or AI application can supply that project. Add M23's relevant threat/evaluation work for AI applications. Course-specific topics may have additional prerequisites explicitly named in their advanced branches.
+
+For the Data Engineer route, use the [M24 pipeline operations contract](../curriculum/6-frontier-production.md#data-pipeline-operations) and carry the same operated pipeline into the systems capstone.
 
 <a id="prerequisites"></a>
 ## Complete prerequisite inventory
@@ -99,7 +122,7 @@ These are **full core-module completion** dependencies. Recommended modules guid
 | ML | Reproduce a baseline and evaluate a train-only fitted pipeline on a defensible split. |
 | AI application | Validate outputs, handle refusal/failure, run a fixed evaluation set and enforce tool permissions in code. |
 
-Keep the evidence and the scope of each waiver in your tracker. Course credit is useful evidence, but review any omitted practical outcome before relying on it.
+Use the [readiness pattern and college-equivalence record](readiness-checks.md#college-equivalence). Keep the evidence and the scope of each waiver in your tracker. Course credit is useful evidence, but review any omitted practical outcome before relying on it.
 
 For undergraduates, retain examples from college DSA, operating systems, networks, databases and software-design courses as they are taught. Use the [CS evidence map](four-year-plan.md#cs-core) to demonstrate equivalent competence and fill a specific gap, instead of automatically repeating the course through another platform.
 
@@ -121,4 +144,4 @@ Return to the relevant prerequisite when you need to derive an estimator, diagno
 
 ## Planning time
 
-Use the [weekly planning method](../FAQ.md#how-long), not a promised number of months. Budget one main course and one evolving project; the project counts toward module work. Review progress every four weeks using completed artifacts and obstacles, then change scope or pace. The [four-year plan](four-year-plan.md#four-year-plan) gives an undergraduate example; the [career guide](career-operations.md#skills-checklist) shows how to check local role requirements.
+Use the [weekly planning method](../FAQ.md#how-long), not a promised number of months. Budget one main course and one evolving project; the project counts toward module work. Review the next task weekly and use the [six-week pilot](study-pilot.md#six-week-review) when you need evidence to change scope or pace. The [four-year plan](four-year-plan.md#four-year-plan) gives an undergraduate example; the [career guide](career-operations.md#skills-checklist) shows how to check local role requirements.

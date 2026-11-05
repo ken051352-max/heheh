@@ -4,9 +4,18 @@
 
 # 🟪 DEEP LEARNING STRATUM (Modules 15–17)
 
+**On this page:** [M15: Deep learning foundations](#module-15) · [M16: Transformers and representations](#module-16) · [M17: Reinforcement learning](#module-17)
+
+Choose the module on your route. Its **core outcome and project** define completion; the topic map supplies additional context. Use the [readiness pattern](../guides/readiness-checks.md#how-to-check) to explain, trace, debug and adapt the prerequisite skill before relying on it. Record one next action in the [tracker](../guides/progress-tracker.md#resume).
+
+<details>
+<summary>Optional stratum artwork</summary>
+
 <img src="../assets/stratum-5-deep-learning.jpg" alt="Deep learning stratum, modules 15 to 17" width="100%">
 
-> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+</details>
+
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [resource defaults](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
 
 ---
 
@@ -15,14 +24,23 @@
 
 **Core outcome:** verify a NumPy backward pass, reproduce it with PyTorch autograd and train/evaluate a small MLP/CNN. Principal recommended book: Christopher M. Bishop and Hugh Bishop, **Deep Learning: Foundations and Concepts** (Springer 2024; free author-hosted web edition, paid PDF/print). Prince and fast.ai are complementary alternatives, not extra gates.
 
+- **Do now:** Trace the shapes and derivatives through one affine layer and scalar loss, then check one smooth gradient numerically.
+- **Next:** build the [M15 project](#project-15) with its tests and results memo. Use the free lecture default and selected principal reading below.
+- **Later depth:** distributed training, custom kernels and architecture surveys; choose these only for a specific gap or specialization.
+
 * **The Tutor's "Why":** Derive and check a small network, then reproduce it with autograd. This exposes the connection between a loss, gradients and a working training loop before expensive experiments.
 
 * **Strict Prerequisites:** Module 2 (chain rule), Module 3 (matrix calculus), Module 9 (SGD), Module 10 (logistic regression, cross-entropy loss).
 
-* **Topic map (core plus optional depth; roadmap synthesis):**
+<details>
+<summary>Full topic map: core context and later depth</summary>
+
+The core outcome, practical contracts and project remain the required route. This breadth map is not a checklist of extra prerequisites.
+
+* **Topic map (roadmap synthesis):**
   * Biological motivation vs artificial neuron (McCulloch-Pitts, perceptron), **Multi-Layer Perceptron (MLP)** architecture — affine transformation + activation function; **universal approximation theorem** (Cybenko 1989, Hornik 1991, with proof sketch).
   * **Backpropagation algorithm** — full derivation via chain rule as dynamic programming over the computation graph; vanishing/exploding gradients; **Xavier/Glorot initialisation**, **He initialisation** (theoretical justification for each).
-  * **Momentum**, **Nesterov momentum**, **AdaGrad**, **RMSProp**, **Adam**, **AdamW** (decoupled weight decay — 2017 fix), **LAMB** (for large-batch), **Lion** (2023, Chesterton), **Sophia** (2023), learning-rate schedules (step decay, exponential, cosine annealing, warmup, one-cycle), gradient clipping.
+  * **Momentum**, **Nesterov momentum**, **AdaGrad**, **RMSProp**, **Adam**, **AdamW** (decoupled weight decay — 2017 fix), **LAMB** (for large-batch), **Lion** ([Chen et al., 2023](https://arxiv.org/abs/2302.06675)), **Sophia** (2023), learning-rate schedules (step decay, exponential, cosine annealing, warmup, one-cycle), gradient clipping.
   * **L1/L2 penalties and decoupled weight decay**, **Dropout** (Hinton 2014 — inverted dropout, concrete dropout), **Batch Normalisation** (Ioffe-Szegedy 2015 — full derivation, internal covariate shift debate, post-hoc explanations), **Layer Normalisation**, **Group Normalisation**, **Instance Normalisation**, **RMSNorm** (a normalization option used in some LLMs), **early stopping**, **data augmentation**, **label smoothing**, **mixup**, **cutmix**.
   * **Convolutional Neural Networks** — convolution operation (discrete 2D), **kernels as learnable filters**, stride, padding (valid, same, full), pooling (max, average, global), translation equivariance vs invariance; classic architectures: **LeNet-5**, **AlexNet**, **VGG-16/19**, **GoogLeNet/Inception** (1×1 convolutions for dimensionality reduction).
   * Data augmentation for vision, dropout in CNNs, batch-norm placement debate.
@@ -37,6 +55,8 @@
   * **Optional theory:** universal approximation, Barron's theorem, depth separation, PAC learning, overparameterisation, double descent and inductive biases. These are roadmap extensions, not a claim that one archived lecture covers the entire list.
   * Neural networks in scikit-learn (MLP introduction).
   * Condensed practical treatment.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [MIT OCW 6.7960 Deep Learning, Fall 2024](https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/) — public lecture videos, notes, assignments and a PyTorch tutorial; instructors Phillip Isola, Sara Beery and Jeremy Bernstein. [MIT 6.S191](https://introtodeeplearning.com/) supplies a shorter free video companion. The [current 6.7960 schedule](https://deeplearning6-7960.github.io/) is a syllabus update, not a promise of public recordings for its current offering.
@@ -67,6 +87,7 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
   * **Throughput engineering:** [Triton](https://github.com/triton-lang/triton) ✅ kernels, **FlashAttention-2 / 3** (Tri Dao), **PagedAttention** (vLLM), activation recomputation strategies, `torch.compile` with `fullgraph=True`.
   * **Reading:** [*How to Scale Your Model*](https://jax-ml.github.io/scaling-book/), [PyTorch DTensor docs](https://pytorch.org/docs/stable/distributed.tensor.html), and the scaling/parallelism/systems materials listed in the selected Stanford CS336 offering; lecture numbering can change.
 
+<a id="project-15"></a>
 * **📦 Module Project (mandatory) — Backprop from scratch, then a real CNN**
   * **Deliverable:** Two halves. **(a)** A NumPy-only MLP with manual forward and backward passes for at least Linear, ReLU, and Softmax-CE layers, trained on a fixed small MNIST or local digits fixture; report held-out accuracy against a trivial baseline instead of treating a hardware-dependent target as a universal gate. **(b)** The same task in PyTorch, then a small CNN on a documented image subset with augmentation, LR scheduling and your own training loop. Full CIFAR-10 runs are optional; report actual sample count, budget and hardware.
   * **Definition of done:** (1) Compare analytic backward passes with finite differences on smooth float64 fixtures, documenting the step size and absolute/relative tolerances (`1e-5` is a starting tolerance, not a universal bound); add a tiny-batch overfit smoke test with an explicit loss target and step budget; (2) `README.md` with loss/accuracy curves for train and validation, and a confusion matrix; (3) a results memo describing a backward-pass bug you found or deliberately injected and how the check detected it.
@@ -80,11 +101,20 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
 
 **Core outcome:** explain tokenization and causal attention, implement a tiny decoder and evaluate a pretrained representation on a frozen task. Principal reading: Bishop and Bishop on attention/transformers; Alammar and Grootendorst, **Hands-On Large Language Models** (O’Reilly 2024, paid), is the applied book. GAN/diffusion/3D families are optional specialization depth.
 
+- **Do now:** Draw which token positions a causal attention mask permits, then test that a later token cannot affect an earlier output.
+- **Next:** build the [M16 project](#project-16) with its tests and results memo. Use the free lecture default and selected principal reading below.
+- **Later depth:** diffusion, GANs, 3D vision and large-scale pretraining; choose these only for a specific gap or specialization.
+
 * **The Tutor's "Why":** Attention, learned representations and generative objectives explain how a model uses context. Build a tiny causal decoder to connect the equations with testable behavior; then compare modern architectural choices.
 
 * **Strict Prerequisites:** Module 15 core (backprop, a working PyTorch training loop and small-network evaluation). RNNs and attention are developed here; optional M15 architecture surveys are not extra entry gates.
 
-* **Topic map (core plus optional depth; roadmap synthesis):**
+<details>
+<summary>Full topic map: core context and later depth</summary>
+
+The core outcome, practical contracts and project remain the required route. This breadth map is not a checklist of extra prerequisites.
+
+* **Topic map (roadmap synthesis):**
   * n-gram language models, perplexity, statistical LM vs neural LM.
   * RNN forward/backward through time, bidirectional RNNs.
   * LSTM full derivation, GRU comparison, vanishing-gradient resolution.
@@ -108,6 +138,8 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
   * Image classification, object detection (YOLO v8-v10, DETR), segmentation, video understanding, 3D vision, **NeRF** (Neural Radiance Fields), **3D Gaussian Splatting** (optional 3D representation topic).
   * Dedicated course on language modelling (see M18).
 
+</details>
+
 * **Courses and references:**
   * **Primary Course Link:** [MIT OCW 6.7960 Deep Learning, Fall 2024](https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/) — select transformer, representation-learning and generative-model videos. [Stanford CS336 public recordings](https://cs336.stanford.edu/) provide current architecture and language-model systems depth; its full GPU-heavy assignments are not M16 core requirements. [Harvard CS109B 2022](https://harvard-iacs.github.io/2022-CS109B/) supplies archived written materials.
   * **Principal reading and further references:**
@@ -126,6 +158,7 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
 
 **Tokenization and scaling:** implement a small byte-pair-encoding example or inspect a trained tokenizer using [tiktoken](https://github.com/openai/tiktoken). Train a learned tokenizer on training text only; document Unicode/byte behavior, special tokens and context limits. Check encoding/decoding on adversarial strings. Scaling-law fits describe measured regimes; report tokens, parameters and compute rather than extrapolating a tiny run into a frontier-model claim.
 
+<a id="project-16"></a>
 * **📦 Module Project (mandatory) — Sentiment analyser on a pretrained model, plus a transformer you built**
   * **Deliverable:** Two halves. **(a)** A sentiment (or topic) classifier built on a pretrained Hugging Face model — fine-tuned or used zero-shot, your choice, but you must justify it — with a proper eval set and error analysis. **(b)** A minimal decoder-only transformer written from scratch (tokeniser → embeddings → multi-head self-attention → residual + layer-norm → LM head) trained on a small licensed corpus with fixed train/validation partitions; compare validation cross-entropy against a unigram baseline. Keep the model tiny enough for a CPU smoke run and report sample quality without promising fluent language.
   * **Definition of done:** (1) `pytest` suite including shape checks for the attention block and a causal-mask test proving that changing any later token cannot change the output at position *t*; (2) `README.md` with the classifier's per-class metrics, a confusion matrix, up to ten inspected misclassifications (all of them if fewer), and either a live URL or exact local/container reproduction command; (3) a results memo on what your from-scratch model's failure modes taught you about the pretrained one.
@@ -139,11 +172,20 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
 
 **Core outcome:** formulate an MDP, verify Bellman updates, train tabular Q-learning and a tiny DQN, then explain policy gradients/PPO and the DPO distinction. Principal book: Sutton and Barto, **Reinforcement Learning: An Introduction**, second edition (2018; free author PDF and paid print).
 
+- **Do now:** Compute one Bellman update on a two-state MDP and distinguish terminal states from time limits.
+- **Next:** build the [M17 project](#project-17) with its tests and results memo. Use the free lecture default and selected principal reading below.
+- **Later depth:** continuous control, model-based RL, multi-agent RL and full LLM post-training; choose these only for a specific gap or specialization.
+
 * **The Tutor's "Why":** Reinforcement learning studies decisions whose consequences unfold over time. Robotics, games and some LLM post-training methods provide different applications; the right objective and evaluation depend on the setting.
 
 * **Strict Prerequisites:** Module 5 (Markov chains, expectation), Module 15 (can train a deep network).
 
-* **Topic map (core plus optional depth; roadmap synthesis):**
+<details>
+<summary>Full topic map: core context and later depth</summary>
+
+The core outcome, practical contracts and project remain the required route. This breadth map is not a checklist of extra prerequisites.
+
+* **Topic map (roadmap synthesis):**
   * **MDP formulation** — (S, A, P, R, γ), episodic vs continuing tasks, **Bellman equations** (value iteration, policy iteration), **optimality** (Bellman optimality operator, contraction mapping theorem proof), dynamic programming for MDPs.
   * **Model-free RL** — **Monte Carlo methods** (first-visit, every-visit), **Temporal Difference (TD)** learning, **TD(0)**, TD(λ), SARSA, **Q-learning** (off-policy TD control), **Deep Q-Networks (DQN)** (Mnih et al. 2015 — experience replay, target network, Atari), Double DQN, Dueling DQN, Rainbow DQN.
   * Optimising under model uncertainty; **explore-vs-exploit tradeoff**; **credit assignment problem**; two key timescales (state dynamics vs information dynamics) → framework table distinguishing optimisation, MDPs, RL.
@@ -160,6 +202,8 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
     * **Multi-agent RL** — self-play, fictitious play, MADDPG, AlphaZero, counterfactual regret minimisation.
   * **RLHF challenges**, reward models and **DPO** (Direct Preference Optimization, Rafailov et al., 2023) as direct optimization on preference pairs, **IPO**, **KTO**, **ORPO**, multi-turn RLHF extensions.
 
+</details>
+
 * **Courses and references:**
   * **Primary Course Link:** [David Silver’s free RL lectures, slides and Easy21 assignment](https://www.davidsilver.uk/teaching/). The [IITM Reinforcement Learning course description](https://study.iitm.ac.in/ds/course_pages/BSCS3003.html) is syllabus context, not a verified free lecture route.
   * **Principal reading and further references:**
@@ -173,6 +217,7 @@ Implement one small `torch.autograd.Function` and check its analytical backward 
 
 **RL evaluation:** separate training exploration from evaluation, use fixed episode budgets and multiple seeds, compare a random/heuristic policy, and distinguish environment termination from time-limit truncation when bootstrapping value targets. Report failures and variability; learning curves are not guaranteed to improve monotonically.
 
+<a id="project-17"></a>
 * **📦 Module Project (mandatory) — Agent that actually learns**
   * **Deliverable:** Tabular Q-learning implemented from scratch on a discrete environment (Taxi, FrozenLake, or a gridworld you define), then DQN on a continuous-observation, discrete-action environment (CartPole; LunarLander optional) with a training loop you wrote. Use at least five seeds as this lab's teaching budget, report mean/spread and held-out evaluation episodes; a single-seed result cannot establish stability across seeds.
   * **Definition of done:** (1) `pytest` suite covering the Bellman update on a hand-computable 2-state MDP, the replay buffer's sampling and eviction, and epsilon decay; (2) `README.md` with the multi-seed learning curves, the full hyperparameter table, and a recorded episode; (3) a results memo describing one instability you observed (divergence, catastrophic forgetting, reward hacking of your own reward function) and what fixed it.

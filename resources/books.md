@@ -5,9 +5,17 @@
 
 **Choose books on educational quality, regardless of price.** Lectures have free routes; principal books may be paid. Read selected topics and solve exercises alongside the project. Buying or finishing the entire catalogue is not a completion requirement.
 
-The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal books; M26 selects a reference for the chosen capstone topic. The tables below explain their purpose and alternatives. Publisher/author pages verify metadata and access; [university reading lists and substantive reviews](../guides/sources.md#evidence-policy) inform fit. No title is best for every reader.
+The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal books; M26 selects a reference for the chosen capstone topic. The shelf below explains their purpose and alternatives. Publisher/author pages verify metadata and access; [university reading lists and substantive reviews](../guides/sources.md#evidence-policy) inform fit. No title is best for every reader.
 
 **Access:** paid means the full book is not assumed free; free text means an authorized author/publisher edition; free code or samples do not mean a free full book. Library subscriptions vary. Match exercises to your edition and check current documentation for older software examples.
+
+## What to read now
+
+For the first semester, use the [one selected reading per milestone](../guides/first-semester.md). *Python Crash Course*, third edition, is the paid principal text; *Automate the Boring Stuff*, third edition, is the authorized free alternative for matching topics. Choose one when reading helps. The lectures and original practice let you begin without buying either book.
+
+**Next:** open the book for your active module only. **Later depth:** keep the remaining shelf bookmarked until a project or question needs it. Book chapter numbers belong to the named edition; do not transfer them from an older course syllabus.
+
+**Browse the shelf:** [Foundations](#foundations-m0m5) · [Statistics/data](#statistics-and-data-systems-m6m8b) · [Classical/Bayesian ML](#classical-and-probabilistic-ml-m9m14) · [Deep learning](#deep-learning-m15m17) · [Frontier/communication](#frontier-systems-and-communication-m18m26).
 
 ## Foundations: M0–M5
 
@@ -15,7 +23,7 @@ The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal
 |---|---|---|
 | [Book of Proof](https://richardhammack.github.io/BookOfProof/) — Richard Hammack, 3rd ed. (2018) | Free text; paid print | M0 principal: definitions, direct/contradiction proofs and induction. Start small; no fixed exercise quota gates Python. |
 | [Python Crash Course](https://nostarch.com/python-crash-course-3rd-edition) — Eric Matthes, 3rd ed. (2022), No Starch | Paid; samples/code free | M1 principal: data structures, functions, files, exceptions and testing, then an original CLI. |
-| [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) — Al Sweigart | Free web; paid print | M1 practical alternative for file/data automation; use the edition on the author's site. |
+| [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/3e/) — Al Sweigart, 3rd ed. (2025), No Starch | Free web; paid print | M1 practical alternative: basics (1–8), files (10), CLI (12), SQLite (16), CSV/JSON/XML (18); select the topic needed, not all automation chapters. |
 | [Calculus: Early Transcendentals](https://www.cengageasia.com/title/default/detail?isbn=9781337613927) — Stewart, Clegg and Watson, 9th ed. (2021), Cengage | Paid | M2 principal: differentiation, integration, partial derivatives and gradients. WebAssign is not required. |
 | [Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/) — Gilbert Strang, 6th ed. (2023), Wellesley-Cambridge | Paid | M3 principal: elimination, subspaces, least squares, eigenvalues and SVD. Map older OCW readings by topic. |
 | [Linear Algebra Done Right](https://linear.axler.net/) — Sheldon Axler, 4th ed., Springer | Authorized free text; paid print | Proof-oriented M3 depth after the computational core. |
@@ -44,7 +52,7 @@ The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal
 | Book and edition | Access | Reading purpose |
 |---|---|---|
 | [An Introduction to Statistical Learning with Applications in Python](https://www.statlearning.com/) — James, Witten, Hastie, Tibshirani and Taylor (2023), Springer | Free author PDF; paid print | M9–M12 principal: regression (3), classification (4), resampling (5), regularization (6), trees (8), SVMs (9), unsupervised learning (12). Rebuild labs with leakage controls. |
-| [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) — Hastie, Tibshirani and Friedman, 2nd ed. | Author-hosted edition; automated content fetch unresolved this pass | Statistical derivations after ISLP; use ISLP while checking access. |
+| [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) — Hastie, Tibshirani and Friedman, 2nd ed. | Author-hosted edition; automated content fetch unresolved in the earlier resource audit | Statistical derivations after ISLP; use ISLP while checking access. |
 | [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html) — Kevin P. Murphy (2022), MIT Press | Free author draft; paid print | Broad probabilistic reference for supervised learning, representations and inference. |
 | [Probabilistic Machine Learning: Advanced Topics](https://probml.github.io/pml-book/book2.html) — Kevin P. Murphy (2023), MIT Press | Free author draft; paid print | Advanced inference and generative/latent-variable models after relevant prerequisites. |
 | [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) — Christopher M. Bishop (2006), Springer | Paid print; only author-authorized downloads | Classical Bayesian/graphical-model depth; not a guide to current Python or transformer engineering. |
@@ -61,7 +69,7 @@ The [module defaults](../guides/how-to-read-a-module.md#pick-one) name principal
 | [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python-third-edition) — François Chollet and Matthew Watson, 3rd ed. (2025), Manning | Paid; samples/code free | Applied Keras 3/multiple-backend alternative, not an extra compulsory framework beside PyTorch. |
 | [Hands-On Machine Learning with Scikit-Learn and PyTorch](https://www.oreilly.com/library/view/hands-on-machine-learning/9798341607972/) — Aurélien Géron (2025), O'Reilly | Paid; code free | Applied classical-ML-to-PyTorch bridge. The older TensorFlow title is a different implementation route. |
 | [Deep Learning](https://www.deeplearningbook.org/) — Goodfellow, Bengio and Courville (2016), MIT Press | Authorized free HTML; paid print | Mathematical/probabilistic reference; the author site does not authorize distributing a free PDF. |
-| [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/) — Michael Nielsen | Free online book | Intuitive backpropagation foundations; translate older code carefully. |
+| [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) — Michael Nielsen | Free online book | Intuitive backpropagation foundations; translate older code carefully. |
 | [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html) — Sutton and Barto, 2nd ed. (2018), MIT Press | Free author draft; paid print | M17 principal: MDPs, value functions, TD learning and policy gradients; add the module's PPO/DPO sources. |
 
 ## Frontier systems and communication: M18–M26
@@ -89,4 +97,4 @@ Inspect the reviewer's audience and examples of strengths/weaknesses. [Aalto BDA
 
 For Python, [InfoWorld's review](https://www.infoworld.com/article/2337756/plunge-into-python-with-python-crash-course-3rd-edition.html) praises *Python Crash Course*'s projects and testing while [I Programmer's review](https://www.i-programmer.info/bookreviews/62-python/16633-python-crash-course-3ed.html) questions its conceptual depth and pacing. Pair it with CS50P and original exercises; agreement is not unanimous. [Cambridge's causal-inference reading guidance](https://www.statslab.cam.ac.uk/~qz280/teaching/causal-2023/) recommends *What If* for comprehensive coverage and identifies other books for particular needs, explicitly as the lecturer's judgment.
 
-The [research record](../audit/research-2026-11-05.md) records corrections and access limits. This review does not mean every book was read cover to cover or every exercise executed.
+The [earlier research record](../audit/research-2026-11-05.md) records corrections and access limits. The [learning-experience research](../audit/learning-experience-research-2026-11-05.md) rechecks the beginner choices, editions and competing reviews. This review does not mean every book was read cover to cover or every exercise executed.

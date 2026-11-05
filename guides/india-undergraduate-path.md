@@ -14,7 +14,7 @@ The [employer research](../audit/career-research-2026-11-05.md) inspected 12 pos
 |---|---|---|
 | College foundations | Follow your degree's programming, discrete mathematics, calculus and linear algebra courses; use M0/M2/M3 to repair specific gaps | Solve a fresh problem and explain the method; record which roadmap outcomes college work already covers |
 | Programming fluency | Complete M1 in stages: [Week 0](week-0.md), [first 30 days](first-30-days.md), starter project, then tested Weather CLI | Write, debug and test code you can explain without an assistant; handle malformed input and failed requests |
-| Algorithms and software habits | Learn M4 after functions and data structures are comfortable; introduce Git, debugging, tests and readable functions as you build | Explain complexity, solve a changed problem, review a diff and correct a failing test |
+| Algorithms and software habits | Begin full M4 after M1 or equivalent evidence; introduce Git, debugging, tests and readable functions as you build | Explain complexity, solve a changed problem, review a diff and correct a failing test |
 | Data literacy | Begin M7 and M8a after M1; use one small permitted dataset for both | Reconcile totals, explain joins/missing values and write a short answer to a real question |
 | Communication and collaboration | Explain one technical result to a classmate; work on a small shared project or request a specific review | A clear README, review response, recorded decision and honest account of your contribution |
 
@@ -22,7 +22,7 @@ Your college's C++/Java programming course can develop the same fundamentals; ke
 
 Protect college study and the eligibility it supports. Record actual campus/employer grade, backlog and graduation rules when relevant; this roadmap invents no universal CGPA cutoff. Use a sustainable weekly budget and reduce optional work during exams. The [four-year schedule](four-year-plan.md#weekly-template) is an example, not additional work on top of every college assignment.
 
-**Your next four weeks:** follow the [first-30-days plan](first-30-days.md), or its demonstrated-skill equivalent if you already know Python. Keep a one-line learning log and choose one small project. Role selection, public hosting, advanced agents and overseas applications do not gate this first step.
+**Your study schedule:** use the [first-semester path](first-semester.md#semester-plan), which already includes Week 0 and the first 30 days. Start at [demonstrated competence](readiness-checks.md#college-equivalence) if you know Python. Record one next task and use [six weeks of real feedback](study-pilot.md#start) to adjust the workload. Keep role selection and overseas applications for the relevant stage.
 
 <a id="role-experiments"></a>
 ## Explore the work before choosing the title

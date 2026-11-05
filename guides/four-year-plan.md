@@ -18,9 +18,9 @@ Build understanding and reviewable work. A job offer, internship, competition me
 <a id="weekly-template"></a>
 ## A sustainable week
 
-Start with an illustrative **12 hours outside college**: six hours of learning/practice, four hours on the project, ninety minutes on relevant interview or CS fundamentals, and thirty minutes reviewing opportunities and your next steps. Project time fulfills module work; it is not an additional project quota.
+For S1, use the [canonical semester workload](first-semester.md#semester-plan): roughly **5–7 hours outside college per week** as an adjustable planning assumption, including practice, projects and reflection. It is one budget, not extra hours for each guide.
 
-Weeks 0–4 focus on [beginner Python](first-30-days.md). Introduce interview practice after functions and debugging are comfortable. During exams, illness or caregiving, reduce or pause every track as needed. Resume from a short note. Re-estimate after four weeks using actual time, not a timetable you cannot sustain.
+In later terms, set the budget from your actual capacity and chosen project. Introduce interview practice once its prerequisites are comfortable and within that same budget. Reduce or pause work during exams, illness or caregiving; use the [recovery path](first-semester.md#recovery). The [six-week study pilot](study-pilot.md#six-week-review) shows how evidence changes the estimate.
 
 <a id="module-map"></a>
 ## Module map
@@ -79,7 +79,7 @@ Keep a short decision note: evidence reviewed, what changed, what stays useful a
 <a id="s1"></a>
 ### S1: Python and study habits
 
-Week 0 → first 30 days → M1 capstone. Add algebra/proof practice if useful. **Exit evidence:** independently explain and debug the CLI, run its tests, reproduce setup and write a short memo. A starter project is a milestone, not full M1 completion.
+Follow the [first-semester schedule](first-semester.md#semester-plan), which integrates Week 0, the first month and M1 projects. Use college maths to fill specific gaps. **Exit evidence:** [M1 readiness](readiness-checks.md#m1-ready), a tested CLI, reproducible setup and an honest memo. If ready and time remains, the final SQL/data investigation is a preview; full M7/M8a remains S2 work. Completing a calendar week does not certify a module.
 
 <a id="s2"></a>
 ### S2: Data and mathematical tools

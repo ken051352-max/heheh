@@ -9,9 +9,9 @@ body:
         Use this only for changes to the **shape** of the curriculum. For a single
         swapped course use *Resource change*; for a broken URL use *Dead or moved link*.
 
-        RFCs stay open for comment for about a month before anything merges, so that
-        people part-way through the affected modules can object. See
-        [CONTRIBUTING.md](https://github.com/akazadivu-design/data-sci/blob/master/CONTRIBUTING.md#rfc).
+        Describe the effect on people part-way through the affected modules and
+        propose a suitable comment period with the maintainer. See
+        [CONTRIBUTING.md](https://github.com/ken051352-max/heheh/blob/genspark_ai_developer/CONTRIBUTING.md#rfc).
   - type: textarea
     id: problem
     attributes:
@@ -76,8 +76,8 @@ body:
     id: duration
     attributes:
       label: Comment period
-      description: Normally one month from the date of posting.
-      value: "1 month from posting"
+      description: Propose a review window appropriate to the scope; the maintainer confirms it.
+      value: "Proposed review window and reason"
     validations:
       required: false
   - type: checkboxes

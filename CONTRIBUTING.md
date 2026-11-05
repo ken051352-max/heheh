@@ -10,7 +10,7 @@ Help readers find a clear route, trustworthy resources and projects they can rep
 
 | Change | How to proceed |
 |---|---|
-| Dead/moved link or confusing instruction | Use the [issue chooser](https://github.com/akazadivu-design/data-sci/issues/new/choose); include the file, URL and observed problem. |
+| Dead/moved link or confusing instruction | Use the [issue chooser](https://github.com/ken051352-max/heheh/issues/new/choose); include the file, URL and observed problem. |
 | Typo or concrete factual correction | Open a focused pull request with the evidence. |
 | Course/book replacement | Apply the [resource bar](#resource-bar), identify what it replaces and update the canonical default when appropriate. |
 | Module structure or prerequisite change | Describe affected learners and migration in an [RFC](#rfc), unless the maintainer has already authorized the work. |
@@ -42,6 +42,8 @@ Remove-Item Env:NPFS_IMPL
 In Bash, use `NPFS_IMPL=reference python -m pytest resources/numpy-from-scratch/tests -q`. The learner starter suite intentionally fails until its algorithms are implemented. Report skipped dependencies explicitly. See [tooling](tools/README.md) for supported Markdown syntax, limits and optional HTTP checks.
 
 The [workflow](.github/workflows/check-links.yml) configures push/PR checks and monthly/manual external reports. Passing locally does not demonstrate that a remote workflow has run.
+
+For beginner practice changes, install [the small test dependency](resources/beginner-projects/requirements.txt), then run `BEGINNER_IMPL=reference python -m pytest resources/beginner-projects/tests -q` in Bash, or set `$env:BEGINNER_IMPL = 'reference'` first in PowerShell. Default starter failures are intentional; reference mode must pass. See [project verification](resources/beginner-projects/README.md#tests).
 
 <a id="dead-links"></a>
 ## Report observed access
@@ -103,6 +105,8 @@ Do not delete or rename existing `<a id="...">` anchors. Preserve compatibility 
 ### Editing prose
 
 Use concrete outcomes, prerequisites and reviewable evidence. Clearly separate core work from later depth. Artifacts can be private, selectively shared or sanitized public. Avoid compulsory hosting, arbitrary metric gates and promised employment timelines. Historic verbatim migration guarantees apply to those earlier migrations; this release deliberately improves curriculum content.
+
+Keep the [first-semester plan](guides/first-semester.md#semester-plan) as the single early schedule. Preserve existing week anchors, connect project stages to [readiness and remediation](guides/readiness-checks.md#how-to-check), and check beginner, experienced and returning entry paths. Generated resource cards and role sequences come from the existing manifest/checker; do not maintain separate hand-edited copies. Inspect narrow-screen rendering when possible and distinguish a proxy walkthrough from real student feedback.
 
 <a id="changelog"></a>
 ### Changelog and audits

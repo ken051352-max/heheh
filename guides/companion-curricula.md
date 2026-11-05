@@ -5,6 +5,8 @@
 <a id="companion-curricula"></a>
 ## Guided companion curricula
 
+**Use only for a specific gap.** The [first-semester sequence](first-semester.md) and your module remain the study plan. Pick one matching lesson below when the default explanation is not working, then return to the same practice task. Completing a companion does not add another required course.
+
 The two Microsoft curricula below provide guided beginner practice. They use the lesson-table navigation, short projects, quizzes, assignments, and solution folders that make a large subject easier to enter. Their public READMEs were re-read on 2026-11-05 and describe the lesson counts below. Earlier reviewed commits remain historical snapshots; current software setup and hosted-service terms should be checked separately.
 
 | Curriculum | Best for | Current scope | Reviewed upstream snapshot |
@@ -33,9 +35,9 @@ The two Microsoft curricula below provide guided beginner practice. They use the
 
 For each module, use a simple four-step loop:
 
-1. **Learn** — complete the primary course or lecture sequence.
+1. **Learn** — study the selected lecture section for the next project task; the module specifies required coverage.
 2. **Read** — work selected sections of the principal book and exercises, whether that book is free or paid.
-3. **Implement** — reproduce core algorithms without relying only on high-level APIs.
+3. **Implement** — attempt the relevant exercise, explain a worked example when needed, then solve a changed example independently.
 4. **Ship** — complete the module project with tests, documentation, and a short results memo.
 
 > **Resource policy:** default lectures are free; principal books are chosen on quality regardless of price. Use these companions for a specific practice gap. Optional cloud lessons/Codespaces can require accounts and incur costs; local lesson execution is the default. Completing both entire companion curricula is not required.

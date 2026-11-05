@@ -1,0 +1,435 @@
+Original-project validation: 2026-11-05T14:58:04.048301+00:00
+Working directory: C:\.orkas\userWorkSpace\chat-2026-11-03-1\repo
+Reference selectors: NPFS_IMPL=reference, BEGINNER_IMPL=reference
+
+## Environment
+python -c import sys,sqlite3,numpy,pytest,sklearn,duckdb; print(sys.version); print({"numpy":numpy.__version__,"pytest":pytest.__version__,"scikit-learn":sklearn.__version__,"duckdb":duckdb.__version__,"sqlite":sqlite3.sqlite_version})
+3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+{'numpy': '2.5.4', 'pytest': '9.2.0', 'scikit-learn': '1.9.1', 'duckdb': '1.5.6', 'sqlite': '3.49.1'}
+
+Exit: 0; expected: 0
+
+## Tooling regressions
+python -m unittest discover -s tools/tests -v
+test_404_and_410_remain_failures_even_on_bot_gated_hosts (test_check_links.HTTPClassification.test_404_and_410_remain_failures_even_on_bot_gated_hosts) ... ok
+test_blocked_rate_limited_and_server_errors_are_unverified (test_check_links.HTTPClassification.test_blocked_rate_limited_and_server_errors_are_unverified) ... ok
+test_head_rejected_get_succeeds (test_check_links.HTTPClassification.test_head_rejected_get_succeeds) ... ok
+test_network_error_is_not_dead_link_evidence (test_check_links.HTTPClassification.test_network_error_is_not_dead_link_evidence) ... ok
+test_empty_fragment_current_page_and_external_schemes (test_check_links.InternalValidation.test_empty_fragment_current_page_and_external_schemes) ... ok
+test_encoded_paths_fragments_queries_and_reference_links (test_check_links.InternalValidation.test_encoded_paths_fragments_queries_and_reference_links) ... ok
+test_heading_suffixes_do_not_collide (test_check_links.InternalValidation.test_heading_suffixes_do_not_collide) ... ok
+test_ids_inside_code_do_not_create_anchors (test_check_links.InternalValidation.test_ids_inside_code_do_not_create_anchors) ... ok
+test_inline_code_underscores_atx_closer_and_setext (test_check_links.InternalValidation.test_inline_code_underscores_atx_closer_and_setext) ... ok
+test_missing_file_and_anchor_are_independent_failures (test_check_links.InternalValidation.test_missing_file_and_anchor_are_independent_failures) ... ok
+test_venv_and_cache_markdown_are_excluded_on_all_platforms (test_check_links.InternalValidation.test_venv_and_cache_markdown_are_excluded_on_all_platforms) ... ok
+test_angle_destination_and_single_quoted_title (test_check_links.MarkdownTargets.test_angle_destination_and_single_quoted_title) ... ok
+test_balanced_parentheses_escaped_destination_and_title (test_check_links.MarkdownTargets.test_balanced_parentheses_escaped_destination_and_title) ... ok
+test_code_comments_and_fences_are_not_links (test_check_links.MarkdownTargets.test_code_comments_and_fences_are_not_links) ... ok
+test_escaped_link_opener_is_prose (test_check_links.MarkdownTargets.test_escaped_link_opener_is_prose) ... ok
+test_html_autolinks_and_nested_image (test_check_links.MarkdownTargets.test_html_autolinks_and_nested_image) ... ok
+test_reference_full_collapsed_and_shortcut_are_case_insensitive (test_check_links.MarkdownTargets.test_reference_full_collapsed_and_shortcut_are_case_insensitive) ... ok
+test_unclosed_fence_hides_remainder (test_check_links.MarkdownTargets.test_unclosed_fence_hides_remainder) ... ok
+test_application_subset_does_not_supply_full_parent_competence (test_curriculum.CurriculumIntegrity.test_application_subset_does_not_supply_full_parent_competence) ... ok
+test_book_labels_escape_markdown_table_syntax (test_curriculum.CurriculumIntegrity.test_book_labels_escape_markdown_table_syntax) ... ok
+test_capstone_requires_an_explicit_conditional_route (test_curriculum.CurriculumIntegrity.test_capstone_requires_an_explicit_conditional_route) ... ok
+test_capstone_subset_prerequisites_are_enforced (test_curriculum.CurriculumIntegrity.test_capstone_subset_prerequisites_are_enforced) ... ok
+test_complete_manifest_has_valid_ordered_routes (test_curriculum.CurriculumIntegrity.test_complete_manifest_has_valid_ordered_routes) ... ok
+test_duplicate_nodes_are_not_silently_overwritten (test_curriculum.CurriculumIntegrity.test_duplicate_nodes_are_not_silently_overwritten) ... ok
+test_full_parent_supplies_application_and_brief_competence (test_curriculum.CurriculumIntegrity.test_full_parent_supplies_application_and_brief_competence) ... ok
+test_generated_drift_fails_and_write_preserves_surrounding_prose (test_curriculum.CurriculumIntegrity.test_generated_drift_fails_and_write_preserves_surrounding_prose) ... ok
+test_malformed_schema_returns_errors_without_traceback (test_curriculum.CurriculumIntegrity.test_malformed_schema_returns_errors_without_traceback) ... ok
+test_missing_canonical_module_and_reserved_ids_are_rejected (test_curriculum.CurriculumIntegrity.test_missing_canonical_module_and_reserved_ids_are_rejected) ... ok
+test_missing_file_and_subset_anchor_are_reported (test_curriculum.CurriculumIntegrity.test_missing_file_and_subset_anchor_are_reported) ... ok
+test_missing_or_duplicate_markers_prevent_all_writes (test_curriculum.CurriculumIntegrity.test_missing_or_duplicate_markers_prevent_all_writes) ... ok
+test_missing_transitive_prerequisite_invalidates_later_steps (test_curriculum.CurriculumIntegrity.test_missing_transitive_prerequisite_invalidates_later_steps) ... ok
+test_prerequisite_cycle_reports_the_path (test_curriculum.CurriculumIntegrity.test_prerequisite_cycle_reports_the_path) ... ok
+test_recommendations_can_point_forward_and_form_a_cycle (test_curriculum.CurriculumIntegrity.test_recommendations_can_point_forward_and_form_a_cycle) ... ok
+test_repository_escape_is_rejected (test_curriculum.CurriculumIntegrity.test_repository_escape_is_rejected) ... ok
+test_research_capstone_does_not_impose_deep_learning_on_every_question (test_curriculum.CurriculumIntegrity.test_research_capstone_does_not_impose_deep_learning_on_every_question) ... ok
+test_route_prerequisites_must_precede_the_dependent_step (test_curriculum.CurriculumIntegrity.test_route_prerequisites_must_precede_the_dependent_step) ... ok
+test_source_urls_must_be_http_and_only_capstone_may_be_empty (test_curriculum.CurriculumIntegrity.test_source_urls_must_be_http_and_only_capstone_may_be_empty) ... ok
+test_subset_parent_must_be_a_known_full_module (test_curriculum.CurriculumIntegrity.test_subset_parent_must_be_a_known_full_module) ... ok
+test_unknown_dependencies_recommendations_and_route_steps (test_curriculum.CurriculumIntegrity.test_unknown_dependencies_recommendations_and_route_steps) ... ok
+test_write_preserves_windows_newlines_outside_generated_bodies (test_curriculum.CurriculumIntegrity.test_write_preserves_windows_newlines_outside_generated_bodies) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.666s
+
+OK
+
+Exit: 0; expected: 0
+
+## NumPy references
+python -m pytest resources/numpy-from-scratch/tests -q
+.................................                                        [100%]
+33 passed in 4.24s
+
+Exit: 0; expected: 0
+
+## Agent contracts
+python -m unittest discover -s resources/agent-lab/tests -v
+test_approval_cannot_authorize_a_second_distinct_request (test_contracts.ContractsTest.test_approval_cannot_authorize_a_second_distinct_request) ... ok
+test_approval_is_bound_to_exact_tenant_order_and_amount (test_contracts.ContractsTest.test_approval_is_bound_to_exact_tenant_order_and_amount) ... ok
+test_approval_required_for_every_first_refund (test_contracts.ContractsTest.test_approval_required_for_every_first_refund) ... ok
+test_balance_check_rolls_back_without_consuming_approval (test_contracts.ContractsTest.test_balance_check_rolls_back_without_consuming_approval) ... ok
+test_changed_payload_with_reused_key_fails (test_contracts.ContractsTest.test_changed_payload_with_reused_key_fails) ... ok
+test_concurrent_first_memory_writes_keep_newest_event (test_contracts.ContractsTest.test_concurrent_first_memory_writes_keep_newest_event) ... ok
+test_concurrent_first_refund_has_one_side_effect (test_contracts.ContractsTest.test_concurrent_first_refund_has_one_side_effect) ... ok
+test_deadline_stops_before_next_call (test_contracts.ContractsTest.test_deadline_stops_before_next_call) ... ok
+test_expiry_boundary_and_tenant_isolation (test_contracts.ContractsTest.test_expiry_boundary_and_tenant_isolation) ... ok
+test_idempotency_survives_restart (test_contracts.ContractsTest.test_idempotency_survives_restart) ... ok
+test_injection_text_is_data_and_cannot_grant_permissions (test_contracts.ContractsTest.test_injection_text_is_data_and_cannot_grant_permissions) ... ok
+test_invalid_amounts_rejected_before_side_effect (test_contracts.ContractsTest.test_invalid_amounts_rejected_before_side_effect) ... ok
+test_invalid_memory_timestamps_and_ttl (test_contracts.ContractsTest.test_invalid_memory_timestamps_and_ttl) ... ok
+test_memory_deletion_does_not_remove_other_tenants (test_contracts.ContractsTest.test_memory_deletion_does_not_remove_other_tenants) ... ok
+test_model_cannot_forge_approval_or_tenant_arguments (test_contracts.ContractsTest.test_model_cannot_forge_approval_or_tenant_arguments) ... ok
+test_readonly_principal_cannot_mutate_even_with_approval (test_contracts.ContractsTest.test_readonly_principal_cannot_mutate_even_with_approval) ... ok
+test_scripted_errors_are_bounded_and_recoverable (test_contracts.ContractsTest.test_scripted_errors_are_bounded_and_recoverable) ... ok
+test_stale_memory_and_duplicate_events_do_not_overwrite (test_contracts.ContractsTest.test_stale_memory_and_duplicate_events_do_not_overwrite) ... ok
+test_step_limit_counts_errors_too (test_contracts.ContractsTest.test_step_limit_counts_errors_too) ... ok
+test_tenant_filter_prevents_cross_tenant_read (test_contracts.ContractsTest.test_tenant_filter_prevents_cross_tenant_read) ... ok
+test_unknown_tool_is_never_executed (test_contracts.ContractsTest.test_unknown_tool_is_never_executed) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.578s
+
+OK
+
+Exit: 0; expected: 0
+
+## Causal, SQLite and DuckDB labs
+python -m unittest discover -s resources/local-labs/tests -v
+test_adjustment_recovers_known_effect_despite_confounding (test_labs.CausalIdentification.test_adjustment_recovers_known_effect_despite_confounding) ... ok
+test_generator_reproducibility_and_declared_population (test_labs.CausalIdentification.test_generator_reproducibility_and_declared_population) ... ok
+test_generator_requires_adequate_even_sample (test_labs.CausalIdentification.test_generator_requires_adequate_even_sample) ... ok
+test_invalid_design_parameters_are_rejected (test_labs.CausalIdentification.test_invalid_design_parameters_are_rejected) ... ok
+test_known_normal_design_and_monotonicity (test_labs.CausalIdentification.test_known_normal_design_and_monotonicity) ... ok
+test_no_overlap_is_reported_instead_of_an_estimate (test_labs.CausalIdentification.test_no_overlap_is_reported_instead_of_an_estimate) ... ok
+test_conflict_rolls_back_an_earlier_valid_insert (test_labs.DuckDBEventLedger.test_conflict_rolls_back_an_earlier_valid_insert) ... ok
+test_equivalent_timezone_is_same_event (test_labs.DuckDBEventLedger.test_equivalent_timezone_is_same_event) ... ok
+test_invalid_rows_are_quarantined_and_valid_rows_committed (test_labs.DuckDBEventLedger.test_invalid_rows_are_quarantined_and_valid_rows_committed) ... ok
+test_late_arrival_is_retained_and_counted (test_labs.DuckDBEventLedger.test_late_arrival_is_retained_and_counted) ... ok
+test_replay_keeps_totals_and_isolates_accounts (test_labs.DuckDBEventLedger.test_replay_keeps_totals_and_isolates_accounts) ... ok
+test_schema_change_for_same_event_is_not_silently_overwritten (test_labs.DuckDBEventLedger.test_schema_change_for_same_event_is_not_silently_overwritten) ... ok
+test_conflict_rolls_back_an_earlier_valid_insert (test_labs.SQLiteEventLedger.test_conflict_rolls_back_an_earlier_valid_insert) ... ok
+test_equivalent_timezone_is_same_event (test_labs.SQLiteEventLedger.test_equivalent_timezone_is_same_event) ... ok
+test_invalid_rows_are_quarantined_and_valid_rows_committed (test_labs.SQLiteEventLedger.test_invalid_rows_are_quarantined_and_valid_rows_committed) ... ok
+test_late_arrival_is_retained_and_counted (test_labs.SQLiteEventLedger.test_late_arrival_is_retained_and_counted) ... ok
+test_replay_keeps_totals_and_isolates_accounts (test_labs.SQLiteEventLedger.test_replay_keeps_totals_and_isolates_accounts) ... ok
+test_schema_change_for_same_event_is_not_silently_overwritten (test_labs.SQLiteEventLedger.test_schema_change_for_same_event_is_not_silently_overwritten) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.110s
+
+OK
+
+Exit: 0; expected: 0
+
+## Beginner references
+python -m pytest resources/beginner-projects/tests -q
+......................................................................   [100%]
+70 passed in 0.28s
+
+Exit: 0; expected: 0
+
+## Causal demo
+python resources/local-labs/causal_inference.py
+{
+  "truth": 2.0,
+  "n": 800,
+  "trials": 200,
+  "seed": 42,
+  "randomized": {
+    "mean_estimate": 2.0024307120602285,
+    "bias": 0.002430712060228517,
+    "coverage_approx_95pct": 0.965,
+    "coverage_monte_carlo_se": 0.012995191418367032
+  },
+  "confounded_naive": {
+    "mean_estimate": 3.7956341017393833,
+    "bias": 1.795634101739383,
+    "coverage_approx_95pct": 0,
+    "coverage_monte_carlo_se": 0.0
+  },
+  "confounded_adjusted": {
+    "mean_estimate": 2.003452342215542,
+    "bias": 0.0034523422155419816,
+    "coverage_approx_95pct": 0.93,
+    "coverage_monte_carlo_se": 0.01804161855266871
+  },
+  "design": {
+    "mde": 0.3,
+    "sigma": 1.8027756377319946,
+    "alpha": 0.05,
+    "power": 0.8,
+    "n_per_arm_normal_approx": 567
+  }
+}
+
+Exit: 0; expected: 0
+
+## SQLite demo
+python resources/local-labs/distributed_data.py --backend sqlite
+{
+  "backend": "sqlite",
+  "backend_version": "3.49.1",
+  "totals": [
+    [
+      "A",
+      400
+    ]
+  ],
+  "first_batch": {
+    "duplicates": 1,
+    "late_retained": 1,
+    "quarantined": [
+      {
+        "row": {
+          "event_id": "bad",
+          "account": "A",
+          "event_time": "2026-01-01T12:00:00+00:00",
+          "amount_cents": "oops"
+        },
+        "reason": "amount_cents must be a nonnegative signed-BIGINT integer"
+      }
+    ]
+  },
+  "replay": {
+    "duplicates": 4,
+    "late_retained": 0,
+    "quarantined": [
+      {
+        "row": {
+          "event_id": "bad",
+          "account": "A",
+          "event_time": "2026-01-01T12:00:00+00:00",
+          "amount_cents": "oops"
+        },
+        "reason": "amount_cents must be a nonnegative signed-BIGINT integer"
+      }
+    ]
+  },
+  "conflict_rollback": "passed"
+}
+
+Exit: 0; expected: 0
+
+## DuckDB demo
+python resources/local-labs/distributed_data.py --backend duckdb
+{
+  "backend": "duckdb",
+  "backend_version": "1.5.6",
+  "totals": [
+    [
+      "A",
+      400
+    ]
+  ],
+  "first_batch": {
+    "duplicates": 1,
+    "late_retained": 1,
+    "quarantined": [
+      {
+        "row": {
+          "event_id": "bad",
+          "account": "A",
+          "event_time": "2026-01-01T12:00:00+00:00",
+          "amount_cents": "oops"
+        },
+        "reason": "amount_cents must be a nonnegative signed-BIGINT integer"
+      }
+    ]
+  },
+  "replay": {
+    "duplicates": 4,
+    "late_retained": 0,
+    "quarantined": [
+      {
+        "row": {
+          "event_id": "bad",
+          "account": "A",
+          "event_time": "2026-01-01T12:00:00+00:00",
+          "amount_cents": "oops"
+        },
+        "reason": "amount_cents must be a nonnegative signed-BIGINT integer"
+      }
+    ]
+  },
+  "conflict_rollback": "passed"
+}
+
+Exit: 0; expected: 0
+
+## Calculator demo
+python resources/beginner-projects/calculator/reference.py 2 + 3
+5.0
+
+Exit: 0; expected: 0
+
+## Offline Weather demo
+python resources/beginner-projects/weather/reference.py Delhi --offline
+{"city": "delhi", "temperature_c": 12.5, "observed_at_utc": "2026-01-01T09:00", "source": "synthetic fixture"}
+
+Exit: 0; expected: 0
+
+## SQL investigation demo
+python resources/beginner-projects/sql/reference.py
+{
+  "source": "synthetic fixture",
+  "sqlite_version": "3.49.1",
+  "load": {
+    "accepted": 3,
+    "duplicates": 1,
+    "rejected": [
+      {
+        "line": 6,
+        "reason": "amount must contain nonnegative integer cents"
+      },
+      {
+        "line": 7,
+        "reason": "unknown customer"
+      },
+      {
+        "line": 8,
+        "reason": "amount must contain nonnegative integer cents"
+      }
+    ]
+  },
+  "customers": [
+    [
+      "A",
+      2000,
+      1800,
+      200
+    ],
+    [
+      "B",
+      500,
+      500,
+      0
+    ],
+    [
+      "C",
+      0,
+      0,
+      0
+    ]
+  ],
+  "plan_before": [
+    [
+      2,
+      0,
+      216,
+      "SCAN orders"
+    ]
+  ],
+  "plan_after": [
+    [
+      3,
+      0,
+      62,
+      "SEARCH orders USING INDEX orders_customer (customer_id=?)"
+    ]
+  ]
+}
+
+Exit: 0; expected: 0
+
+## SQL query preview
+python resources/beginner-projects/sql/preview.py
+{"source": "curated synthetic preview", "columns": ["order_id", "customer_id", "amount_cents"], "rows": [["o1", "A", 1200], ["o2", "A", 800], ["o3", "B", 500]]}
+
+Exit: 0; expected: 0
+
+## Calculator zero divisor
+python resources/beginner-projects/calculator/reference.py 7 / 0
+Cannot calculate: the divisor must not be zero
+
+Exit: 2; expected: nonzero
+
+## Weather unknown city
+python resources/beginner-projects/weather/reference.py Atlantis --offline
+Weather unavailable: unknown city; choose Delhi or London
+
+Exit: 2; expected: nonzero
+
+## Weather malformed fixture
+python resources/beginner-projects/weather/reference.py Delhi --offline --fixture resources/beginner-projects/weather/fixtures/malformed.json
+Weather unavailable: weather data is malformed or has unexpected fields/units
+
+Exit: 2; expected: nonzero
+
+## Intentional starter failures
+python -m pytest resources/beginner-projects/tests -q --tb=no --junitxml=C:\.orkas\userWorkSpace\chat-2026-11-03-1\repo\.git\codex-learning-experience\starter.xml
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF...FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF..F   [100%]
+=========================== short test summary info ===========================
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[2-+-3-5]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[2---5--3]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[2.5-*-4-10]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[7-/-2-3.5]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[-4-+- 2 --2]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_arithmetic[0-/-4-0]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[hello-+-3]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[-+-2]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[1-/-0]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[1-/--0.0]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[2-**-3]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[NaN-+-1]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[1-+-inf]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_rejects_bad_input_or_unrepresentable_result[1e308-*-1e308]
+FAILED resources/beginner-projects/tests/test_calculator.py::test_cli_exit_codes_and_streams
+FAILED resources/beginner-projects/tests/test_sql.py::test_fixture_reconciliation_includes_zero_order_customer
+FAILED resources/beginner-projects/tests/test_sql.py::test_replay_preserves_totals
+FAILED resources/beginner-projects/tests/test_sql.py::test_split_payments_do_not_multiply_orders
+FAILED resources/beginner-projects/tests/test_sql.py::test_two_identical_amounts_are_not_deduplicated
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad0]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad1]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad2]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad3]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad4]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad5]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[bad6]
+FAILED resources/beginner-projects/tests/test_sql.py::test_bad_rows_quarantined_without_losing_valid_row[None]
+FAILED resources/beginner-projects/tests/test_sql.py::test_conflicting_duplicate_rolls_back_earlier_insert
+FAILED resources/beginner-projects/tests/test_sql.py::test_keys_foreign_keys_and_amount_constraints
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_and_timestamp_preserved
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[{"current":\n]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[raw1]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[null]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[[]]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[\xff]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_payloads[raw5]
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_must_be_finite_number[None]
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_must_be_finite_number[True]
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_must_be_finite_number[12.5]
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_must_be_finite_number[nan]
+FAILED resources/beginner-projects/tests/test_weather.py::test_temperature_must_be_finite_number[inf]
+FAILED resources/beginner-projects/tests/test_weather.py::test_units_and_timestamp_checked
+FAILED resources/beginner-projects/tests/test_weather.py::test_offline_never_fetches_or_writes_cache
+FAILED resources/beginner-projects/tests/test_weather.py::test_unknown_city_and_missing_fixture_fail_usefully
+FAILED resources/beginner-projects/tests/test_weather.py::test_live_adapter_request_and_cache_reuse
+FAILED resources/beginner-projects/tests/test_weather.py::test_cache_exact_expiry_future_time_and_city_are_misses
+FAILED resources/beginner-projects/tests/test_weather.py::test_corrupt_cache_is_refreshed
+FAILED resources/beginner-projects/tests/test_weather.py::test_failed_requests_do_not_write_or_retry[failure0]
+FAILED resources/beginner-projects/tests/test_weather.py::test_failed_requests_do_not_write_or_retry[failure1]
+FAILED resources/beginner-projects/tests/test_weather.py::test_failed_requests_do_not_write_or_retry[failure2]
+FAILED resources/beginner-projects/tests/test_weather.py::test_failed_requests_do_not_write_or_retry[failure3]
+FAILED resources/beginner-projects/tests/test_weather.py::test_malformed_response_is_not_cached
+FAILED resources/beginner-projects/tests/test_weather.py::test_unwritable_cache_preserves_prior_file
+FAILED resources/beginner-projects/tests/test_weather.py::test_failed_cache_replacement_preserves_prior_and_cleans_temp
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[0-ttl]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[0-timeout]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[-1-ttl]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[-1-timeout]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[inf-ttl]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[inf-timeout]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[True-ttl]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[True-timeout]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[5-ttl]
+FAILED resources/beginner-projects/tests/test_weather.py::test_invalid_config_rejected_before_request[5-timeout]
+FAILED resources/beginner-projects/tests/test_weather.py::test_cli_reports_failure_without_success_output
+65 failed, 5 passed in 0.31s
+
+Exit: 1; expected: 1
+
+Starter JUnit inspected: 70 cases, 65 intentional NotImplementedError failures, 5 supplied scaffold passes, zero setup/import errors and zero skips.

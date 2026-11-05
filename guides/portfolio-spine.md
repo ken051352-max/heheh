@@ -3,7 +3,7 @@
 <a id="portfolio-spine"></a>
 # The Portfolio Spine: one evolving application
 
-Build one system for a concrete problem and improve it through measured releases. Start after the [M1 competence checks](../curriculum/1-foundations.md#three-check-gate). Levels 1–3 form a useful application route; levels 4–5 are optional experiments. A deterministic workflow or retrieval-only system can be the right final design.
+Build one system for a concrete problem and improve it through measured releases. Start after full [M1 core completion](../curriculum/1-foundations.md#m1-capstone) and the [independent-understanding checks](../curriculum/1-foundations.md#three-check-gate). The [first-semester Python projects](first-semester.md) are the earlier starting point; this application sequence comes later. Levels 1–3 form a useful application route; levels 4–5 are optional experiments. A deterministic workflow or retrieval-only system can be the right final design.
 
 <a id="pick-a-problem"></a>
 ## Choose a problem and data you may use
@@ -13,13 +13,40 @@ A study assistant over public course rules, a support helper over synthetic orde
 <a id="levels"></a>
 ## Releases and evidence
 
-| Release | Build | Completion evidence |
-|---|---|---|
-| <a id="level-1"></a>**L1: model boundary** | A small local script/service with one task and a typed input/output contract | Deterministic baseline, fixed examples, schema checks plus semantic checks, explicit refusal/error handling, README and memo. Use [M18-app](../curriculum/6-frontier-production.md#application-foundations). |
-| <a id="level-2"></a>**L2: retrieval** | Add document retrieval only when needed | A frozen 20–50-case teaching set with source evidence, no-retrieval and lexical baselines, retrieval metrics, citation/answer assessment and failure slices. Use [M21](../coursepages/m21-rag-vector-dbs/README.md). |
-| <a id="level-3"></a>**L3: bounded tools** | Start with a deterministic workflow; compare one model-controlled loop | Allowlists and validation enforced in code, trusted confirmation for destructive actions, idempotency, timeout/step/retry bounds, traces and repeated-task outcomes. Use [M22](../coursepages/m22-agentic-ai/README.md#labs). |
-| <a id="level-4"></a>**L4: multiple agents, optional** | Split work only if a measured bottleneck warrants it | Same evaluation workload and budgets as L3, context/permission boundaries, injected worker failures and a before/after quality-cost-latency comparison. Keeping L3 is a valid result. |
-| <a id="level-5"></a>**L5: proposed improvements, optional research** | A sandboxed agent proposes and tests a limited change | Frozen scorer/test data outside agent write access, held-out evaluation, audit trail and human review of any accepted change. Use [M23 experiments](../coursepages/m23-ai-safety/README.md#level-5-loops). |
+<a id="level-1"></a>
+### L1: model boundary
+
+A small local script/service with one task and a typed input/output contract.
+
+**Evidence:** Deterministic baseline, fixed examples, schema checks plus semantic checks, explicit refusal/error handling, README and memo. Use [M18-app](../curriculum/6-frontier-production.md#application-foundations).
+
+<a id="level-2"></a>
+### L2: retrieval
+
+Add document retrieval only when needed.
+
+**Evidence:** A frozen 20–50-case teaching set with source evidence, no-retrieval and lexical baselines, retrieval metrics, citation/answer assessment and failure slices. Use [M21](../coursepages/m21-rag-vector-dbs/README.md).
+
+<a id="level-3"></a>
+### L3: bounded tools
+
+Start with a deterministic workflow; compare one model-controlled loop.
+
+**Evidence:** Allowlists and validation enforced in code, trusted confirmation for destructive actions, idempotency, timeout/step/retry bounds, traces and repeated-task outcomes. Use [M22](../coursepages/m22-agentic-ai/README.md#labs).
+
+<a id="level-4"></a>
+### L4: multiple agents, optional
+
+Split work only if a measured bottleneck warrants it.
+
+**Evidence:** Same evaluation workload and budgets as L3, context/permission boundaries, injected worker failures and a before/after quality-cost-latency comparison. Keeping L3 is a valid result.
+
+<a id="level-5"></a>
+### L5: proposed improvements, optional research
+
+A sandboxed agent proposes and tests a limited change.
+
+**Evidence:** Frozen scorer/test data outside agent write access, held-out evaluation, audit trail and human review of any accepted change. Use [M23 experiments](../coursepages/m23-ai-safety/README.md#level-5-loops).
 
 **Module mapping:** L1 covers the M18 application subset, not the M1 Weather CLI or full M18 training project. L2 can cover M21. L3 plus the actual MCP SDK lab can cover M22. M23 needs its threat-model and regression evidence; merely adding a checker agent is insufficient. M24 needs the complete [production bar](../curriculum/6-frontier-production.md#production-bar), regardless of the chosen level. Map evidence explicitly before marking a module complete.
 

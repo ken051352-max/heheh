@@ -2,3 +2,10 @@
 tools/__pycache__/
 __pycache__/
 .pytest_cache/
+.venv/
+.venv-beginner/
+.venv-local-labs/
+weather-cache.json
+node_modules/
+opencode.jsonc
+study-private/

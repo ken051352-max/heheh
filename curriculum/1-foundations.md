@@ -5,17 +5,21 @@
 <a id="new-here"></a>
 > **🌱 Start here if you're new**
 >
-> 1. New to Python? **[Open Week 0](../guides/week-0.md#week-0).** Seven days, in your browser, nothing to install.
-> 2. Then follow the [first 30 days](../guides/first-30-days.md#first-30-days). That is the gentle start of Module 1.
+> 1. New to Python? **[Open Week 0](../guides/week-0.md#week-0).** Run and change one small program in your browser.
+> 2. Follow the [first-semester plan](../guides/first-semester.md#semester-plan), which integrates Week 0 and the first 30 days. Skip demonstrated skills using the [readiness checks](../guides/readiness-checks.md#how-to-check).
 > 3. You don't need anything else on this page yet. No diagnostic, no proofs, no tooling.
 > 4. The maths placement in Week 2 only helps you pick resources. It never blocks you.
 > 5. The rest of this page is reference for later. It will wait for you.
 
 # 🟩 FOUNDATION STRATUM — Modules 0–5
 
+[Optional maths placement](#math-diagnostic) · [M0: Maths bridge](#module-0) · [M1: Python](#module-1) · [M2: Calculus](#module-2) · [M3: Linear algebra](#module-3) · [M4: Algorithms](#module-4) · [M5: Probability](#module-5)
+
+**Do now:** your current [semester milestone](../guides/first-semester.md#semester-plan). **Next:** its linked project and readiness check. **Later depth:** the expanded topic maps selected for your route. Use college evidence to fill specific gaps rather than taking every foundation course at once.
+
 <img src="../assets/stratum-1-foundations.jpg" alt="Foundation stratum, modules 0 to 5" width="100%">
 
-> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [resource defaults](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
 
 > These six modules build the maths and programming base for everything later. Follow the **core outcome** in each module; extended topic lists are optional depth; one principal book is recommended by quality, with its access/cost labeled. The [learning contract](README.md#learning-contract) defines reviewable evidence and lets you reuse an evolving project. A local or privately shared artifact is sufficient.
 
@@ -31,14 +35,14 @@
 <a id="math-diagnostic"></a>
 ## 🩺 Maths placement (optional, never a gate)
 
-**For beginners:** take this once in [Week 2 of your first 30 days](../guides/first-30-days.md#week-2). It tells you which free resources fit you. **It never blocks Module 1**, and nobody "fails" it.
+**For beginners:** optionally try this in [Week 2 of your first 30 days](../guides/first-30-days.md#week-2), or use a permitted college example. It helps identify a topic to revisit. **It never blocks Module 1**, and nobody "fails" it.
 
 <a id="math-placement-step-1"></a>
 ### Step 1 — Take one free placement check (30–45 min)
 
 | Who | Placement check | What it covers |
 |---|---|---|
-| **Everyone** | [Khan Academy Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) (free account, 30 questions, about 30–45 min) | Functions, trigonometry, complex numbers, vectors, matrices, series |
+| **Optional starting check** | [Khan Academy Precalculus course challenge](https://www.khanacademy.org/math/precalculus/test/x9e81a4f98389efdf:course-challenge) (free account; allow part of a study session and stop when it identifies a useful gap) | Functions, trigonometry, complex numbers, vectors, matrices, series |
 | **Optional, if that felt easy** | Try one practice exam from [MIT 18.01 Single Variable Calculus — exams](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/exams/) (MIT OCW, free; solutions included) | Limits, derivatives, integrals |
 
 > **Honesty note.** Earlier versions promised a unified 15-question diagnostic. It was never written,
@@ -49,7 +53,7 @@
 <a id="math-placement-step-2"></a>
 ### Step 2 — Use your result to pick resources (never to stop)
 
-Keep going with [Module 1](#module-1) whatever you score. Then add **one** of these, at about 15–30 min a day:
+Keep going with [Module 1](#module-1) whatever you score. If a specific gap affects your college work, select one relevant resource below within your existing study budget; this is not an additional daily requirement:
 
 | Your Khan course-challenge result | Add this alongside Python |
 |---|---|
@@ -121,6 +125,8 @@ Practise these **seven study habits**, selected for this curriculum:
 <a id="module-0"></a>
 ## Module 0: Mathematical Maturity Bridge — Pre-Calculus, Logic & Proof
 
+**Scope:** optional maths preparation; use [college equivalence](../guides/readiness-checks.md#college-equivalence) for demonstrated work. Python remains open regardless of placement.
+
 **Recommended principal reading:** Richard Hammack, **Book of Proof**, third edition (free author PDF and paid print): definitions, direct/contradiction proofs and induction.
 
 **Core outcome:** translate quantified statements, give a counterexample, and write a direct, contradiction and induction proof with assumptions. Keep a proof notebook. This bridge remains optional preparation, never a gate for Python.
@@ -147,6 +153,9 @@ Practise these **seven study habits**, selected for this curriculum:
 
 ### Sub-module 0a — Pre-Calculus & Trigonometry Refresher (≈ 2–4 weeks)
 
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
+
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * **Numbers:** ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ; absolute value as distance; intervals; surds and rationalising.
   * **Algebra:** factorisation (difference of squares, sum/difference of cubes), polynomial long division, partial fractions, exponent and log laws, change-of-base formula, **completing the square** (useful in Gaussian and regression algebra).
@@ -157,6 +166,8 @@ Practise these **seven study habits**, selected for this curriculum:
   * **Sequences & series:** arithmetic and geometric, sum formulas (you will re-derive these in MGFs in M5).
   * **Limits — informal:** ε-δ intuition, one-sided limits, infinite limits, limits at infinity.
 
+</details>
+
 * **Courses and references:**
   * **Primary (free):** [Khan Academy Precalculus](https://www.khanacademy.org/math/precalculus) — 10 units, ≈ 40 hours, includes mastery quizzes.
   * **Alternative (free, MIT-quality):** [MIT 18.01SC Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) — self-paced OCW Scholar course (18.01A was retired from OCW; replaced v2026.7), ideal if you have 6+ weeks.
@@ -164,6 +175,9 @@ Practise these **seven study habits**, selected for this curriculum:
   * **Computational verification:** use **SymPy** to check examples and identities where useful (e.g., `sympy.simplify(sin(x)**2 + cos(x)**2 - 1)`).
 
 ### Sub-module 0b — Logic, Proof & Mathematical Vernacular (≈ 4–6 weeks · CORE)
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * **Propositional logic:** truth tables, conjunction `∧`, disjunction `∨`, negation `¬`, implication `⟹`, biconditional `⟺`, **converse / contrapositive / inverse** (and which are logically equivalent).
@@ -187,6 +201,8 @@ Practise these **seven study habits**, selected for this curriculum:
     **(Optional) Lean 4 first contact:** prove `∀ n : ℕ, n + 0 = n` interactively. *Optional practice in explicit definitions and proof steps.*
 
     </details>
+
+</details>
 
 * **Courses and references:**
   * **Primary text (free):** [_Book of Proof_ (Richard Hammack, **3rd Edition**)](https://richardhammack.github.io/BookOfProof/) — chapters 1–10. The author provides the complete text and identifies its American Institute of Mathematics Open Textbook Initiative approval.
@@ -223,7 +239,9 @@ Practise these **seven study habits**, selected for this curriculum:
 
 **Recommended principal reading:** Eric Matthes, **Python Crash Course**, third edition (No Starch, paid): a structured beginner reference. Luciano Ramalho, **Fluent Python**, second edition (O’Reilly, paid), is later language depth. No purchase is needed for Week 0 or CS50P lectures.
 
-**Core outcome:** complete CS50P or equivalent outcomes, the starter milestone, and the tested Weather CLI. Pydantic boundary validation follows ordinary Python types; async and streaming are later extensions. Choose one main course and use the book shelf for optional depth.
+**Core outcome:** demonstrate CS50P-equivalent language outcomes, the starter milestone, and the tested Weather CLI. Use the [M1 readiness evidence](../guides/readiness-checks.md#m1-ready); a certificate or every problem set is not a roadmap gate. Pydantic, async and streaming are later extensions after ordinary Python validation. Choose one main course and use the book shelf for targeted reinforcement.
+
+**Do now:** the [semester milestone](../guides/first-semester.md#semester-plan) matching your evidence. **Next:** [calculator](../resources/beginner-projects/calculator/README.md#start), then [Weather CLI](../resources/beginner-projects/weather/README.md#start) after tests/files. **Later depth:** the language and tooling menus below; they are not extra first-semester completion boxes.
 
 * **The Tutor's "Why":** This roadmap uses Python for data analysis, numerical experiments and AI applications. Turn a small specification into a program you can explain, test and reproduce.
 
@@ -236,7 +254,10 @@ Practise these **seven study habits**, selected for this curriculum:
 
   </details>
 
-* **Strict Prerequisites:** None beyond basic literacy and a web browser for the beginner route. Week 0 runs in Scrimba, and CS50P provides VS Code in the browser at [cs50.dev](https://cs50.dev/). A local VS Code install and high-school algebra are useful later, but neither gates starting Python.
+* **Strict Prerequisites:** None beyond basic literacy and a web browser for the beginner route. Week 0 uses public CS50P examples with a browser editor; the course also provides a workspace at [cs50.dev](https://cs50.dev/) with its requested free accounts. Local editor installation and high-school algebra do not gate starting Python.
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * Functions, variables, types (int/float/str), `print`, formatted strings, conditionals, boolean expressions.
@@ -254,17 +275,17 @@ Practise these **seven study habits**, selected for this curriculum:
   * Branching, iteration, string manipulation, recursion (factorial, Fibonacci, Towers of Hanoi), debugging methodology, efficiency (big-O informal intro), tuples, lists, aliasing, cloning, mutating, dictionaries.
   * Optimisation problems, knapsack, graph-theoretic models, dynamic programming motivation, random walks, Monte Carlo simulation, sampling + confidence, experimental data curve-fitting, statistical myths.
 
+</details>
+
 * **Courses and references:**
   * **Primary Course Link:** [Harvard CS50P — free OpenCourseWare](https://cs50.harvard.edu/python/) · [MIT 6.0001 on OCW](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/) · [University of Helsinki Python Programming MOOC](https://programming-26.mooc.fi/) (hands-on exercise-focused companion).
   * **Outcome-to-Resource Mapping:**
     * Core syntax & data structures (Lectures 0–2) → Variables, conditionals, loops, functions, lists, dicts.
-    * Exceptions & file I/O (Lectures 3, 6) → Defensive parsing, `try/except`, `pathlib`, CSV/JSON handling.
-    * Libraries & packaging (Lecture 4) → Standard library (`sys`, `random`, `json`), virtual environments.
-    * Unit testing (Lecture 5) → `pytest`, automated test suites, fixtures, test-first assertions.
+    * Exceptions & file I/O (Lectures 3, 6) → `try/except`, reading/writing files and CSV. Project guidance adds `pathlib` and schema validation; JSON also appears in Lecture 4.
+    * Libraries (Lecture 4) → standard library, packages, JSON and command-line arguments. Environment isolation comes from the [project setup](../resources/beginner-projects/README.md#setup), not assumed lecture coverage.
+    * Unit testing (Lecture 5) → `assert`, `pytest` and testing functions; project instructions add fixtures and mocked failures.
     * Object-oriented programming (Lecture 8) → Classes, methods, attributes, clean encapsulation.
-    * Helsinki Python MOOC parts 1–7 → the same beginner-to-intermediate syntax, testing, file, and
-      object-oriented outcomes through text-first, auto-tested practice; use it as a companion or depth
-      alternative, not as an additional mandatory course.
+    * Helsinki Python MOOC → text-first, auto-tested practice; map its current introduction and advanced parts to the outcomes you need. Do not assume introductory parts 1–7 include all object-oriented depth or add both courses as mandatory work.
   * **Access Status (Nov 2026):**
     * [CS50P](https://cs50.harvard.edu/python/) learning materials are free. Current official guidance
       says feedback/submission uses a free edX account, the CS50 Certificate route is free after
@@ -276,7 +297,7 @@ Practise these **seven study habits**, selected for this curriculum:
   * **Reading shelf (principal book above; alternatives and depth):**
     * _Fluent Python_ (**2nd Edition, 2022**; [fluentpython.com](https://www.fluentpython.com/) ✅) — Luciano Ramalho — chapters 1–6, 9 (closures/decorators), 17 (iterators).
     * _Python Crash Course_ (**3rd Edition**; [No Starch](https://nostarch.com/python-crash-course-3rd-edition) ✅) — Eric Matthes — for absolute beginners only.
-  * **Practical Implementation:** Start in the browser (Scrimba, then [cs50.dev](https://cs50.dev/)). Professional tooling comes after CS50P; see below.
+  * **Practical Implementation:** Start with the [Week 0 browser route](../guides/week-0.md#week-0). Use the [isolated project setup](../resources/beginner-projects/README.md#setup) when needed; additional professional tooling comes later.
 
 <details>
 <summary><strong>Advanced / later (after CS50P):</strong> Python version, editor setup and Modern Python Tooling (uv, mypy, Pydantic, asyncio, hypothesis, pre-commit)</summary>
@@ -298,7 +319,7 @@ Practise these **seven study habits**, selected for this curriculum:
 <a id="python-skill-groups"></a>
 ### 🎯 The four AI-engineering skill groups (v2026.7) + async (v2026.8)
 
-You don't need all of Python to start building AI systems. Video W2 (01:15–02:28) narrows the foundation to **four skill groups**. v2026.8 adds a fifth, **[async concurrency and streaming](#async-skill-group)**, which you learn *after* the gate, right before Portfolio Spine L1. Application engineers often consume model APIs; training-oriented roles also need the later PyTorch modules. The [first 30 days](../guides/first-30-days.md#skill-groups) map each week onto these groups.
+You don't need all of Python to start building AI systems. Video W2 (01:15–02:28) narrows the foundation to **four skill groups**. v2026.8 adds a fifth, **[async concurrency and streaming](#async-skill-group)**, an optional extension when a later application needs concurrent I/O. Application engineers often consume model APIs; training-oriented roles also need the later PyTorch modules. The [first 30 days](../guides/first-30-days.md#skill-groups) map each week onto these groups.
 
 | # | Skill group | What it covers | Where you learn it | Free reference |
 |---|---|---|---|---|
@@ -307,7 +328,7 @@ You don't need all of Python to start building AI systems. Video W2 (01:15–02:
 | **3** | **File & log I/O** | Reading documents, writing structured output, reading and writing logs | CS50P Lecture 6 → capstone cache | [`pathlib`](https://docs.python.org/3/library/pathlib.html) · [`logging`](https://docs.python.org/3/library/logging.html) |
 | **4** | **Environment & package isolation** | One virtual environment per project with `venv` + `pip` or **`uv`**, so one project's library versions can't break another's | First local project (after cs50.dev) | [`venv` tutorial](https://docs.python.org/3/tutorial/venv.html) · [uv docs](https://docs.astral.sh/uv/) |
 
-> **Group 4 is the one beginners skip** (W2, 02:13), and skipping it is what breaks your second project. The rule: **one project, one environment.** In cs50.dev the environment is managed for you. On your own machine, run `uv venv` or `python -m venv .venv` before your first `pip install`.
+> **Use one isolated environment per local project** so dependency choices can be reproduced. In cs50.dev the environment is managed for you. On your own machine, run `uv venv` or `python -m venv .venv` before your first `pip install`.
 
 <a id="async-skill-group"></a>
 ### ⚡ Skill group 5 · Async concurrency, backpressure and token streaming (v2026.8)
@@ -403,139 +424,80 @@ async def chat(request: Request, q: str):
 > **Common mistakes:** creating a client inside a hot loop; scheduling an unbounded number of pending tasks (use a bounded queue for large streams); retrying invalid input; blocking the event loop. Default `gather` propagates the first exception **without automatically cancelling the other tasks**; `return_exceptions=True` collects ordinary errors. Preserve cancellation and close upstream streams explicitly. A partial JSON prefix is provisional: validate the complete response before acting on it.
 
 <a id="ai-usage-rule"></a>
-### 🚦 Foundations-phase AI usage rule and the 3-check exit gate
+### AI assistance and independent evidence
 
-**The rule (W2, 05:08–05:26):** during Week 0, the first 30 days and M1 projects, **AI may only explain concepts and quiz you. You write the code yourself**, even when it's slow and frustrating. Letting an assistant write the project produces the *fluency illusion* (Video 1, 09:30): it feels like understanding, but you didn't do the work that makes it stick.
+Use AI explanations, questions and feedback after your own first attempt. Keep generated solutions closed during the final changed-example check and record the help you used. Course assignments also follow their own academic honesty rules. The [readiness guide](../guides/readiness-checks.md#how-to-check) is the canonical policy; assisted output is not proof of mastery.
 
 <a id="three-check-gate"></a>
-**Exit gate: unlock AI coding assistants only when all three are true (W2, 05:27–05:41):**
+**Independent coding check** (compatible anchor for the former “three-check gate”):
 
-| Check | How to test yourself (no AI, no hints) | ✅ |
-|---|---|---|
-| **1. Read** unfamiliar code | Open a 50–100-line Python file you didn't write (an Exercism community solution or a small open-source script). In 15 minutes, write one sentence per function saying what it does and what data goes in and out | ☐ |
-| **2. Debug** a failing test alone | Break one assertion in your own `pytest` suite (or a [NumPy-sprint](../resources/numpy-from-scratch/README.md#numpy-from-scratch) test). Find and fix the cause from the traceback without pasting it into an LLM | ☐ |
-| **3. Reason about data flow** | For your weather CLI, list in advance where it breaks on malformed input (bad city, timeout, a missing JSON key, an unwritable cache file). Then write one test per item | ☐ |
+1. **Read:** predict a short unfamiliar function's output and effects before running it.
+2. **Debug:** make a meaningful test fail through an introduced implementation defect, diagnose it and fix the cause.
+3. **Explain data flow:** trace the Weather CLI through valid input, malformed data, timeout and cache failure; test the stated behavior.
 
-**After the gate, AI becomes a skill to practise, not a crutch to avoid** (W2, 05:50–07:15):
+These capabilities are demonstrated in [M1 readiness](../guides/readiness-checks.md#m1-ready). A gap calls for targeted practice and a fresh check, not a global ban or permission badge. When using generated code later, review its assumptions and test meaningful failures. For mathematics, attempt the reasoning before requesting critique and verify a changed example independently.
 
-- **Spec-driven prompting.** Write the specification first, with constraints, inputs, outputs and failure cases. Then ask for an implementation. Ad-hoc one-line IDE prompts produce poor output.
-- **Audit AI-written tests.** AI writes tests that pass for the wrong reasons. For every generated test, ask: *"Would this fail if the bug I care about came back?"*
-- **Review generated code.** Check its behavior, assumptions and failure cases before committing it. AI-engineering roles also involve data, evaluation, systems and product work; their balance varies by team.
-- **Write down the trade-offs.** Every project from here on records its choices in a [`DECISIONS.md`](../guides/portfolio-spine.md#decisions-template).
+### Study sequence and project ladder
 
-> The gate replaces the old "the policy loosens after M5" wording below for **coding assistants**. The M1–M5 policy still applies to maths and proof work.
+The [first-semester plan](../guides/first-semester.md#semester-plan) is the single calendar/pacing source. It integrates Week 0 and the first 30 days, then libraries, tests, files and the capstone, with movable exam buffers. Progress depends on evidence rather than completing a dated phase.
 
-### 📅 Suggested pacing structure — the four-phase Python roadmap
-
-The topic list above is *what* to learn. The table gives illustrative pacing and a reviewable milestone for each phase. Adjust the weeks using your actual study time; the artifacts, not the dates, establish progress. Pacing and milestones are adapted from Scrimba's [beginner's guide to learning Python (2026)](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) and reconciled with the CS50P week map.
-
-| Phase | Weeks | Goal | Core skills | **Milestone you must ship** |
-| :--- | :--- | :--- | :--- | :--- |
-| **1 — Foundations** | 1–4 | Stop being confused by syntax | Variables, types, operators, conditionals, loops, functions, lists/dicts/tuples/sets, string methods | A **number-guessing game** or a **command-line calculator** in a git repo with a README: the [M1 starter project](#m1-starter-project) |
-| **2 — Working Python** | 5–8 | Write programs that touch the outside world | File I/O, CSV/JSON, exceptions, `pathlib`, modules + `import`, standard library, virtual envs, regular expressions | A **file-I/O CLI tool** (e.g. an expense tracker or file organiser) that reads and writes real files and survives bad input |
-| **3 — Real-World Python** | 9–14 | Write code another engineer would accept | OOP (classes, inheritance, dunders), decorators, generators, comprehensions, type hints, `pytest`, `requests`, git branching + PRs, debugging | An **API-consuming application** with clear function boundaries, type hints and a `pytest` suite; CI is the stretch goal. This is the [M1 capstone](#m1-capstone) |
-| **4 — Specialisation** | Month 4–6+ | Point Python at a domain | NumPy/pandas (→ [M7](2-statistics-and-data.md#module-7)), a web framework (Flask/FastAPI), Docker, deployment | **Later module artifacts with reproducible local demos** — see the [Minimum Production Bar](6-frontier-production.md#production-bar) |
-
-**Phase-matched project ladder.** Match project difficulty to the phase you are actually in. Building above your rung produces copy-paste; building below it produces boredom.
-
-| Rung | Phase | Project options |
-| :--- | :--- | :--- |
-| **Beginner** | 1 | Number-guessing game · password generator · Pomodoro timer · expense tracker · Markdown-to-HTML converter |
-| **Intermediate** | 2–3 | Reddit scraper · Spotify listening-history analyser · Discord bot · weather CLI (real API + caching + error handling) · bulk file organiser |
-| **Advanced** | 4 | Flask blog with authentication · sentiment analyser on a pretrained Hugging Face model · stock dashboard · RAG chatbot over your own notes |
-
-> **Note on the advanced rung.** The sentiment analyser, stock dashboard and RAG chatbot can evolve into the [M16](5-deep-learning.md#module-16), [M14](4-probabilistic-ml.md#module-14) and [M21](6-frontier-production.md#module-21) projects respectively. Complete their prerequisites before claiming those modules. Reuse the relevant project instead of rebuilding it for a separate Python milestone.
+- **Starter:** the [calculator scaffold](../resources/beginner-projects/calculator/README.md#start) or a distinct guessing game after functions, control flow and exceptions.
+- **Capstone:** extend the [Weather scaffold](../resources/beginner-projects/weather/README.md#stages) after testing and file handling. Keep parsing, failure cases and caching in this one evolving artifact instead of requiring a separate file-I/O app.
+- **After M1:** choose [M4 algorithms](#module-4), [M7 data](2-statistics-and-data.md#module-7) or [M8a SQL](2-statistics-and-data.md#module-8a) according to your next priority and prerequisites. Frameworks, deployment and agents belong to later work.
 
 <a id="python-course-matrix"></a>
-### 🐍 Free Python course matrix
+### Free Python learning routes and optional references
 
-Choose one main course and add a companion only for a specific gap. This matrix is synthesised from Scrimba's [best free Python courses for beginners in 2026](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/), with historical checks in [`audit/VERIFICATION.md`](../audit/VERIFICATION.md). Access terms can change; use open CS50P materials as the default. Hour estimates describe different combinations of instruction and practice and are not directly comparable completion promises.
+**Default lectures:** [Harvard CS50P](https://cs50.harvard.edu/python/) provides public lectures, notes and problem statements. Follow the [semester map](../guides/first-semester.md#semester-plan); official course certificates have their own complete requirements. The roadmap does not require a certificate.
 
-| Course | Hours | Format | Free certificate? | Projects | Best for |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **[Scrimba — Learn Python](https://scrimba.com/learn-python-c03)** ✅ · **Week 0 default** | ~4.1 h · 3 sections | Interactive screencasts you can edit and run inline (Treasure Porth) | Yes (free certificate) | 3 projects: PayUp expense splitter, word-scramble game, karaoke queue manager | A browser-based start that avoids local environment setup. See [Week 0](../guides/week-0.md#week-0) |
-| **[Harvard CS50P](https://cs50.harvard.edu/python/)** ✅ | ~100 h · 10 weeks | Lectures + graded problem sets (David Malan) | Yes (free certificate) | 9 problem sets + final project | The default lecture-based course; the spine of this module's topic list |
-| **[University of Helsinki — Python Programming MOOC 2026](https://programming-26.mooc.fi/)** ✅ | 200+ h · 14 parts (two 5-ECTS courses: parts 1–7 and 8–14) | Text-based, auto-tested exercises; optional weekly lectures and recordings (Department of Computer Science, University of Helsinki) | Certificate/credit conditions vary; check course terms | Hundreds of auto-graded exercises | Learners who prefer **reading over watching** and want relentless exercise volume. **Depth alternative to CS50P** |
-| **[freeCodeCamp — Scientific Computing with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/)** ✅ | ~300 h | Video + browser projects | Yes (free certification) | 5 certification projects | A **free credential** plus scientific-computing framing. ⚠️ Content is older than the others — verify Python-3 idioms against the official docs as you go |
-| **[Official Python Tutorial](https://docs.python.org/3/tutorial/)** ✅ | ~15 h | Reference-grade prose | No | None | The **authoritative** source. Use as a companion, never as your first course |
-| **[Google's Python Class](https://developers.google.com/edu/python)** ✅ | ~10 h | Written lessons + exercises | No | Small exercise sets | Programmers **already fluent in another language** who need Python syntax fast |
-| **[Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)** ✅ | Book (3rd Ed., 2025) | Free full text online (Al Sweigart) | No | Chapter-end practice projects | Concrete examples of useful everyday automation |
+- **Principal beginner book:** [Python Crash Course, third edition](https://nostarch.com/python-crash-course-3rd-edition), Eric Matthes (paid). Its author supplies code and selected samples, not a free full book. The semester map identifies bounded chapter/section readings.
+- **Free-text alternative:** [Automate the Boring Stuff with Python, third edition](https://automatetheboringstuff.com/3e/), Al Sweigart. Use the author-hosted text for the named topic; the separately sold video course is not a free-lecture requirement.
+- **Text-first course alternative:** [University of Helsinki Python Programming MOOC](https://programming-26.mooc.fi/). Map its exercises to M1 outcomes and fill gaps; do not complete it in addition to CS50P by default.
+- **Experienced programmers:** [the official Python tutorial](https://docs.python.org/3/tutorial/) and the [readiness checks](../guides/readiness-checks.md#m1-ready) can identify the specific Python gaps to fill.
+- **Later language depth:** *Fluent Python*, second edition, after you can write and debug small programs. It is not the initial beginner text.
 
 <a id="python-helpers"></a>
-**Free interactive helpers (use any time, never required):**
+**Helpers for a specific gap:** [Python Tutor](https://pythontutor.com/) for tracing, [futurecoder](https://futurecoder.io/) for interactive explanations, and [Exercism Python](https://exercism.org/tracks/python) for extra practice. A helper does not add a mandatory exercise quota.
 
-| Helper | What it does | Use it when |
-| :--- | :--- | :--- |
-| **[futurecoder](https://futurecoder.io/)** ✅ | Free interactive beginner course with hints, in the browser | A CS50P idea doesn't click and you want a second explanation |
-| **[Python Tutor](https://pythontutor.com/)** ✅ | Visualises your code running, one line at a time | A loop or variable does something you didn't expect |
-| **[Exercism — Python track](https://exercism.org/tracks/python)** ✅ | Free practice exercises with tests, an in-browser editor and optional volunteer mentoring | You want extra practice; the [first 30 days](../guides/first-30-days.md#week-3) uses five exercises |
-
-> **The recommended pairing stack.** No single course produces competence. Run them in this order:
-> **1. [Scrimba — Learn Python](https://scrimba.com/learn-python-c03)** for a frictionless [Week 0](../guides/week-0.md#week-0) →
-> **2. [CS50P](https://cs50.harvard.edu/python/) *or* the [Helsinki MOOC](https://programming-26.mooc.fi/)** for the depth, testing discipline, and OOP that the fast courses skip. Pick CS50P if you learn from lectures; pick Helsinki if you learn from exercises. The [first 30 days](../guides/first-30-days.md#first-30-days) start CS50P for you →
-> **3. Alongside, for motivation: [Automate the Boring Stuff](https://automatetheboringstuff.com/)** to turn syntax into things you actually use. Dip in when you want a fun side project; it is not a separate stage.
->
-> Practise with the [free helpers](#python-helpers) above whenever you like.
->
-> **Check a course's scope.** Use Python 3 for new work. A short introduction may omit OOP, exceptions or testing; add those topics before claiming the full M1 outcome. A course checklist alone does not establish employability.
+Earlier versions began with [Scrimba's Learn Python](https://scrimba.com/learn-python-c03). Its official course metadata and launch page describe it as free; it remains an optional interactive alternative, and existing work counts as evidence. CS50P now starts the required route to keep one lecture spine and avoid assigning overlapping courses. Complete interactive lesson playback was not tested. See the [research record](../audit/semester-research-2026-11-05.md).
 
 ### 🔨 How to actually study this module — the tutorial-hell escape protocol
 
 Tutorial hell means repeatedly consuming instruction without practising independently. Use a small artifact to check whether you can apply what you watched.
 
 1. **Start a small milestone.** Once you understand its first step, attempt it and turn the gaps into concrete, searchable questions.
-2. **Close the tutorial and rebuild from memory.** Keep the original guided project and rebuild in a fresh file with the tab closed. What you cannot reproduce is what you have not learned — that list is your actual study plan.
+2. **Close the tutorial and rebuild from memory.** Keep the original guided project and rebuild in a fresh file with the tab closed. Use the missing steps to choose targeted practice; one forgotten detail does not erase the skills you can demonstrate.
 3. **Protect practice time.** Try two hours of coding per hour of instruction as a planning experiment, then adjust using what you can explain and reproduce. No ratio diagnoses whether learning is happening.
 4. **Read, break, and fix other people's code.** Clone a small open-source Python repo, read it until you can explain the entry point, deliberately break something, then fix it. Reading production code is a distinct skill from writing greenfield code, and job interviews test it.
 5. **Keep a weekly learning log.** Share it privately or publicly if useful. Record what you built and the next question — see [Career Operations](../guides/career-operations.md#career-operations).
 
 > **Check learning through performance:** explain a new example, reproduce a result and debug a failure. Feeling comfortable or struggling does not by itself establish understanding. Reduce scope or seek a different explanation when difficulty stops productive practice.
 
-### 🤖 Disciplined AI-assistant practice
+### Independent practice and source context
 
-Use the three-check gate above for coding assistance. For M2–M5 mathematics and proofs, attempt the reasoning before requesting critique. The following examples apply before the coding gate and while practising an unfamiliar mathematical method.
-
-**Useful requests during independent practice:**
-* "Explain what this error message means and what category of bug causes it."
-* "Review the code I already wrote and name the weaknesses — do not rewrite it."
-* "Quiz me on decorators. Ask questions, do not give answers."
-* "Explain three ways to structure this, with trade-offs" — then you choose and you type it.
-
-**Avoid before you can independently explain and test the result:**
-* "Write this function for me."
-* Pasting a milestone project's requirements into a model and shipping the output.
-* Accepting any autocomplete you could not have written yourself and cannot explain line by line.
-
-> **⚠️ The fluency illusion.** Video 1 (09:30): *"There's this fluency illusion where AI hands you a perfect answer, and you walk away feeling like you understood it, but you didn't do the cognitive work that makes the knowledge stick."* Check your understanding by solving a fresh example and explaining a failure case without assistance.
->
-> **Coding-assistant use follows the three-check gate above.** For M2–M5 proofs, attempt the derivation before requesting critique. Once you can explain and test the result, models can help with boilerplate, tests and configuration — and [M22](6-frontier-production.md#module-22) treats agentic coding as a first-class engineering topic. The restriction is developmental, not moral.
-
-### 📚 Cited sources added in v2026.3
-
-* **[Scrimba — *Best Free Python Courses for Beginners in 2026*](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/)** ✅ *(verified 2026-07-26)* — source for the [free Python course matrix](#python-course-matrix), the pairing stack, and the Python-2/no-OOP red flags.
-* **[Scrimba — *How to Learn Python: A Beginner's Guide (2026)*](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/)** ✅ *(verified 2026-07-26)* — source for the four-phase pacing structure, the weekly milestones, the phase-matched project ladder, the tutorial-hell escape protocol, and the historical pacing discussion that preceded the current [role pathways](../guides/practitioner-track.md#practitioner-track).
-* **Video 1 — [*How to Become an ML Engineer*](https://www.youtube.com/watch?v=UZ_rK9gzVSc)** (03:00–04:00) — the Python competence bar for ML work: data types, control flow, functions, and file handling, then straight into NumPy and pandas ([M7](2-statistics-and-data.md#module-7)). The *fluency illusion* warning is at 09:30.
-* **Video 3 — [*The Only 7 Books You Need to Become an AI Engineer*](https://www.youtube.com/watch?v=Pr9oRVtAqCM)** (01:21) — Python is "table stakes" for the AI Engineer role; *Automate the Boring Stuff* is named as the entry point (see the [Practitioner Shelf](../resources/books.md#practitioner-shelf)).
+Use [the canonical readiness pattern](../guides/readiness-checks.md#how-to-check): explanation, prediction, debugging and changed input. The legacy video opinions in [sources](../guides/sources.md#citation-key) are practitioner perspectives, not validated curriculum completion rules. The [current semester research](../audit/semester-research-2026-11-05.md) records the teaching-material and edition checks behind this sequence.
 
 <a id="m1-starter-project"></a>
-* **🌱 M1 starter project (Weeks 3–4) — your first original program**
+* **🌱 M1 starter project (semester Week 4) — your first original program**
   * **When:** Week 4 of the [first 30 days](../guides/first-30-days.md#week-4), after CS50P Lectures 0–3.
-  * **Deliverable:** pick **one** from the beginner rung of the [project ladder](#module-1). A **command-line calculator** that handles divide-by-zero and typos politely, *or* a **number-guessing game** with your own twist (limited guesses, a score or difficulty levels).
+  * **Deliverable:** use the [calculator starter, fixtures and rubric](../resources/beginner-projects/calculator/README.md#start), or an equivalent original design. A **command-line calculator** that handles divide-by-zero and typos politely, *or* a **number-guessing game** with your own twist (limited guesses, a score or difficulty levels).
   * **Done when:** (1) it runs and survives one bad input; (2) it is in your `python-journey` repository; (3) its README records a normal run, a bad-input run and one lesson learned. Sharing is optional. Automated tests arrive at Lecture 5: this starter is a progress milestone, not full M1 completion.
-  * *Why this exists:* a small, early win before the capstone. Dropout in programming MOOCs peaks in the first weeks ([Why this design](../guides/week-0.md#why-this-design)).
+  * *Why this exists:* a small, early win before the capstone. The [design rationale](../guides/week-0.md#why-this-design) separates teaching judgments from measured evidence.
 
 <a id="m1-capstone"></a>
 * **📦 Module Project (mandatory, end-of-M1 capstone) — Weather CLI**
-  * **When:** start around CS50P Lectures 5–6 (testing and files), after the starter project. It is a Phase 3 (Weeks 9–14) milestone.
-  * **Deliverable:** A Weather CLI with city input, an API adapter, expiry-aware disk caching and readable output. Separate parsing, fetching, caching and formatting; use a class only when it clarifies state. Pin the Python/dependency environment. Bundle sanitized JSON fixtures and `--offline` mode so the artifact is reviewable without an account or network.
-  * **Definition of done:** (1) mocked `pytest` tests for success, unknown city, timeout, malformed API data, cache expiry and an unwritable cache; (2) README with setup, usage and a fixture-output transcript; (3) useful errors and nonzero failure exit codes without credential leakage; (4) a short results memo with API provenance, limitations and diagnosed failures. When available, demonstrate the adapter against a free public weather service once; all automated assessment uses fixtures.
+  * **When:** start after CS50P Lectures 5–6 (testing and files), after the starter project. The [semester plan](../guides/first-semester.md#week-12) schedules focused implementation after the remaining language fundamentals; extend the milestone when needed.
+  * **Deliverable:** use the [Weather CLI starter, fixtures and staged rubric](../resources/beginner-projects/weather/README.md#start): city input, an API adapter, expiry-aware disk caching and readable output. Separate parsing, fetching, caching and formatting; use a class only when it clarifies state. Pin the Python/dependency environment. Bundle sanitized JSON fixtures and `--offline` mode so the artifact is reviewable without an account or network.
+  * **Definition of done:** (1) mocked `pytest` tests for success, unknown city, timeout, malformed API data, cache expiry and an unwritable cache; (2) README with setup, usage and a fixture-output transcript; (3) useful errors and nonzero failure exit codes without credential leakage; (4) a short results memo with API provenance, limitations and diagnosed failures. A live free-service demonstration is optional and recorded separately; all automated assessment uses fixtures. Finish the [M1 readiness demonstration](../guides/readiness-checks.md#m1-ready) before relying on M1 as a prerequisite.
   * **Stretch (adds one production element):** Wire a GitHub Actions workflow that runs `ruff` + `pytest` on every push, and make the badge green.
-  * *Archetype source: video 1 (13:40) — the "weather CLI with real API, caching and error handling" tier; Phase 3 milestone of the [four-phase roadmap](#module-1).*
+  * *Archetype source: video 1 (13:40) — the "weather CLI with real API, caching and error handling" tier; the [semester sequence](../guides/first-semester.md#week-12) now supplies the timing.*
 
 ---
 
 <a id="module-2"></a>
 ## Module 2: Single-Variable & Multivariable Calculus + Matrix Calculus & Convex Optimisation
+
+**Start and assess:** use [college equivalence](../guides/readiness-checks.md#college-equivalence) for calculus already studied, then fill the exact project gap. Apply the [four-part readiness pattern](../guides/readiness-checks.md#how-to-check) before relying on a derivative in probability or ML.
 
 **Recommended principal reading:** Stewart, Clegg and Watson, **Calculus: Early Transcendentals**, ninth edition (Cengage, paid): differentiation/integration and multivariable practice. OpenStax Calculus is the free text alternative; the lectures stay free.
 
@@ -546,6 +508,9 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 * **Strict Prerequisites:** High-school algebra and Module 1 (so you can verify integrals with SymPy). Module 0 proof literacy is recommended, not a gate. *Beginner note: Book of Proof ch. 1–4 is enough to start; the full Module 0 is optional.*
 
 > **Sequencing note:** The matrix-calculus list below includes an advanced preview of derivatives through SVD and eigendecomposition. That preview is not a prerequisite for starting M2; the computational treatment of those decompositions belongs to M3, which can be taken before, after, or alongside M2.
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * Limits and continuity (ε-δ definition), derivative as a limit, power/product/quotient/chain rules, trig derivatives, exponential and log derivatives, implicit differentiation, linear/quadratic approximations, related rates, Mean Value Theorem, L'Hôpital's rule, optimisation (first/second derivative tests), Newton's method.
@@ -562,6 +527,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 
     </details>
   * **[The Matrix Cookbook — Petersen & Pedersen, 2024 update]** + **[Parr & Howard "The Matrix Calculus You Need For Deep Learning" (arXiv:1802.01528, 2024 revision)]** as *daily-reference* lookup PDFs.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [MIT OCW 18.01 Single Variable Calculus](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/) · [MIT OCW 18.02SC Multivariable Calculus](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/). Use the public videos, notes and exercises from these OCW routes.
@@ -583,8 +550,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
       **Boyd & Vandenberghe** _Convex Optimization_ (Cambridge 2004; **6th printing 2023**, free PDF as above) — chapters 1–5 for the optional convex-optimization branch; revisit later chapters as needed.
 
       </details>
-    * 3Blue1Brown: [_Essence of Calculus_ playlist (16 videos, ≈ 3 hrs)](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) — required visual intuition.
-  * **Practical Implementation:** **SymPy 1.13+** for symbolic verification; **JAX 0.7+** `jax.grad` / `jax.jacrev` / `jax.jacfwd` / `jax.hessian` for automatic differentiation — learn these NOW as you'll need them for all of M15+. **`cvxpy` 1.5+** for convex optimisation modelling (DCP), **`autograd`** as a teaching aid for hand-coding back-prop. Optionally explore **`Zygote.jl`** in Julia for source-to-source AD intuition.
+    * 3Blue1Brown: [_Essence of Calculus_ playlist (16 videos, ≈ 3 hrs)](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) — optional visual reinforcement when a concept needs another explanation.
+  * **Practical Implementation:** **SymPy 1.13+** for symbolic verification; **JAX** for an optional automatic-differentiation comparison after the mathematical core; select a release compatible with your environment. **`cvxpy` 1.5+** for convex optimisation modelling (DCP), **`autograd`** as a teaching aid for hand-coding back-prop. Optionally explore **`Zygote.jl`** in Julia for source-to-source AD intuition.
 
 * **🌱 Beginners:** your college calculus course plus 3Blue1Brown's *Essence of Calculus* is enough to start the [module project](#module-2). The 16-week plan below is a later, full-depth option, not a prerequisite for anything in your first year.
 
@@ -623,6 +590,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 <a id="module-3"></a>
 ## Module 3: Linear Algebra — Computational, Geometric & Abstract
 
+**Start and assess:** check relevant [college linear-algebra evidence](../guides/readiness-checks.md#college-equivalence); preserve the computational project outcomes. Explain a matrix operation, trace a small example, diagnose a shape/stability error and test changed input.
+
 **Recommended principal reading:** Gilbert Strang, **Introduction to Linear Algebra**, sixth edition (Wellesley-Cambridge Press, paid): systems, subspaces, projections, eigenvalues and SVD. Match exercises to your edition rather than copying older OCW page numbers.
 
 **Core outcome:** solve linear systems, explain rank/projection, compute SVD/PCA and diagnose ill-conditioning. The three core experiments below establish application fluency; Axler proofs and sparse iterative solvers are optional depth.
@@ -631,7 +600,7 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 
 * **Strict Prerequisites:** High-school algebra for the mathematics; M1 Python skills before the computational project.
 * **Recommended Prerequisites:** Module 0b (proof literacy; *Book of Proof* ch. 1–4). Module 2 (calculus) is recommended concurrently or needed later when connecting matrix calculus to optimization ([Module 9](../curriculum/3-classical-ml.md#module-9) and [Module 15](../curriculum/5-deep-learning.md#module-15)), but is not a blocker for linear algebra fundamentals (vector spaces, linear independence, projections, and eigenvalues).
-* **Prior Competency:** Demonstrated high-school algebra or prior computational maths waives prerequisites.
+* **Prior Competency:** Demonstrate the specific prerequisite outcome using [college or prior-study evidence](../guides/readiness-checks.md#college-equivalence). Maths evidence does not waive the Python skills required for the computational project.
 
 * **🧭 Suggested Two-Pass Pedagogy:**
   * **Pass 1 — Computational (5 weeks):** Strang 18.06 + 3Blue1Brown — focus on *doing* row-reduction, computing eigenvalues, running SVD on toy matrices. Goal: numerical fluency.
@@ -641,6 +610,9 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 
     </details>
   * **Pass 3 — Applications (3 weeks):** Strang's *Linear Algebra and Learning from Data* + Fessler and Nadakuditi's *Linear Algebra for Data Science, Machine Learning, and Signal Processing* (Cambridge 2024) — focus on *the eight matrix factorisations of ML* (LU, QR, eigendecomposition, SVD, Cholesky, polar, NMF, randomised SVD).
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * Systems of linear equations, Gaussian elimination, LU factorisation, vector spaces, subspaces (column space, null space, row space, left null space — the "four fundamental subspaces"), rank-nullity theorem, linear independence, basis, dimension, orthogonality, Gram-Schmidt process, QR decomposition, projections, least squares (normal equations), determinants (cofactor expansion, properties), **eigenvalues and eigenvectors** (characteristic polynomial, diagonalisation), **Singular Value Decomposition (SVD)** (full and reduced forms, Eckart-Young theorem, pseudoinverse), positive-definite matrices (Cholesky), similar matrices, Jordan form, complex matrices (Hermitian, unitary), fast Fourier transform as a change of basis, linear transformations, applications to graphs (Laplacian), applications to differential equations (matrix exponential).
@@ -655,6 +627,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
   * Vector spaces as abstract objects, bases, inner products, orthonormal bases, projection onto subspace, **"model fitting as projection"** (critical insight for understanding linear regression), design of features, basis functions (polynomial, Fourier, radial).
   * Eigendecomposition as diagonalisation, SVD applications to dimensionality reduction and image compression.
   * Condition number κ(A) and numerical-stability intuition, **why floating-point matters** (catastrophic cancellation; why you never `(AᵀA)⁻¹Aᵀy` in practice — use `np.linalg.lstsq` or QR), **randomised SVD** (Halko-Martinsson-Tropp, 2011 — a method for low-rank approximation), iterative methods (power iteration, Lanczos, Arnoldi → ARPACK), **Krylov subspaces** as preview of conjugate-gradient.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [MIT 18.06 OCW SC version (Strang, 2011) — evergreen](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/) · [3Blue1Brown EoLA](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
@@ -711,15 +685,20 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 <a id="module-4"></a>
 ## Module 4: Discrete Math, Algorithms & Data Structures
 
+**Start and assess:** [M1 competence](../guides/readiness-checks.md#m1-ready) comes first. Use the [readiness pattern](../guides/readiness-checks.md#how-to-check) to trace a structure, identify an invariant failure and compare a changed input before adding advanced algorithms.
+
 **Recommended principal reading:** Cormen, Leiserson, Rivest and Stein, **Introduction to Algorithms**, fourth edition (MIT Press, paid): asymptotics, data structures, graph algorithms and dynamic programming. Use selected chapters with free MIT 6.006 lectures, not a cover-to-cover gate.
 
 **Core outcome:** choose lists/maps/heaps, analyze time and space, implement traversal and a small dynamic program, and formulate/test the meal planner. Streaming sketches and approximation theory are optional depth. Use MIT 6.006 as the free default; the other courses and books are alternatives.
 
-* **The Tutor's "Why":** Interviews for FAANG/quant/research roles test DSA rigorously; beyond that, you cannot design feature pipelines (hashing, bloom filters) or understand graph ML without it. **Cambridge ML & Bayesian Inference (2025-26) explicitly lists Discrete Mathematics as a prerequisite.**
+* **The Tutor's "Why":** Algorithms and data structures support correctness, resource-use reasoning and later systems work. Practise choosing a representation and explaining its trade-offs; review actual role requirements rather than treating every interview as the same test.
 
 * **Strict Prerequisites:** Module 1 (can write and debug Python).
 * **Recommended Prerequisites:** Module 0b proof literacy and Module 5 probability for the randomized
   and streaming extensions. Neither is a blocker for the core data-structures and algorithms path.
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):**
   * ArrayList implementation, singly/doubly linked lists, stacks, queues, circular buffers, amortised analysis of dynamic arrays.
@@ -732,6 +711,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
   * **[2026.2 addendum — Randomised & Streaming Algorithms]**: **Bloom filters** (false-positive rate calculus, counting bloom, cuckoo filter), **MinHash / locality-sensitive hashing (LSH)** (Jaccard similarity estimation for dedup and near-duplicate detection, used in LLM pre-training data pipelines), **HyperLogLog** (cardinality estimation), **Count-Min Sketch** (frequency estimation for streaming), **reservoir sampling** (uniform sampling from a stream of unknown length), **randomised quicksort**, **Karger's min-cut**. *Choose these extensions for data-system workloads where their trade-offs matter.*
   * **[Amortised Analysis]**: Aggregate / accounting / potential methods applied to dynamic arrays, splay trees, union-find with path-compression — the mental model behind *"why Python `list.append` is O(1) amortised"*.
   * **[Approximation Algorithms]**: PTAS / FPTAS definitions, vertex-cover 2-approximation, set-cover greedy log-factor, k-means approximation, **primal-dual schema** — relevant for NP-hard pipeline-scheduling problems (M8b).
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [MIT 6.006 Introduction to Algorithms OCW](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) — free lectures, notes and Python exercises.
@@ -752,6 +733,8 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 <a id="module-5"></a>
 ## Module 5: Probability Theory — The Language of Uncertainty
 
+**Start and assess:** use [college equivalence](../guides/readiness-checks.md#college-equivalence) for prior probability and calculus work. Apply the [readiness pattern](../guides/readiness-checks.md#how-to-check) to one conditional-probability calculation and one simulation before inference.
+
 **Recommended principal reading:** Blitzstein and Hwang, **Introduction to Probability**, second edition (author-provided free text; paid print): conditional probability, random variables, expectation and limits.
 
 **Core outcome:** conditional probability, expectation/variance, common distributions, LLN/CLT and Monte Carlo error. Complete the simulation project; measure theory and advanced concentration are optional research depth.
@@ -760,6 +743,9 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 
 * **Strict Prerequisites:** Module 1 for simulations and the single-variable calculus core of Module 2 for continuous distributions.
 * **Recommended Prerequisites:** Module 3 before covariance matrices and multivariate Gaussian extensions. Discrete probability can begin while calculus is in progress.
+
+<details>
+<summary>Topic map and later depth — use the core outcome above to choose scope</summary>
 
 * **Topic map (core plus optional depth; roadmap synthesis):** Stat 110 is the main course. Match topics to its actual lecture titles; the roadmap's additional topics and sequence are not a transcript of one offering.
   * Probability and Counting — sample spaces, events, naïve definition of probability, multiplication rule, permutations, combinations, binomial coefficient identities.
@@ -793,8 +779,10 @@ Use the three-check gate above for coding assistance. For M2–M5 mathematics an
 * **Extended topic menu:** concentration inequalities and measure theory below are optional research depth. Entropy, conditional expectation and Monte Carlo estimation are the application core.
   * **Concentration inequalities for ML — beyond Chebyshev:** **Hoeffding's inequality** (the workhorse of generalisation bounds), **McDiarmid's bounded-differences inequality**, **Bernstein's inequality**, **sub-Gaussian** and **sub-exponential** random variables, ψ-Orlicz norms, **Bernstein-Chernoff bound for VC-dimension** (the 1971 Vapnik-Chervonenkis result that started statistical learning theory). Study the inequalities needed by the particular generalization bound you choose.
   * **Information theory primer (the overlap with probability):** **entropy `H(X) = −Σ p log p`**, joint and conditional entropy, **mutual information `I(X;Y)`**, **KL divergence `D_KL(P‖Q)` and Jensen's inequality**, cross-entropy (a common classification and language-modeling objective), **f-divergences** (TV, JS, Hellinger), **Fano's inequality** (lower bounds for classification error). Use the matching sections in Cover and Thomas; the advanced inequalities are optional.
-  * **Measure-theoretic bridge — *taught minimally so you can read PML2 (Murphy 2023)*:** σ-algebras (Borel), measurable functions, Lebesgue integral *vs* Riemann (why we need it: integrating discontinuous limits), **Radon-Nikodym derivative `dν/dμ`** (the *correct* definition of "density"), almost-sure convergence vs convergence in probability vs in distribution vs in `L²`, pushforward measures, **dominated and monotone convergence theorems** (conditions that can justify exchanging limits and integrals). **Goal:** read Wasserman *All of Statistics* Ch 21 or Murphy PML2 Ch 1 without panic — *not* to do measure-theoretic exercises.
+  * **Measure-theoretic bridge — *taught minimally so you can read PML2 (Murphy 2023)*:** σ-algebras (Borel), measurable functions, Lebesgue integral *vs* Riemann (why we need it: integrating discontinuous limits), **Radon-Nikodym derivative `dν/dμ`** (the *correct* definition of "density"), almost-sure convergence vs convergence in probability vs in distribution vs in `L²`, pushforward measures, **dominated and monotone convergence theorems** (conditions that can justify exchanging limits and integrals). **Goal:** recognize measure-theoretic assumptions when an advanced reference uses them; these topics are not M5 completion gates. Select a dedicated probability/measure reference for this later study rather than assigning an unverified chapter mapping.
   * **Probability in code — *do these three concretely*:** (1) **inverse-CDF sampling** for a distribution with a tractable quantile function, hand-coded; (2) **rejection sampling** + **importance sampling** with diagnostics (effective sample size); (3) **Monte-Carlo integration** of a 5-D integral with confidence-interval analysis.
+
+</details>
 
 * **Courses and references:**
   * **Primary Course Link:** [Harvard Stat 110 lecture playlist](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo) and [author course materials](https://stat110.hsites.harvard.edu/) — free lectures, text and practice materials.

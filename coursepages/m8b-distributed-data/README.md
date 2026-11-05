@@ -1,4 +1,12 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 8b — Distributed Data & Streaming Systems
+
+**First task:** Run the SQLite replay fixture, predict the total after replay, and compare your prediction with the output.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Curriculum specification](../../curriculum/2-statistics-and-data.md#module-8b) · [Learning contract](../../curriculum/README.md#learning-contract)
 
@@ -10,6 +18,7 @@ Use the [DataTalks.Club Data Engineering Zoomcamp](https://github.com/DataTalksC
 
 **Recommended principal book:** Reis and Housley's *Fundamentals of Data Engineering* (paid), for lifecycle and architecture decisions. Kleppmann/Riccomini's *Designing Data-Intensive Applications* and Akidau, Chernyak and Lax's *Streaming Systems* add systems depth. Match chapters to your edition; see the [book shelf](../../resources/books.md). Lecture access remains free.
 
+<a id="start-lab"></a>
 ## Core lab: replayable local event pipeline
 
 Start with the standard-library backend; no installation is needed. The [lab README](../../resources/local-labs/README.md) also documents DuckDB installation and `--backend duckdb`:
@@ -40,10 +49,17 @@ Use the project's official local quickstart or Docker Compose example and pin im
 
 For streaming, distinguish event time from processing time and explain the watermark policy. Kafka transactions do not make arbitrary database/API side effects exactly-once; state source, processor and sink guarantees separately. Use idempotent keys/transactions and inject faults at the sink boundary.
 
+<a id="completion"></a>
 ## Done when
 
 Keep runnable assertions for schema rejection, duplicate conflicts, replay invariance and late data. Compare Spark/DuckDB results; include a failure/recovery transcript. Submit topology, resource budget, pinned environment, README and a memo explaining local-experiment limits. A private artifact is sufficient.
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites
 
 M1 and M8a. M4 helps with hashing/partitioning; async is useful for services but does not gate batch SQL/file pipelines.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

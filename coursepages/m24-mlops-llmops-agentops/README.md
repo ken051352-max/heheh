@@ -1,13 +1,23 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 24 — MLOps + LLMOps + AgentOps
+
+**First task:** Reproduce one evaluated project result and mark which production-bar item is missing first; work on that item.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Full module](../../curriculum/6-frontier-production.md#module-24) ·
 [Canonical Minimum Production Bar](../../curriculum/6-frontier-production.md#production-bar)
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites and default route
 
 Bring one completed, evaluated project. M22 is required for the AgentOps extension, and the
-relevant M23 threat/evaluation controls apply to AI applications. Classical models can complete
-M24 without LLM or agent modules.
+relevant M23 threat/evaluation controls apply to AI applications. Data pipelines and classical models can complete
+M24 without LLM or agent modules. For the Data Engineer route, carry the M8a/M8b project through the
+[pipeline operations contract](../../curriculum/6-frontier-production.md#data-pipeline-operations): data-quality/reconciliation gates, safe replay, completion/freshness budgets and tested recovery. Select transferable testing/deployment/monitoring material below and reuse M8b's pipeline resources; model training is not an added prerequisite.
 
 | Resource | Role and access |
 |---|---|
@@ -18,19 +28,22 @@ M24 without LLM or agent modules.
 | [OpenTelemetry GenAI](https://github.com/open-telemetry/semantic-conventions-genai) | Current source; Development status, version-sensitive conventions |
 | [MLflow](https://mlflow.org/) | Local experiment/artifact tracking option |
 
+<a id="start-lab"></a>
 ## 🏁 One production bar, one centerpiece
 
 The [12-row canonical bar](../../curriculum/6-frontier-production.md#production-bar) is the single
 completion checklist: package, tests, typed boundaries, structured logs, configuration, container,
-CI/eval gates, artifact lineage, reachable artifact, monitoring, rollback/runbook, and results memo.
+CI/eval gates, artifact lineage, runnable artifact, monitoring, rollback/runbook, and results memo.
 Meet it once, deeply, in M24. Earlier modules retain their smaller learning rubrics.
 
-A local Docker service with a documented smoke run is valid; public hosting, Kubernetes and paid
+A local Docker service or pipeline job with a documented smoke run is valid; public hosting, Kubernetes and paid
 cloud accounts are optional. Run metadata can begin as a versioned manifest or local MLflow store.
 Use one adequate tool for each need; installing every framework is not a learning outcome.
 
 <a id="evaluation-harness"></a>
 ## 📏 The four-part evaluation harness
+
+**Scope:** this task/trial harness covers model, retrieval and agent behavior. A data-only pipeline uses deterministic schema, reconciliation, bad-record and replay fixtures plus operational measurements from the pipeline contract; it does not need synthetic prompts, token counts or an LLM judge.
 
 Use the same harness across [retrieval](../m21-rag-vector-dbs/README.md#evaluation-harness),
 [agents](../m22-agentic-ai/README.md#labs), and [safety](../m23-ai-safety/README.md#evaluation-harness).
@@ -104,20 +117,27 @@ and budget exhaustion. The conventions have Development status and may change. K
 prompt/response content capture off unless the project has an explicit data policy. Metrics and
 redacted traces are enough to begin.
 
+<a id="completion"></a>
 ## 📦 Required project — operate and recover one system
 
 1. Select one evaluated project and meet all rows of the canonical production bar. Use a local
    package/container, validated configuration, test suite, artifact manifest, and automated CI.
-2. Define a measured latency/resource/quality budget on stated hardware, workload and concurrency.
-   Store the model/data/prompt/config identifiers needed to reproduce the baseline.
+2. Define a measured resource/quality budget on stated hardware and workload: service latency/concurrency
+   or pipeline completion/freshness under a declared schedule. Store input/output data, code/config and any model/prompt identifiers needed to reproduce the baseline.
 3. Introduce an observable failure: unavailable dependency, invalid payload, corrupted artifact,
    budget exhaustion or a controlled distribution change. Record the alert and investigation.
 4. Restore a previous known-good artifact/configuration using the documented rollback command.
+   For a pipeline, restore consistent data/checkpoint state or replay fixed inputs, verifying that outputs are neither duplicated nor partially published.
    Run the smoke/evaluation gates again and record the outcome. A rollback paragraph without an
    executed drill does not satisfy the systems artifact.
 5. Submit the architecture, runbook, clean-clone instructions, lineage, incident memo, and results.
 
-**Done:** one command reproduces the service and verification; every checklist row points to
+**Done:** one command reproduces the service or pipeline job and verification; every checklist row points to
 concrete evidence; quality and resource limits are declared; the rollback drill succeeds. Public
 hosting is optional. **Stretch:** one justified canary/shadow evaluation, distributed workload, or
 feature-store integration. Do not build classical, LLM and agent services solely to tick three boxes.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

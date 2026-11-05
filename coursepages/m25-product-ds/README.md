@@ -1,8 +1,17 @@
+[Home](../../README.md) · [Curriculum index](../../curriculum/README.md) · [Resume](../../guides/progress-tracker.md#resume)
+
 # Module 25 — Product DS, Business, Communication & Storytelling
+
+**First task:** Name the audience and decision, then hand-check the numerator and denominator of one metric on a tiny cohort.
+
+[Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
+
+This page supports the linked module; it is not an additional course to finish. Optional extensions come after the core artifact.
 
 [Full module](../../curriculum/6-frontier-production.md#module-25) ·
 [Early application product brief](../../curriculum/6-frontier-production.md#product-brief)
 
+<a id="entry-prerequisites"></a>
 ## Prerequisites and default route
 
 M6 + M7 for the full module; M6½ before causal-impact claims. Modeling experience is useful when
@@ -23,6 +32,7 @@ Books are chosen for quality. Free videos/papers and the local project provide a
 purchasing a book; a library subscription must not be assumed. Company interview formats vary, so
 the project demonstrates a decision-making skill rather than promising a universal interview loop.
 
+<a id="start-lab"></a>
 ## 📦 Required project — explain a metric change and recommend a decision
 
 Use one of your datasets or a labeled synthetic scenario, such as seven-day retention falling by
@@ -42,6 +52,7 @@ three percentage points. State the audience, decision owner and action available
 6. **Review:** obtain peer/mentor/stakeholder feedback when available, or run a documented rubric
    review. Record the revision and unresolved objection; never invent stakeholder endorsement.
 
+<a id="completion"></a>
 ## Completion rubric
 
 | Criterion | Pass evidence |
@@ -60,3 +71,8 @@ Private, selectively shared, and sanitized public artifacts are all acceptable.
 pitfalls; decision-theoretic threshold selection; a fairness or user-wellbeing tradeoff; or a
 stakeholder decision log after a real pilot. These extend the same artifact rather than creating
 three unrelated portfolio projects.
+
+
+---
+
+**After the core:** record the artifact, remaining gap and next task in the [tracker](../../guides/progress-tracker.md#resume), then return to your [chosen route](../../guides/practitioner-track.md#role-pathways). Revisit only the missing skill with the [readiness pattern](../../guides/readiness-checks.md#how-to-check).

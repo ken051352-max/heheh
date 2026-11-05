@@ -1,0 +1,47 @@
+{
+  "review_date": "2026-11-05",
+  "reviewer": "semester_readiness",
+  "scope": "Individual full text review of assigned existing guides and M0-M8b pages; new materials authored and reviewed. Relevant TOCs and teaching pages inspected live. No images or private configuration assigned.",
+  "files": [
+    {
+      "path": "curriculum/1-foundations.md",
+      "disposition": "improve",
+      "reason": "Reviewed all M0-M5 text, topic maps, code sketches, books, pacing, diagnostics and project specifications. Added local wayfinding and readiness links; replaced competing Python pacing/courses with the canonical semester; corrected lecture attribution and broad unsupported learning/job claims; preserved advanced maps behind disclosure and all explicit anchors. Historical diagnostic body preserved as non-operational history."
+    },
+    {
+      "path": "curriculum/2-statistics-and-data.md",
+      "disposition": "improve",
+      "reason": "Reviewed inference, causal, data, SQL and distributed-data sections individually. Added local contents, disclosure, M1 readiness and conditional SQL/data preview links. Retained inference/causal/distributed core; made full SQL project source/report flexible while preserving migrations, plan analysis and reconciliation requirements."
+    },
+    {
+      "path": "guides/week-0.md",
+      "disposition": "consolidate",
+      "reason": "Reviewed the former seven-day three-project Scrimba plan and rationale; replaced its required route with a small public CS50P orientation continuing the same lecture, preserved all explicit anchors and prior-work equivalence, reduced onboarding/account load and unsupported learning claims."
+    },
+    {
+      "path": "guides/first-30-days.md",
+      "disposition": "consolidate",
+      "reason": "Reviewed every prior weekly task, maths/API sketch and completion box. Kept week anchors as detailed opening instructions for the canonical semester, removed simultaneous mandatory exercise quotas and duplicate schedule, connected starter and readiness evidence, preserved optional maths concept examples and moved API work after libraries."
+    },
+    {
+      "path": "guides/first-semester.md",
+      "disposition": "improve",
+      "reason": "New canonical schedule with adjustable planning assumptions, one objective/resource/practice/artifact/check/next step per milestone, verified edition readings, two movable exam buffers, M1 evidence before conditional SQL preview, college equivalence and recovery."
+    },
+    {
+      "path": "guides/readiness-checks.md",
+      "disposition": "improve",
+      "reason": "New reusable explanation/prediction/debug/transfer pattern with concrete Python, file/testing, input-validation, object, SQL and data exercises; reviewer notes, misconceptions, targeted remediation, independent evidence policy and college equivalence."
+    },
+    {
+      "path": "audit/semester-research-2026-11-05.md",
+      "disposition": "improve",
+      "reason": "New dated decision/source record distinguishing retrieved teaching material, verified TOCs, researcher cross-checks, design assumptions, access limits and unperformed student trials."
+    },
+    {
+      "path": "audit/semester-review-2026-11-05.json",
+      "disposition": "improve",
+      "reason": "New assigned-file review disposition record, including new deliverables and retained historical material."
+    }
+  ]
+}
