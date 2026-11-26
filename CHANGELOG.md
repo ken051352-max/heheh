@@ -7,6 +7,14 @@
 
 Each pass records changes and the scope of verification. Current evidence lives in the [project integration and validation](audit/project-integration-2026-11-05.md) and [learning-experience research](audit/learning-experience-research-2026-11-05.md). Earlier entries and HTTP logs describe their historical state, not present access or requirements.
 
+### Curriculum and role review · 2026-11-26
+
+Added a runnable SQL retake, a software release route and a research route scoped to the chosen question. M4 now bridges the discrete maths its lectures assume. M21 starts with a measured offline retrieval comparison. The [review record](audit/curriculum-review-2026-11-26.md) includes employer requirements, access checks and local verification.
+
+### Optional roadmap tutor for Codex and OpenCode · 2026-11-05
+
+Added a roadmap-aware tutoring skill, OpenCode v2 primary agent and [learner guide](agent.md). Private progress records separate planned/actual time, assistance, evidence and next actions; bounded weekly plans and review prompts support recovery without creating another semester schedule. The installer preserves existing configuration and backs up changed tutor files on explicit updates. [Research and verification](audit/tutor-2026-11-05.md) distinguish inspected tutor designs, software tests, discovery checks and simulated teaching from real learner outcomes.
+
 ### Original-project integration and route corrections · 2026-11-05
 
 Applied the reviewed learning-experience work to the original project after comparing every tracked file and preserving private configuration. Fixed the Data Engineer route's M24/M26 service-only requirement: an operated data pipeline now demonstrates the same production bar through data-quality, replay, freshness and recovery evidence. Corrected Lion's attribution, clarified optional JavaScript visualization and protected the documented local-lab environment. All 182 code tests passed freshly in the project; [the integration record](audit/project-integration-2026-11-05.md) separates source access, original-project execution and rendering checks.

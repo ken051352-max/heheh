@@ -24,7 +24,7 @@ If you prefer book reinforcement, use *Python Crash Course*, third edition, chap
 <a id="week-0-plan"></a>
 ## The first small task
 
-1. Watch the opening lecture examples and pause to type them yourself.
+1. Watch until you can follow the first `print` and name examples, then pause. On a slow connection, use the [free Lecture 0 notes](https://cs50.harvard.edu/python/notes/0/) and stop after the greeting. Save functions for Week 1.
 2. Run `print("Hello, learner")`. Change the name, predict the output, then run it again.
 3. Give the name a variable: `name = "Asha"`, then `print("Hello,", name)`. Explain which text is fixed and which value can change.
 4. If comfortable, replace the assigned name with `input("Name: ")` and run it with two names. If not, keep the variable example and write the question you need answered.

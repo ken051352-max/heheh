@@ -11,7 +11,7 @@ This is the **single first-semester schedule**. [Week 0](week-0.md) and the [fir
 
 ## Workload and scope
 
-**Planning assumption:** a short orientation followed by 16 study weeks, usually 5–7 hours a week outside college. This is a budget to try, not a measured completion time. Reserve roughly half of each available week for doing and checking; adjust that split if the lecture, project or a prerequisite needs longer. Spread a lecture across sessions. Weeks 7 and 14 are buffers, movable to your exam dates. At 2–3 hours a week, spread each milestone over multiple calendar weeks. At a higher budget, deepen the current project before adding another subject.
+**Planning assumption:** a short orientation followed by 16 study weeks, usually 5–7 hours a week outside college. This is a budget to try, not a measured completion time. Reserve roughly half of each available week for doing and checking; adjust that split if the lecture, project or a prerequisite needs longer. Spread a lecture across sessions. Weeks 7 and 14 are buffers, movable to your exam dates. At 2–3 hours, use one calendar week for the lesson segment and one normal run, then another for a failure case, explanation and repair. For example, get the offline Weather fixture working before scheduling cache expiry. During exams, save the exact next command and pause. Resume by rerunning the last successful input. At a higher budget, deepen the current project before adding another subject.
 
 - **Do now:** one Python learning spine, small programs, tests, file handling, explanation and an offline Weather CLI. College maths and CS remain the main parallel courses; save relevant work as [equivalence evidence](readiness-checks.md#college-equivalence).
 - **Next:** after demonstrated [M1 competence](readiness-checks.md#m1-ready), a small SQL/data investigation. The final two weeks are movable introductory M8a work, **not M7 or M8a completion**. If M1 needs the whole semester, defer SQL.
@@ -181,7 +181,7 @@ Each section has one main objective. Keep only its task active; the next link te
 - **Learn:** [CS50 SQL Lecture 1, Relating](https://cs50.harvard.edu/sql/weeks/1/), especially keys, joins and grouping.
 - **Read if useful:** the SQL project's schema/data dictionary; defer detailed system design until [M8a](../curriculum/2-statistics-and-data.md#module-8a).
 - **Practise and save:** finish the [read-only query preview](../resources/beginner-projects/sql/README.md#query-preview): reconcile a join at the required grain, retain an entity with no matching rows and explain a bad join. Save your query, expected/actual totals and a short findings note. You are not completing the kit's ingestion, transaction or plan-analysis stages this week.
-- **Check:** finish the query-preview tasks in [SQL readiness](readiness-checks.md#sql-ready); use [Data readiness](readiness-checks.md#data-ready) before M7. Schema implementation, inserts/constraints, quarantine/replay, transaction rollback and plan analysis follow CS50 SQL Designing/Writing in later M8a work. A supplied schema and tiny fixture do not demonstrate full M8a migrations, windows or PostgreSQL measured plans.
+- **Check:** run your join on the second shop with `--case retake`, then finish the query-preview tasks in [SQL readiness](readiness-checks.md#sql-ready); use [Data readiness](readiness-checks.md#data-ready) before M7. Schema implementation, inserts/constraints, quarantine/replay, transaction rollback and plan analysis follow CS50 SQL Designing/Writing in later M8a work. A supplied schema and tiny fixture do not demonstrate full M8a migrations, windows or PostgreSQL measured plans.
 - **Next:** [semester exit](#semester-exit).
 
 <a id="semester-exit"></a>
@@ -189,7 +189,7 @@ Each section has one main objective. Keep only its task active; the next link te
 
 Record your M1 status, the exact scope of any SQL/data preview, an artifact you can explain, a gap and the next task in the [tracker](progress-tracker.md#full-tracker). Keep a maths/CS equivalence note for material your college already assessed. If SQL has not started, that is a pacing observation, not failure.
 
-Choose **one** next priority using the [India undergraduate path](india-undergraduate-path.md): M4 and college CS fundamentals, M7 data investigation, M8a relational systems, or a specific maths gap. Try a small role experiment later; do not enroll in all six [role pathways](practitioner-track.md#role-pathways). You can remain undecided while building shared foundations.
+Choose **one** next priority using the [India undergraduate path](india-undergraduate-path.md): M4 and college CS fundamentals, M7 data investigation, M8a relational systems, or a specific maths gap. Pick one [role experiment](india-undergraduate-path.md#role-experiments) when you want to compare directions. You can remain undecided while building shared foundations.
 
 <a id="recovery"></a>
 ## Missed a week or failed a check?

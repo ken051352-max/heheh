@@ -5,7 +5,7 @@
 
 This route is for a BTech CSE/AI student who has not chosen a job family and wants to work at a strong company in India or abroad. **Build the common foundation now; choose a provisional specialization after trying the work.** A degree label, a fashionable framework or finishing every module is not an employment guarantee.
 
-The [employer research](../audit/career-research-2026-11-05.md) inspected 12 postings and official student-program guides in November 2026. It informs the exercises below; it cannot predict vacancies, visa policy or the best-paid role in your graduation year. Lectures remain free, paid books are welcome, and buying a book or cloud subscription is not an entry requirement.
+The [26 November role sample](../audit/curriculum-review-2026-11-26.md#hiring) updates the [earlier employer research](../audit/career-research-2026-11-05.md) with role-specific requirements and a first-year eligibility check. It informs the exercises below; it cannot predict vacancies, visa policy or the best-paid role in your graduation year. Lectures remain free, paid books are welcome, and buying a book or cloud subscription is not an entry requirement.
 
 <a id="first-year-priorities"></a>
 ## What to prioritize this year
@@ -27,15 +27,15 @@ Protect college study and the eligibility it supports. Record actual campus/empl
 <a id="role-experiments"></a>
 ## Explore the work before choosing the title
 
-Spread these bounded experiments across the first two years as prerequisites become available. They are learning samples, not three simultaneous courses or proof of full module completion. Reuse a domain such as transport, campus operations or public energy data, with permission and sanitized fixtures where needed.
+Choose one experiment when its starting skill is in reach. Reuse an existing project and give it one study session for a first result. Carry unfinished work into a later session if you want to investigate it.
 
-| Experiment | When ready | Deliverable and what it reveals |
-|---|---|---|
-| Analysis and business decisions | After M1/M7; add M8a SQL when ready | Answer a question, reconcile spreadsheet/SQL totals, define a KPI and show a filtered chart plus decision memo. Did you enjoy investigating messy data and explaining a decision? |
-| Software and AI applications | Start with the M1 CLI; add M18-app only after its HTTP/validation/test prerequisites | Build a useful deterministic tool first. Later compare a small model on frozen examples, expose a simple interface and handle failures. Did you enjoy debugging, integration and user behavior? |
-| Statistical modeling | After the relevant M2/M3/M5 and M9/M10 foundations | Predict a defined outcome with a baseline, defensible split, train-only preprocessing and error analysis. Did you enjoy mathematical reasoning, evaluation and revising hypotheses? |
-
-If data pipelines are the engaging part, explore the [data-engineering route](practitioner-track.md#role-pathways). If reading/replicating papers is more engaging, explore the research route after the relevant theory. Software engineering is also a plausible first destination: use your college CS work and software projects alongside this roadmap instead of forcing an AI job title.
+- **Software engineering · after the M1 CLI.** Reproduce a reported failure with a new input. Save a failing test, a fix and a release note another person can follow. Try [software engineering](practitioner-track.md#route-software-engineer) if diagnosing the fault was the interesting part.
+- **Data analysis · after the SQL preview.** Reconcile the second shop's orders, then write two sentences for its coordinator about the population and the result. Try the [analyst route](practitioner-track.md#route-analyst) if explaining a trustworthy number held your attention.
+- **Data engineering · after M8a ingestion.** Replay a batch and change one row under an existing ID. Predict the effect on totals, then save the ledger checks. Try [data engineering](practitioner-track.md#route-data-engineer) if recovering consistent state was the interesting part.
+- **Data science · after M9.** Compare one held-out prediction with a simple baseline. Keep the split, one error slice and a decision on which model to use. Try [applied DS](practitioner-track.md#route-applied-ds) if you want to investigate why it failed.
+- **ML engineering · with an evaluated M9/M10 model.** Reload the saved model in a clean process and run the same cases. Change one input type and write a test for the resulting failure. Try [ML engineering](practitioner-track.md#route-ml-engineer) if reproducibility and serving appealed.
+- **AI applications · after M18-app.** Give a local adapter one valid fixture and one incomplete response. Save the user-visible outcome, failure trace and a decision about when to request review. Try [AI application engineering](practitioner-track.md#route-ai-application) if specifying behavior was satisfying.
+- **Research · after M5/M6.** Pick a simulation result from your statistics coursework, predict what happens under a changed sample size, and repeat across seeds. Save the procedure, discrepancy and an alternative explanation. Try [research foundations](practitioner-track.md#route-research) if the discrepancy makes you want a second experiment.
 
 After each experiment, record what you liked, what you could demonstrate, what feedback exposed, and what you would investigate next. By the end of the second year, choose **one provisional primary route** and a related alternative. Revisit the choice when new work or evidence changes it.
 
@@ -70,7 +70,7 @@ Compare the work, mentorship, engineering practice, growth, compensation relativ
 
 | Official source | Observed program scope | Action |
 |---|---|---|
-| [Microsoft Explore](https://careers.microsoft.com/v2/global/en/exploremicrosoft) | Dedicated page describes first-/second-year students; an 8-week India program and a 12-week US program | Monitor the India openings and their exact eligibility. The program page is not proof that applications are open today or that you are eligible for the US version |
+| [Microsoft Explore](https://careers.microsoft.com/v2/global/en/exploremicrosoft) | Eight weeks in India. The FAQ lists India for the second-year application. The first-year application lists the US, Canada and Mexico. | As a first-year student in India, revisit the India posting in your second year and verify the location, cohort and dates for that cycle |
 | [Amazon student internships](https://www.amazon.jobs/content/en/career-programs/university/internships-for-students) | Official student opportunity directory | Read each opening's degree stage, graduation window, location and dates rather than assuming one company-wide rule |
 | [Atlassian early careers](https://www.atlassian.com/company/careers/earlycareers) | Internships target penultimate-year students; graduate programs target final-year/recent graduates | Record current recruitment windows when your cohort is eligible; recheck future cycles |
 | College faculty, clubs and permitted community projects | Scope, supervision and availability depend on the specific opportunity | Agree a small deliverable, schedule, data rights and feedback process; retain evidence of your contribution |

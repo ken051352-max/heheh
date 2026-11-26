@@ -5,7 +5,7 @@
 
 Choose a provisional role when you have enough experience to make that choice, then follow its core sequence. The full curriculum remains available for deeper study. These are learning routes with reviewable outcomes, not guarantees about job titles, hiring, salary or time to employment.
 
-**Undecided undergraduate:** follow the [first-semester sequence](first-semester.md#semester-plan), beginning with M1, your college mathematics and CS coursework, then use a small M7/M8a project to explore data work after the prerequisites. The [India undergraduate path](india-undergraduate-path.md) and [yearly direction reviews](four-year-plan.md#yearly-review) help you choose and revise a specialization. The six routes below remain options; you do not need to complete all of them to keep exploring.
+**Undecided undergraduate:** follow the [first-semester sequence](first-semester.md#semester-plan), beginning with M1, your college mathematics and CS coursework, then use a small M7/M8a project to explore data work after the prerequisites. The [India undergraduate path](india-undergraduate-path.md) and [yearly direction reviews](four-year-plan.md#yearly-review) help you choose and revise a specialization. Pick one [role experiment](india-undergraduate-path.md#role-experiments) when you are ready.
 
 **Free lectures, books chosen on merit:** use the [default lectures and principal books](how-to-read-a-module.md#pick-one). Paid books are welcome; complete selected reading and exercises rather than collecting every recommended title.
 
@@ -32,17 +32,22 @@ Choose a provisional role when you have enough experience to make that choice, t
 <a id="route-ai-application"></a>
 ### AI Application Engineer
 
-[M1](../curriculum/1-foundations.md#module-1) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) → [M21](../curriculum/6-frontier-production.md#module-21) → [M22](../curriculum/6-frontier-production.md#module-22) → [M23](../curriculum/6-frontier-production.md#module-23) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
+[M1](../curriculum/1-foundations.md#module-1) → [M8a local SQL](../curriculum/2-statistics-and-data.md#local-relational-project) → [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) → [M21](../curriculum/6-frontier-production.md#module-21) → [M22](../curriculum/6-frontier-production.md#module-22) → [M23](../curriculum/6-frontier-production.md#module-23) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
 
 <a id="route-research"></a>
 ### Research Foundations
 
-[M0](../curriculum/1-foundations.md#module-0) → [M1](../curriculum/1-foundations.md#module-1) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M4](../curriculum/1-foundations.md#module-4) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M6½](../curriculum/2-statistics-and-data.md#module-6-half) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M9](../curriculum/3-classical-ml.md#module-9) → [M10](../curriculum/3-classical-ml.md#module-10) → [M11](../curriculum/3-classical-ml.md#module-11) → [M12](../curriculum/3-classical-ml.md#module-12) → [M13](../curriculum/4-probabilistic-ml.md#module-13) → [M14](../curriculum/4-probabilistic-ml.md#module-14) → [M15](../curriculum/5-deep-learning.md#module-15) → [M16](../curriculum/5-deep-learning.md#module-16) → [M17](../curriculum/5-deep-learning.md#module-17) → [M18](../curriculum/6-frontier-production.md#module-18) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 research](../curriculum/6-frontier-production.md#module-26)
+[M1](../curriculum/1-foundations.md#module-1) → [M2](../curriculum/1-foundations.md#module-2) → [M3](../curriculum/1-foundations.md#module-3) → [M5](../curriculum/1-foundations.md#module-5) → [M6](../curriculum/2-statistics-and-data.md#module-6) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 research](../curriculum/6-frontier-production.md#module-26)
 
 <a id="route-data-engineer"></a>
 ### Data Engineer
 
 [M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M7](../curriculum/2-statistics-and-data.md#module-7) → [M8a](../curriculum/2-statistics-and-data.md#module-8a) → [M8b](../curriculum/2-statistics-and-data.md#module-8b) → [M24](../curriculum/6-frontier-production.md#module-24) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief) → [M26 systems](../curriculum/6-frontier-production.md#module-26)
+
+<a id="route-software-engineer"></a>
+### Software Engineer
+
+[M1](../curriculum/1-foundations.md#module-1) → [M4](../curriculum/1-foundations.md#module-4) → [M8a local SQL](../curriculum/2-statistics-and-data.md#local-relational-project) → [M25 product brief](../curriculum/6-frontier-production.md#product-brief)
 
 <!-- END ROLE ROUTES -->
 
@@ -52,13 +57,17 @@ Choose a provisional role when you have enough experience to make that choice, t
 | Applied Data Scientist | Leakage-safe model comparison, subgroup errors and a defensible product decision | Bayesian modeling, causal specialization, forecasting or deep learning |
 | ML Engineer | Versioned model service, reproducible training, tests, evaluation gates, monitoring and rollback | Distributed data, transformers, serving optimization |
 | AI Application Engineer | One evaluated application, adding retrieval or tools only when they improve a measured baseline | Fine-tuning, advanced retrieval, multi-agent experiments |
+| Software Engineer | A local CLI or service backed by SQL, tests, a reviewed bug fix and a release another person can run | Deployment or networks when your project needs them |
 | Research Foundations | Reproduce a paper, test an assumption with an ablation, report uncertainty and limitations | The mathematical and domain prerequisites of the chosen research question |
 | Data Engineer | Reproducible ingestion/transformation pipeline with schema, replay and failure contracts | Distributed execution, lakehouse formats, streaming operations |
 
-The Analyst path includes the calculus/probability needed for the full inference module. If you only need descriptive analysis initially, complete M1 - M7 - M8a and the product brief first; record inference and causal work as pending. The research path is broad preparation; it does not require studying every frontier application before beginning a suitable paper reproduction.
+The Analyst path includes the calculus/probability needed for the full inference module. If you only need descriptive analysis initially, complete M1 - M7 - M8a and the product brief first; record inference and causal work as pending. On the research route, choose a question after M6. For example, reproduce an interval-coverage simulation and change the sample size. For a causal question add M6½, for a predictive baseline add M9, and for a transformer study follow M15 → M16 with their prerequisites. Add these before M26 when the method requires them. Keep evidence from the previous longer route and use it for the corresponding methods.
+
+The software route ends with a small release. Use M1 for the CLI, M4 for a defensible data-structure choice, M8a-local for persistence and M25-brief for acceptance criteria. Carry the college [OS, networks and design evidence](four-year-plan.md#cs-core) alongside it. Ask a classmate to reproduce one bug and try your fix, or run their reproduction steps in a fresh environment yourself. For a later systems capstone, operate a supported data pipeline or service through M24 first.
 
 ## What the subset labels mean
 
+- **M8a-local:** the [staged SQLite project](../curriculum/2-statistics-and-data.md#local-relational-project) through ingestion, replay/rollback and reconciled reporting. The read-only semester preview is a first step. Full M8a includes the local project outcomes.
 - **M18-app:** [Application foundations](../curriculum/6-frontier-production.md#application-foundations): prompting, typed outputs, model limitations, evaluation and bounded API handling after M1. It does not certify training, transformer derivations or the full M18 post-training project. Full M18 includes this competence.
 - **M25-brief:** [Product brief](../curriculum/6-frontier-production.md#product-brief): user need, acceptance criteria, costs, limitations and a decision memo. It makes no causal inference claim. Full M25 additionally requires statistical analysis and EDA.
 - **M26-research / systems / applied:** the three [capstone contracts](../curriculum/6-frontier-production.md#module-26). Complete one, with the prerequisites of the actual research method or system you use.
@@ -82,7 +91,7 @@ These are **full core-module completion** dependencies. Recommended modules guid
 | [M3](../curriculum/1-foundations.md#module-3) | [M1](../curriculum/1-foundations.md#module-1) | [M0](../curriculum/1-foundations.md#module-0), [M2](../curriculum/1-foundations.md#module-2) |
 | [M4](../curriculum/1-foundations.md#module-4) | [M1](../curriculum/1-foundations.md#module-1) | [M0](../curriculum/1-foundations.md#module-0), [M5](../curriculum/1-foundations.md#module-5) |
 | [M5](../curriculum/1-foundations.md#module-5) | [M1](../curriculum/1-foundations.md#module-1), [M2](../curriculum/1-foundations.md#module-2) | [M3](../curriculum/1-foundations.md#module-3) |
-| [M6](../curriculum/2-statistics-and-data.md#module-6) | [M5](../curriculum/1-foundations.md#module-5) | [M1](../curriculum/1-foundations.md#module-1) |
+| [M6](../curriculum/2-statistics-and-data.md#module-6) | [M5](../curriculum/1-foundations.md#module-5) | [M1](../curriculum/1-foundations.md#module-1), [M3](../curriculum/1-foundations.md#module-3) |
 | [M6½](../curriculum/2-statistics-and-data.md#module-6-half) | [M5](../curriculum/1-foundations.md#module-5), [M6](../curriculum/2-statistics-and-data.md#module-6) | [M7](../curriculum/2-statistics-and-data.md#module-7) |
 | [M7](../curriculum/2-statistics-and-data.md#module-7) | [M1](../curriculum/1-foundations.md#module-1) | None |
 | [M8a](../curriculum/2-statistics-and-data.md#module-8a) | [M1](../curriculum/1-foundations.md#module-1) | [M4](../curriculum/1-foundations.md#module-4) |
@@ -97,12 +106,13 @@ These are **full core-module completion** dependencies. Recommended modules guid
 | [M16](../curriculum/5-deep-learning.md#module-16) | [M15](../curriculum/5-deep-learning.md#module-15) | None |
 | [M17](../curriculum/5-deep-learning.md#module-17) | [M5](../curriculum/1-foundations.md#module-5), [M15](../curriculum/5-deep-learning.md#module-15) | None |
 | [M18](../curriculum/6-frontier-production.md#module-18) | [M16](../curriculum/5-deep-learning.md#module-16) | [M17](../curriculum/5-deep-learning.md#module-17) |
-| [M21](../curriculum/6-frontier-production.md#module-21) | [M1](../curriculum/1-foundations.md#module-1), [M8a](../curriculum/2-statistics-and-data.md#module-8a), [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) | [M11](../curriculum/3-classical-ml.md#module-11) |
+| [M21](../curriculum/6-frontier-production.md#module-21) | [M1](../curriculum/1-foundations.md#module-1), [M8a local SQL](../curriculum/2-statistics-and-data.md#local-relational-project), [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) | [M11](../curriculum/3-classical-ml.md#module-11) |
 | [M22](../curriculum/6-frontier-production.md#module-22) | [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations), [M21](../curriculum/6-frontier-production.md#module-21) | None |
 | [M23](../curriculum/6-frontier-production.md#module-23) | [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) | [M22](../curriculum/6-frontier-production.md#module-22) |
 | [M24](../curriculum/6-frontier-production.md#module-24) | An evaluated project (see module) | [M23](../curriculum/6-frontier-production.md#module-23) |
 | [M25](../curriculum/6-frontier-production.md#module-25) | [M6](../curriculum/2-statistics-and-data.md#module-6), [M7](../curriculum/2-statistics-and-data.md#module-7) | [M6½](../curriculum/2-statistics-and-data.md#module-6-half) |
 | [M26](../curriculum/6-frontier-production.md#module-26) | Depends on the chosen capstone route (see below) | None |
+| [M8a local SQL](../curriculum/2-statistics-and-data.md#local-relational-project) | [M1](../curriculum/1-foundations.md#module-1) | None |
 | [M18 application foundations](../curriculum/6-frontier-production.md#application-foundations) | [M1](../curriculum/1-foundations.md#module-1) | None |
 | [M25 product brief](../curriculum/6-frontier-production.md#product-brief) | [M1](../curriculum/1-foundations.md#module-1) | None |
 | [M26 research](../curriculum/6-frontier-production.md#module-26) | [M6](../curriculum/2-statistics-and-data.md#module-6), [M25 product brief](../curriculum/6-frontier-production.md#product-brief) | None |
@@ -128,9 +138,9 @@ For undergraduates, retain examples from college DSA, operating systems, network
 
 ## The application-engineering sequence
 
-1. **Python and data access:** M1 and M8a. Build a small tested CLI, then a simple local service. Async is introduced when concurrent I/O is needed.
-2. **Model boundary:** M18-app. Compare a deterministic baseline with one small model on a fixed task. Separate schema validity from useful answers.
-3. **Retrieval:** M21. Evaluate lexical, dense and hybrid retrieval before adding reranking. Keep a no-retrieval baseline.
+1. **Python and data access:** M1 and M8a-local. Build a small tested CLI, then a simple local service. Async is introduced when concurrent I/O is needed.
+2. **Model boundary:** M18-app. Test a deterministic baseline and a fixture-driven adapter on a fixed task. A local model comparison adds evidence about model quality. Separate schema validity from useful answers.
+3. **Retrieval:** M21. Compare no evidence and lexical search, then investigate one observed failure using the same labeled questions.
 4. **Tools:** M22. Start with bounded deterministic workflows; add a model-controlled loop only if its evaluated benefit justifies it.
 5. **Safety and operations:** introduce M23 tests as soon as the model sees untrusted data, then complete M24. Use M25-brief to communicate the result.
 6. **Capstone:** improve the same repository under the systems contract. Multi-agent or self-modifying behavior is optional research, not a completion gate.

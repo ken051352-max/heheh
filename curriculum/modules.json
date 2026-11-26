@@ -7,8 +7,8 @@
       "anchor": "module-0",
       "requires": [],
       "recommends": [],
-      "default_url": "https://www.khanacademy.org/math/precalculus",
-      "book": "Book of Proof - Hammack (free)",
+      "default_url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-2-induction/",
+      "book": "Book of Proof - Richard Hammack, 3rd edition (free)",
       "book_url": "https://richardhammack.github.io/BookOfProof/"
     },
     {
@@ -52,8 +52,8 @@
         "M2"
       ],
       "default_url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
-      "book": "Introduction to Linear Algebra - Strang (paid)",
-      "book_url": "https://math.mit.edu/~gs/linearalgebra/"
+      "book": "Introduction to Linear Algebra - Gilbert Strang, 6th edition (paid)",
+      "book_url": "https://math.mit.edu/~gs/linearalgebra/ila6/indexila6.html"
     },
     {
       "id": "M4",
@@ -68,7 +68,7 @@
         "M5"
       ],
       "default_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
-      "book": "Introduction to Algorithms - CLRS (paid)",
+      "book": "Introduction to Algorithms - Cormen, Leiserson, Rivest and Stein, 4th edition (paid)",
       "book_url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
     },
     {
@@ -96,7 +96,8 @@
         "M5"
       ],
       "recommends": [
-        "M1"
+        "M1",
+        "M3"
       ],
       "default_url": "https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/",
       "book": "All of Statistics - Wasserman (paid)",
@@ -331,13 +332,13 @@
       "anchor": "module-21",
       "requires": [
         "M1",
-        "M8a",
+        "M8a-local",
         "M18-app"
       ],
       "recommends": [
         "M11"
       ],
-      "default_url": "https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/",
+      "default_url": "https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/augmented-language-models/",
       "book": "AI Engineering - Huyen (paid)",
       "book_url": "https://huyenchip.com/books/"
     },
@@ -395,7 +396,7 @@
       "recommends": [
         "M6h"
       ],
-      "default_url": "https://www.storytellingwithdata.com/videos",
+      "default_url": "https://ocw.mit.edu/courses/14-310x-data-analysis-for-social-scientists-spring-2023/resources/14310x-lecture-16_mp4/",
       "book": "Trustworthy Online Controlled Experiments - Kohavi, Tang and Xu (paid)",
       "book_url": "https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59"
     },
@@ -412,6 +413,14 @@
     }
   ],
   "subsets": [
+    {
+      "id": "M8a-local",
+      "parent": "M8a",
+      "anchor": "local-relational-project",
+      "requires": [
+        "M1"
+      ]
+    },
     {
       "id": "M18-app",
       "parent": "M18",
@@ -519,7 +528,7 @@
       "title": "AI Application Engineer",
       "steps": [
         "M1",
-        "M8a",
+        "M8a-local",
         "M18-app",
         "M21",
         "M22",
@@ -533,26 +542,11 @@
       "id": "research",
       "title": "Research Foundations",
       "steps": [
-        "M0",
         "M1",
         "M2",
         "M3",
-        "M4",
         "M5",
         "M6",
-        "M6h",
-        "M7",
-        "M8a",
-        "M9",
-        "M10",
-        "M11",
-        "M12",
-        "M13",
-        "M14",
-        "M15",
-        "M16",
-        "M17",
-        "M18",
         "M25-brief",
         "M26-research"
       ]
@@ -569,6 +563,16 @@
         "M24",
         "M25-brief",
         "M26-systems"
+      ]
+    },
+    {
+      "id": "software-engineer",
+      "title": "Software Engineer",
+      "steps": [
+        "M1",
+        "M4",
+        "M8a-local",
+        "M25-brief"
       ]
     }
   ]

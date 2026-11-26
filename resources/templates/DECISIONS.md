@@ -54,8 +54,8 @@ A linear cost estimate is not a load test. Do not extrapolate a measured p95 wit
 
 | Level | Evidence to retain |
 |---|---|
-| L1 | Baseline/model choice, schema + semantic validation, retry/fallback policy, fixture vs real-model results. |
-| L2 | Corpus/data rights, retrieval/store choice, chunking and reranking comparisons, frozen evaluation cases. |
+| L1 | Baseline/model choice, schema + semantic validation, retry/fallback policy, fixture results and any measured model results. |
+| L2 | Corpus/data rights, retrieval/store choice, the measured indexing or ranking change, frozen evaluation cases. |
 | L3 | Tool allowlist, read/write permissions, trusted approval scope, idempotency/replay and step/deadline limits. |
 | L4 — optional | Whether multiple agents outperform the single-workflow baseline; topology, context isolation and failure handling. |
 | L5 — optional | Objective validity, reward gaming regressions, bounded proposed changes, review and rollback. |

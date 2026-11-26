@@ -2,7 +2,7 @@
 
 # Module 21 — RAG, Vector DBs & Retrieval Systems
 
-**First task:** Choose a handful of permitted documents and label five answerable/unanswerable questions; inspect one no-retrieval response before choosing infrastructure.
+**First task:** run `python resources/local-labs/retrieval.py` from the repository root. Find a question where adding the passage changes the first result and a paraphrase that both searches miss.
 
 [Check prerequisites](#entry-prerequisites) · [Start the lab](#start-lab) · [Completion evidence](#completion)
 
@@ -19,7 +19,7 @@ are context rather than universal adoption statistics.
 <a id="entry-prerequisites"></a>
 ## Prerequisites and default route
 
-M1 + M8a + [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
+M1 + [M8a-local](../../curriculum/2-statistics-and-data.md#local-relational-project) + [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
 (full M18 also covers it). M11 is recommended for vector geometry; study cosine similarity before
 implementing dense retrieval.
 
@@ -29,18 +29,19 @@ implementing dense retrieval.
 | [Pinecone Learn](https://www.pinecone.io/learn/) | Free reference explanations; using Pinecone's service is unnecessary |
 | [LlamaIndex docs](https://developers.llamaindex.ai/python/framework/) | Implementation companion when a framework becomes useful |
 | [AI Engineering](https://huyenchip.com/books/) — Chip Huyen | Recommended main text, retrieval and evaluation chapters; paid book |
-| [BGE model card](https://huggingface.co/BAAI/bge-small-en-v1.5) | CPU embedding baseline; read preprocessing and license |
-| [pgvector](https://github.com/pgvector/pgvector) / [LanceDB](https://lancedb.com/) | Local storage choices; choose one |
+| [BGE model card](https://huggingface.co/BAAI/bge-small-en-v1.5) | Optional dense-search experiment on CPU. Check preprocessing and license, then compare against your lexical results. |
+| [pgvector](https://github.com/pgvector/pgvector) / [LanceDB](https://lancedb.com/) | Optional local storage for a dense-search extension when you need to persist and query embeddings. |
 | [ColBERT](https://github.com/stanford-futuredata/ColBERT) / [ColPali](https://github.com/illuin-tech/colpali) | Depth: text late interaction / visual document retrieval |
 | [Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval) | Source-specific experiment to reproduce, not a universal SOTA claim |
 
-Start with 10–30 small, licensed text/Markdown documents and stable IDs. PDF parsing is a later
-extension if the task needs it. Local BM25, BGE-small CPU embeddings, exact search or LanceDB, and a
-small BGE cross-encoder provide the baseline. PostgreSQL/pgvector is the SQL alternative. No cloud
-account is required. Cache downloaded model weights for offline runs and record hardware/runtime.
+For your own project, choose 10–30 short documents you wrote or may reuse and give each a stable ID. Plain text and the Python standard library suffice. Save the source and permission with each document. A database and model weights can wait until you have a question that needs them.
 
 <a id="start-lab"></a>
-## Before building: choose the failure to address
+## Compare two searches before choosing tools
+
+The [worked lab](../../resources/local-labs/retrieval.py) uses four synthetic passages. Read the six queries first, predict the best permitted evidence or an abstention, then run it. It counts shared terms and resolves ties by document ID. Check hits among answerable questions and correct abstentions among unanswerable ones. Include the denominators. An empty ranking on an answerable question is a miss.
+
+For an independent check, write a new public document and two new questions, including a paraphrase without shared words. Freeze their labels, run the old search, then change one indexing choice. Keep the failing row even when your change helps the average. Record your hardware and timing when comparing implementations. The supplied cases are practice before the held-out project below.
 
 | Evidence from your baseline | Candidate intervention |
 |---|---|
@@ -83,23 +84,18 @@ system identity. A small golden set supports regression work, not a population r
 
 1. **Ingest:** preserve source/license, document ID/version, page/section, and access metadata.
    Test empty input, duplicates, malformed documents, and re-indexing after an update.
-2. **Compare:** run no retrieval, BM25, dense, hybrid RRF, and hybrid plus reranker over the same
-   corpus and eval questions. Freeze candidate count, k, model, prompt, and decoding settings when
-   comparing retrieval changes. Inspect exact search before claiming ANN improvements.
+2. **Compare:** start with no evidence and lexical retrieval. Test one change such as indexing the passage alongside the title, changing chunk boundaries or using BM25. Keep the corpus version, labels and k fixed. Return the best permitted extract with its source ID, or abstain at a declared threshold.
 3. **Authorize:** apply access controls before candidates reach reranking, generation, or caches.
    Test that an unauthorized document is absent at every stage and in the final response.
-4. **Evaluate:** score retrieval deterministically and answer quality from real model outputs.
-   Repeat stochastic generation (start with five runs if feasible), report counts and variability.
-   Scripted/mock responses validate integration only; they do not demonstrate RAG answer quality.
+4. **Evaluate:** inspect whether the returned extract actually supports an answer, and count unsupported results and false abstentions. Save examples of both. If you add generation, score actual outputs separately. One optional experiment holds the retrieved documents fixed and moves the relevant passage from first to middle to last. Keep the question and decoding settings fixed. Record results for your model. [Liu et al., TACL 2024](https://aclanthology.org/2024.tacl-1.9/)
 5. **Decide:** write a memo recommending the simplest configuration that meets the declared
    quality/resource budget, with concrete failure examples and reasons it might change.
 
 **Done when:** a clean-clone command rebuilds the index and metrics from versioned inputs; tests pass;
-the README contains the comparison table and limitations; the memo interprets the results. A result
-where hybrid or reranking fails to improve is acceptable. Keep the repository private or share it
+the README contains the comparison table and limitations; the memo interprets the results. A change that fails to improve retrieval can still support a decision. Keep the repository private or share it
 selectively if the corpus cannot be published; include a sanitized reproducible fixture.
 
-**Optional depth:** add exactly one of contextual retrieval, query rewriting, GraphRAG,
+**Optional depth:** try dense search, hybrid fusion, a reranker, contextual retrieval, query rewriting, GraphRAG,
 ColBERT/ColPali, multilingual retrieval, or ANN scaling. Compare against the core baseline. Hosted
 Cohere reranking is an optional paid comparison. A GPU or a paid judge must not become a core gate.
 

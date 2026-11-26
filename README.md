@@ -42,8 +42,7 @@ Stay **undecided** while you build Python and college CS/mathematics. After the 
 - [ML Engineer](guides/practitioner-track.md#route-ml-engineer): training, serving and model operations.
 - [AI Application Engineer](guides/practitioner-track.md#route-ai-application): evaluated products using existing models.
 - [Research Foundations](guides/practitioner-track.md#route-research): mathematical depth and paper reproduction.
-
-Software engineering remains a valid destination: retain the [college CS foundation](guides/four-year-plan.md#cs-core) and use your programming projects. Model infrastructure is later depth within the ML/research routes. These are learning choices, not employment guarantees.
+- [Software Engineer](guides/practitioner-track.md#route-software-engineer) for building and maintaining a tested program alongside the [college CS foundation](guides/four-year-plan.md#cs-core).
 
 <a id="the-curriculum-itself"></a>
 ## Curriculum at a glance
@@ -80,7 +79,7 @@ The illustration uses abbreviated ranges; M8 splits into M8a/M8b, and M19/M20 ar
 ## Useful links
 
 - **Beginner practice:** [Calculator, offline Weather CLI and SQL investigation](resources/beginner-projects/README.md) · [Readiness and recovery](guides/readiness-checks.md#how-to-check) · [Six-week study pilot](guides/study-pilot.md#start).
-- **Study help:** [Read a module](guides/how-to-read-a-module.md#reading-order) · [Choose a resource](guides/how-to-read-a-module.md#pick-one) · [Optional guided companions](guides/companion-curricula.md) · [Get unstuck](guides/how-to-read-a-module.md#common-ways-people-get-stuck).
+- **Study help:** [Your AI tutor: learn, plan and resume](agent.md) · [Read a module](guides/how-to-read-a-module.md#reading-order) · [Choose a resource](guides/how-to-read-a-module.md#pick-one) · [Optional guided companions](guides/companion-curricula.md) · [Get unstuck](guides/how-to-read-a-module.md#common-ways-people-get-stuck).
 - **Building AI systems:** [Portfolio Spine: one system, five levels](guides/portfolio-spine.md#portfolio-spine) · [`DECISIONS.md` template](resources/templates/DECISIONS.md) · [NumPy From Scratch harness](resources/numpy-from-scratch/README.md#numpy-from-scratch) · [Agent labs (M22)](coursepages/m22-agentic-ai/README.md#labs) · [Evaluation harness (M24)](coursepages/m24-mlops-llmops-agentops/README.md#evaluation-harness).
 - **References, when needed:** [Books](resources/books.md) · [Toolchain](resources/toolchain.md) · [Citation key](guides/sources.md#citation-key) · [Career planning](guides/career-operations.md). Supporting course pages are linked beside their modules in the [index](curriculum/README.md#all-modules).
 - **Career evidence:** [India undergraduate and international options](guides/india-undergraduate-path.md) · [Employer research and eligibility limits](audit/career-research-2026-11-05.md) · [Opportunity log template](resources/templates/OPPORTUNITIES.md).

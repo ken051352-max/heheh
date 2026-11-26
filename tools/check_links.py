@@ -35,7 +35,7 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 EXCLUDED_DIRS = {".git", ".venv", "venv", "node_modules", ".pytest_cache",
-                 "__pycache__", ".research"}
+                 "__pycache__", ".research", "study-private"}
 AUTOLINK = re.compile(r"<(https?://[^>\s]+)>")
 HEADING = re.compile(r"^ {0,3}#{1,6}(?:[ \t]+(.*)|[ \t]*)$")
 FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")

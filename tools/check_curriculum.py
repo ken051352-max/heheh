@@ -21,9 +21,10 @@ else:
 ROOT = Path(__file__).resolve().parents[1]
 MODULE_IDS = ({f"M{i}" for i in range(19)} - {"M8"}) | {
     "M6h", "M8a", "M8b", *(f"M{i}" for i in range(21, 27))}
-SUBSET_IDS = {"M18-app", "M25-brief", "M26-research", "M26-systems", "M26-applied"}
-ROUTE_IDS = {"analyst", "applied-ds", "ml-engineer", "ai-application", "research", "data-engineer"}
-SUBSET_LABELS = {"M18-app": "M18 application foundations", "M25-brief": "M25 product brief",
+SUBSET_IDS = {"M8a-local", "M18-app", "M25-brief", "M26-research", "M26-systems", "M26-applied"}
+ROUTE_IDS = {"analyst", "applied-ds", "ml-engineer", "ai-application", "research",
+             "data-engineer", "software-engineer"}
+SUBSET_LABELS = {"M8a-local": "M8a local SQL", "M18-app": "M18 application foundations", "M25-brief": "M25 product brief",
                  "M26-research": "M26 research", "M26-systems": "M26 systems",
                  "M26-applied": "M26 applied"}
 
@@ -255,7 +256,8 @@ def main(argv=None):
     if errors:
         print(f"Curriculum integrity: {len(errors)} failure(s)")
         return 1
-    print("Curriculum integrity: 27 modules, 5 subsets, 6 ordered routes; targets and generated tables valid")
+    print(f"Curriculum integrity: {len(data['modules'])} modules, {len(data['subsets'])} subsets, "
+          f"{len(data['routes'])} ordered routes; targets and generated tables valid")
     return 0
 
 

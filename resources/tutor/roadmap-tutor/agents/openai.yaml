@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roadmap Tutor"
+  short_description: "Learn, plan study time and resume private progress"
+  default_prompt: "Use $roadmap-tutor to help me resume my roadmap, choose one task for today's available time and save my next step."

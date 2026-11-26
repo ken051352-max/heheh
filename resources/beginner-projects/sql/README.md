@@ -16,9 +16,15 @@ Read the customer/order keys in the [schema](schema.sql), then run the supplied 
 python resources/beginner-projects/sql/preview.py
 ```
 
-It prints three clean synthetic orders. Edit [`preview.sql`](preview.sql), keeping one query at a time. Week 15: filter customer A's orders, predict their count/total and compare with output. Week 16: join customers to orders and report order counts/totals for **every customer**, including C with no orders. Use `COUNT(order_id)` rather than counting the outer row, and explain your handling of absent totals. Save your query, a hand calculation, output and a short memo. Add another query or changed condition you can explain independently.
+It prints three clean synthetic orders. Edit [`preview.sql`](preview.sql), keeping one query at a time. Week 15: filter customer A's orders, predict their count/total and compare with output. Week 16: join customers to orders and report order counts/totals for **every customer**, including C with no orders. Use `COUNT(order_id)` rather than counting the outer row, and explain your handling of absent totals. Save your query, a hand calculation, output and a short memo.
 
-The [workspace](preview.py) loads a documented, curated clean subset of the fixtures into memory. This is supplied setup, not evidence you implemented data cleaning. SQLite's query-only setting prevents accidental writes; this local learning aid is not a security sandbox for hostile SQL. No database or network service is needed.
+For your retake, read the [second shop's rows](fixtures/retake.sql). Two customers share a name and two orders have the same amount. Predict one row per customer, then run your saved join on those rows:
+
+```text
+python resources/beginner-projects/sql/preview.py --case retake
+```
+
+The runner reads the same `preview.sql` in both cases. You can also pass the path to your own query file. If a customer disappears, draw the join for that ID. If equal amounts disappear, check which entity you counted. Rerun both cases after a repair. The [workspace](preview.py) supplies the data in memory and enables SQLite's query-only setting. It needs no service or setup beyond the kit's Python interpreter.
 
 **Preview completion:** explain keys, reproduce the filtered result, preserve C in the join and reconcile the 2,500-cent order total without duplicate counting. The [SQL readiness check](../../../guides/readiness-checks.md#sql-ready) supplies a different example. Observe supplied constraints when useful; implementing ingestion, payment reconciliation, transactions and index work below can wait until M8a. Record this as **query/join preview complete, M8a partial**.
 
@@ -69,7 +75,7 @@ Apply the [shared rubric](../README.md#one-shared-submission-and-assessment-patt
 
 **Recovery:** draw one order joined to two payment rows, write each repeated value, then sum at each grain separately. If ingestion is confusing, test one valid row, one duplicate and one rejected row before returning to the complete fixture. If totals differ, inspect row counts after every join rather than changing the expected total.
 
-**Next:** record this as **partial M8a** in the [tracker](../../../guides/progress-tracker.md#full-tracker), then use the [semester review](../../../guides/first-semester.md#semester-exit) to choose the next task. Continue the [full SQL module](../../../curriculum/2-statistics-and-data.md#module-8a) when scheduled; M4 is useful for index internals, not a gate to this investigation.
+**Next:** after the read-only preview, record partial M8a and use the [semester review](../../../guides/first-semester.md#semester-exit). Once your own four-stage implementation passes the assessment, record [M8a-local](../../../curriculum/2-statistics-and-data.md#local-relational-project) in the [tracker](../../../guides/progress-tracker.md#full-tracker). Continue the [full SQL module](../../../curriculum/2-statistics-and-data.md#module-8a) when scheduled; M4 is useful for index internals, not a gate to this investigation.
 
 <details>
 <summary>Reviewer material and implementation references</summary>

@@ -111,7 +111,7 @@ class InternalValidation(unittest.TestCase):
 
     def test_venv_and_cache_markdown_are_excluded_on_all_platforms(self):
         self.write("README.md", "# Valid\n")
-        for directory in ("node_modules", ".venv", ".pytest_cache", ".git"):
+        for directory in ("node_modules", ".venv", ".pytest_cache", ".git", "study-private"):
             self.write(directory + "/README.md", "[bad](missing.md)\n")
         self.write("custom-python-env/pyvenv.cfg", "home = /some/python\n")
         self.write("custom-python-env/README.md", "[bad](missing.md)\n")
