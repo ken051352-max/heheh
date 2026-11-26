@@ -37,5 +37,5 @@ passing this lab is not an erasure-compliance guarantee.
 
 For the MCP exercise, use the official SDK, pin the protocol revision, and test
 the real discovery/call wire behavior separately. This harness does not establish
-MCP conformance. For the model exercise, run a real local model against frozen
+MCP conformance. For an optional model comparison, run a real local model against frozen
 tasks, compare with deterministic routing, and report failures as well as gains.

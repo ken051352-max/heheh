@@ -23,7 +23,7 @@
 
 * **The Tutor's "Why":** Inference turns sample evidence into estimates and decisions with stated uncertainty. Learn when an estimator, interval or test answers the actual question and when its assumptions fail.
 
-* **Strict Prerequisites:** Module 5 core (conditional probability, expectation/variance, sampling and CLT). MGFs and asymptotic proofs are optional mathematical depth.
+* **Strict Prerequisites:** Module 5 core (conditional probability, expectation/variance, sampling and CLT). MGFs and asymptotic proofs are optional mathematical depth. MIT's full 18.650 lectures also assume matrices, vectors and eigenvalues. For a scalar interval or permutation test, start with samples and resampling. Before a matrix-based derivation, explain a two-variable covariance matrix using college linear algebra or the M3 subspaces/eigenvalues lessons. [MIT syllabus](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/pages/syllabus/)
 
 <details>
 <summary>Topic map and later depth — use the core outcome above to choose scope</summary>
@@ -140,6 +140,7 @@
 </details>
 
 * **Courses and references:**
+  * **First selection exercise:** after the Data School filtering lesson, construct `df = pd.DataFrame({"amount": [2, 5, 2]}, index=[10, 20, 30])` with pandas imported as `pd`. Try `df.loc[df["amount"] > 2, "amount"]`, `df.loc[20, "amount"]` and `df.iloc[1, 0]`. Predict which expression still identifies the same record after reordering the frame with `df = df.loc[[20, 10, 30]]`. Record each selected label and value. The older recording mentions the retired `.ix` accessor. Use `.loc` for labels and `.iloc` for positions. [Current pandas indexing guide](https://pandas.pydata.org/docs/user_guide/indexing.html)
   * **Primary Course Link:** [Data School's free pandas video course](https://www.dataschool.io/easier-data-analysis-with-pandas/) — public videos, notebooks and datasets; also listed in the [pandas tutorial index](https://pandas.pydata.org/docs/getting_started/tutorials.html). Pair it with McKinney's book and current pandas docs for API changes. [Harvard CS109A 2021](https://harvard-iacs.github.io/2021-CS109A/pages/schedule.html) supplies archived notebooks/slides; public recordings are not assumed.
   * **Reading shelf (principal book above; alternatives and depth):**
     * _Python for Data Analysis_ (**3rd Edition, 2022**) — Wes McKinney (pandas creator) — chapters 5–10.
@@ -179,6 +180,11 @@ This exercise responds to observed analyst tasks in the [dated employer sample](
 **Recommended principal reading:** Silberschatz, Korth and Sudarshan, **Database System Concepts** (paid), for relational systems; Kimball and Ross, **The Data Warehouse Toolkit**, third edition (paid), for optional dimensional-model depth. CS50 SQL lectures remain the free default.
 
 **Core outcome:** design keys/constraints, query joins/windows, migrate a schema, validate data and explain a measured execution plan. Start after M1; index internals do not gate SQL.
+
+<a id="local-relational-project"></a>
+### Local relational project · M8a-local
+
+After M1, work through the [four SQLite stages](../resources/beginner-projects/sql/README.md#stages). On synthetic orders, demonstrate keys and constraints, parameterized ingestion, duplicate replay, transaction rollback and a reconciled join with a no-order customer. Explain a local query plan and reproduce one changed case. The AI application and software routes can carry this artifact forward. The semester's read-only preview starts this work. Record the subset when you can demonstrate the full staged investigation. Completing full M8a also supplies this competence. The warehouse, windows and measured PostgreSQL plans remain in full M8a.
 
 **First small step:** after [M1 evidence](../guides/readiness-checks.md#m1-ready), use the [local SQL investigation](../resources/beginner-projects/sql/README.md#start) and [SQL readiness check](../guides/readiness-checks.md#sql-ready). The [semester plan](../guides/first-semester.md#week-15) makes this a conditional two-week preview. SQLite practice does not complete the PostgreSQL migrations, windows and measured-plan requirements below.
 

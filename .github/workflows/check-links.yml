@@ -10,6 +10,7 @@ on:
       - "resources/local-labs/**"
       - "resources/agent-lab/**"
       - "resources/beginner-projects/**"
+      - "resources/tutor/**"
       - ".github/workflows/check-links.yml"
   pull_request:
     paths:
@@ -20,6 +21,7 @@ on:
       - "resources/local-labs/**"
       - "resources/agent-lab/**"
       - "resources/beginner-projects/**"
+      - "resources/tutor/**"
       - ".github/workflows/check-links.yml"
   schedule:
     - cron: "0 6 1 * *"   # monthly external-link freshness report
@@ -37,7 +39,7 @@ jobs:
         run: python tools/check_links.py
       - name: Validate curriculum prerequisites and generated guide tables (blocking)
         run: python tools/check_curriculum.py --check
-      - name: Test curriculum integrity, link parsing and HTTP classification offline
+      - name: Test curriculum integrity, link parsing, tutor persistence and installation offline
         run: python -m unittest discover -s tools/tests -v
       - name: Test local agent contracts without a model or paid service
         run: python -m unittest discover -s resources/agent-lab/tests -v

@@ -75,8 +75,8 @@ class CurriculumIntegrity(unittest.TestCase):
     def test_route_prerequisites_must_precede_the_dependent_step(self):
         steps = self.routes["ai-application"]["steps"]
         steps[0], steps[1] = steps[1], steps[0]
-        self.assert_error("route ai-application: M8a requires earlier M1")
-        self.assert_error("route ai-application: M21 requires earlier M8a")
+        self.assert_error("route ai-application: M8a-local requires earlier M1")
+        self.assert_error("route ai-application: M21 requires earlier M8a-local")
 
     def test_missing_transitive_prerequisite_invalidates_later_steps(self):
         self.routes["analyst"]["steps"].remove("M2")
@@ -84,10 +84,16 @@ class CurriculumIntegrity(unittest.TestCase):
         self.assert_error("route analyst: M6 requires earlier M5")
 
     def test_full_parent_supplies_application_and_brief_competence(self):
-        steps = self.routes["research"]["steps"]
-        steps.insert(steps.index("M18") + 1, "M21")
-        steps[steps.index("M25-brief")] = "M25"
+        self.routes["research"]["steps"] = [
+            "M1", "M2", "M3", "M5", "M6", "M7", "M8a", "M9", "M10",
+            "M15", "M16", "M18", "M21", "M25", "M26-research",
+        ]
         self.assertEqual(self.errors(), [])
+
+    def test_local_sql_does_not_supply_warehouse_prerequisite(self):
+        steps = self.routes["data-engineer"]["steps"]
+        steps[steps.index("M8a")] = "M8a-local"
+        self.assert_error("route data-engineer: M8b requires earlier M8a")
 
     def test_application_subset_does_not_supply_full_parent_competence(self):
         self.modules["M21"]["requires"] = ["M18"]

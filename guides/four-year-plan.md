@@ -66,7 +66,7 @@ Use these checkpoints at the end of each academic year, adjusting for your degre
 
 | Checkpoint | Evidence and next decision |
 |---|---|
-| Year 1: build a base and explore | Review your programming project and college mathematics. Choose one small next project that helps distinguish an interest in software, data analysis or AI applications; do not start all six routes. |
+| Year 1: build a base and explore | Review your programming project and college mathematics. Choose one small next project that helps distinguish an interest in software, data analysis or AI applications. Use its outcome at the next review. |
 | Year 2: choose a provisional direction | Compare the work you enjoyed and could explain independently. Pick one primary route for the next term, retaining room for one adjacent exploration and unfinished CS fundamentals. |
 | Year 3: test the direction against practice | Use project/internship feedback and a dated sample of relevant entry-level requirements. Keep, refine or change the route; fill demonstrated gaps before adding another framework. |
 | Year 4: focus the transition | Review the capstone, degree progress and actual application requirements. Choose the next work or study step from current evidence and circumstances; a different outcome can justify revising the plan. |
@@ -84,7 +84,7 @@ Follow the [first-semester schedule](first-semester.md#semester-plan), which int
 <a id="s2"></a>
 ### S2: Data and mathematical tools
 
-M7 + M8a share a data pipeline; begin M2/M3 and M4 with college courses. **Exit evidence:** documented schema, reproducible transformations, validation failures and understandable plots. Keep numerical-math work progressing before S3.
+Choose one outside-college priority. If the CLI was the part you liked, take the [software route](practitioner-track.md#route-software-engineer) and work on M4 alongside college DSA. For a data question, begin M7 or M8a, then extend the same pipeline into the other. Reuse M2/M3 work when college covers it. **Exit evidence:** for data, save a documented schema, reproducible transformations, validation failures and understandable plots. For software, save a working change, a test and a data-structure decision. Use the maths prerequisites for the route you choose next.
 
 <a id="summer-1"></a>
 ### Summer 1: Consolidate prerequisites

@@ -37,15 +37,15 @@ For a costly book, use a library, an authorized open edition or the free lecture
 <a id="module-default-1"></a>
 ## One default route and principal book per module
 
-These stacked defaults and the prerequisite inventory come from [the module map](../curriculum/modules.json). The checker detects drift between them. M0 includes free Khan videos and Hammack's proof text; M14's FPP3 includes the authors' embedded lecture videos. M26 is a project, not a lecture course.
+These stacked defaults and the prerequisite inventory come from [the module map](../curriculum/modules.json). The checker detects drift between them. M0 pairs selected MIT proof lessons with Hammack's free text and offers Khan for algebra repair; M14's FPP3 includes the authors' embedded lecture videos. M26 is a project, not a lecture course.
 
 <!-- BEGIN MODULE DEFAULTS -->
 
 <a id="default-m0"></a>
 ### [M0 — Maths bridge](../curriculum/1-foundations.md#module-0)
 
-- **Free teaching route:** [Free course / lecture route](https://www.khanacademy.org/math/precalculus)
-- **Principal book:** [Book of Proof - Hammack (free)](https://richardhammack.github.io/BookOfProof/)
+- **Free teaching route:** [Free course / lecture route](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-2-induction/)
+- **Principal book:** [Book of Proof - Richard Hammack, 3rd edition (free)](https://richardhammack.github.io/BookOfProof/)
 
 <a id="default-m1"></a>
 ### [M1 — Python](../curriculum/1-foundations.md#module-1)
@@ -63,13 +63,13 @@ These stacked defaults and the prerequisite inventory come from [the module map]
 ### [M3 — Linear algebra](../curriculum/1-foundations.md#module-3)
 
 - **Free teaching route:** [Free course / lecture route](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/)
-- **Principal book:** [Introduction to Linear Algebra - Strang (paid)](https://math.mit.edu/~gs/linearalgebra/)
+- **Principal book:** [Introduction to Linear Algebra - Gilbert Strang, 6th edition (paid)](https://math.mit.edu/~gs/linearalgebra/ila6/indexila6.html)
 
 <a id="default-m4"></a>
 ### [M4 — Algorithms](../curriculum/1-foundations.md#module-4)
 
 - **Free teaching route:** [Free course / lecture route](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
-- **Principal book:** [Introduction to Algorithms - CLRS (paid)](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
+- **Principal book:** [Introduction to Algorithms - Cormen, Leiserson, Rivest and Stein, 4th edition (paid)](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 
 <a id="default-m5"></a>
 ### [M5 — Probability](../curriculum/1-foundations.md#module-5)
@@ -170,7 +170,7 @@ These stacked defaults and the prerequisite inventory come from [the module map]
 <a id="default-m21"></a>
 ### [M21 — Retrieval and RAG](../curriculum/6-frontier-production.md#module-21)
 
-- **Free teaching route:** [Free course / lecture route](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/)
+- **Free teaching route:** [Free course / lecture route](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/augmented-language-models/)
 - **Principal book:** [AI Engineering - Huyen (paid)](https://huyenchip.com/books/)
 
 <a id="default-m22"></a>
@@ -194,7 +194,7 @@ These stacked defaults and the prerequisite inventory come from [the module map]
 <a id="default-m25"></a>
 ### [M25 — Product data science](../curriculum/6-frontier-production.md#module-25)
 
-- **Free teaching route:** [Free course / lecture route](https://www.storytellingwithdata.com/videos)
+- **Free teaching route:** [Free course / lecture route](https://ocw.mit.edu/courses/14-310x-data-analysis-for-social-scientists-spring-2023/resources/14310x-lecture-16_mp4/)
 - **Principal book:** [Trustworthy Online Controlled Experiments - Kohavi, Tang and Xu (paid)](https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/D97B26382EB0EB2DC2019A7A7B518F59)
 
 <a id="default-m26"></a>
@@ -220,7 +220,7 @@ These stacked defaults and the prerequisite inventory come from [the module map]
 
 **FSDL / Hugging Face.** Public lecture/course materials. Some original labs use service accounts or hosted APIs. Follow this roadmap's local lab route; hosted services and credits are not assumed free.
 
-**Berkeley safety lectures / BlueDot / Storytelling with Data.** Berkeley has selected public lecture videos; Storytelling with Data links public videos. BlueDot's full course materials require a free account; facilitated cohorts, premium archives and feedback have separate terms. The default uses selected public videos and requires no paid lecture or cohort.
+**Berkeley safety lectures / BlueDot / product decisions.** Berkeley has selected public lecture videos; Storytelling with Data links public videos. BlueDot's full course materials require a free account; facilitated cohorts, premium archives and feedback have separate terms. M25 uses a downloadable MIT lecture on interpreting randomized experiments and a metrics slide deck.
 
 **Recommended books.** Author/publisher links and access labels in the catalogue. Editions can use different exercise numbers and software. Paid print/ebook, authorized free text and sample/code-only access are labeled separately.
 

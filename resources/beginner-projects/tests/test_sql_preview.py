@@ -39,3 +39,16 @@ def test_missing_and_bad_queries_report_failure(tmp_path, capsys):
     assert preview.main([str(query)]) == 2
     output = capsys.readouterr()
     assert output.err and not output.out
+
+
+def test_retake_runs_the_same_query_on_a_new_read_only_fixture(tmp_path, capsys):
+    query = tmp_path / "report.sql"
+    query.write_text(
+        "SELECT c.customer_id, COUNT(o.order_id), COALESCE(SUM(o.amount_cents),0) "
+        "FROM customers AS c LEFT JOIN orders AS o USING (customer_id) "
+        "GROUP BY c.customer_id ORDER BY c.customer_id", encoding="utf-8")
+    assert preview.main(["--case", "retake", str(query)]) == 0
+    assert json.loads(capsys.readouterr().out)["rows"] == [
+        ["1", 2, 1200], ["2", 2, 600], ["3", 0, 0], ["4", 0, 0]]
+    query.write_text("DELETE FROM orders", encoding="utf-8")
+    assert preview.main(["--case", "retake", str(query)]) == 2

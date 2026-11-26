@@ -44,21 +44,10 @@ The application subset below is available after M1 and does not count as complet
   distinction between an answer, a citation, and supporting evidence.
 - Build a small extraction or classification application. Keep its input/output contract separate
   from the model adapter; record model identifier/revision and generation settings.
-- Compare a deterministic heuristic, zero-shot prompting, and a few-shot prompt on a frozen task
-  set. Define semantic correctness as well as schema validity; inspect false positives/negatives.
-- Use Pydantic v2 for application validation. Compare prompt-only JSON with constrained generation
-  through [Outlines](https://dottxt-ai.github.io/outlines/latest/), or study the official
-  [OpenAI](https://developers.openai.com/api/docs/guides/structured-outputs) and
-  [Anthropic](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) interfaces.
-  Providers support different schema subsets. Handle refusal, incomplete generation, unsupported
-  schema, transport failure, and domain-invalid values explicitly. Valid structure does not prove
-  factual correctness or authorization.
+- Compare a deterministic heuristic with a fixture-driven adapter on a frozen set of labeled inputs. Include one well-formed but factually wrong response, an incomplete response and a refusal. Score schema validity separately from task correctness. Record which examples reach a human reviewer and why.
+- Validate the response at the application boundary. Pydantic v2 is one option. Preserve the input ID, response source and error category. Record latency of the local adapter and label any hosted costs as estimates.
 
-**Completion evidence:** a runnable adapter, mocked transport/error tests, and an evaluation report
-from a **real model**. A small local model such as
-[SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct) provides a CPU
-experiment; weak results are legitimate evidence. Mocks validate plumbing, not model quality.
-Record hardware, download size, and measured runtime; paid API access is unnecessary.
+**Completion evidence:** a runnable adapter, expected and actual outputs, a failure log and one changed case you can explain. Fixed responses let you test the application offline. Mark model quality and inference latency **unmeasured** in this route. For a model comparison, run zero-shot and few-shot prompts on the same cases with a small local model such as [SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct). Record the revision, settings, hardware and measured results. Constrained decoding or a hosted API is an optional extension.
 
 <a id="application-integration"></a>
 **Application-engineering extension — a small complete product:** after the M18-app core, connect the adapter to one simple local interface and a typed backend. A plain HTML form or small Python UI is sufficient; a particular frontend framework is not required.
@@ -97,8 +86,7 @@ rewards. Choose one extension after the core artifact; report the workload behin
 **Application lecture route:** [Full Stack LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/).
 **Practical companion:** [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1).
 **University depth:** CS336 assignments;
-its full GPU systems/training workloads exceed the local core. Assignment 5 covers alignment and
-reasoning RL; DPO is an optional part. CPU correctness exercises do not reproduce the full course.
+its full GPU systems/training workloads exceed the local core. The 2026 syllabus lists Assignment 5 on alignment and reasoning RL. Match any optional exercise to the assignment handout for the year you use. CPU correctness exercises do not reproduce the full course.
 **Recommended main books:** Sebastian Raschka, [*Build a Large Language Model (From Scratch)*](https://www.manning.com/books/build-a-large-language-model-from-scratch)
 (Manning, 2024), for mechanisms; Chip Huyen, [*AI Engineering*](https://huyenchip.com/books/)
 (O'Reilly, 2025), especially evaluation, dataset engineering, and fine-tuning. The free
@@ -111,6 +99,8 @@ sequences is acceptable; QLoRA/GPU scaling is an extension. Compare base zero-sh
 fixed-context baseline, and adapted model on the same held-out examples. Add full retrieval at M21.
 Submit the data card, split manifest, training curve, executable scoring/tests, locked environment,
 README, and results memo. A negative result passes when the method and limitations are sound.
+**First CPU check:** before downloading weights, initialize a one-layer causal transformer with a tiny vocabulary. Freeze the base, train a rank-4 LoRA adapter for a few steps on two short synthetic token sequences, save it, and reload it onto the same original base. Compare held-out logits before and after reloading and verify the frozen parameters. This establishes adapter training and persistence. Use a real task and a held-out comparison for the module result. A [tested configuration](../audit/curriculum-review-2026-11-26.md#runtime) is available if setup is the obstacle.
+
 **Stretch:** DPO on separately curated preference pairs, with a regression check on another ability.
 
 ---
@@ -128,32 +118,28 @@ README, and results memo. A negative result passes when the method and limitatio
 surveyed about 500 U.S. decision-makers and combined responses with market modeling. Such an
 investor-produced sample provides context, not a universal deployment census or a reason to use RAG.
 
-**Strict Prerequisites:** M1, M8a, and [M18-app](#application-foundations) competence (also covered
+**Strict Prerequisites:** M1, [M8a-local](2-statistics-and-data.md#local-relational-project) (also supplied by full M8a), and [M18-app](#application-foundations) competence (also covered
 by full M18). M11's vector geometry is recommended; learn cosine similarity before dense retrieval.
 
 **Core outcomes:**
 
 - Ingest a small corpus with document IDs, versions, provenance, and access metadata; preserve
   page/section citations through chunking and re-indexing.
-- Compare BM25, dense retrieval, reciprocal-rank fusion, and a cross-encoder reranker on one corpus.
-  Start with exact vector search before measuring approximate-index recall/latency tradeoffs.
+- Compare a no-evidence baseline with lexical retrieval on one corpus. Change one indexing or ranking decision and measure the effect on the same labeled questions.
 - Evaluate hit@k, context precision, recall@k where relevance labels are complete, and answer
   faithfulness/correctness. Assess unanswerable questions, stale documents, and authorization filters.
 - Distinguish [ColBERT](https://github.com/stanford-futuredata/ColBERT) text late interaction from
   [ColPali](https://github.com/illuin-tech/colpali) visual document retrieval. They are depth options;
   ColPali is not a drop-in name for ordinary single-vector text embeddings.
 
-**Default local stack:** text/Markdown exports → BM25 +
-[BGE-small](https://huggingface.co/BAAI/bge-small-en-v1.5) CPU embeddings → local LanceDB or NumPy
-exact search → a small BGE cross-encoder on a bounded candidate set. Local PostgreSQL/pgvector is
-a SQL-oriented alternative. Hosted Cohere reranking and paid generation are optional comparisons.
+**Default local stack:** start with the [standard-library retrieval exercise](../resources/local-labs/retrieval.py). It scores exact word overlap and returns passage IDs. Move to BM25, CPU embeddings, rank fusion or reranking when an observed failure motivates that comparison. For a dense experiment start with exact vector search. Record download size and runtime.
 
 **Free lecture:** [Full Stack LLM Bootcamp — Augmented Language Models](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/augmented-language-models/)
 (2023 concepts; use current implementation docs). **Practical reading:**
 [Pinecone Learn](https://www.pinecone.io/learn/),
 [LlamaIndex docs](https://developers.llamaindex.ai/python/framework/), and the
 [original RAG paper](https://arxiv.org/abs/2005.11401).
-**Main book:** Huyen, *AI Engineering*, retrieval and evaluation chapters.
+**Main book:** Huyen, *AI Engineering*, chapters 3–4 on evaluation and the retrieval section of chapter 6. Use the [author’s contents](https://github.com/chiphuyen/aie-book/blob/main/ToC.md) to locate the sections.
 
 **Decision framework:** start with a deterministic or no-retrieval baseline, then test prompt
 examples, fixed context, retrieval, and fine-tuning against observed failure categories. These
@@ -163,12 +149,8 @@ not maintain a source-of-truth database. Measure the component that earns its ex
 
 <a id="project-21"></a>
 **📦 Module Project (mandatory) — One evaluated retrieval system.** Freeze 20–50 labeled questions
-and supporting document IDs before tuning. Use separate development examples. Compare no retrieval,
-BM25, dense, hybrid, and hybrid plus reranker under the same generation settings. Report retrieval
-metrics, claim-level evidence checks, answer correctness, abstention, and latency. This small set is
-a teaching/regression set, not evidence of population-wide reliability. Submit ingestion and scorer
-tests, the versioned corpus/eval, reproducible commands, README, and memo; document observed failures.
-Mocked generation covers integration tests only; answer-quality claims need real generated answers.
+and supporting document IDs before tuning. Keep separate development cases. Compare no evidence, lexical retrieval and one change on the same questions. Inspect authorized passages, missing evidence, supported claims and abstentions. In the offline core, return an extract with its source ID or abstain. Score what that system returned and record local latency. Assess generated answers separately if you add a model. Submit ingestion and scorer tests, versioned corpus/evaluation, commands, README and a memo explaining a failure.
+
 **Stretch:** one of contextual retrieval, GraphRAG, late interaction, or multimodal retrieval with
 an ablation against the core system. [Detailed lab and rubric](../coursepages/m21-rag-vector-dbs/README.md).
 
@@ -201,8 +183,7 @@ loop → multiple agents only when a measured benefit justifies coordination and
 - Separate working context, episodic summaries/checkpoints, and durable semantic memory. Preserve
   provenance, timestamps, tenant isolation, expiry, contradiction resolution, and deletion controls.
 
-**MCP compatibility:** teach released [revision 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28),
-not an invented October revision. It uses per-request version/capability metadata and mandatory
+**MCP compatibility:** released [revision 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28) uses per-request version/capability metadata and mandatory
 server support for `server/discover`; the client may discover first. Tool lists support pagination
 and cache metadata. `outputSchema` is optional in the protocol; this lab requires typed output.
 Annotations such as `readOnlyHint` and `destructiveHint` are untrusted hints. The
@@ -213,14 +194,13 @@ and WebMCP are separate extension/interoperability topics, not required by every
 
 **Free course:** [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/), with local
 substitutes for hosted exercises; **depth:** [Berkeley Agents MOOC](https://llmagents-learning.org/).
-**Main book:** Huyen, *AI Engineering*, tools, planning, memory, and failure analysis.
+**Main book:** Huyen, *AI Engineering*, the agents section of chapter 6. Reuse the evaluation methods in chapters 3–4.
 
 <a id="project-22"></a>
 **📦 Module Project (mandatory) — A bounded, evaluated tool assistant.** Expose a small local SQL
-fixture through an actual MCP SDK server, then connect a local SDK client. Implement a deterministic
-workflow and a model-directed alternative over the same 20 tasks. Include malformed requests,
+fixture through an actual MCP SDK server, then connect a local SDK client. Run a deterministic workflow and replay scripted tool proposals over the same 20 tasks. Include malformed requests,
 unknown tools, permission failures, stale discovery, timeouts, and duplicate writes. Submit typed
-schemas, protocol transcript, control tests, repeated real-model outcomes, traces, and decision memo.
+schemas, protocol transcript, control tests, expected and observed end states, traces, and a decision memo. Add repeated model runs only when measuring model-directed choices.
 Start with [the local contracts lab](../resources/agent-lab/README.md); its scripted tests establish
 application controls, not model quality or MCP conformance. Follow [Labs 1–5](../coursepages/m22-agentic-ai/README.md#labs)
 for staged extensions. Multi-agent research and public benchmark runs are optional depth.
@@ -374,7 +354,7 @@ rules); distinguish a product change from instrumentation/population changes; es
 propose a decision with guardrails and the evidence that would reverse it. Explain costs of errors,
 proxy failures, missing data, selection bias, and ethical tradeoffs in ordinary language.
 
-**Free video route:** [Storytelling with Data public videos](https://www.storytellingwithdata.com/videos).
+**Free lecture:** use the opening randomized-experiment and selective-reporting discussion in [MIT 14.310x Lecture 16](https://ocw.mit.edu/courses/14-310x-data-analysis-for-social-scientists-spring-2023/resources/14310x-lecture-16_mp4/). Explain how reporting only successful tests could change a launch decision. Use the “Designing Metrics” slides in the [SIGIR/KDD tutorial](https://exp-platform.com/2017abtestingtutorial/) to define an outcome, a diagnostic metric and a guardrail. Use [Storytelling with Data](https://www.storytellingwithdata.com/videos) when the remaining problem is how to present the result.
 **Free references:** [Ron Kohavi's ExP papers](https://exp-platform.com/) and
 [Shneiderman's visualization paper](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf).
 **Recommended main books:** Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments*, and
@@ -405,7 +385,9 @@ Research requires M6, M25-brief and the theory/methods relevant to its question;
 a deep-learning project, not for every research capstone. Systems requires M24 plus applicable safety controls;
 Applied requires M6/M7/M25 and M6½ for causal claims. All 27 modules are not a universal gate.
 
-Choose one track. Agree a written question, scope, baseline, budget and evaluation plan before the
+Choose one track. For a first pilot, take the baseline from your strongest existing project, change one input or assumption, and ask another person to reproduce the difference from your README. An accessible text table with column labels and units can accompany a plot or recorded demo. For software-route learners, a reviewed release can finish the route before choosing an M26 project.
+
+Agree a written question, scope, baseline, budget and evaluation plan before the
 main implementation; review a pilot before committing to a large run. A rigorous null result can pass.
 The scores below are **roadmap teaching rubrics**, not university grading rules or hiring guarantees.
 

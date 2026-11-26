@@ -32,6 +32,8 @@ Choose the obstacle that best describes what happened; multiple causes are possi
 
 Open the artifact and repeat one short check without the solution. Record assistance used. Use a changed input or explanation to distinguish remembering the supplied example from being able to apply it.
 
+For a SQL milestone, record the two fixture results only when you actually run and explain your query. A partial attempt and its next repair are enough for a weekly entry.
+
 Then compare planned work with **finished evidence**, not just videos watched. Record one confusing instruction or gap, one thing to retain and **one change** for next week. If there was no study, record that without inventing results. Restart from the last demonstrated skill using the [recovery path](first-semester.md#recovery).
 
 Weeks 1–6 of this pilot mean six calendar review intervals beginning when you start the log. They need not match semester weeks 1–6. Pauses and incomplete tasks are useful observations; the pilot has no pass score.

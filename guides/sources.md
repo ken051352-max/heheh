@@ -5,6 +5,8 @@
 
 The roadmap combines free lectures, books chosen on merit and reproducible projects. Recommendations are editorial judgments supported by source content, audience fit and independent review; no book or framework is an undisputed winner for every learner.
 
+Read the [26 November curriculum review](../audit/curriculum-review-2026-11-26.md) for the current default changes, employer sample, signed-out lecture checks and limits.
+
 <a id="evidence-policy"></a>
 ## Evidence policy
 

@@ -21,12 +21,16 @@ statistical or causal competence.
 
 | Resource | Role and access |
 |---|---|
-| [Storytelling with Data public videos](https://www.storytellingwithdata.com/videos) | Free lecture/video route; paid workshops and premium archives are separate |
+| [MIT 14.310x Lecture 16](https://ocw.mit.edu/courses/14-310x-data-analysis-for-social-scientists-spring-2023/resources/14310x-lecture-16_mp4/) | Default lecture. Watch the opening discussion of real experiments and selective reporting. A download and transcript are available. |
+| [A/B Testing at Scale](https://exp-platform.com/2017abtestingtutorial/) | Metrics companion. Read section 5, Designing Metrics. |
+| [Storytelling with Data public videos](https://www.storytellingwithdata.com/videos) | Communication practice when presenting the decision. |
 | [Ron Kohavi's ExP papers](https://exp-platform.com/) | Free experimentation evidence and pitfalls |
 | [Shneiderman's visualization paper](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf) | Primary visualization framework |
-| Cole Nussbaumer Knaflic — *Storytelling with Data* | Recommended main communication book; paid |
+| Cole Nussbaumer Knaflic — *Storytelling with Data* | Optional communication reference, paid |
 | Kohavi, Tang & Xu — *Trustworthy Online Controlled Experiments* | Recommended main experimentation book; paid, shared with M6½ |
 | [Locally Optimistic](https://locallyoptimistic.com/) | Practitioner perspectives; assess advice against the project context |
+
+After the lecture, predeclare one metric you would still report if the result went against your recommendation. From the [Designing Metrics slides](https://exp-platform.com/Documents/2017-08%20ABTutorial/ABTutorial_5_designingMetrics.pptx), choose a guardrail and a data-quality check. Save the population, comparison and decision the evidence supports. The later nonparametric regression segment is optional here.
 
 Books are chosen for quality. Free videos/papers and the local project provide a route without
 purchasing a book; a library subscription must not be assumed. Company interview formats vary, so

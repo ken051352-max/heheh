@@ -11,6 +11,8 @@ For a first-year BTech CSE/AI student in India, the [India undergraduate path](i
 
 Use **do now** for that one task, **next** for its dependent milestone, and **later depth** for deferred references. For pacing feedback, copy the [six-week pilot log](study-pilot.md#start); it records observations without creating another schedule.
 
+Prefer conversational help? The optional [roadmap tutor for Codex and OpenCode](../agent.md) can plan within your available time, record private evidence and retrieve the next action across sessions. It uses this tracker’s completion rules; assisted work and unknown study time stay explicitly labelled.
+
 <a id="starter-tracker"></a>
 ## First 30 days
 
@@ -43,7 +45,7 @@ The [semester plan](first-semester.md#semester-plan) is the schedule; this is it
 - Specific gap and [recovery task](first-semester.md#recovery), if needed:
 - Next action and review date:
 
-After the starter, record the tested Weather CLI and [M1 readiness](readiness-checks.md#m1-ready). A conditional SQL query/join preview is **partial M8a evidence**, with introductory data reasoning; it does not complete M7 or M8a. Preserve college-equivalence evidence rather than repeating demonstrated work.
+After the starter, record the tested Weather CLI and [M1 readiness](readiness-checks.md#m1-ready). For the [SQL preview](../resources/beginner-projects/sql/README.md#query-preview), save both your shop and retake results as **partial M8a evidence**. Note the first query or join you still need to repair. Preserve college-equivalence evidence rather than repeating demonstrated work.
 
 <a id="daily-log"></a>
 ## Daily log
@@ -108,7 +110,7 @@ For a small screen, use the single-milestone record above. The full table is a r
 
 </details>
 
-Record M18-app and M25-brief separately when following the application route. M0 is optional; M26 has one chosen track. Every completion row links to its actual work, validation and results memo.
+Record M8a-local, M18-app and M25-brief separately when following the application route. M0 is optional; M26 has one chosen track. Every completion row links to its actual work, validation and results memo.
 
 ## Shared project evidence
 
@@ -134,7 +136,7 @@ Record M18-app and M25-brief separately when following the application route. M0
 - [ ] Chose one main learning priority for the next term and a review date; kept unchosen modules and tools deferred.
 - [ ] Reviewed a small sample of relevant [current role requirements](career-operations.md#skills-checklist).
 - [ ] Got feedback on one specific artifact, privately if preferred.
-- [ ] Chose and completed the [M26 research, systems or applied rubric](../curriculum/6-frontier-production.md#module-26).
+- [ ] Saved the release or capstone named by my route. Software finishes with a reviewed local release. For an [M26 track](../curriculum/6-frontier-production.md#module-26), include its rubric and reproduction command.
 - [ ] Can explain a failure, trade-off and next decision without relying on a copied answer.
 
 Employment outcomes, ratings and public user counts are not curriculum completion criteria.

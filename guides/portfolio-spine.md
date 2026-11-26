@@ -30,7 +30,7 @@ Add document retrieval only when needed.
 <a id="level-3"></a>
 ### L3: bounded tools
 
-Start with a deterministic workflow; compare one model-controlled loop.
+Compare a deterministic workflow with bounded fixture proposals. Try one model-controlled loop if its decisions are the question.
 
 **Evidence:** Allowlists and validation enforced in code, trusted confirmation for destructive actions, idempotency, timeout/step/retry bounds, traces and repeated-task outcomes. Use [M22](../coursepages/m22-agentic-ai/README.md#labs).
 
@@ -70,7 +70,7 @@ Copy the [DECISIONS template](../resources/templates/DECISIONS.md). Record conte
 | Level | Decisions to record |
 |---|---|
 | L1 | Task/metric, model and license, schema and semantic validation, refusal/failure policy, resource budget |
-| L2 | Corpus rights, chunking, retrieval baseline, embedding/reranker, evaluation cases and citation checks |
+| L2 | Corpus rights, chunking, retrieval baseline, one measured retrieval change, evaluation cases and citation checks |
 | L3 | Tools and authorization, confirmation binding, idempotency scope, step/time budgets and memory lifetime |
 | L4 | Why more agents, each context/permission boundary, failure behavior and measured benefit |
 | L5 | What may change, who owns the metric/holdout, sandbox limits and human acceptance rule |

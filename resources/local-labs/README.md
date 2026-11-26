@@ -1,8 +1,10 @@
-# Local causal and data-system labs
+# Local causal, data-system and retrieval labs
 
-Small deterministic fixtures for [M6½](../../coursepages/m6h-causal-inference/README.md) and [M8b](../../coursepages/m8b-distributed-data/README.md). No hosted service, GPU, paid API or dataset download is required. Python 3.12+ is the roadmap baseline.
+Small deterministic fixtures for [M6½ causal inference](../../coursepages/m6h-causal-inference/README.md), [M8b pipelines](../../coursepages/m8b-distributed-data/README.md) and M21 retrieval. No hosted service, GPU, paid API or dataset download is required. Python 3.12+ is the roadmap baseline.
 
 ## Run from the repository root
+
+For [M21 retrieval](../../coursepages/m21-rag-vector-dbs/README.md#start-lab), run `python resources/local-labs/retrieval.py`. The standard-library example compares no evidence, title search, and title plus passage search on the same six synthetic queries. Inspect the document ID returned for each query. The paraphrase shows where literal matching fails. Add your own case before changing the search and save the before/after rows. These are component measurements on a tiny teaching fixture.
 
 Both the causal lab and the default SQLite ledger use only the Python standard library:
 
@@ -40,7 +42,7 @@ The SQLite route needs no installation or network. Installing DuckDB needs netwo
 
 Both print JSON to stdout and create no output files. Save a transcript in your own artifact. The coursepages specify the extensions and decision memo needed for module completion; running a supplied example alone is not completion.
 
-Run the regression suite from the repository root with `python -m unittest discover -s resources/local-labs/tests -v`. Six causal tests and six SQLite ledger contracts run with the standard library. The same six ledger contracts run against DuckDB when installed; otherwise the output explicitly reports six skips. Skipped DuckDB contracts have not been verified on that machine. CI installs the lab requirements to exercise both backends.
+Run the regression suite from the repository root with `python -m unittest discover -s resources/local-labs/tests -v`. Causal, retrieval and SQLite ledger tests run with the standard library. The same six ledger contracts run against DuckDB when installed; otherwise the output explicitly reports six skips. Skipped DuckDB contracts have not been verified on that machine. CI installs the lab requirements to exercise both backends.
 
 ## Limitations to investigate
 

@@ -131,7 +131,7 @@ Practise these **seven study habits**, selected for this curriculum:
 
 **Core outcome:** translate quantified statements, give a counterexample, and write a direct, contradiction and induction proof with assumptions. Keep a proof notebook. This bridge remains optional preparation, never a gate for Python.
 
-> **Status:** Recommended, never a gate. Beginners: do *Book of Proof* ch. 1–4 at 15 min/day alongside college maths (see the [beginner maths track](#beginner-math-track)). The full module is for later.
+For the proof outcome, start with the base case and inductive step in [MIT 6.042J Lecture 2, Induction](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-2-induction/). Write out its claim, assumptions and an independent example. For an algebra gap, use the [precalculus refresher](#beginner-math-track). Begin Python as soon as you like.
 
 <details>
 <summary><strong>Archival / Non-operational:</strong> historical status line</summary>
@@ -689,9 +689,13 @@ Use [the canonical readiness pattern](../guides/readiness-checks.md#how-to-check
 
 **Recommended principal reading:** Cormen, Leiserson, Rivest and Stein, **Introduction to Algorithms**, fourth edition (MIT Press, paid): asymptotics, data structures, graph algorithms and dynamic programming. Use selected chapters with free MIT 6.006 lectures, not a cover-to-cover gate.
 
-**Core outcome:** choose lists/maps/heaps, analyze time and space, implement traversal and a small dynamic program, and formulate/test the meal planner. Streaming sketches and approximation theory are optional depth. Use MIT 6.006 as the free default; the other courses and books are alternatives.
+**Core outcome:** choose lists/maps/heaps, analyze time and space, implement traversal and a small dynamic program, and formulate/test a small constrained search such as the meal planner. Streaming sketches and approximation theory are optional depth. Use MIT 6.006 as the free default; the other courses and books are alternatives.
 
 * **The Tutor's "Why":** Algorithms and data structures support correctness, resource-use reasoning and later systems work. Practise choosing a representation and explaining its trade-offs; review actual role requirements rather than treating every interview as the same test.
+
+**Before MIT 6.006:** take a sorted list and explain why discarding half of the remaining values preserves a binary search for a target. Trace a missing target in an empty list and in a list of four values. State why the search terminates. College discrete maths or DSA work with the same reasoning counts. If the trace is hard, use the searching segment of [CS50 Algorithms](https://cs50.harvard.edu/x/weeks/3/), then retry with an absent value between two entries. If the proof is hard, revisit induction in the M0 text and explain why each step preserves the candidate interval. Start lists/maps while doing that repair.
+
+MIT assumes discrete maths including sets, logic, proofs, recursion, graphs, counting and probability. Before attempting its full assignments, try the relevant items in [Problem Set 0](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/) and borrow the matching college material or MIT 6.042J lesson for each gap. Use the roadmap project to assess the selected M4 outcomes. [MIT syllabus](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/)
 
 * **Strict Prerequisites:** Module 1 (can write and debug Python).
 * **Recommended Prerequisites:** Module 0b proof literacy and Module 5 probability for the randomized
@@ -723,9 +727,9 @@ Use [the canonical readiness pattern](../guides/readiness-checks.md#how-to-check
   * **Practical Implementation:** Pure Python + `collections` (deque, defaultdict, Counter), **`sortedcontainers`**, **`networkx` 3.x** for graph algorithms, **LeetCode** + **Codeforces** for practice.
 
 * **📦 Module Project (mandatory) — Constraint-based meal planner**
-  * **Deliverable:** A program that, given a food database (calories + macros + cost per item) and a set of constraints (daily calorie target, minimum protein, budget ceiling, no more than *k* repeats per week), produces a valid 7-day meal plan. Solve it twice: once with your own search/DP formulation, once with a solver (`pulp` or `ortools`), and compare.
-  * **Definition of done:** (1) `pytest` suite including at least one *infeasible* constraint set that your program correctly reports as unsatisfiable rather than crashing or silently returning garbage; (2) `README.md` stating the formulation explicitly — decision variables, objective, constraints; (3) a results memo comparing your hand-rolled search against the solver on runtime and solution quality, and stating the complexity class of the problem you just solved.
-  * **Stretch:** Expose it as a Streamlit app so a non-programmer can change the constraints and see a new plan.
+  * **Deliverable:** A program that, given a food database (calories + macros + cost per item) and a set of constraints (daily calorie target, minimum protein, budget ceiling, no more than *k* repeats per week), produces a valid 7-day meal plan. Begin with two days and a tiny allowed menu so you can enumerate the answers by hand. Compare your search/DP result with exhaustive enumeration on that case, then extend your own search to the week. The same exercise can use course timetabling if a college project already has constraints and an infeasible case.
+  * **Definition of done:** (1) `pytest` suite including at least one *infeasible* constraint set that your program correctly reports as unsatisfiable rather than crashing or silently returning garbage; (2) `README.md` stating the formulation explicitly — decision variables, objective, constraints; (3) a results memo comparing the answers and number of states examined on the small instance, then explaining how the search grows with the number of days and choices.
+  * **Stretch:** Compare with a constraint solver when a bigger instance makes the baseline impractical. Use the same objective and report any timeout separately from infeasibility.
   * *Archetype source: video 1 (14:05) — the constraint-based meal planner, cited there specifically because it demonstrates problem formulation rather than model-fitting.*
 
 ---

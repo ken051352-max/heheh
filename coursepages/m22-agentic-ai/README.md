@@ -15,8 +15,7 @@ This page supports the linked module; it is not an additional course to finish. 
 ## Prerequisites and route
 
 Complete M21 and [M18-app competence](../../curriculum/6-frontier-production.md#application-foundations)
-(full M18 also covers it). Start with a deterministic workflow, add one model-directed loop, and
-compare the results. Multi-agent frameworks are extensions justified by the workload.
+(full M18 also covers it). Compare a fixed workflow with scripted proposals on a synthetic task. Add model-directed routing when investigating model behavior. Multi-agent frameworks are extensions justified by the workload.
 
 | Resource | Role |
 |---|---|
@@ -53,7 +52,7 @@ error must not trigger an unbounded retry. Do not claim idempotency just because
 <a id="mcp-server-example"></a>
 ### Local server exercise: implement the real interface
 
-Use the official Python SDK v2 and pin the exact installed version. Its migration guide documents
+Use the official Python SDK v2 and pin the exact installed version. The [v2.3.0 release](https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0) is the November 2026 reference point. Its migration guide documents
 `MCPServer` and snake_case Python fields; protocol JSON still uses names such as `outputSchema`.
 Older `FastMCP` tutorials require the corresponding v1 SDK or an explicit migration.
 
@@ -72,7 +71,7 @@ flag is never the approval authority.
 **Verify:** actual SDK client discovery and calls; typed structured output; unknown/malformed
 requests; no unauthorized row access; approved/rejected simulated actions; replay after process
 restart; concurrent first writes; and no duplicate side effect. Save a redacted protocol transcript.
-A desktop commercial client is optional; the SDK client supplies the free route.
+For a first check with SDK 2.3.0, expose one read-only fixture tool. Launch it with `Client(StdioServerParameters(command=sys.executable, args=[server_path]))` inside `async with`. Record `client.protocol_version`, then await `client.list_tools()` and `client.call_tool(name, arguments)`. Inspect `structured_content` on success and `is_error` for a missing fixture ID. Compare the observed state after both calls. A desktop client is optional. [Versioned client transport docs](https://github.com/modelcontextprotocol/python-sdk/blob/v2.3.0/docs/client/transports.md)
 
 <a id="mcp-2026"></a>
 ### What the 2026-07-28 protocol actually changes
@@ -136,13 +135,13 @@ tests offline; run a real local model when measuring selection or answer quality
 <a id="lab-1"></a>
 ### Lab 1 · A bounded loop and deterministic baseline
 
-Implement the fixed workflow first. Then let a model propose typed tool requests. The host validates
+Implement the fixed workflow first. Then let a scripted adapter propose typed tool requests, including invalid ones. The host validates
 and dispatches only allowlisted tools, appends results as data, and terminates on a valid final answer
 or budget exhaustion. Start with eight tool attempts; count failed attempts too. Apply per-call I/O
 timeouts and a total elapsed budget. A between-call clock check cannot interrupt a blocked network call.
 
 **Done:** unknown tool, wrong argument type, malformed JSON, refusal, timeout, repeated failure and
-step exhaustion all have tests. Compare the real model with deterministic routing on the same tasks.
+step exhaustion all have tests. Compare the two paths by actual final state and termination reason. Reuse the same tasks for an optional model comparison.
 The [scripted runner](../../resources/agent-lab/contracts.py) supplies control tests, not the model loop.
 
 <a id="lab-2"></a>
@@ -159,7 +158,7 @@ particular commercial coding assistant to run the experiment.
 <a id="lab-3"></a>
 ### Lab 3 · Structured calls and failure contracts
 
-Compare prompt-only JSON, validation with bounded retry, and local constrained decoding using
+Exercise valid, truncated, refused and domain-invalid responses using local fixtures. For an optional model experiment, compare prompt-only JSON, validation with bounded retry, and local constrained decoding using
 [Outlines](https://dottxt-ai.github.io/outlines/latest/). The
 [OpenAI](https://developers.openai.com/api/docs/guides/structured-outputs) and
 [Anthropic](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) docs provide
@@ -167,7 +166,7 @@ optional provider comparisons. Check supported JSON Schema features and output c
 status; then validate application meaning and permissions independently.
 
 **Done:** report parse/schema errors, semantic errors, retries and latency over a fixed task set.
-Use a small real local model for this comparison. A scripted valid JSON response cannot demonstrate
+Use a small real local model when comparing decoding strategies. A scripted valid JSON response cannot demonstrate
 a decoding algorithm's advantage. Constrained syntax does not make an order ID correct or authorized.
 
 <a id="lab-4"></a>
@@ -225,9 +224,9 @@ small subsets do not establish leaderboard-comparable performance.
 ## 📦 Required completion evidence
 
 Submit the actual MCP SDK server/client, bounded assistant, frozen tasks, deterministic contract
-tests, real-model comparison, traces, memory design/tests, README and results memo. One system covers
+tests, expected and observed final states, traces, memory design/tests, README and results memo. One system covers
 all core outcomes; Lab 2 and multi-agent/public-benchmark extensions are optional. Schemas and controls
-must work, but the model is allowed to perform poorly if the evaluation explains it honestly. Private,
+must work. Label proposal sources. Measure model-selection accuracy only if you run a model. Private,
 selectively shared, and sanitized public artifacts all meet the reviewability requirement.
 
 

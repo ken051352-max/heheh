@@ -173,7 +173,7 @@ An existing project may replace rebuilding Weather when it demonstrates the same
 
 **Remediation:** choose the failed category: [control flow](#loops-and-errors), [tests/files](#testing-and-files), [objects](#objects-and-data-flow), or the exact [Weather stage](../resources/beginner-projects/weather/README.md#stages). Keep M1 active and defer dependent projects until the missing capability is demonstrated. You may continue unrelated college mathematics while repairing Python.
 
-**Next:** [SQL preview](first-semester.md#week-15), [M7](../curriculum/2-statistics-and-data.md#module-7), or [M4](../curriculum/1-foundations.md#module-4), one chosen priority at a time. The manifest's prerequisites remain unchanged.
+**Next:** [SQL preview](first-semester.md#week-15), [M7](../curriculum/2-statistics-and-data.md#module-7), or [M4](../curriculum/1-foundations.md#module-4), one chosen priority at a time. For the first algorithms assignment, try the discrete-maths check at the M4 link.
 
 <a id="sql-ready"></a>
 ## SQL investigation — filtering, joins and reconciliation
@@ -188,14 +188,14 @@ Use this tiny hypothetical example, separate from the project fixture:
 1. Explain each table's row meaning (grain), its primary key and the foreign-key relationship. Why keep the unit in the column name?
 2. Predict the number of orders and total paise for customer 1. Write a filtered query and compare it with hand arithmetic.
 3. A report groups by customer name after a cross join. Explain the inflated total. Repair it to return **all three customers**, including the one with no orders, and count orders correctly.
-4. On paper, add a fourth order for Ravi and recalculate totals. Compare with the same changed data in a disposable reviewer-loaded database when available. Explain why two orders with equal amounts are still two orders. Implementing inserts or transaction handling is not part of this query preview.
+4. Open the [runnable second shop](../resources/beginner-projects/sql/fixtures/retake.sql). It uses the project's cents column, adds a second 300-cent order for customer 2 and a different customer named Ravi. Predict the four rows before running your join with [`--case retake`](../resources/beginner-projects/sql/README.md#query-preview). Save your prediction, output and any repair. Explain how the report preserves both people and both orders.
 
 **Observable evidence:** 2 orders and 1,200 paise for Asha; correct join keys; zero orders for Noor; and a reconciled total for the changed example. Do not require ingestion or rollback implementation to finish this preview.
 
 <details>
 <summary>Reviewer notes and targeted repair</summary>
 
-The original order total is 1,500 paise. Cross joining to three customers produces 9 rows and repeats the amount three times, summing to 4,500. A left join on customer ID preserves Noor; `COUNT(order_id)` counts non-null order IDs, whereas `COUNT(*)` counts the outer row. Use `COALESCE(SUM(amount_paise), 0)` when the report defines no orders as zero. Group by stable customer ID as well as the name; people can share names. A new 200-paise order for Ravi brings the total to 1,700, with 500 for Ravi. That is an example changed case, not an imposed project fixture.
+The original paper total is 1,500 paise. Cross joining to three customers produces 9 rows and a total of 4,500. A left join on customer ID preserves Noor. `COUNT(order_id)` counts non-null order IDs. Use `COALESCE(SUM(amount_paise), 0)` when the report defines no orders as zero. For the executable retake, check for four customer rows and a grand total of 1,800 in the fixture's stated unit.
 
 Repair a grain or filtering gap with [CS50 SQL Querying](https://cs50.harvard.edu/sql/weeks/0/). Repair joins by drawing the three relationships and using [Relating](https://cs50.harvard.edu/sql/weeks/1/). For later M8a schema/ingestion stages, continue to [Designing](https://cs50.harvard.edu/sql/weeks/2/) and Writing before implementing inserts and transactions. At that stage, observe the supplied schema rejecting duplicate order IDs and unknown customer IDs under enabled foreign-key constraints; then implement and test your own ingestion contract. SQLite foreign-key enforcement must be enabled on the connection. SQLite `EXPLAIN QUERY PLAN` describes a plan; it is not PostgreSQL's measured `EXPLAIN ANALYZE` output. None of those later implementation tasks is an extra Week 16 requirement.
 

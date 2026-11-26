@@ -5,7 +5,7 @@
 
 Build relevant competence and make it easy for a reviewer to assess. Hiring also depends on vacancies, geography, work authorization, credentials, timing and individual circumstances. These planning suggestions are not measured guarantees about hiring.
 
-**First-year CSE/AI in India, role undecided?** Use the [undergraduate international-options route](india-undergraduate-path.md). It keeps first-year foundations broad, introduces small role experiments and reviews specialization each semester. The [November 2026 employer sample](../audit/career-research-2026-11-05.md) records 12 postings and student-program guidance; it is evidence about particular roles, not a forecast of your graduation-year market.
+**First-year CSE/AI in India, role undecided?** Use the [undergraduate international-options route](india-undergraduate-path.md). It keeps first-year foundations broad, introduces small role experiments and reviews specialization each semester. Use the [26 November examples](../audit/curriculum-review-2026-11-26.md#hiring) to practise reading a graduation window, a country-specific remote label and a sponsorship condition. Reopen the actual posting when you apply.
 
 ## 1. Choose an attainable next role
 
